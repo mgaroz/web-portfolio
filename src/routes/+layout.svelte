@@ -8,7 +8,7 @@
 		<div class="menu">
 			<ul class="list-none flex">
 				<li class="inline-block py-5 px-[30px]">
-					<a href="/" class="text-[14px] uppercase ">Home</a>
+					<a href="/" class="text-[14px] uppercase border-b"><span class="py-[3px]">Home</span></a>
 				</li>
 				<li class="inline-block py-5 px-[30px]">
 					<a href="#work" class="text-[14px] uppercase ">Work</a>
