@@ -23,7 +23,7 @@
 				<span class="inline-block text-sm slide-up cursor-pointer">Scroll to explore</span>
 			</div>
 			<div id="hero-footer-right">
-				<span class="text-sm"> Selected case studies (04)</span>
+				<span class="text-sm">Selected case studies (04)</span>
 			</div>
 		</div>
 	</div>
@@ -36,7 +36,6 @@
 		top: 100%;
 		left: 0;
 		content: 'Scroll to explore';
-		transition: top 0.1s ease-in;
 	}
 
 	.slide-up:hover {
