@@ -18,7 +18,6 @@
 					<Link href="#about" content="About" textSize="14px" />
 				</li>
 				<li class="inline-block py-5 px-[30px]">
-					<!-- <a href="#contact" class="text-[14px] uppercase ">Contact</a> -->
 					<Link href="#contact" content="Contact" textSize="14px" />
 				</li>
 			</ul>
