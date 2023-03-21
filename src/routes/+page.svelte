@@ -47,7 +47,7 @@
 		position: relative;
 		top: 0px;
 		width: auto;
-		transition: top 0.1s ease-in;
+		transition: top 0.2s;
 	}
 
 	.slide-up::after {
