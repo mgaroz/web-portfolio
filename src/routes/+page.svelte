@@ -57,7 +57,4 @@
 		height: 0;
 		visibility: hidden;
 	}
-
-	#hero-footer-left:hover {
-	}
 </style>
