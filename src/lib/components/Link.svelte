@@ -2,10 +2,14 @@
 	export let href: string;
 	export let content: string | number;
 	export let textSize: string;
+	export let duration: number;
 </script>
 
 <a {href} class="block overflow-hidden uppercase">
-	<span class="slide-up group-hover:-top-5 text-[{textSize}]" data-hover={content}>{content}</span>
+	<span
+		class="slide-up group-hover:-top-[19px] text-[{textSize}] transition-[top] duration-{duration}"
+		data-hover={content}>{content}</span
+	>
 </a>
 
 <style>
@@ -13,8 +17,6 @@
 		position: relative;
 		top: 0px;
 		width: auto;
-		transition: top 0.2s;
-		overflow: hidden;
 	}
 
 	.slide-up::before {
