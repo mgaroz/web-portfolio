@@ -1,23 +1,25 @@
 <script>
 	import '../app.css';
+	import Link from '$lib/components/Link.svelte';
 </script>
 
 <header>
-	<nav class="flex items-center justify-between py-5 w-full px-20 h-32">
+	<nav class="flex h-32 w-full items-center justify-between py-5 px-20">
 		<div class="logo">LOGO</div>
 		<div class="menu">
-			<ul class="list-none flex">
+			<ul class="flex list-none">
 				<li class="inline-block py-5 px-[30px]">
-					<a href="/" class="text-[14px] uppercase border-b"><span class="py-[3px]">Home</span></a>
+					<Link href="/" content="Home" />
 				</li>
 				<li class="inline-block py-5 px-[30px]">
-					<a href="#work" class="text-[14px] uppercase ">Work</a>
+					<Link href="#work" content="Work" />
 				</li>
 				<li class="inline-block py-5 px-[30px]">
-					<a href="#about" class="text-[14px] uppercase ">About</a>
+					<Link href="#about" content="About" />
 				</li>
 				<li class="inline-block py-5 px-[30px]">
-					<a href="#contact" class="text-[14px] uppercase ">Contact</a>
+					<!-- <a href="#contact" class="text-[14px] uppercase ">Contact</a> -->
+					<Link href="#contact" content="Contact" />
 				</li>
 			</ul>
 		</div>
