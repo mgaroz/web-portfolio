@@ -9,17 +9,17 @@
 		<div class="menu">
 			<ul class="flex list-none">
 				<li class="inline-block py-5 px-[30px]">
-					<Link href="/" content="Home" />
+					<Link href="/" content="Home" textSize="14px" />
 				</li>
 				<li class="inline-block py-5 px-[30px]">
-					<Link href="#work" content="Work" />
+					<Link href="#work" content="Work" textSize="14px" />
 				</li>
 				<li class="inline-block py-5 px-[30px]">
-					<Link href="#about" content="About" />
+					<Link href="#about" content="About" textSize="14px" />
 				</li>
 				<li class="inline-block py-5 px-[30px]">
 					<!-- <a href="#contact" class="text-[14px] uppercase ">Contact</a> -->
-					<Link href="#contact" content="Contact" />
+					<Link href="#contact" content="Contact" textSize="14px" />
 				</li>
 			</ul>
 		</div>

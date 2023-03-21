@@ -1,10 +1,11 @@
 <script lang="ts">
 	export let href: string;
 	export let content: string | number;
+	export let textSize: string;
 </script>
 
 <a {href} class="block overflow-hidden uppercase">
-	<span class="slide-up text-[14px]" data-hover={content}>{content}</span>
+	<span class="slide-up text-[{textSize}]" data-hover={content}>{content}</span>
 </a>
 
 <style>
