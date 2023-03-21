@@ -5,7 +5,7 @@
 </script>
 
 <a {href} class="block overflow-hidden uppercase">
-	<span class="slide-up text-[{textSize}]" data-hover={content}>{content}</span>
+	<span class="slide-up group-hover:-top-5 text-[{textSize}]" data-hover={content}>{content}</span>
 </a>
 
 <style>
@@ -31,9 +31,5 @@
 		display: block;
 		height: 0;
 		visibility: hidden;
-	}
-
-	.slide-up:hover {
-		top: -20px;
 	}
 </style>
