@@ -40,4 +40,8 @@
 	h6 {
 		@apply text-h6;
 	}
+
+	quote {
+		@apply text-quote;
+	}
 }
