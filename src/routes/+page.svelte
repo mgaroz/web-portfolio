@@ -2,6 +2,7 @@
 	import Work from './Work.svelte';
 	import About from './About.svelte';
 	import News from './News.svelte';
+	import Contact from './Contact.svelte';
 </script>
 
 <section class="h-[calc(100vh-128px)] px-20">
@@ -56,6 +57,7 @@
 </div>
 <About />
 <News />
+<Contact />
 
 <style>
 	.slide-up::before {
