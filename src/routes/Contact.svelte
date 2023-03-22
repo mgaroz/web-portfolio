@@ -8,9 +8,9 @@
 		<span class="block text-[1.25rem] uppercase"> I'd love to hear from you </span>
 		<span class="block text-[1.25rem] uppercase"> Let's work together </span>
 	</div>
-	<div class="flex w-full items-center justify-between pb-28">
+	<div class="flex w-full items-start justify-between pb-28">
 		<div id="contact-left" class="w-1/4">
-			<h3 class="uppercase">Let's talk</h3>
+			<h3 class="uppercase leading-none">Let's talk</h3>
 		</div>
 		<div id="contact-right" class="w-2/3">
 			<form action="/contact">
@@ -21,7 +21,7 @@
 							type="text"
 							name="name"
 							id="name"
-							class="inline-block w-full border-b bg-transparent text-[20px]"
+							class="inline-block w-full border-0 border-b bg-transparent text-[20px]"
 						/>
 					</div>
 					<div class="inline-block">
@@ -30,20 +30,25 @@
 							type="email"
 							name="email"
 							id="email"
-							class="inline-block w-full border-b bg-transparent text-[20px] outline-transparent"
+							class="inline-block w-full border-0 border-b bg-transparent text-[20px] outline-transparent"
 						/>
 					</div>
 				</div>
-				<div class="w-full">
+				<div class="w-full pb-10">
 					<label for="message" class="text-[20px]">MESSAGE</label>
 					<textarea
 						name="message"
 						id="message"
 						cols="30"
 						rows="10"
-						class="w-full resize-none bg-transparent text-[20px]"
+						class="w-full resize-none border-0 border-b bg-transparent text-[20px]"
 					/>
 				</div>
+				<button
+					class="bg-gallery-500 text-cod-gray-500 group h-[40px] w-36 rounded-full align-middle text-[14px] uppercase"
+				>
+					Send mail
+				</button>
 			</form>
 		</div>
 	</div>
