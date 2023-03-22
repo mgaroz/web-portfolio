@@ -1,3 +1,7 @@
+<script lang="ts">
+	import Work from './Work.svelte';
+</script>
+
 <section class="h-[calc(100vh-128px)] px-20">
 	<div
 		id="hero"
@@ -21,7 +25,7 @@
 		<div class="flex w-full items-center justify-between uppercase" id="hero-footer">
 			<div id="hero-footer-left" class="flex items-center justify-center gap-8 overflow-hidden">
 				<span class="slide-up inline-block cursor-pointer text-sm">Scroll to explore</span>
-				<div class="flex items-center justify-center">
+				<div class="flex h-5 w-5 items-center justify-center">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
@@ -44,6 +48,7 @@
 		</div>
 	</div>
 </section>
+<Work />
 
 <style>
 	.slide-up::before {

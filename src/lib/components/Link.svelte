@@ -7,7 +7,7 @@
 
 <a {href} class="block overflow-hidden uppercase">
 	<span
-		class="slide-up group-hover:-top-[19px] text-[{textSize}] transition-[top] duration-{duration}"
+		class="slide-up group-hover:-top-[22px] text-[{textSize}] transition-[top] duration-{duration}"
 		data-hover={content}>{content}</span
 	>
 </a>
