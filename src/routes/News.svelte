@@ -16,10 +16,11 @@
 			class="border-cod-gray-50 flex h-[15.125rem] w-full items-center justify-between border-t border-b py-[3.125rem]"
 		>
 			<div class="group relative flex max-h-32 items-center">
-				<div
-					class="image-reveal mr-4 bg-[url('https://picsum.photos/220/140')] duration-500 group-hover:h-36 group-hover:w-[220px]"
-				>
-					<!-- <img id="news1" src="" alt="something else" /> -->
+				<div class="overflow-hidden">
+					<!-- Needs GSAP to reverse animation -->
+					<div
+						class="mr-4 w-0 scale-125 bg-[url('https://picsum.photos/220/140')] bg-cover bg-no-repeat duration-500 group-hover:h-36 group-hover:w-[220px] group-hover:scale-100"
+					/>
 				</div>
 				<h3 class="uppercase">Work collection</h3>
 			</div>
@@ -36,10 +37,11 @@
 			class="border-cod-gray-50 flex h-[15.125rem] w-full items-center justify-between border-b py-[3.125rem]"
 		>
 			<div class="group relative flex max-h-32 items-center">
-				<div
-					class="image-reveal mr-4 bg-[url('https://picsum.photos/220/140')] duration-500 group-hover:h-36 group-hover:w-[220px]"
-				>
-					<!-- <img id="news2" src="" alt="something" /> -->
+				<div class="overflow-hidden">
+					<!-- Needs GSAP to reverse animation -->
+					<div
+						class="mr-4 w-0 scale-125 bg-[url('https://picsum.photos/220/140')] bg-cover bg-no-repeat transition-all duration-500 group-hover:h-36 group-hover:w-[220px] group-hover:scale-100 group-hover:transition-all group-hover:duration-500"
+					/>
 				</div>
 				<h3 class="uppercase">Website of the year</h3>
 			</div>
@@ -56,10 +58,11 @@
 			class="border-cod-gray-50 flex h-[15.125rem] w-full items-center justify-between border-b py-[3.125rem]"
 		>
 			<div class="group relative flex max-h-32 items-center">
-				<div
-					class="image-reveal mr-4 scale-125 bg-[url('https://picsum.photos/220/140')] duration-500 group-hover:h-36 group-hover:w-[220px] group-hover:scale-100"
-				>
-					<!-- <img src="" alt="wow" id="news3" /> -->
+				<div class="overflow-hidden">
+					<!-- Needs GSAP to reverse animation -->
+					<div
+						class="reverseit mr-4 w-0 scale-125 bg-[url('https://picsum.photos/220/140')] bg-cover bg-no-repeat duration-500 group-hover:h-36 group-hover:w-[220px] group-hover:scale-100"
+					/>
 				</div>
 				<h3 class="uppercase">The process</h3>
 			</div>
@@ -94,7 +97,9 @@
 		font-size: clamp(2.125rem, 1.2354rem + 3.9538vw, 5.98rem);
 	}
 
-	.image-reveal {
-		width: 0;
+	.reverseit {
+		transform: scale(1.25), width(0);
+		transform-origin: center;
+		transition: all 0.5s ease-in-out;
 	}
 </style>
