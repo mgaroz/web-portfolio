@@ -8,6 +8,7 @@
 		src: local('Basis Grotesque Pro Medium'),
 			url('lib/font/BasisGrotesquePro-Medium.woff2') format('woff2');
 		font-weight: 500;
+		font-display: swap;
 	}
 
 	@font-face {
@@ -15,6 +16,7 @@
 		src: local('Basis Grotesque Pro Regular'),
 			url('lib/font/BasisGrotesquePro-Regular.woff2') format('woff2');
 		font-weight: 400;
+		font-display: swap;
 	}
 
 	h1 {
