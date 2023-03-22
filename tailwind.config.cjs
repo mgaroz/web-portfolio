@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       bgm: ['Basis Grotesque Pro Medium', 'sans-serif'],
-      bgr: ['Basis Grotesque Pro Regular', 'sand-serif']
+      bgr: ['Basis Grotesque Pro Regular', 'sans-serif']
     },
     extend: {
       colors: {
