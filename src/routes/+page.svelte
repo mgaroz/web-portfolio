@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Work from './Work.svelte';
 	import About from './About.svelte';
+	import News from './News.svelte';
 </script>
 
 <section class="h-[calc(100vh-128px)] px-20">
@@ -54,6 +55,7 @@
 	<hr />
 </div>
 <About />
+<News />
 
 <style>
 	.slide-up::before {
