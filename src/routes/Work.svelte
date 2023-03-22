@@ -2,7 +2,7 @@
 	<div id="work-section" class="flex items-center justify-between gap-8">
 		<div
 			id="work-item-one"
-			class="relative w-1/4 grow basis-0 transition-all duration-500 hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"
+			class="relative w-1/4 grow basis-0 cursor-pointer transition-all duration-500 hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"
 		>
 			<div class="mb-4 h-full w-full overflow-hidden">
 				<div
@@ -13,7 +13,7 @@
 		</div>
 		<div
 			id="work-item-two"
-			class="relative w-1/4 grow basis-0 transition-all duration-500 hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"
+			class="relative w-1/4 grow basis-0 cursor-pointer transition-all duration-500 hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"
 		>
 			<div class="mb-4 h-full w-full overflow-hidden">
 				<div
@@ -24,7 +24,7 @@
 		</div>
 		<div
 			id="work-item-three"
-			class="relative w-1/4 grow basis-0 transition-all duration-500 hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"
+			class="relative w-1/4 grow basis-0 cursor-pointer transition-all duration-500 hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"
 		>
 			<div class="mb-4 h-full w-full overflow-hidden">
 				<div
@@ -35,7 +35,7 @@
 		</div>
 		<div
 			id="work-item-four"
-			class="relative w-1/4 grow basis-0 transition-all duration-500 hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"
+			class="relative w-1/4 grow basis-0 cursor-pointer transition-all duration-500 hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"
 		>
 			<div class="mb-4 h-full w-full overflow-hidden">
 				<div

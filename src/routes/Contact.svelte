@@ -1,3 +1,7 @@
+<script lang="ts">
+	let currentYear = new Date().getFullYear();
+</script>
+
 <section id="contact" class="h-full w-full px-20 pt-28">
 	<div class="pb-10">
 		<span class="text-big-size block uppercase leading-none">Get</span>
@@ -70,7 +74,7 @@
 			<span class="block text-[14px] uppercase">Back to top</span>
 		</div>
 		<div>
-			<span class="text-[14px] uppercase">Miguel Garoz &#169; 2023</span>
+			<span class="text-[14px] uppercase">Miguel Garoz &#169; {currentYear}</span>
 		</div>
 		<div>
 			<span class="text-[14px] uppercase">Follow me</span>
