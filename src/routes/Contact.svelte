@@ -6,7 +6,6 @@
 	</div>
 	<div class="pb-20">
 		<span class="block text-[1.25rem] uppercase"> I'd love to hear from you </span>
-		<span class="block text-[1.25rem] uppercase"> Let's work together </span>
 	</div>
 	<div class="flex w-full items-start justify-between pb-28">
 		<div id="contact-left" class="w-1/4">
@@ -34,7 +33,7 @@
 						/>
 					</div>
 				</div>
-				<div class="w-full pb-10">
+				<div class="w-full">
 					<label for="message" class="text-[20px]">MESSAGE</label>
 					<textarea
 						name="message"
@@ -44,6 +43,7 @@
 						class="w-full resize-none border-0 border-b bg-transparent text-[20px]"
 					/>
 				</div>
+				<hr class="h-[1.75rem] border-0" />
 				<button
 					class="bg-gallery-500 text-cod-gray-500 group h-[40px] w-36 rounded-full align-middle text-[14px] uppercase"
 				>
