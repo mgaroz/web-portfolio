@@ -1,4 +1,3 @@
-<!-- Needs contact form -->
 <section id="contact" class="h-full w-full px-20 pt-28">
 	<div class="pb-10">
 		<span class="text-big-size block uppercase leading-none">Get</span>
