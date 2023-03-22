@@ -11,7 +11,7 @@
 	<div id="more-about-me" class="flex items-center justify-end pt-10 pb-20">
 		<div id="more-about-me-section-1" class="w-1/2">
 			<h5 class="mb-[1.5625rem] uppercase">About me</h5>
-			<p class="font-bgr mb-[1.5625rem] font-normal leading-7">
+			<p class="font-bgr mb-[1.5625rem] leading-7">
 				There are many variations of passages of Lorem Ipsum available, but the majority have
 				suffered alteration in some form, by injected humour, or randomised words which don't look
 				even slightly believable. If you are going to use a passage of Lorem Ipsum.
