@@ -9,10 +9,11 @@
 <a {href} class="block overflow-hidden uppercase">
 	<span
 		class="slide-up transition-[top] {displacement
-			? `group-hover:-top-[${displacement}]`
-			: 'group-hover:-top-[22px]'}"
+			? `group-hover:-top-[var(--displacement)]`
+			: 'group-hover:-top-[19px]'}"
 		data-hover={content}
-		style="--textSize:{textSize}; --duration:{duration};">{content}</span
+		style="--textSize:{textSize}; --duration:{duration}; --displacement:{displacement}"
+		>{content}</span
 	>
 </a>
 

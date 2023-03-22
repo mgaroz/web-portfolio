@@ -32,7 +32,7 @@
 				content="Scroll to explore"
 				textSize="14px"
 				duration="200ms"
-				displacement="-20px"
+				displacement="19px"
 			/>
 		</div>
 		<div class="flex h-5 w-5 items-center justify-center">
