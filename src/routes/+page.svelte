@@ -17,6 +17,7 @@
 					<span class="relative left-96 inline-block">GAROZ</span>
 				</h1>
 			</div>
+			<!-- Make this a block and work from there -->
 			<div class="absolute bottom-0 left-0 max-w-[16.25rem]" id="herosub-wrapper">
 				<h5 class="translate-y-[calc(-23vh+50%)] translate-x-2 uppercase leading-5">
 					<span class="relative block text-sm"

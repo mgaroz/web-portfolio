@@ -1,3 +1,4 @@
+<!-- Needs contact form -->
 <section id="contact" class="h-full w-full px-20 pt-28">
 	<div class="pb-20">
 		<span class="block text-[1.25rem] uppercase"> I'd love to hear from you </span>
@@ -9,9 +10,9 @@
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
 				viewBox="0 0 24 24"
-				stroke-width="1.5"
+				stroke-width="2.5"
 				stroke="currentColor"
-				class="h-6 w-6"
+				class="h-5 w-5"
 			>
 				<path
 					stroke-linecap="round"
