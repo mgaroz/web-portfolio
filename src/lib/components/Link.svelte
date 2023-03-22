@@ -3,11 +3,14 @@
 	export let content: string | number;
 	export let textSize: string;
 	export let duration: string;
+	export let displacement: string;
 </script>
 
 <a {href} class="block overflow-hidden uppercase">
 	<span
-		class="slide-up transition-[top] group-hover:-top-[22px]"
+		class="slide-up transition-[top] {displacement
+			? `group-hover:-top-[${displacement}]`
+			: 'group-hover:-top-[22px]'}"
 		data-hover={content}
 		style="--textSize:{textSize}; --duration:{duration};">{content}</span
 	>

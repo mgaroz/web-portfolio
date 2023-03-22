@@ -27,7 +27,13 @@
 	</div>
 	<div id="about-footer" class="mb-[1.5625rem] flex justify-start gap-8">
 		<div class="group">
-			<Link href="#about" content="Scroll to explore" textSize="14px" duration={'200ms'} />
+			<Link
+				href="#about"
+				content="Scroll to explore"
+				textSize="14px"
+				duration="200ms"
+				displacement="-20px"
+			/>
 		</div>
 		<div class="flex h-5 w-5 items-center justify-center">
 			<svg
