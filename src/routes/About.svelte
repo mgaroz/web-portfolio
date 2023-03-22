@@ -25,10 +25,25 @@
 			</p>
 		</div>
 	</div>
-	<div id="about-footer" class="mb-[1.5625rem] flex justify-start">
-		<!-- <span class="slide-up inline-block cursor-pointer text-sm uppercase">Scroll to explore</span> -->
+	<div id="about-footer" class="mb-[1.5625rem] flex justify-start gap-8">
 		<div class="group">
-			<Link href="#about" content="Scroll to explore" textSize="14px" duration={200} />
+			<Link href="#about" content="Scroll to explore" textSize="14px" duration={'200ms'} />
+		</div>
+		<div class="flex h-5 w-5 items-center justify-center">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				stroke-width={2.5}
+				stroke="currentColor"
+				class="h-5 w-5"
+			>
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					d="M4.5 4.5l15 15m0 0V8.25m0 11.25H8.25"
+				/>
+			</svg>
 		</div>
 	</div>
 </section>
