@@ -15,17 +15,56 @@
 		<div
 			class="border-cod-gray-50 flex h-[15.125rem] w-full items-center justify-between border-t border-b py-[3.125rem]"
 		>
-			AAAA
+			<div class="flex max-h-32 items-center">
+				<div class="mr-4">
+					<img id="news1" src="" alt="something else" />
+				</div>
+				<h3 class="uppercase">Work collection</h3>
+			</div>
+			<div class="flex items-center justify-between gap-20">
+				<div>
+					<span class="block text-[14px] uppercase">intern / projects / agency</span>
+				</div>
+				<div>
+					<span class="block text-[14px] uppercase">march 21, 2023</span>
+				</div>
+			</div>
 		</div>
 		<div
 			class="border-cod-gray-50 flex h-[15.125rem] w-full items-center justify-between border-b py-[3.125rem]"
 		>
-			BBBB
+			<div class="flex max-h-32 items-center">
+				<div class="mr-4">
+					<img id="news2" src="" alt="something" />
+				</div>
+				<h3 class="uppercase">Website of the year</h3>
+			</div>
+			<div class="flex items-center justify-between gap-20">
+				<div>
+					<span class="block text-[14px] uppercase">intern / projects / agency</span>
+				</div>
+				<div>
+					<span class="block text-[14px] uppercase">march 21, 2023</span>
+				</div>
+			</div>
 		</div>
 		<div
 			class="border-cod-gray-50 flex h-[15.125rem] w-full items-center justify-between border-b py-[3.125rem]"
 		>
-			CCCC
+			<div class="flex max-h-32 items-center">
+				<div class="mr-4">
+					<img src="" alt="wow" id="news3" />
+				</div>
+				<h3 class="uppercase">The process of development</h3>
+			</div>
+			<div class="flex items-center justify-between gap-20">
+				<div>
+					<span class="block text-[14px] uppercase">intern / projects / agency</span>
+				</div>
+				<div>
+					<span class="block text-[14px] uppercase">march 21, 2023</span>
+				</div>
+			</div>
 		</div>
 	</div>
 	<hr class="h-[1.75rem] border-0" />
@@ -47,5 +86,17 @@
 <style>
 	.text-big-size {
 		font-size: clamp(2.125rem, 1.2354rem + 3.9538vw, 5.98rem);
+	}
+
+	#news1 {
+		content: url('https://picsum.photos/220/140');
+	}
+
+	#news2 {
+		content: url('https://picsum.photos/220/140');
+	}
+
+	#news3 {
+		content: url('https://picsum.photos/220/140');
 	}
 </style>
