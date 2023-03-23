@@ -6,11 +6,11 @@
 		>
 			<div class="mb-4 h-full w-full overflow-hidden">
 				<div
-					class="bg-cod-gray-50 mb-4 h-full w-full scale-110 bg-[url('https://picsum.photos/id/236/800/600')] bg-cover bg-center bg-no-repeat transition-transform duration-500 hover:scale-100"
+					class="bg-cod-gray-50 mb-4 h-full w-full scale-110 bg-[url('$lib/img/sky-full.webp')] bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-100"
 				/>
 			</div>
 			<div class="flex items-center justify-between">
-				<p class="uppercase">Item One</p>
+				<p class="uppercase">Skyler Cohen</p>
 				<p
 					class="text-gallery-800 uppercase opacity-0 transition-opacity duration-500 group-hover:opacity-100"
 				>

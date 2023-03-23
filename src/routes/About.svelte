@@ -1,33 +1,43 @@
 <script lang="ts">
 	import gsap from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import Link from '$lib/components/Link.svelte';
 	import { onMount } from 'svelte';
 
 	let headerContainer: HTMLHeadElement;
+	let sectionContainer: HTMLElement;
 	let tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-	function fillText() {
-		tl.from(headerContainer, {
-			duration: 2,
-			clipPath: 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)',
-			opacity: 0.5
-		}).to(
-			headerContainer,
-			{
-				duration: 2,
-				clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-				opacity: 1
-			},
-			'-=2'
-		);
-	}
-
 	onMount(() => {
-		fillText();
+		gsap.registerPlugin(ScrollTrigger);
+
+		let animText = tl
+			.from(headerContainer, {
+				duration: 2,
+				// clipPath: 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)',
+				opacity: 0.5
+			})
+			.to(
+				headerContainer,
+				{
+					duration: 2,
+					// clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+					opacity: 1
+				},
+				'-=2'
+			);
+
+		ScrollTrigger.create({
+			trigger: sectionContainer,
+			start: '15% 90%',
+			end: 'bottom 80%',
+			toggleActions: 'restart reverse restart reverse',
+			animation: animText
+		});
 	});
 </script>
 
-<section id="about" class="h-full w-full px-20 pt-28">
+<section id="about" class="h-full w-full px-20 pt-28" bind:this={sectionContainer}>
 	<div id="about-me" class="pb-20">
 		<h1 class="uppercase leading-none" bind:this={headerContainer}>
 			Helping people to innovate and remain highly relevant by developing edge websites
