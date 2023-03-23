@@ -3,6 +3,53 @@
 	import About from './About.svelte';
 	import News from './News.svelte';
 	import Contact from './Contact.svelte';
+	import gsap from 'gsap';
+	import { onMount } from 'svelte';
+
+	let nameContainer: HTMLSpanElement;
+	let lastNameContainer: HTMLSpanElement;
+	let subContainer: HTMLSpanElement;
+
+	let tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+	function animateHero() {
+		tl.from(nameContainer, {
+			duration: 1.5,
+			y: 100,
+			opacity: 0
+		})
+			.from(
+				lastNameContainer,
+				{
+					duration: 1.5,
+					y: 100,
+					opacity: 0
+				},
+				'-=1.40'
+			)
+			.from(
+				subContainer,
+				{
+					duration: 1.5,
+					y: 100,
+					opacity: 0,
+					clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
+				},
+				'-=1.40'
+			)
+			.to(
+				subContainer,
+				{
+					duration: 1.5,
+					clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'
+				},
+				'-=1.40'
+			);
+	}
+
+	onMount(() => {
+		animateHero();
+	});
 </script>
 
 <section class="h-[calc(100vh+110px)] px-20" id="home">
@@ -13,17 +60,14 @@
 		<div class="z-2 relative inset-0 mx-auto block w-full">
 			<div class="relative mx-auto w-full pt-10 pb-40 text-left">
 				<h1 class="text-hero-size leading-none">
-					<span class="relative block">MIGUEL</span>
-					<span class="relative left-96 inline-block">GAROZ</span>
-				</h1>
-			</div>
-			<!-- Make this a block and work from there -->
-			<div class="absolute bottom-0 left-0 max-w-[16.25rem]" id="herosub-wrapper">
-				<h5 class="translate-y-[calc(-23vh+50%)] translate-x-2 uppercase leading-5">
-					<span class="relative block text-sm"
+					<span class="relative block" bind:this={nameContainer}>MIGUEL</span>
+					<span
+						class="relative inline-block max-w-[16.25rem] translate-x-2 align-middle text-sm uppercase leading-5"
+						bind:this={subContainer}
 						>Front-end developer with an adaptive approach to problem solving.</span
 					>
-				</h5>
+					<span class="relative left-10 inline-block" bind:this={lastNameContainer}>GAROZ</span>
+				</h1>
 			</div>
 		</div>
 		<div class="flex w-full items-center justify-between uppercase" id="hero-footer">
