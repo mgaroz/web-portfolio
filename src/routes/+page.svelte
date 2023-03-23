@@ -60,9 +60,9 @@
 		<div class="z-2 relative inset-0 mx-auto block w-full">
 			<div class="relative mx-auto w-full pt-10 pb-40 text-left">
 				<h1 class="text-hero-size leading-none">
-					<span class="relative block" bind:this={nameContainer}>MIGUEL</span>
+					<span class="relative block -translate-x-2" bind:this={nameContainer}>MIGUEL</span>
 					<span
-						class="relative inline-block max-w-[16.25rem] translate-x-2 align-middle text-sm uppercase leading-5"
+						class="relative inline-block max-w-[16.25rem] align-middle text-sm uppercase leading-5"
 						bind:this={subContainer}
 						>Front-end developer with an adaptive approach to problem solving.</span
 					>
