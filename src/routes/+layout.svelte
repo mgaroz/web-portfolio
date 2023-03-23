@@ -4,7 +4,7 @@
 </script>
 
 <header>
-	<nav class="flex h-32 w-full items-center justify-between py-5 px-20">
+	<nav class="bg-cod-gray-500 fixed z-30 flex h-32 w-full items-center justify-between py-5 px-20">
 		<div class="logo">LOGO</div>
 		<div class="menu">
 			<ul class="flex list-none">

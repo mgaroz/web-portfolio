@@ -5,7 +5,7 @@
 	import Contact from './Contact.svelte';
 </script>
 
-<section class="h-[calc(100vh-128px)] px-20">
+<section class="h-[calc(100vh+110px)] px-20" id="home">
 	<div
 		id="hero"
 		class="relative z-20 flex h-full w-full flex-col items-center justify-around overflow-hidden"

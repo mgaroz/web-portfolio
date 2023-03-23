@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Link from '$lib/components/Link.svelte';
 	let currentYear = new Date().getFullYear();
 </script>
 
@@ -56,7 +57,7 @@
 		</div>
 	</div>
 	<div class="flex items-center justify-between gap-8 pb-12">
-		<div class="flex items-center justify-between gap-8">
+		<div class="group flex items-center justify-between gap-8">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
@@ -71,7 +72,13 @@
 					d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
 				/>
 			</svg>
-			<span class="block text-[14px] uppercase">Back to top</span>
+			<Link
+				href="#home"
+				content="Back to top"
+				textSize="14px"
+				duration="200ms"
+				displacement="19px"
+			/>
 		</div>
 		<div>
 			<span class="text-[14px] uppercase">Miguel Garoz &#169; {currentYear}</span>
