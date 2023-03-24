@@ -15,13 +15,11 @@
 		<div
 			class="border-cod-gray-50 flex h-[15.125rem] w-full items-center justify-between overflow-hidden border-b py-[3.125rem]"
 		>
-			<div class="group relative flex max-h-32 items-center">
-				<div
-					class="invisible relative -left-96 w-[220px] overflow-hidden transition-all duration-500 group-hover:visible group-hover:left-0"
-				>
+			<div class="group relative flex max-h-32 max-w-fit items-center">
+				<div class="relative overflow-hidden">
 					<!-- Needs GSAP to reverse animation -->
 					<div
-						class="mr-4 h-32 w-full scale-125 bg-[url('https://picsum.photos/220/140')] bg-cover bg-no-repeat transition-all duration-500 group-hover:scale-100 group-hover:transition-all group-hover:duration-500"
+						class="mr-4 h-36 w-0 scale-125 bg-[url('https://picsum.photos/220/140')] bg-cover bg-no-repeat transition-all duration-500 group-hover:w-[220px] group-hover:scale-100 group-hover:transition-all group-hover:duration-500"
 					/>
 				</div>
 				<h3 class="uppercase">Work collection</h3>
@@ -39,10 +37,10 @@
 			class="border-cod-gray-50 flex h-[15.125rem] w-full items-center justify-between border-b py-[3.125rem]"
 		>
 			<div class="group relative flex max-h-32 items-center">
-				<div class="overflow-hidden transition-all">
+				<div class="relative overflow-hidden transition-all">
 					<!-- Needs GSAP to reverse animation -->
 					<div
-						class="mr-4 w-0 scale-125 bg-[url('https://picsum.photos/221/140')] bg-cover bg-no-repeat transition-all duration-500 group-hover:h-36 group-hover:w-[220px] group-hover:scale-100 group-hover:transition-all group-hover:duration-500"
+						class="mr-4 h-36 w-0 scale-125 bg-[url('https://picsum.photos/221/140')] bg-cover bg-no-repeat transition-all duration-500 group-hover:w-[220px] group-hover:scale-100 group-hover:transition-all group-hover:duration-500"
 					/>
 				</div>
 				<h3 class="uppercase">Website of the year</h3>
@@ -63,7 +61,7 @@
 				<div class="overflow-hidden">
 					<!-- Needs GSAP to reverse animation -->
 					<div
-						class="reverseit mr-4 w-0 scale-125 bg-[url('https://picsum.photos/222/140')] bg-cover bg-no-repeat duration-500 group-hover:h-36 group-hover:w-[220px] group-hover:scale-100"
+						class="reverseit mr-4 h-36 w-0 scale-125 bg-[url('https://picsum.photos/222/140')] bg-cover bg-no-repeat duration-500 group-hover:w-[220px] group-hover:scale-100"
 					/>
 				</div>
 				<h3 class="uppercase">The process</h3>
