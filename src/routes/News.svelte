@@ -19,7 +19,7 @@
 	<hr class="h-[1.75rem] border-0" />
 	<div>
 		<div
-			class="border-cod-gray-50 flex h-[15.125rem] w-full items-center justify-between overflow-hidden border-b py-[3.125rem]"
+			class="border-cod-gray-50 flex h-[15.125rem] w-full items-center justify-between overflow-hidden border-b border-t py-[3.125rem]"
 		>
 			<div class="group relative flex max-h-36 max-w-fit cursor-pointer items-center">
 				<div class="relative overflow-hidden">
