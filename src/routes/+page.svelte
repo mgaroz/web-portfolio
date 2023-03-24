@@ -5,7 +5,7 @@
 	import Contact from './Contact.svelte';
 	import gsap from 'gsap';
 	import { onMount } from 'svelte';
-	import { active, workActive } from '$lib/store';
+	import { active, workActive, backColor } from '$lib/store';
 
 	let nameContainer: HTMLSpanElement;
 	let lastNameContainer: HTMLSpanElement;
@@ -13,10 +13,13 @@
 	let ballContainer: HTMLDivElement;
 	let m = { x: 0, y: 0 };
 
+	$: activeBackColor = $backColor;
+
 	let tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
 	function handleMousemove(e: MouseEvent) {
 		(m.x = e.clientX), (m.y = e.clientY);
+		console.log(activeBackColor);
 	}
 
 	function animateHero() {
@@ -84,6 +87,7 @@
 	class:active-work={$workActive}
 	class="circle z-40"
 	bind:this={ballContainer}
+	style="--backColor:{activeBackColor}"
 />
 <section class="h-[calc(100vh+110px)] px-20" id="home">
 	<div
@@ -191,7 +195,7 @@
 	.active-work {
 		width: 100px;
 		height: 100px;
-		background-color: purple;
+		background-color: var(--backColor);
 		border: none;
 		background-image: url('$lib/img/arrow-up-right.svg');
 		background-size: 50%;

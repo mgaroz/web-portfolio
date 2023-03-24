@@ -1,5 +1,10 @@
 <script lang="ts">
-	import { workActive } from '$lib/store';
+	import { workActive, backColor } from '$lib/store';
+
+	function setStatus(status: boolean, color: string) {
+		workActive.set(status);
+		backColor.set(color);
+	}
 </script>
 
 <section class="h-full w-full px-20 pb-28" id="work">
@@ -7,7 +12,7 @@
 		<div
 			id="work-item-one"
 			class="group relative w-1/4 grow basis-0 cursor-pointer transition-all duration-500 hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"
-			on:mouseenter={() => workActive.set(true)}
+			on:mouseenter={() => setStatus(true, '#9D7B6C')}
 			on:mouseleave={() => workActive.set(false)}
 		>
 			<div class="mb-4 h-full w-full overflow-hidden">
@@ -27,6 +32,8 @@
 		<div
 			id="work-item-two"
 			class="group relative w-1/4 grow basis-0 cursor-pointer transition-all duration-500 hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"
+			on:mouseenter={() => setStatus(true, '#1F1C19')}
+			on:mouseleave={() => workActive.set(false)}
 		>
 			<div class="mb-4 h-full w-full overflow-hidden">
 				<div
@@ -45,6 +52,8 @@
 		<div
 			id="work-item-three"
 			class="group relative w-1/4 grow basis-0 cursor-pointer transition-all duration-500 hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"
+			on:mouseenter={() => setStatus(true, '#6A5C4D')}
+			on:mouseleave={() => workActive.set(false)}
 		>
 			<div class="mb-4 h-full w-full overflow-hidden">
 				<div
@@ -63,6 +72,8 @@
 		<div
 			id="work-item-four"
 			class="group relative w-1/4 grow basis-0 cursor-pointer transition-all duration-500 hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"
+			on:mouseenter={() => setStatus(true, '#3579AB')}
+			on:mouseleave={() => workActive.set(false)}
 		>
 			<div class="mb-4 h-full w-full overflow-hidden">
 				<div
