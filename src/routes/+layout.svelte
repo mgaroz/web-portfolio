@@ -18,7 +18,7 @@
 				<li class="group inline-block py-5 px-[30px]">
 					<Link href="#about" content="About" textSize="14px" duration={'150ms'} displacement="" />
 				</li>
-				<li class="group inline-block py-5 px-[30px]">
+				<li class="group inline-block py-5 pl-[30px]">
 					<Link
 						href="#contact"
 						content="Contact"
