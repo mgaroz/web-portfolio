@@ -1,8 +1,14 @@
+<script lang="ts">
+	import { workActive } from '$lib/store';
+</script>
+
 <section class="h-full w-full px-20 pb-28" id="work">
 	<div id="work-section" class="flex items-center justify-between gap-8">
 		<div
 			id="work-item-one"
 			class="group relative w-1/4 grow basis-0 cursor-pointer transition-all duration-500 hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"
+			on:mouseenter={() => workActive.set(true)}
+			on:mouseleave={() => workActive.set(false)}
 		>
 			<div class="mb-4 h-full w-full overflow-hidden">
 				<div

@@ -5,7 +5,7 @@
 	import Contact from './Contact.svelte';
 	import gsap from 'gsap';
 	import { onMount } from 'svelte';
-	import { active } from '$lib/store';
+	import { active, workActive } from '$lib/store';
 
 	let nameContainer: HTMLSpanElement;
 	let lastNameContainer: HTMLSpanElement;
@@ -79,7 +79,12 @@
 </script>
 
 <svelte:window on:mousemove={handleMousemove} />
-<div class:active={$active} class="circle z-40" bind:this={ballContainer} />
+<div
+	class:active={$active}
+	class:active-work={$workActive}
+	class="circle z-40"
+	bind:this={ballContainer}
+/>
 <section class="h-[calc(100vh+110px)] px-20" id="home">
 	<div
 		id="hero"
@@ -181,5 +186,16 @@
 		height: 120px;
 		background-color: #73737340;
 		border: none;
+	}
+
+	.active-work {
+		width: 100px;
+		height: 100px;
+		background-color: purple;
+		border: none;
+		background-image: url('$lib/img/arrow-up-right.svg');
+		background-size: 50%;
+		background-repeat: no-repeat;
+		background-position: center;
 	}
 </style>
