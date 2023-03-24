@@ -1,5 +1,11 @@
 <script lang="ts">
 	import Link from '$lib/components/Link.svelte';
+	import { blogActive, backColor } from '$lib/store';
+
+	function setStatus(status: boolean) {
+		blogActive.set(status);
+		backColor.set('#000');
+	}
 </script>
 
 <section id="news" class="h-full w-full px-20 pt-28">
@@ -21,7 +27,13 @@
 						class="reverseit h-36 w-0 scale-125 bg-[url('https://picsum.photos/220/140')] bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100"
 					/>
 				</div>
-				<h3 class="uppercase">Work collection</h3>
+				<h3
+					class="uppercase"
+					on:mouseenter={() => setStatus(true)}
+					on:mouseleave={() => setStatus(false)}
+				>
+					Work collection
+				</h3>
 			</div>
 			<div class="flex flex-shrink-0 items-center justify-between gap-20">
 				<div>
@@ -41,7 +53,13 @@
 						class="reverseit h-36 w-0 scale-125 bg-[url('https://picsum.photos/221/140')] bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100"
 					/>
 				</div>
-				<h3 class="uppercase">Website of the year</h3>
+				<h3
+					class="uppercase"
+					on:mouseenter={() => setStatus(true)}
+					on:mouseleave={() => setStatus(false)}
+				>
+					Website of the year
+				</h3>
 			</div>
 			<div class="flex flex-shrink-0 items-center justify-between gap-20">
 				<div>
@@ -61,7 +79,13 @@
 						class="reverseit h-36 w-0 scale-125 bg-[url('https://picsum.photos/222/140')] bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100"
 					/>
 				</div>
-				<h3 class="uppercase">The process</h3>
+				<h3
+					class="uppercase"
+					on:mouseenter={() => setStatus(true)}
+					on:mouseleave={() => setStatus(false)}
+				>
+					The process
+				</h3>
 			</div>
 			<div class="flex flex-shrink-0 items-center justify-between gap-20">
 				<div>
