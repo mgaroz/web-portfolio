@@ -9,8 +9,14 @@
 	let nameContainer: HTMLSpanElement;
 	let lastNameContainer: HTMLSpanElement;
 	let subContainer: HTMLSpanElement;
+	let ballContainer: HTMLDivElement;
+	let m = { x: 0, y: 0 };
 
 	let tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+	function handleMousemove(e: MouseEvent) {
+		(m.x = e.clientX), (m.y = e.clientY);
+	}
 
 	function animateHero() {
 		tl.from(nameContainer, {
@@ -48,10 +54,31 @@
 	}
 
 	onMount(() => {
+		gsap.set(ballContainer, { xPercent: -50, yPercent: -50 });
+
+		const ball = ballContainer;
+		const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+		const mouse = m;
+		const speed = 0.25;
+
+		const xSet = gsap.quickSetter(ball, 'x', 'px');
+		const ySet = gsap.quickSetter(ball, 'y', 'px');
+
+		gsap.ticker.add(() => {
+			const dt = 1.25 - Math.pow(1.35 - speed, gsap.ticker.deltaRatio());
+
+			pos.x += (mouse.x - pos.x) * dt;
+			pos.y += (mouse.y - pos.y) * dt;
+			xSet(pos.x);
+			ySet(pos.y);
+		});
+
 		animateHero();
 	});
 </script>
 
+<svelte:window on:mousemove={handleMousemove} />
+<div class="circle z-40" bind:this={ballContainer} />
 <section class="h-[calc(100vh+110px)] px-20" id="home">
 	<div
 		id="hero"
@@ -134,5 +161,16 @@
 
 	.text-hero-size {
 		font-size: clamp(3.15rem, 1.3846rem + 7.8462vw, 10.8rem);
+	}
+
+	.circle {
+		width: 40px;
+		height: 40px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		border: 2px solid #737373;
+		border-radius: 50%;
+		pointer-events: none;
 	}
 </style>
