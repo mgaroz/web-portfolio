@@ -19,7 +19,6 @@
 
 	function handleMousemove(e: MouseEvent) {
 		(m.x = e.clientX), (m.y = e.clientY);
-		console.log(activeBackColor);
 	}
 
 	function animateHero() {
