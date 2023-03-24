@@ -9,13 +9,13 @@
 		<span class="text-big-size block uppercase leading-none">In touch</span>
 	</div>
 	<div class="pb-20">
-		<span class="block text-[1.25rem] uppercase"> I'd love to hear from you </span>
+		<span class="font-bgr block text-[1.25rem] uppercase"> I'd love to hear from you </span>
 	</div>
 	<div class="flex w-full items-start justify-between pb-28">
 		<div id="contact-left" class="w-1/4">
-			<h3 class="uppercase leading-none">Let's talk</h3>
+			<h3 class="font-bgr uppercase leading-none">Let's talk</h3>
 		</div>
-		<div id="contact-right" class="w-2/3">
+		<div id="contact-right" class="font-bgr w-2/3">
 			<form action="/contact">
 				<div class="mb-8 grid w-full grid-cols-2 gap-10">
 					<div class="inline-block">
@@ -49,7 +49,7 @@
 				</div>
 				<hr class="h-[1.75rem] border-0" />
 				<button
-					class="bg-gallery-500 text-cod-gray-500 group h-[40px] w-36 rounded-full align-middle text-[14px] uppercase"
+					class="bg-gallery-500 text-cod-gray-500 font-bgm group h-[40px] w-36 rounded-full align-middle text-[14px] uppercase"
 				>
 					Send mail
 				</button>
@@ -57,7 +57,7 @@
 		</div>
 	</div>
 	<div class="flex items-center justify-between gap-8 pb-12">
-		<div class="group flex items-center justify-between gap-8">
+		<div class="font-bgr group flex items-center justify-between gap-8">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
@@ -80,10 +80,10 @@
 				displacement="19px"
 			/>
 		</div>
-		<div>
+		<div class="font-bgr">
 			<span class="text-[14px] uppercase">Miguel Garoz &#169; {currentYear}</span>
 		</div>
-		<div>
+		<div class="font-bgr">
 			<span class="text-[14px] uppercase">Follow me</span>
 		</div>
 	</div>
