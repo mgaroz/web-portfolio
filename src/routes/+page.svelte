@@ -127,7 +127,7 @@
 				</div>
 			</div>
 			<div id="hero-footer-right">
-				<span class="font-bgr text-sm">Selected case studies (04)</span>
+				<span class="font-bgr text-sm">Selected works (04)</span>
 			</div>
 		</div>
 	</div>
