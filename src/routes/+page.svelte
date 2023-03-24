@@ -62,7 +62,7 @@
 				<h1 class="text-hero-size leading-none">
 					<span class="relative block -translate-x-2" bind:this={nameContainer}>MIGUEL</span>
 					<span
-						class="relative inline-block max-w-[16.25rem] align-middle text-sm uppercase leading-5"
+						class="font-bgr relative inline-block max-w-[16.25rem] align-middle text-sm uppercase leading-5"
 						bind:this={subContainer}
 						>Front-end developer with an adaptive approach to problem solving.</span
 					>
@@ -72,7 +72,7 @@
 		</div>
 		<div class="flex w-full items-center justify-between uppercase" id="hero-footer">
 			<div id="hero-footer-left" class="flex items-center justify-center gap-8 overflow-hidden">
-				<span class="slide-up inline-block cursor-pointer text-sm">Scroll to explore</span>
+				<span class="slide-up font-bgr inline-block cursor-pointer text-sm">Scroll to explore</span>
 				<div class="flex h-5 w-5 items-center justify-center">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +91,7 @@
 				</div>
 			</div>
 			<div id="hero-footer-right">
-				<span class="text-sm">Selected case studies (04)</span>
+				<span class="font-bgr text-sm">Selected case studies (04)</span>
 			</div>
 		</div>
 	</div>

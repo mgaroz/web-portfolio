@@ -15,60 +15,60 @@
 		<div
 			class="border-cod-gray-50 flex h-[15.125rem] w-full items-center justify-between overflow-hidden border-b py-[3.125rem]"
 		>
-			<div class="group relative flex max-h-36 max-w-fit items-center">
+			<div class="group relative flex max-h-36 max-w-fit cursor-pointer items-center">
 				<div class="relative overflow-hidden">
 					<div
-						class="reverseit mr-4 h-36 w-0 scale-125 bg-[url('https://picsum.photos/220/140')] bg-cover bg-center bg-no-repeat duration-500 group-hover:w-[220px] group-hover:scale-100"
+						class="reverseit h-36 w-0 scale-125 bg-[url('https://picsum.photos/220/140')] bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100"
 					/>
 				</div>
 				<h3 class="uppercase">Work collection</h3>
 			</div>
 			<div class="flex flex-shrink-0 items-center justify-between gap-20">
 				<div>
-					<span class="block text-[14px] uppercase">intern / projects / agency</span>
+					<span class="font-bgr block text-[14px] uppercase">intern / projects / agency</span>
 				</div>
 				<div>
-					<span class="block text-[14px] uppercase">march 21, 2023</span>
+					<span class="font-bgr block text-[14px] uppercase">march 21, 2023</span>
 				</div>
 			</div>
 		</div>
 		<div
 			class="border-cod-gray-50 flex h-[15.125rem] w-full items-center justify-between border-b py-[3.125rem]"
 		>
-			<div class="group relative flex max-h-36 items-center">
+			<div class="group relative flex max-h-36 cursor-pointer items-center">
 				<div class="relative overflow-hidden transition-all">
 					<div
-						class="reverseit mr-4 h-36 w-0 scale-125 bg-[url('https://picsum.photos/221/140')] bg-cover bg-center bg-no-repeat duration-500 group-hover:w-[220px] group-hover:scale-100"
+						class="reverseit h-36 w-0 scale-125 bg-[url('https://picsum.photos/221/140')] bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100"
 					/>
 				</div>
 				<h3 class="uppercase">Website of the year</h3>
 			</div>
 			<div class="flex flex-shrink-0 items-center justify-between gap-20">
 				<div>
-					<span class="block text-[14px] uppercase">intern / projects / agency</span>
+					<span class="font-bgr block text-[14px] uppercase">intern / projects / agency</span>
 				</div>
 				<div>
-					<span class="block text-[14px] uppercase">march 21, 2023</span>
+					<span class="font-bgr block text-[14px] uppercase">march 21, 2023</span>
 				</div>
 			</div>
 		</div>
 		<div
 			class="border-cod-gray-50 flex h-[15.125rem] w-full items-center justify-between border-b py-[3.125rem]"
 		>
-			<div class="group relative flex max-h-36 items-center">
+			<div class="group relative flex max-h-36 cursor-pointer items-center">
 				<div class="overflow-hidden">
 					<div
-						class="reverseit mr-4 h-36 w-0 scale-125 bg-[url('https://picsum.photos/222/140')] bg-cover bg-center bg-no-repeat duration-500 group-hover:w-[220px] group-hover:scale-100"
+						class="reverseit h-36 w-0 scale-125 bg-[url('https://picsum.photos/222/140')] bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100"
 					/>
 				</div>
 				<h3 class="uppercase">The process</h3>
 			</div>
 			<div class="flex flex-shrink-0 items-center justify-between gap-20">
 				<div>
-					<span class="block text-[14px] uppercase">intern / projects / agency</span>
+					<span class="font-bgr block text-[14px] uppercase">intern / projects / agency</span>
 				</div>
 				<div>
-					<span class="block text-[14px] uppercase">march 21, 2023</span>
+					<span class="font-bgr block text-[14px] uppercase">march 21, 2023</span>
 				</div>
 			</div>
 		</div>
@@ -76,7 +76,7 @@
 	<hr class="h-[1.75rem] border-0" />
 	<hr class="h-[1.75rem] border-0" />
 	<div class="w-2/5">
-		<h5 class="uppercase">
+		<h5 class="font-bgr uppercase">
 			We help businesses to innovate and remain relevant to their customers only by developing
 			digital creative products.
 		</h5>

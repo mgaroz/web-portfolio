@@ -10,9 +10,9 @@
 				/>
 			</div>
 			<div class="flex items-center justify-between">
-				<p class="whitespace-nowrap uppercase">Skyler Cohen</p>
+				<p class="font-bgr p1 whitespace-nowrap uppercase">Skyler Cohen</p>
 				<p
-					class="text-gallery-800 uppercase opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+					class="text-gallery-800 p2 uppercase opacity-0 transition-opacity duration-500 group-hover:opacity-100"
 				>
 					Development
 				</p>
@@ -28,9 +28,9 @@
 				/>
 			</div>
 			<div class="flex items-center justify-between">
-				<p class="uppercase">Andy's Cafe</p>
+				<p class="p1 font-bgr uppercase">Andy's Cafe</p>
 				<p
-					class="text-gallery-800 uppercase opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+					class="text-gallery-800 p2 uppercase opacity-0 transition-opacity duration-500 group-hover:opacity-100"
 				>
 					Development
 				</p>
@@ -46,9 +46,9 @@
 				/>
 			</div>
 			<div class="flex items-center justify-between">
-				<p class="uppercase">Item Three</p>
+				<p class="p1 font-bgr uppercase">Item Three</p>
 				<p
-					class="text-gallery-800 uppercase opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+					class="text-gallery-800 p2 uppercase opacity-0 transition-opacity duration-500 group-hover:opacity-100"
 				>
 					Development
 				</p>
@@ -64,9 +64,9 @@
 				/>
 			</div>
 			<div class="flex items-center justify-between">
-				<p class="uppercase">Item Four</p>
+				<p class="p1 uppercase">Item Four</p>
 				<p
-					class="text-gallery-800 uppercase opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+					class="text-gallery-800 p2 uppercase opacity-0 transition-opacity duration-500 group-hover:opacity-100"
 				>
 					Development
 				</p>
@@ -74,3 +74,13 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	.p1 {
+		font-size: 18px;
+	}
+
+	.p2 {
+		font-size: 14px;
+	}
+</style>
