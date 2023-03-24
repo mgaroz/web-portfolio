@@ -98,7 +98,7 @@
 </section>
 <Work />
 <div class="px-20">
-	<hr />
+	<hr class="border-cod-gray-50" />
 </div>
 <About />
 <News />

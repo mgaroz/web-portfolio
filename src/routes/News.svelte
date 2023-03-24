@@ -4,7 +4,7 @@
 
 <section id="news" class="h-full w-full px-20 pt-28">
 	<div>
-		<h6 class="pb-[1.5625rem] uppercase">/ Get informed</h6>
+		<h6 class="font-bgr pb-[1.5625rem] uppercase">/ Get informed</h6>
 		<hr class="h-[1.75rem] border-0" />
 		<span class="text-big-size block uppercase leading-none">Blog</span>
 		<span class="text-big-size block uppercase leading-none">All entries</span>
@@ -80,6 +80,7 @@
 			We help businesses to innovate and remain relevant to their customers only by developing
 			digital creative products.
 		</h5>
+		<hr class="h-[1.75rem] border-0" />
 		<hr class="h-[1.75rem] border-0" />
 		<button
 			class="bg-gallery-500 text-cod-gray-500 group h-[40px] w-36 rounded-full align-middle uppercase"

@@ -61,7 +61,7 @@
 		</div>
 	</div>
 	<div id="about-footer" class="mb-[1.5625rem] flex justify-start gap-8">
-		<div class="group">
+		<div class="font-bgr group">
 			<Link
 				href="#about"
 				content="More about me"
