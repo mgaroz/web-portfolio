@@ -19,9 +19,9 @@
 	<hr class="h-[1.75rem] border-0" />
 	<div>
 		<div
-			class="border-cod-gray-50 flex h-[15.125rem] w-full items-center justify-between overflow-hidden border-b border-t py-[3.125rem]"
+			class="border-cod-gray-50 group flex h-[15.125rem] w-full items-center justify-between overflow-hidden border-b border-t py-[3.125rem]"
 		>
-			<div class="group relative flex max-h-36 max-w-fit cursor-pointer items-center">
+			<div class="relative flex max-h-36 max-w-fit cursor-pointer items-center">
 				<div class="relative overflow-hidden">
 					<div
 						class="reverseit h-36 w-0 scale-125 bg-[url('https://picsum.photos/220/140')] bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100"
@@ -45,9 +45,9 @@
 			</div>
 		</div>
 		<div
-			class="border-cod-gray-50 flex h-[15.125rem] w-full items-center justify-between border-b py-[3.125rem]"
+			class="border-cod-gray-50 group flex h-[15.125rem] w-full items-center justify-between border-b py-[3.125rem]"
 		>
-			<div class="group relative flex max-h-36 cursor-pointer items-center">
+			<div class="relative flex max-h-36 cursor-pointer items-center">
 				<div class="relative overflow-hidden transition-all">
 					<div
 						class="reverseit h-36 w-0 scale-125 bg-[url('https://picsum.photos/221/140')] bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100"
@@ -71,9 +71,9 @@
 			</div>
 		</div>
 		<div
-			class="border-cod-gray-50 flex h-[15.125rem] w-full items-center justify-between border-b py-[3.125rem]"
+			class="border-cod-gray-50 group flex h-[15.125rem] w-full items-center justify-between border-b py-[3.125rem]"
 		>
-			<div class="group relative flex max-h-36 cursor-pointer items-center">
+			<div class="relative flex max-h-36 cursor-pointer items-center">
 				<div class="overflow-hidden">
 					<div
 						class="reverseit h-36 w-0 scale-125 bg-[url('https://picsum.photos/222/140')] bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100"
