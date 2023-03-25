@@ -16,7 +16,7 @@
 			<h3 class="font-bgr uppercase leading-none">Let's talk</h3>
 		</div>
 		<div id="contact-right" class="font-bgr w-2/3">
-			<form action="/contact">
+			<form action="https://fabform.io/f/Cf02Z9Y" method="POST">
 				<div class="mb-8 grid w-full grid-cols-2 gap-10">
 					<div class="inline-block">
 						<label for="name" class="text-[20px]">NAME</label>
@@ -49,6 +49,7 @@
 				</div>
 				<hr class="h-[1.75rem] border-0" />
 				<button
+					type="submit"
 					class="bg-gallery-500 text-cod-gray-500 font-bgm group h-[40px] w-36 rounded-full align-middle text-[14px] uppercase"
 				>
 					Send mail
