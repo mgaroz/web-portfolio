@@ -3,7 +3,7 @@
 	import About from './About.svelte';
 	import News from './News.svelte';
 	import Contact from './Contact.svelte';
-	import gsap from 'gsap';
+	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 	import { active, workActive, backColor, blogActive } from '$lib/store';
 

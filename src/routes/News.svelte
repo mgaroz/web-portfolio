@@ -11,7 +11,7 @@
 	}
 </script>
 
-<section id="news" class="h-full w-full px-20 pt-28">
+<section id="blog" class="h-full w-full px-20 pt-28">
 	<div>
 		<h6 class="font-bgr pb-[1.5625rem] uppercase">/ Get informed</h6>
 		<hr class="h-[1.75rem] border-0" />

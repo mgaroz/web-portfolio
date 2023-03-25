@@ -1,5 +1,5 @@
 <script lang="ts">
-	import gsap from 'gsap';
+	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import Link from '$lib/components/Link.svelte';
 	import { onMount } from 'svelte';
