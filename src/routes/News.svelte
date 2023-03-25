@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Link from '$lib/components/Link.svelte';
 	import { blogActive, backColor } from '$lib/store';
-	import { onMount } from 'svelte';
 	import dayjs from 'dayjs';
 
 	export let blogData: any;
@@ -10,10 +9,6 @@
 		blogActive.set(status);
 		backColor.set('#000');
 	}
-
-	onMount(() => {
-		console.log(blogData);
-	});
 </script>
 
 <section id="news" class="h-full w-full px-20 pt-28">
@@ -59,34 +54,6 @@
 				</div>
 			</div>
 		{/each}
-
-		<!-- <div
-			class="border-cod-gray-50 group flex h-[15.125rem] w-full items-center justify-between overflow-hidden border-b border-t py-[3.125rem]"
-		>
-			<div class="relative flex max-h-36 max-w-fit cursor-pointer items-center">
-				<div class="relative overflow-hidden">
-					<div
-						class="reverseit h-36 w-0 scale-125 bg-[url('https://picsum.photos/220/140')] bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100"
-					/>
-				</div>
-				<h3
-					class="uppercase"
-					on:mouseenter={() => setStatus(true)}
-					on:mouseleave={() => setStatus(false)}
-				>
-					Work collection
-				</h3>
-			</div>
-			<div class="flex flex-shrink-0 items-center justify-between gap-20">
-				<div>
-					<span class="font-bgr block text-[14px] uppercase">intern / projects / agency</span>
-				</div>
-				<div>
-					<span class="font-bgr block text-[14px] uppercase">march 21, 2023</span>
-				</div>
-			</div>
-		</div> -->
-
 		<div
 			class="border-cod-gray-50 group flex h-[15.125rem] w-full items-center justify-between border-b py-[3.125rem]"
 		>
