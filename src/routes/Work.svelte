@@ -5,21 +5,33 @@
 	import item2 from '$lib/img/cf-landing.avif';
 	import item3 from '$lib/img/item3.avif';
 	import item4 from '$lib/img/item4.avif';
+	import { onMount } from 'svelte';
 
-	function statusAndAverageColor(status: boolean, image: string) {
+	let imagesObject = { item1: item1, item2: item2, item3: item3, item4: item4 };
+	let colorObject: any = {};
+
+	function setStatusAndColor(status: boolean, color: string) {
 		workActive.set(status);
-		fac
-			.getColorAsync(image)
-			.then((color) => {
-				backColor.set(color.hex);
-			})
-			.catch((e) => {
-				console.error(e);
-			});
-		fac.destroy();
+		backColor.set(colorObject[color]);
 	}
 
 	const fac = new FastAverageColor();
+
+	onMount(() => {
+		let values = Object.values(imagesObject);
+		values.forEach((item, idx) => {
+			fac
+				.getColorAsync(item)
+				.then((color) => {
+					let key = 'item' + (idx + 1).toString();
+					Object.assign(colorObject, { [key]: color.hex });
+				})
+				.catch((e) => {
+					console.error(e);
+				});
+		});
+		fac.destroy();
+	});
 </script>
 
 <section class="h-full w-full px-20 pb-28" id="work">
@@ -27,7 +39,7 @@
 		<div
 			id="work-item-one"
 			class="group relative w-1/4 grow basis-0 cursor-pointer transition-all duration-500 hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"
-			on:mouseenter={() => statusAndAverageColor(true, item1)}
+			on:mouseenter={() => setStatusAndColor(true, 'item1')}
 			on:mouseleave={() => workActive.set(false)}
 		>
 			<div class="mb-4 h-full w-full overflow-hidden">
@@ -47,7 +59,7 @@
 		<div
 			id="work-item-two"
 			class="group relative w-1/4 grow basis-0 cursor-pointer transition-all duration-500 hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"
-			on:mouseenter={() => statusAndAverageColor(true, item2)}
+			on:mouseenter={() => setStatusAndColor(true, 'item2')}
 			on:mouseleave={() => workActive.set(false)}
 		>
 			<div class="mb-4 h-full w-full overflow-hidden">
@@ -67,7 +79,7 @@
 		<div
 			id="work-item-three"
 			class="group relative w-1/4 grow basis-0 cursor-pointer transition-all duration-500 hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"
-			on:mouseenter={() => statusAndAverageColor(true, item3)}
+			on:mouseenter={() => setStatusAndColor(true, 'item3')}
 			on:mouseleave={() => workActive.set(false)}
 		>
 			<div class="mb-4 h-full w-full overflow-hidden">
@@ -87,7 +99,7 @@
 		<div
 			id="work-item-four"
 			class="group relative w-1/4 grow basis-0 cursor-pointer transition-all duration-500 hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"
-			on:mouseenter={() => statusAndAverageColor(true, item4)}
+			on:mouseenter={() => setStatusAndColor(true, 'item4')}
 			on:mouseleave={() => workActive.set(false)}
 		>
 			<div class="mb-4 h-full w-full overflow-hidden">
