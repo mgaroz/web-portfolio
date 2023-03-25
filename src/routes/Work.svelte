@@ -6,11 +6,6 @@
 	import item3 from '$lib/img/item3.avif';
 	import item4 from '$lib/img/item4.avif';
 
-	function setStatus(status: boolean, color: string) {
-		workActive.set(status);
-		backColor.set(color);
-	}
-
 	function newSetStatus(status: boolean, image: string) {
 		workActive.set(status);
 		fac
