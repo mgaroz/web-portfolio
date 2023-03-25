@@ -21,7 +21,7 @@
 		<h6 class="font-bgr pb-[1.5625rem] uppercase">/ Get informed</h6>
 		<hr class="h-[1.75rem] border-0" />
 		<span class="text-big-size block uppercase leading-none">Blog</span>
-		<span class="text-big-size block uppercase leading-none">All entries</span>
+		<span class="text-big-size block uppercase leading-none">Latest entries</span>
 	</div>
 	<hr class="h-[1.75rem] border-0" />
 	<hr class="h-[1.75rem] border-0" />

@@ -1,8 +1,8 @@
 export async function load() {
 	const response = async () => {
 		try {
-			const res = await fetch('https://dev.to/api/articles?username=mgaroz').then((result) =>
-				result.json()
+			const res = await fetch('https://dev.to/api/articles?username=mgaroz&per_page=3').then(
+				(result) => result.json()
 			);
 			return res;
 		} catch (error) {
