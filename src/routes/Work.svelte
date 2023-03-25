@@ -8,7 +8,7 @@
 	import { onMount } from 'svelte';
 
 	let imagesObject = { item1: item1, item2: item2, item3: item3, item4: item4 };
-	let colorObject: { [prop: string]: any };
+	let colorObject: { [prop: string]: any } = {};
 
 	function setStatusAndColor(status: boolean, color: string) {
 		workActive.set(status);
