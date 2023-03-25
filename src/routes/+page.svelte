@@ -13,6 +13,8 @@
 	let ballContainer: HTMLDivElement;
 	let m = { x: 0, y: 0 };
 
+	export let data;
+
 	$: activeBackColor = $backColor;
 
 	let tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
@@ -81,6 +83,7 @@
 </script>
 
 <svelte:window on:mousemove={handleMousemove} />
+
 <div
 	class:active={$active}
 	class:active-work={$workActive || $blogActive}
@@ -137,7 +140,9 @@
 	<hr class="border-cod-gray-50" />
 </div>
 <About />
-<News />
+{#await data then res}
+	<News blogData={res.response} />
+{/await}
 <Contact />
 
 <style>
