@@ -47,7 +47,7 @@
 					</h3>
 				</div>
 				<div
-					class="flex h-36 flex-shrink-0 items-center justify-between gap-20"
+					class="flex h-16 flex-shrink-0 items-center justify-between gap-20"
 					on:mouseenter={() => setTrailerActive(true)}
 					on:mouseleave={() => setTrailerActive(false)}
 				>
