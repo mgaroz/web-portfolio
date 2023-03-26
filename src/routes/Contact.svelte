@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Link from '$lib/components/Link.svelte';
+
 	let currentYear = new Date().getFullYear();
 </script>
 
@@ -73,13 +74,7 @@
 					d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
 				/>
 			</svg>
-			<Link
-				href="#home"
-				content="Back to top"
-				textSize="14px"
-				duration="200ms"
-				displacement="19px"
-			/>
+			<Link href="/" content="Back to top" textSize="14px" duration="200ms" displacement="19px" />
 		</div>
 		<div class="font-bgr">
 			<span class="text-[14px] uppercase">Miguel Garoz &#169; {currentYear}</span>

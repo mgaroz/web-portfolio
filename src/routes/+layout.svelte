@@ -28,7 +28,7 @@
 				on:mouseleave={() => active.set(false)}
 			>
 				<li
-					class="group inline-block py-5 px-[30px]"
+					class="group inline-block h-full py-5 px-[30px]"
 					style="opacity: {hoveredStatus.item === 'home' ? 1 : hoveredStatus.hovered ? 0.5 : 1}"
 					on:mouseenter={() => itemHovered(true, 'home')}
 					on:mouseleave={() => itemHovered(false, '')}
@@ -41,13 +41,9 @@
 						displacement=""
 						menuItem={true}
 					/>
-
-					<div
-						class="h-[1px] w-full border-t {$activeNavItem === 'home' ? 'visible' : 'invisible'}"
-					/>
 				</li>
 				<li
-					class="group inline-block py-5 px-[30px]"
+					class="group inline-block h-full py-5 px-[30px]"
 					style="opacity: {hoveredStatus.item === 'work' ? 1 : hoveredStatus.hovered ? 0.5 : 1}"
 					on:mouseenter={() => itemHovered(true, 'work')}
 					on:mouseleave={() => itemHovered(false, '')}
@@ -59,9 +55,6 @@
 						duration={'150ms'}
 						displacement=""
 						menuItem={true}
-					/>
-					<div
-						class="h-[1px] w-full border-t {$activeNavItem === 'work' ? 'visible' : 'invisible'}"
 					/>
 				</li>
 				<li
@@ -78,9 +71,6 @@
 						displacement=""
 						menuItem={true}
 					/>
-					<div
-						class="h-[1px] w-full border-t {$activeNavItem === 'about' ? 'visible' : 'invisible'}"
-					/>
 				</li>
 				<li
 					class="hovered group inline-block py-5 px-[30px]"
@@ -96,9 +86,6 @@
 						displacement=""
 						menuItem={true}
 					/>
-					<div
-						class="h-[1px] w-full border-t {$activeNavItem === 'blog' ? 'visible' : 'invisible'}"
-					/>
 				</li>
 				<li
 					class="group my-5 ml-[30px] inline-block"
@@ -113,9 +100,6 @@
 						duration={'150ms'}
 						displacement=""
 						menuItem={true}
-					/>
-					<div
-						class="h-[1px] w-full border-t {$activeNavItem === 'contact' ? 'visible' : 'invisible'}"
 					/>
 				</li>
 			</ul>

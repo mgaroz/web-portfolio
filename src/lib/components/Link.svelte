@@ -31,12 +31,18 @@
 		<span
 			class="slide-up h-full transition-[top] {displacement
 				? `group-hover:-top-[var(--displacement)]`
-				: 'group-hover:-top-[19px]'}"
+				: 'group-hover:-top-[19px]'} overflow-hidden"
 			data-hover={content}
 			style="--textSize:{textSize}; --duration:{duration}; --displacement:{displacement}"
 			>{content}</span
 		>
 	</a>
+	<div
+		class="h-[1px] w-full border-t group-hover:visible {$activeNavItem ===
+		content.toString().toLowerCase()
+			? 'visible'
+			: 'invisible'}"
+	/>
 {:else}
 	<a {href} class="block overflow-hidden uppercase">
 		<span
@@ -62,7 +68,7 @@
 	.slide-up::before {
 		position: absolute;
 		width: auto;
-		top: 100%;
+		top: 105%;
 		left: 0;
 		content: attr(data-hover);
 	}
