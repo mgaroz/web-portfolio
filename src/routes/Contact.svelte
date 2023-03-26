@@ -25,7 +25,7 @@
 							type="text"
 							name="name"
 							id="name"
-							class="border-cod-gray-50 inline-block w-full border-0 border-b bg-transparent text-[20px]"
+							class="border-cod-gray-50 focus:border-b-gallery-50 inline-block w-full border-0 border-b bg-transparent text-[20px] focus:ring-transparent"
 						/>
 					</div>
 					<div class="inline-block">
@@ -34,7 +34,7 @@
 							type="email"
 							name="email"
 							id="email"
-							class="border-cod-gray-50 inline-block w-full border-0 border-b bg-transparent text-[20px] outline-transparent"
+							class="border-cod-gray-50 focus:border-b-gallery-50 inline-block w-full border-0 border-b bg-transparent text-[20px] focus:ring-transparent"
 						/>
 					</div>
 				</div>
@@ -44,8 +44,8 @@
 						name="message"
 						id="message"
 						cols="30"
-						rows="10"
-						class="border-cod-gray-50 w-full resize-none border-0 border-b bg-transparent text-[20px]"
+						rows="3"
+						class="border-cod-gray-50 focus:border-b-gallery-50 w-full resize-none border-0 border-b bg-transparent text-[20px] focus:ring-transparent"
 					/>
 				</div>
 				<hr class="h-[1.75rem] border-0" />
