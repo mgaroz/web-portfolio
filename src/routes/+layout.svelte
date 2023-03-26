@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import Link from '$lib/components/Link.svelte';
-	import { active, activeNavItem } from '$lib/store';
+	import { active } from '$lib/store';
 	import logo from '$lib/img/mg-logo.svg';
 
 	let hoveredStatus = {
