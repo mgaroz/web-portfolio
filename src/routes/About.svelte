@@ -38,7 +38,7 @@
 </script>
 
 <section id="about" class="h-full w-full px-20 pb-28" bind:this={sectionContainer}>
-	<div id="about-me" class="pb-20">
+	<div id="about-me" class="md:pb-14 2xl:pb-20">
 		<h1 class="uppercase leading-none" bind:this={headerContainer}>
 			Helping people to innovate and remain relevant by developing highly performant websites
 		</h1>
@@ -62,7 +62,7 @@
 			</p>
 		</div>
 	</div>
-	<div id="about-footer" class="mt-[1.5625rem] flex justify-start gap-8">
+	<div id="about-footer" class="flex justify-start gap-8 2xl:mt-16">
 		<div class="font-bgr group">
 			<Link
 				href="#about"
