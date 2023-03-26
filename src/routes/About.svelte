@@ -69,7 +69,7 @@
 				content="More about me"
 				textSize="14px"
 				duration="200ms"
-				displacement="19px"
+				displacement="20px"
 			/>
 		</div>
 		<div class="flex h-5 w-5 items-center justify-center">
