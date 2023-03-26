@@ -52,8 +52,6 @@
 				learning and expanding my knowledge in this ever-evolving field to stay up-to-date with the
 				latest technologies and techniques.
 			</p>
-			<!-- <hr class="h-[1.75rem] border-0" /> -->
-			<!-- <h5 class="font-bgr mb-[1.5625rem] uppercase">My goal</h5> -->
 			<p class="font-bgr leading-7">
 				When I'm not coding, you can find me exploring new technologies and trends in the field,
 				reading up on the latest industry news, and working on personal projects to continue
@@ -64,13 +62,7 @@
 	</div>
 	<div id="about-footer" class="flex justify-start gap-8 2xl:mt-16">
 		<div class="font-bgr group">
-			<Link
-				href="#about"
-				content="More about me"
-				textSize="14px"
-				duration="200ms"
-				displacement="20px"
-			/>
+			<Link href="#blog" content="Blog" textSize="14px" duration="200ms" displacement="20px" />
 		</div>
 		<div class="flex h-5 w-5 items-center justify-center">
 			<svg
