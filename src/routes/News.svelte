@@ -1,13 +1,19 @@
 <script lang="ts">
 	import Link from '$lib/components/Link.svelte';
-	import { blogActive, backColor } from '$lib/store';
+	import { blogActive, backColor, active } from '$lib/store';
 	import dayjs from 'dayjs';
 
 	export let blogData: any;
 
 	function setStatus(status: boolean) {
+		active.set(false);
 		blogActive.set(status);
 		backColor.set('#000');
+	}
+
+	function setTrailerActive(status: boolean) {
+		blogActive.set(false);
+		active.set(status);
 	}
 </script>
 
@@ -40,7 +46,11 @@
 						<a href={post.url} target="_blank">{post.title}</a>
 					</h3>
 				</div>
-				<div class="flex flex-shrink-0 items-center justify-between gap-20">
+				<div
+					class="flex h-36 flex-shrink-0 items-center justify-between gap-20"
+					on:mouseenter={() => setTrailerActive(true)}
+					on:mouseleave={() => setTrailerActive(false)}
+				>
 					<div>
 						<span class="font-bgr block text-[14px] uppercase"
 							>{post.tag_list[0]} / {post.tag_list[1]} / {post.tag_list[2]}</span
