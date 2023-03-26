@@ -40,27 +40,29 @@
 <section id="about" class="h-full w-full px-20 pb-28" bind:this={sectionContainer}>
 	<div id="about-me" class="pb-20">
 		<h1 class="uppercase leading-none" bind:this={headerContainer}>
-			Helping people to innovate and remain highly relevant by developing edge websites
+			Helping people to innovate and remain relevant by developing highly performant websites
 		</h1>
 	</div>
 	<div id="more-about-me" class="flex items-center justify-end pt-10 pb-20">
 		<div id="more-about-me-section-1" class="w-1/2">
 			<h5 class="font-bgr mb-[1.5625rem] uppercase">About me</h5>
 			<p class="font-bgr mb-[1.5625rem] leading-7">
-				There are many variations of passages of Lorem Ipsum available, but the majority have
-				suffered alteration in some form, by injected humour, or randomised words which don't look
-				even slightly believable. If you are going to use a passage of Lorem Ipsum.
+				Hello there, my name is Miguel Garoz and I'm a front-end developer. I have a passion for
+				creating responsive websites that provide the best user experience possible. I am constantly
+				learning and expanding my knowledge in this ever-evolving field to stay up-to-date with the
+				latest technologies and techniques.
 			</p>
-			<hr class="h-[1.75rem] border-0" />
-			<h5 class="font-bgr mb-[1.5625rem] uppercase">My goal</h5>
+			<!-- <hr class="h-[1.75rem] border-0" /> -->
+			<!-- <h5 class="font-bgr mb-[1.5625rem] uppercase">My goal</h5> -->
 			<p class="font-bgr leading-7">
-				You need to be sure there isn't anything embarrassing hidden in the middle of text. All the
-				Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making
-				this the first true generator on the Internet. It uses a dictionary with Latin words.
+				When I'm not coding, you can find me exploring new technologies and trends in the field,
+				reading up on the latest industry news, and working on personal projects to continue
+				improving my skills. I'm excited to see where my journey as a front-end developer will take
+				me next!
 			</p>
 		</div>
 	</div>
-	<div id="about-footer" class="mb-[1.5625rem] flex justify-start gap-8">
+	<div id="about-footer" class="mt-[1.5625rem] flex justify-start gap-8">
 		<div class="font-bgr group">
 			<Link
 				href="#about"
