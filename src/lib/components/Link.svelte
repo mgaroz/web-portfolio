@@ -1,21 +1,44 @@
 <script lang="ts">
+	import { activeNavItem } from '$lib/store';
 	export let href: string;
 	export let content: string | number;
 	export let textSize: string;
 	export let duration: string;
 	export let displacement: string;
+	export let menuItem: boolean = false;
+
+	function setActiveNavItem(status: string) {
+		activeNavItem.set(status);
+	}
 </script>
 
-<a {href} class="block overflow-hidden uppercase">
-	<span
-		class="slide-up transition-[top] {displacement
-			? `group-hover:-top-[var(--displacement)]`
-			: 'group-hover:-top-[19px]'}"
-		data-hover={content}
-		style="--textSize:{textSize}; --duration:{duration}; --displacement:{displacement}"
-		>{content}</span
+{#if menuItem}
+	<a
+		{href}
+		class="block h-full overflow-hidden uppercase"
+		on:click={() => setActiveNavItem(content.toString().toLowerCase())}
 	>
-</a>
+		<span
+			class="slide-up h-full transition-[top] {displacement
+				? `group-hover:-top-[var(--displacement)]`
+				: 'group-hover:-top-[19px]'}"
+			data-hover={content}
+			style="--textSize:{textSize}; --duration:{duration}; --displacement:{displacement}"
+			>{content}</span
+		>
+	</a>
+{:else}
+	<a {href} class="block h-full overflow-hidden uppercase">
+		<span
+			class="slide-up h-full transition-[top] {displacement
+				? `group-hover:-top-[var(--displacement)]`
+				: 'group-hover:-top-[19px]'}"
+			data-hover={content}
+			style="--textSize:{textSize}; --duration:{duration}; --displacement:{displacement}"
+			>{content}</span
+		>
+	</a>
+{/if}
 
 <style>
 	.slide-up {
