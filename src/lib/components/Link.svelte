@@ -21,28 +21,30 @@
 </script>
 
 {#if menuItem}
-	<a
-		{href}
-		class="block h-full overflow-hidden uppercase"
-		on:mouseenter={() => setActiveNavItem(content.toString().toLowerCase())}
-		on:mouseleave={() => setPreviousNavItem()}
-		on:click={() => setActiveNavItem(content.toString().toLowerCase())}
-	>
-		<span
-			class="slide-up h-full transition-[top] {displacement
-				? `group-hover:-top-[var(--displacement)]`
-				: 'group-hover:-top-[19px]'} overflow-hidden"
-			data-hover={content}
-			style="--textSize:{textSize}; --duration:{duration}; --displacement:{displacement}"
-			>{content}</span
+	<div class="h-full">
+		<a
+			{href}
+			class="block h-full overflow-hidden uppercase"
+			on:mouseenter={() => setActiveNavItem(content.toString().toLowerCase())}
+			on:mouseleave={() => setPreviousNavItem()}
+			on:click={() => setActiveNavItem(content.toString().toLowerCase())}
 		>
-	</a>
-	<div
-		class="h-[1px] w-full border-t group-hover:visible {$activeNavItem ===
-		content.toString().toLowerCase()
-			? 'visible'
-			: 'invisible'}"
-	/>
+			<span
+				class="slide-up h-full transition-[top] {displacement
+					? `group-hover:-top-[var(--displacement)]`
+					: 'group-hover:-top-[19px]'} overflow-hidden"
+				data-hover={content}
+				style="--textSize:{textSize}; --duration:{duration}; --displacement:{displacement}"
+				>{content}</span
+			>
+		</a>
+		<div
+			class="h-[1px] w-full border-t group-hover:visible {$activeNavItem ===
+			content.toString().toLowerCase()
+				? 'visible'
+				: 'invisible'}"
+		/>
+	</div>
 {:else}
 	<a {href} class="block overflow-hidden uppercase">
 		<span
