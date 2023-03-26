@@ -46,7 +46,7 @@
 {:else}
 	<a {href} class="block overflow-hidden uppercase">
 		<span
-			class="slide-up align-middle transition-[top] group-hover:-top-[var(--displacement)]"
+			class="slide-up transition-[top] group-hover:-top-[var(--displacement)]"
 			data-hover={content}
 			style="--textSize:{textSize}; --duration:{duration}; --displacement:{displacement}"
 			>{content}</span
