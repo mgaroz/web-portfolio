@@ -23,7 +23,7 @@
 	<div>
 		{#each blogData as post}
 			<div
-				class="border-cod-gray-50 group flex h-[15.125rem] w-full items-center justify-between overflow-hidden border-b border-t py-[3.125rem]"
+				class="border-cod-gray-50 group flex h-[15.125rem] w-full items-center justify-between overflow-hidden border-b py-[3.125rem] first:border-t"
 			>
 				<div class="relative flex max-h-36 max-w-fit cursor-pointer items-center">
 					<div class="relative overflow-hidden">
