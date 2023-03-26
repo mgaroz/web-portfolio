@@ -6,9 +6,17 @@
 	export let duration: string;
 	export let displacement: string;
 	export let menuItem: boolean = false;
+	let prevNavItem: string;
 
 	function setActiveNavItem(status: string) {
+		prevNavItem = $activeNavItem;
 		activeNavItem.set(status);
+	}
+
+	function setPreviousNavItem() {
+		if (prevNavItem !== $activeNavItem) {
+			activeNavItem.set(prevNavItem);
+		}
 	}
 </script>
 
@@ -16,6 +24,8 @@
 	<a
 		{href}
 		class="block h-full overflow-hidden uppercase"
+		on:mouseenter={() => setActiveNavItem(content.toString().toLowerCase())}
+		on:mouseleave={() => setPreviousNavItem()}
 		on:click={() => setActiveNavItem(content.toString().toLowerCase())}
 	>
 		<span
