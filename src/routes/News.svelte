@@ -46,17 +46,21 @@
 						<a href={post.url} target="_blank">{post.title}</a>
 					</h3>
 				</div>
-				<div
-					class="flex h-16 flex-shrink-0 items-center justify-between gap-20"
-					on:mouseenter={() => setTrailerActive(true)}
-					on:mouseleave={() => setTrailerActive(false)}
-				>
-					<div>
+				<div class="flex h-16 flex-shrink-0 items-center justify-between gap-20">
+					<div
+						class="h-16 cursor-pointer"
+						on:mouseenter={() => setTrailerActive(true)}
+						on:mouseleave={() => setTrailerActive(false)}
+					>
 						<span class="font-bgr block text-[14px] uppercase"
 							>{post.tag_list[0]} / {post.tag_list[1]} / {post.tag_list[2]}</span
 						>
 					</div>
-					<div>
+					<div
+						class="h-16 cursor-pointer"
+						on:mouseenter={() => setTrailerActive(true)}
+						on:mouseleave={() => setTrailerActive(false)}
+					>
 						<span class="font-bgr block text-[14px] uppercase"
 							>{dayjs(post.created_at.substring(0, 10)).format('MMMM DD, YYYY')}</span
 						>
