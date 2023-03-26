@@ -38,9 +38,9 @@
 		>
 	</a>
 {:else}
-	<a {href} class="block h-full overflow-hidden uppercase">
+	<a {href} class="block overflow-hidden uppercase">
 		<span
-			class="slide-up h-full transition-[top] {displacement
+			class="slide-up transition-[top] {displacement
 				? `group-hover:-top-[var(--displacement)]`
 				: 'group-hover:-top-[19px]'}"
 			data-hover={content}

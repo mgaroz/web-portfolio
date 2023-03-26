@@ -2,6 +2,7 @@
 	import '../app.css';
 	import Link from '$lib/components/Link.svelte';
 	import { active, activeNavItem } from '$lib/store';
+	import logo from '$lib/img/mg-logo.svg';
 
 	let hoveredStatus = {
 		hovered: false,
@@ -19,7 +20,7 @@
 
 <header>
 	<nav class="bg-cod-gray-500 fixed z-30 flex h-32 w-full items-center justify-between py-5 px-20">
-		<div class="logo">LOGO</div>
+		<div class="flex items-center"><img src={logo} alt="logo" class="h-8" /></div>
 		<div class="menu">
 			<ul
 				class="font-bgr flex list-none"
