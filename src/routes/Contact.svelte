@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Link from '$lib/components/Link.svelte';
-
 	let currentYear = new Date().getFullYear();
 </script>
 
