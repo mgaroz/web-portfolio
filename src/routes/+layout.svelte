@@ -20,7 +20,7 @@
 
 <header>
 	<nav class="bg-cod-gray-500 fixed z-30 flex h-32 w-full items-center justify-between py-5 px-20">
-		<div class="flex items-center"><img src={logo} alt="logo" class="h-5" /></div>
+		<div class="flex items-center"><img src={logo} alt="logo" class="h-4" /></div>
 		<div class="menu">
 			<ul
 				class="font-bgr flex list-none"
