@@ -19,7 +19,7 @@
 
 <section id="blog" class="h-full w-full px-20 pb-28">
 	<div>
-		<h6 class="font-bgr pb-[1.5625rem] uppercase">/ Get informed</h6>
+		<h6 class="font-bgr pb-[1.5625rem] uppercase">/ Stay informed</h6>
 		<hr class="h-[1.75rem] border-0" />
 		<span class="text-big-size block uppercase leading-none">Blog</span>
 		<span class="text-big-size block uppercase leading-none">Latest entries</span>
