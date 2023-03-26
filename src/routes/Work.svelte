@@ -44,7 +44,8 @@
 		>
 			<div class="mb-4 h-full w-full overflow-hidden">
 				<div
-					class="bg-cod-gray-50 mb-4 h-full w-full scale-110 bg-[url('$lib/img/sky-full.avif')] bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-100"
+					style="background-image: url('{item1}')"
+					class="bg-cod-gray-50 mb-4 h-full w-full scale-110  bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-100"
 				/>
 			</div>
 			<div class="flex items-center justify-between">
@@ -64,7 +65,8 @@
 		>
 			<div class="mb-4 h-full w-full overflow-hidden">
 				<div
-					class="bg-cod-gray-50 mb-4 h-full w-full scale-110 bg-[url('$lib/img/cf-landing.avif')] bg-cover bg-center bg-no-repeat transition-transform duration-500 hover:scale-100"
+					style="background-image: url('{item2}')"
+					class="bg-cod-gray-50 mb-4 h-full w-full scale-110 bg-cover bg-center bg-no-repeat transition-transform duration-500 hover:scale-100"
 				/>
 			</div>
 			<div class="flex items-center justify-between">
@@ -84,7 +86,8 @@
 		>
 			<div class="mb-4 h-full w-full overflow-hidden">
 				<div
-					class="bg-cod-gray-50 mb-4 h-full w-full scale-110 bg-[url('$lib/img/item3.avif')] bg-cover bg-center bg-no-repeat transition-transform duration-500 hover:scale-100"
+					style="background-image: url('{item3}')"
+					class="bg-cod-gray-50 mb-4 h-full w-full scale-110 bg-cover bg-center bg-no-repeat transition-transform duration-500 hover:scale-100"
 				/>
 			</div>
 			<div class="flex items-center justify-between">
@@ -104,7 +107,8 @@
 		>
 			<div class="mb-4 h-full w-full overflow-hidden">
 				<div
-					class="bg-cod-gray-50 mb-4 h-full w-full scale-110 bg-[url('$lib/img/item4.avif')] bg-cover bg-center bg-no-repeat transition-transform duration-500 hover:scale-100"
+					style="background-image: url('{item4}')"
+					class="bg-cod-gray-50 mb-4 h-full w-full scale-110 bg-cover bg-center bg-no-repeat transition-transform duration-500 hover:scale-100"
 				/>
 			</div>
 			<div class="flex items-center justify-between">
