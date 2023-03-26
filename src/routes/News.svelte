@@ -48,7 +48,7 @@
 				</div>
 				<div class="flex h-16 flex-shrink-0 items-center justify-between gap-20">
 					<div
-						class="flex h-16 cursor-pointer items-center justify-center"
+						class="flex h-16 items-center justify-center"
 						on:mouseenter={() => setTrailerActive(true)}
 						on:mouseleave={() => setTrailerActive(false)}
 					>
@@ -57,7 +57,7 @@
 						>
 					</div>
 					<div
-						class="flex h-16 cursor-pointer items-center justify-center"
+						class="flex h-16 items-center justify-center"
 						on:mouseenter={() => setTrailerActive(true)}
 						on:mouseleave={() => setTrailerActive(false)}
 					>
