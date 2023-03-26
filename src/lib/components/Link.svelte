@@ -4,7 +4,7 @@
 	export let content: string | number;
 	export let textSize: string;
 	export let duration: string;
-	export let displacement: string;
+	export let displacement: string = '19px';
 	export let menuItem: boolean = false;
 	let prevNavItem: string;
 
@@ -46,9 +46,7 @@
 {:else}
 	<a {href} class="block overflow-hidden uppercase">
 		<span
-			class="slide-up transition-[top] {displacement
-				? `group-hover:-top-[var(--displacement)]`
-				: 'group-hover:-top-[19px]'}"
+			class="slide-up transition-[top] group-hover:-top-[var(--displacement)]"
 			data-hover={content}
 			style="--textSize:{textSize}; --duration:{duration}; --displacement:{displacement}"
 			>{content}</span

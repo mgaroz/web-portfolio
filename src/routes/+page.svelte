@@ -6,6 +6,7 @@
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 	import { active, workActive, backColor, blogActive } from '$lib/store';
+	import Link from '$lib/components/Link.svelte';
 
 	let nameContainer: HTMLSpanElement;
 	let lastNameContainer: HTMLSpanElement;
@@ -110,8 +111,17 @@
 			</div>
 		</div>
 		<div class="flex w-full items-center justify-between uppercase" id="hero-footer">
-			<div id="hero-footer-left" class="flex items-center justify-center gap-8 overflow-hidden">
-				<span class="slide-up font-bgr inline-block cursor-pointer text-sm">Scroll to explore</span>
+			<div
+				id="hero-footer-left"
+				class="font-bgr group flex items-center justify-center gap-8 overflow-hidden"
+			>
+				<Link
+					href="#work"
+					content="Scroll to explore"
+					textSize="14px"
+					duration="200ms"
+					displacement="20px"
+				/>
 				<div class="flex h-5 w-5 items-center justify-center">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -146,33 +156,6 @@
 <Contact />
 
 <style>
-	.slide-up::before {
-		position: absolute;
-		width: auto;
-		top: 100%;
-		left: 0;
-		content: 'Scroll to explore';
-	}
-
-	.slide-up:hover {
-		top: -20px;
-	}
-
-	.slide-up {
-		position: relative;
-		top: 0px;
-		width: auto;
-		transition: top 0.2s;
-	}
-
-	.slide-up::after {
-		clear: both;
-		content: ' ';
-		display: block;
-		height: 0;
-		visibility: hidden;
-	}
-
 	.text-hero-size {
 		font-size: clamp(3.15rem, 1.3846rem + 7.8462vw, 10.8rem);
 	}
