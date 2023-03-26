@@ -137,7 +137,7 @@
 </section>
 <Work />
 <div class="px-20">
-	<hr class="border-cod-gray-50" />
+	<hr class="border-cod-gray-50 pb-28" />
 </div>
 <About />
 {#await data then res}

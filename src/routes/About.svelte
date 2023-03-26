@@ -37,7 +37,7 @@
 	});
 </script>
 
-<section id="about" class="h-full w-full px-20 pt-28" bind:this={sectionContainer}>
+<section id="about" class="h-full w-full px-20 pb-28" bind:this={sectionContainer}>
 	<div id="about-me" class="pb-20">
 		<h1 class="uppercase leading-none" bind:this={headerContainer}>
 			Helping people to innovate and remain highly relevant by developing edge websites

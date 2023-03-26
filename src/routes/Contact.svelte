@@ -3,7 +3,7 @@
 	let currentYear = new Date().getFullYear();
 </script>
 
-<section id="contact" class="h-full w-full px-20 pt-28">
+<section id="contact" class="h-full w-full px-20">
 	<div class="pb-10">
 		<span class="text-big-size block uppercase leading-none">Get</span>
 		<span class="text-big-size block uppercase leading-none">In touch</span>
