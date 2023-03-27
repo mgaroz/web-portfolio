@@ -21,10 +21,10 @@
 </script>
 
 {#if menuItem}
-	<div class="h-full">
+	<div class="h-full w-full">
 		<a
 			{href}
-			class="block h-full overflow-hidden uppercase"
+			class="block h-full w-full overflow-hidden uppercase"
 			on:mouseenter={() => setActiveNavItem(content.toString().toLowerCase())}
 			on:mouseleave={() => setPreviousNavItem()}
 			on:click={() => setActiveNavItem(content.toString().toLowerCase())}

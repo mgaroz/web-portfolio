@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import Link from '$lib/components/Link.svelte';
-	import { active } from '$lib/store';
+	import { active, activeNavItem } from '$lib/store';
 	import logo from '$lib/img/mg-logo.svg';
 
 	let hoveredStatus = {
@@ -28,8 +28,12 @@
 				on:mouseleave={() => active.set(false)}
 			>
 				<li
-					class="group inline-block px-[30px]"
-					style="opacity: {hoveredStatus.item === 'home' ? 1 : hoveredStatus.hovered ? 0.5 : 1}"
+					class="max-w-24 group inline-block px-[30px]"
+					style="opacity: {active && hoveredStatus.item === 'home'
+						? 1
+						: hoveredStatus.hovered
+						? 0.5
+						: 1}"
 					on:mouseenter={() => itemHovered(true, 'home')}
 					on:mouseleave={() => itemHovered(false, '')}
 				>
@@ -88,7 +92,7 @@
 					/>
 				</li>
 				<li
-					class="group ml-[30px] inline-block"
+					class="group inline-block pl-[30px]"
 					style="opacity: {hoveredStatus.item === 'contact' ? 1 : hoveredStatus.hovered ? 0.5 : 1}"
 					on:mouseenter={() => itemHovered(true, 'contact')}
 					on:mouseleave={() => itemHovered(false, '')}
