@@ -28,10 +28,10 @@
 
 <header>
 	<nav
-		class="bg-cod-gray-500 2xs:hidden fixed z-30 h-32 w-full items-center justify-between py-5 px-20 md:flex"
+		class="bg-cod-gray-500 2xs:px-6 fixed z-30 flex w-full items-center justify-between py-5 md:h-32 md:px-20"
 	>
 		<div class="flex items-center"><img src={logo} alt="logo" class="h-4" /></div>
-		<div class="menu h-full">
+		<div class="menu 2xs:hidden h-full md:block">
 			<ul
 				class="font-bgr flex h-full list-none items-center"
 				on:mouseenter={handleEnter}

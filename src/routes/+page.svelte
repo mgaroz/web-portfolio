@@ -92,14 +92,14 @@
 	bind:this={ballContainer}
 	style="--backColor:{activeBackColor}"
 />
-<section class="2xs:px-6 md:h-[calc(70vh+128px)] md:px-20 md:pt-32" id="home">
+<section class="2xs:px-6 h-[calc(70vh+128px)] md:px-20 md:pt-32" id="home">
 	<div
 		id="hero"
 		class="relative z-20 flex h-full w-full flex-col items-center justify-around overflow-hidden"
 	>
 		<div class="z-2 relative inset-0 mx-auto block w-full">
 			<div class="relative mx-auto w-full pt-10 pb-40 text-left">
-				<h1 class="text-hero-size leading-none">
+				<h1 class="text-hero-size 2xs:pb-10 leading-none md:pb-0">
 					<span class="relative block md:-translate-x-2" bind:this={nameContainer}>MIGUEL</span>
 					<span
 						class="font-bgr 2xs:hidden relative max-w-[16.25rem] align-middle text-sm uppercase leading-5 md:inline-block"
@@ -110,7 +110,7 @@
 						>GAROZ</span
 					>
 				</h1>
-				<span class="font-bgr 2xs:block uppercase md:hidden">
+				<span class="font-bgr 2xs:block 2xs:text-[14px] uppercase md:hidden">
 					Front-end developer with an adaptive approach to problem solving.
 				</span>
 			</div>
