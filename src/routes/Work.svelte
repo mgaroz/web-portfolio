@@ -34,7 +34,7 @@
 	});
 </script>
 
-<section class="h-full w-full px-20 pb-28" id="work">
+<section class="h-full w-full px-20 pb-28" id="portfolio">
 	<div id="work-section" class="flex items-center justify-between gap-8">
 		<div
 			id="work-item-one"

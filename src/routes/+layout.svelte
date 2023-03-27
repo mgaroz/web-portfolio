@@ -65,8 +65,8 @@
 					on:mouseleave={() => itemHovered(false, '')}
 				>
 					<Link
-						href="#work"
-						content="Work"
+						href="#portfolio"
+						content="Portfolio"
 						textSize="14px"
 						duration={'150ms'}
 						displacement=""
