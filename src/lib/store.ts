@@ -6,6 +6,6 @@ export const backColor = writable('#000');
 export const blogActive = writable(false);
 export const activeMenuInfo = writable({
 	itemBeingHovered: '',
-	isBeingHovered: true,
+	isBeingHovered: false,
 	currentActiveItem: 'home'
 });
