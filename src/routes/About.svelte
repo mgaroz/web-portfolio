@@ -61,7 +61,7 @@
 		</div>
 	</div>
 	<div id="about-footer" class="flex justify-start gap-8 2xl:mt-16">
-		<div class="font-bgr group">
+		<div class="font-bgr 2xs:hidden group md:block">
 			<Link href="#blog" content="Blog" textSize="14px" duration="200ms" displacement="20px" />
 		</div>
 		<div class="flex h-5 w-5 items-center justify-center">
