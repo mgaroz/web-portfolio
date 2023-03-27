@@ -17,7 +17,7 @@
 	}
 </script>
 
-<section id="blog" class="h-full w-full px-20 pb-28">
+<section id="blog" class="2xs:px-6 h-full w-full pb-28 md:px-20">
 	<div>
 		<h6 class="font-bgr pb-[1.5625rem] uppercase">/ Stay informed</h6>
 		<hr class="h-[1.75rem] border-0" />
@@ -29,35 +29,35 @@
 	<div>
 		{#each blogData as post}
 			<div
-				class="border-cod-gray-50 group flex h-[15.125rem] w-full items-center justify-between overflow-hidden border-b py-[3.125rem] first:border-t"
+				class="border-cod-gray-50 group w-full items-center justify-between overflow-hidden border-b py-[3.125rem] first:border-t md:flex md:h-[15.125rem]"
 			>
-				<div class="relative flex max-h-36 max-w-fit cursor-pointer items-center">
+				<div class="relative max-h-36 max-w-fit cursor-pointer items-center md:flex">
 					<div class="relative overflow-hidden">
 						<div
 							style="background-image: url('{post.cover_image}')"
-							class="reverseit h-36 w-0 scale-125 bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100"
+							class="reverseit 2xs:hidden h-36 w-0 scale-125 bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100 md:block"
 						/>
 					</div>
 					<h3
-						class="uppercase"
+						class="text-titles 2xs:flex 2xs:h-20 2xs:pb-10 2xs:items-center uppercase md:block md:h-auto md:pb-0"
 						on:mouseenter={() => setStatus(true)}
 						on:mouseleave={() => setStatus(false)}
 					>
 						<a href={post.url} target="_blank">{post.title}</a>
 					</h3>
 				</div>
-				<div class="flex h-16 flex-shrink-0 items-center justify-between gap-20">
+				<div class="flex-shrink-0 items-center justify-between md:flex md:h-16 md:gap-20">
 					<div
-						class="flex h-16 items-center justify-center"
+						class="items-center justify-center md:flex md:h-16"
 						on:mouseenter={() => setTrailerActive(true)}
 						on:mouseleave={() => setTrailerActive(false)}
 					>
-						<span class="font-bgr block text-[14px] uppercase"
+						<span class="font-bgr 2xs:leading-loose block text-[14px] uppercase md:leading-normal"
 							>{post.tag_list[0]} / {post.tag_list[1]} / {post.tag_list[2]}</span
 						>
 					</div>
 					<div
-						class="flex h-16 items-center justify-center"
+						class="items-center justify-center md:flex md:h-16"
 						on:mouseenter={() => setTrailerActive(true)}
 						on:mouseleave={() => setTrailerActive(false)}
 					>
@@ -69,23 +69,23 @@
 			</div>
 		{/each}
 		<div
-			class="border-cod-gray-50 group flex h-[15.125rem] w-full items-center justify-between border-b py-[3.125rem]"
+			class="border-cod-gray-50 group h-[15.125rem] w-full items-center justify-between border-b py-[3.125rem] md:flex"
 		>
-			<div class="relative flex max-h-36 cursor-pointer items-center">
+			<div class="relative max-h-36 cursor-pointer items-center md:flex">
 				<div class="relative overflow-hidden transition-all">
 					<div
-						class="reverseit h-36 w-0 scale-125 bg-[url('https://picsum.photos/221/140')] bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100"
+						class="reverseit 2xs:hidden h-36 w-0 scale-125 bg-[url('https://picsum.photos/221/140')] bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100 md:block"
 					/>
 				</div>
 				<h3
-					class="uppercase"
+					class="text-titles 2xs:flex 2xs:h-20 2xs:pb-10 2xs:items-center uppercase md:block md:h-auto md:pb-0"
 					on:mouseenter={() => setStatus(true)}
 					on:mouseleave={() => setStatus(false)}
 				>
 					Website of the year
 				</h3>
 			</div>
-			<div class="flex flex-shrink-0 items-center justify-between gap-20">
+			<div class="flex-shrink-0 items-center justify-between md:flex md:gap-20">
 				<div>
 					<span class="font-bgr block text-[14px] uppercase">intern / projects / agency</span>
 				</div>
@@ -95,23 +95,23 @@
 			</div>
 		</div>
 		<div
-			class="border-cod-gray-50 group flex h-[15.125rem] w-full items-center justify-between border-b py-[3.125rem]"
+			class="border-cod-gray-50 group h-[15.125rem] w-full items-center justify-between border-b py-[3.125rem] md:flex"
 		>
-			<div class="relative flex max-h-36 cursor-pointer items-center">
-				<div class="overflow-hidden">
+			<div class="relative max-h-36 cursor-pointer items-center md:flex">
+				<div class="relative overflow-hidden">
 					<div
-						class="reverseit h-36 w-0 scale-125 bg-[url('https://picsum.photos/222/140')] bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100"
+						class="reverseit 2xs:hidden h-36 w-0 scale-125 bg-[url('https://picsum.photos/222/140')] bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100 md:block"
 					/>
 				</div>
 				<h3
-					class="uppercase"
+					class="text-titles 2xs:flex 2xs:h-20 2xs:pb-10 2xs:items-center uppercase md:block md:h-auto md:pb-0"
 					on:mouseenter={() => setStatus(true)}
 					on:mouseleave={() => setStatus(false)}
 				>
 					The process
 				</h3>
 			</div>
-			<div class="flex flex-shrink-0 items-center justify-between gap-20">
+			<div class="flex-shrink-0 items-center justify-between md:flex md:gap-20">
 				<div>
 					<span class="font-bgr block text-[14px] uppercase">intern / projects / agency</span>
 				</div>
@@ -123,7 +123,7 @@
 	</div>
 	<hr class="h-[1.75rem] border-0" />
 	<hr class="h-[1.75rem] border-0" />
-	<div class="w-2/5">
+	<div class="md:w-2/5">
 		<h5 class="font-bgr uppercase">
 			Create a powerful online presence, engage with your audience, and grow your business.
 		</h5>
@@ -146,5 +146,9 @@
 		transform: scale(1.25), width(0);
 		transform-origin: center;
 		transition: all 0.5s ease-in-out;
+	}
+
+	.text-titles {
+		font-size: clamp(1.5rem, 1.1827rem + 1.4103vw, 2.875rem);
 	}
 </style>

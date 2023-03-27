@@ -92,7 +92,7 @@
 	bind:this={ballContainer}
 	style="--backColor:{activeBackColor}"
 />
-<section class="h-[calc(70vh+128px)] px-20 pt-32" id="home">
+<section class="2xs:px-6 md:h-[calc(70vh+128px)] md:px-20 md:pt-32" id="home">
 	<div
 		id="hero"
 		class="relative z-20 flex h-full w-full flex-col items-center justify-around overflow-hidden"
@@ -100,14 +100,19 @@
 		<div class="z-2 relative inset-0 mx-auto block w-full">
 			<div class="relative mx-auto w-full pt-10 pb-40 text-left">
 				<h1 class="text-hero-size leading-none">
-					<span class="relative block -translate-x-2" bind:this={nameContainer}>MIGUEL</span>
+					<span class="relative block md:-translate-x-2" bind:this={nameContainer}>MIGUEL</span>
 					<span
-						class="font-bgr relative inline-block max-w-[16.25rem] align-middle text-sm uppercase leading-5"
+						class="font-bgr 2xs:hidden relative max-w-[16.25rem] align-middle text-sm uppercase leading-5 md:inline-block"
 						bind:this={subContainer}
 						>Front-end developer with an adaptive approach to problem solving.</span
 					>
-					<span class="relative left-10 inline-block" bind:this={lastNameContainer}>GAROZ</span>
+					<span class="2xs:left-0 relative inline-block md:left-10" bind:this={lastNameContainer}
+						>GAROZ</span
+					>
 				</h1>
+				<span class="font-bgr 2xs:block uppercase md:hidden">
+					Front-end developer with an adaptive approach to problem solving.
+				</span>
 			</div>
 		</div>
 		<div class="flex w-full items-center justify-between uppercase" id="hero-footer">
@@ -146,7 +151,7 @@
 	</div>
 </section>
 <Work />
-<div class="px-20">
+<div class="2xs:px-6 md:px-20">
 	<hr class="border-cod-gray-50 pb-28" />
 </div>
 <About />

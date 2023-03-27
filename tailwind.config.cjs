@@ -57,6 +57,10 @@ module.exports = {
         h5: '1.276375rem',
         h6: '0.875rem',
         quote: '1.5rem',
+      },
+      screens: {
+        xs: '475px',
+        '2xs': '360px'
       }
     },
   },

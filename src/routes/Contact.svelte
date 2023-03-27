@@ -3,19 +3,19 @@
 	let currentYear = new Date().getFullYear();
 </script>
 
-<section id="contact" class="h-full w-full px-20">
+<section id="contact" class="2xs:px-6 h-full w-full md:px-20">
 	<div class="pb-10">
 		<span class="text-big-size block uppercase leading-none">Get</span>
 		<span class="text-big-size block uppercase leading-none">In touch</span>
 	</div>
-	<div class="pb-20">
+	<div class="md:pb-20">
 		<span class="font-bgr block text-[1.25rem] uppercase"> I'd love to hear from you </span>
 	</div>
-	<div class="flex w-full items-start justify-between pb-28">
-		<div id="contact-left" class="w-1/4">
+	<div class="w-full items-start justify-between pb-28 md:flex">
+		<div id="contact-left" class="2xs:pb-10 md:w-1/4 md:pb-0">
 			<h3 class="font-bgr uppercase leading-none">Let's talk</h3>
 		</div>
-		<div id="contact-right" class="font-bgr w-2/3">
+		<div id="contact-right" class="font-bgr md:w-2/3">
 			<form action="https://fabform.io/f/Cf02Z9Y" method="POST">
 				<div class="mb-8 grid w-full grid-cols-2 gap-10">
 					<div class="inline-block">
@@ -57,8 +57,8 @@
 			</form>
 		</div>
 	</div>
-	<div class="flex items-center justify-between gap-8 pb-12">
-		<div class="font-bgr group flex items-center justify-between gap-8">
+	<div class="items-center justify-between pb-12 md:flex md:gap-8">
+		<div class="font-bgr 2xs:gap-1 group flex items-center md:justify-between md:gap-8">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
