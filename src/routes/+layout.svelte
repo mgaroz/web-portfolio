@@ -18,7 +18,7 @@
 </script>
 
 <svelte:head>
-	<title>MGaroz | Font-End Developer</title>
+	<title>mgaroz | Font-End Developer</title>
 	<meta name="robots" content="index nofollow" />
 	<meta
 		name="description"
