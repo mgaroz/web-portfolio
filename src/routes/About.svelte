@@ -37,7 +37,11 @@
 	});
 </script>
 
-<section id="about" class="2xs:px-6 h-full w-full md:px-20 md:pb-28" bind:this={sectionContainer}>
+<section
+	id="about"
+	class="2xs:px-6 2xs:pb-20 h-full w-full md:px-20 md:pb-28"
+	bind:this={sectionContainer}
+>
 	<div id="about-me" class="md:pb-14 2xl:pb-20">
 		<h1 class="responsive-font uppercase leading-none" bind:this={headerContainer}>
 			Helping people to innovate and remain relevant by developing highly performant websites
