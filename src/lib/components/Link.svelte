@@ -1,36 +1,48 @@
 <script lang="ts">
-	import { activeNavItem } from '$lib/store';
+	import { activeMenuInfo } from '$lib/store';
 	export let href: string;
 	export let content: string | number;
 	export let textSize: string;
 	export let duration: string;
 	export let displacement: string = '19px';
 	export let menuItem: boolean = false;
-	let prevNavItem: string;
 
-	function setActiveNavItem(status: string) {
-		prevNavItem = $activeNavItem;
-		activeNavItem.set(status);
+	function setItemBeingHovered(status: string) {
+		activeMenuInfo.set({
+			itemBeingHovered: status,
+			isBeingHovered: true,
+			currentActiveItem: $activeMenuInfo.currentActiveItem
+		});
+	}
+
+	function setClickedNavItem(item: string) {
+		activeMenuInfo.set({
+			currentActiveItem: item,
+			itemBeingHovered: $activeMenuInfo.itemBeingHovered,
+			isBeingHovered: $activeMenuInfo.isBeingHovered
+		});
 	}
 
 	function setPreviousNavItem() {
-		if (prevNavItem !== $activeNavItem) {
-			activeNavItem.set(prevNavItem);
-		}
+		activeMenuInfo.set({
+			itemBeingHovered: '',
+			isBeingHovered: false,
+			currentActiveItem: $activeMenuInfo.currentActiveItem
+		});
 	}
 </script>
 
 {#if menuItem}
-	<div class="h-full w-full">
+	<div class="flex h-full w-full flex-col items-center justify-center">
 		<a
 			{href}
-			class="block h-full w-full overflow-hidden uppercase"
-			on:mouseenter={() => setActiveNavItem(content.toString().toLowerCase())}
+			class="block overflow-hidden uppercase"
+			on:mouseenter={() => setItemBeingHovered(content.toString().toLowerCase())}
 			on:mouseleave={() => setPreviousNavItem()}
-			on:click={() => setActiveNavItem(content.toString().toLowerCase())}
+			on:click={() => setClickedNavItem(content.toString().toLowerCase())}
 		>
 			<span
-				class="slide-up h-full transition-[top] {displacement
+				class="slide-up transition-[top] {displacement
 					? `group-hover:-top-[var(--displacement)]`
 					: 'group-hover:-top-[19px]'} overflow-hidden"
 				data-hover={content}
@@ -39,9 +51,12 @@
 			>
 		</a>
 		<div
-			class="h-[1px] w-full border-t group-hover:visible {$activeNavItem ===
-			content.toString().toLowerCase()
+			class="h-[1px] w-full border-t group-hover:visible {!$activeMenuInfo.isBeingHovered &&
+			$activeMenuInfo.currentActiveItem === content.toString().toLowerCase()
 				? 'visible'
+				: $activeMenuInfo.isBeingHovered &&
+				  $activeMenuInfo.itemBeingHovered !== $activeMenuInfo.currentActiveItem
+				? 'invisible'
 				: 'invisible'}"
 		/>
 	</div>

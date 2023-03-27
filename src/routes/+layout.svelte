@@ -1,20 +1,19 @@
 <script lang="ts">
 	import '../app.css';
 	import Link from '$lib/components/Link.svelte';
-	import { active, activeNavItem } from '$lib/store';
+	import { active, activeMenuInfo } from '$lib/store';
 	import logo from '$lib/img/mg-logo.svg';
-
-	let hoveredStatus = {
-		hovered: false,
-		item: ''
-	};
 
 	function handleEnter() {
 		active.set(true);
 	}
 
 	function itemHovered(status: boolean, item: string) {
-		hoveredStatus = { hovered: status, item: item };
+		activeMenuInfo.set({
+			itemBeingHovered: item,
+			isBeingHovered: status,
+			currentActiveItem: $activeMenuInfo.currentActiveItem
+		});
 	}
 </script>
 
@@ -28,10 +27,11 @@
 				on:mouseleave={() => active.set(false)}
 			>
 				<li
-					class="max-w-24 group inline-block px-[30px]"
-					style="opacity: {active && hoveredStatus.item === 'home'
+					class="hovered max-w-24 group h-full px-[30px]"
+					style="opacity: {$activeMenuInfo.isBeingHovered &&
+					$activeMenuInfo.itemBeingHovered === 'home'
 						? 1
-						: hoveredStatus.hovered
+						: $activeMenuInfo.isBeingHovered
 						? 0.5
 						: 1}"
 					on:mouseenter={() => itemHovered(true, 'home')}
@@ -47,8 +47,12 @@
 					/>
 				</li>
 				<li
-					class="group inline-block px-[30px]"
-					style="opacity: {hoveredStatus.item === 'work' ? 1 : hoveredStatus.hovered ? 0.5 : 1}"
+					class="hovered group h-full px-[30px]"
+					style="opacity: {$activeMenuInfo.itemBeingHovered === 'work'
+						? 1
+						: $activeMenuInfo.isBeingHovered
+						? 0.5
+						: 1}"
 					on:mouseenter={() => itemHovered(true, 'work')}
 					on:mouseleave={() => itemHovered(false, '')}
 				>
@@ -62,8 +66,12 @@
 					/>
 				</li>
 				<li
-					class="hovered group inline-block px-[30px]"
-					style="opacity: {hoveredStatus.item === 'about' ? 1 : hoveredStatus.hovered ? 0.5 : 1}"
+					class="hovered group h-full px-[30px]"
+					style="opacity: {$activeMenuInfo.itemBeingHovered === 'about'
+						? 1
+						: $activeMenuInfo.isBeingHovered
+						? 0.5
+						: 1}"
 					on:mouseenter={() => itemHovered(true, 'about')}
 					on:mouseleave={() => itemHovered(false, '')}
 				>
@@ -77,8 +85,12 @@
 					/>
 				</li>
 				<li
-					class="hovered group inline-block px-[30px]"
-					style="opacity: {hoveredStatus.item === 'blog' ? 1 : hoveredStatus.hovered ? 0.5 : 1}"
+					class="hovered group h-full px-[30px]"
+					style="opacity: {$activeMenuInfo.itemBeingHovered === 'blog'
+						? 1
+						: $activeMenuInfo.isBeingHovered
+						? 0.5
+						: 1}"
 					on:mouseenter={() => itemHovered(true, 'blog')}
 					on:mouseleave={() => itemHovered(false, '')}
 				>
@@ -92,8 +104,12 @@
 					/>
 				</li>
 				<li
-					class="group inline-block pl-[30px]"
-					style="opacity: {hoveredStatus.item === 'contact' ? 1 : hoveredStatus.hovered ? 0.5 : 1}"
+					class="group h-full pl-[30px]"
+					style="opacity: {$activeMenuInfo.itemBeingHovered === 'contact'
+						? 1
+						: $activeMenuInfo.isBeingHovered
+						? 0.5
+						: 1}"
 					on:mouseenter={() => itemHovered(true, 'contact')}
 					on:mouseleave={() => itemHovered(false, '')}
 				>
