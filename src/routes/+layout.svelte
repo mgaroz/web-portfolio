@@ -28,7 +28,7 @@
 
 <header>
 	<nav
-		class="bg-cod-gray-500 2xs:px-6 fixed z-30 flex w-full items-center justify-between py-5 md:h-32 md:px-20"
+		class="bg-cod-gray-500 2xs:px-6 2xs:py-8 fixed z-30 flex w-full items-center justify-between md:h-32 md:py-5 md:px-20"
 	>
 		<div class="flex items-center"><img src={logo} alt="logo" class="h-4" /></div>
 		<div class="menu 2xs:hidden h-full md:block">
