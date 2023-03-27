@@ -27,7 +27,7 @@
 				on:mouseleave={() => active.set(false)}
 			>
 				<li
-					class="hovered max-w-24 group h-full px-[30px]"
+					class="hovered group h-full px-[30px]"
 					style="opacity: {$activeMenuInfo.isBeingHovered &&
 					$activeMenuInfo.itemBeingHovered === 'home'
 						? 1
@@ -104,7 +104,7 @@
 					/>
 				</li>
 				<li
-					class="group h-full pl-[30px]"
+					class="hovered group h-full pl-[30px]"
 					style="opacity: {$activeMenuInfo.itemBeingHovered === 'contact'
 						? 1
 						: $activeMenuInfo.isBeingHovered

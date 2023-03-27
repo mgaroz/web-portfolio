@@ -36,7 +36,7 @@
 	<div class="flex h-full w-full flex-col items-center justify-center">
 		<a
 			{href}
-			class="block overflow-hidden uppercase"
+			class="mx-auto block overflow-hidden uppercase"
 			on:mouseenter={() => setItemBeingHovered(content.toString().toLowerCase())}
 			on:mouseleave={() => setPreviousNavItem()}
 			on:click={() => setClickedNavItem(content.toString().toLowerCase())}
