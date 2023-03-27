@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { activeMenuInfo } from '$lib/store';
+	import { activeMenuInfo, active } from '$lib/store';
 	export let href: string;
 	export let content: string | number;
 	export let textSize: string;
@@ -51,7 +51,8 @@
 			>
 		</a>
 		<div
-			class="h-[1px] w-full border-t group-hover:visible {!$activeMenuInfo.isBeingHovered &&
+			class="h-[1px] w-full border-t group-hover:visible {!$active &&
+			!$activeMenuInfo.isBeingHovered &&
 			$activeMenuInfo.currentActiveItem === content.toString().toLowerCase()
 				? 'visible'
 				: $activeMenuInfo.isBeingHovered &&
