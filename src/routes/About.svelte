@@ -47,9 +47,13 @@
 			Helping people to innovate and remain relevant by developing highly performant websites
 		</h1>
 	</div>
-	<div id="more-about-me" class="flex items-center justify-end pt-10 pb-20">
+	<div id="more-about-me" class="2xs:pb-10 flex items-center justify-end pt-10 md:pb-20">
 		<div id="more-about-me-section-1" class="2xs:w-full md:w-1/2">
-			<h5 class="font-bgr mb-[1.5625rem] uppercase">About me</h5>
+			<h5
+				class="md:font-bgr responsive-title 2xs:font-bgm 2xs:font-normal mb-[1.5625rem] uppercase"
+			>
+				About me
+			</h5>
 			<p class="font-bgr mb-[1.5625rem] leading-7">
 				Hello there, my name is Miguel Garoz and I'm a front-end developer. I have a passion for
 				creating responsive websites that provide the best user experience possible. I am constantly
@@ -90,5 +94,9 @@
 <style>
 	.responsive-font {
 		font-size: clamp(2.125rem, 1.2354rem + 3.9538vw, 5.98rem);
+	}
+
+	.responsive-title {
+		font-size: clamp(1rem, 0.9423rem + 0.2564vw, 1.25rem);
 	}
 </style>
