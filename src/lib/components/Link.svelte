@@ -30,7 +30,7 @@
 			on:click={() => setActiveNavItem(content.toString().toLowerCase())}
 		>
 			<span
-				class="slide-up h-full transition-[top] {displacement
+				class="slide-up h-full w-full transition-[top] {displacement
 					? `group-hover:-top-[var(--displacement)]`
 					: 'group-hover:-top-[19px]'} overflow-hidden"
 				data-hover={content}
