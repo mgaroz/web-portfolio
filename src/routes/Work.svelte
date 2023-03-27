@@ -37,7 +37,7 @@
 <section class="2xs:px-6 h-full w-full pb-28 md:px-20" id="portfolio">
 	<div
 		id="work-section"
-		class="2xs:flex 2xs:flex-col gap-8 md:flex-row md:items-center md:justify-between"
+		class="2xs:flex 2xs:flex-col 2xs:justify-between gap-8 md:flex-row md:items-center"
 	>
 		<div
 			id="work-item-one"
