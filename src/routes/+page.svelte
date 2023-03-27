@@ -88,7 +88,7 @@
 <div
 	class:active={$active}
 	class:active-work={$workActive || $blogActive}
-	class="circle z-40"
+	class="circle 2xs:hidden z-40 md:block"
 	bind:this={ballContainer}
 	style="--backColor:{activeBackColor}"
 />
@@ -115,7 +115,10 @@
 				</span>
 			</div>
 		</div>
-		<div class="flex w-full items-center justify-between uppercase" id="hero-footer">
+		<div
+			class="2xs:pb-10 flex w-full items-center justify-between uppercase md:pb-0"
+			id="hero-footer"
+		>
 			<div
 				id="hero-footer-left"
 				class="font-bgr group flex items-center justify-center gap-8 overflow-hidden"
