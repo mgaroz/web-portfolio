@@ -55,9 +55,6 @@
 			!$activeMenuInfo.isBeingHovered &&
 			$activeMenuInfo.currentActiveItem === content.toString().toLowerCase()
 				? 'visible'
-				: $activeMenuInfo.isBeingHovered &&
-				  $activeMenuInfo.itemBeingHovered !== $activeMenuInfo.currentActiveItem
-				? 'invisible'
 				: 'invisible'}"
 		/>
 	</div>
