@@ -125,8 +125,7 @@
 	<hr class="h-[1.75rem] border-0" />
 	<div class="w-2/5">
 		<h5 class="font-bgr uppercase">
-			We help businesses to innovate and remain relevant to their customers only by developing
-			digital creative products.
+			Create a powerful online presence, engage with your audience, and grow your business.
 		</h5>
 		<hr class="h-[1.75rem] border-0" />
 		<hr class="h-[1.75rem] border-0" />
