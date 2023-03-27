@@ -17,6 +17,15 @@
 	}
 </script>
 
+<svelte:head>
+	<title>MGaroz | Font-End Developer</title>
+	<meta name="robots" content="index nofollow" />
+	<meta
+		name="description"
+		content="Miguel Garoz is a Front-End Developer. He specializes in building exceptional websites, applications, and everything in between."
+	/>
+</svelte:head>
+
 <header>
 	<nav class="bg-cod-gray-500 fixed z-30 flex h-32 w-full items-center justify-between py-5 px-20">
 		<div class="flex items-center"><img src={logo} alt="logo" class="h-4" /></div>
