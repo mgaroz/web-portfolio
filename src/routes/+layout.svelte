@@ -58,12 +58,12 @@
 				</li>
 				<li
 					class="hovered group h-full px-[30px]"
-					style="opacity: {$activeMenuInfo.itemBeingHovered === 'work'
+					style="opacity: {$activeMenuInfo.itemBeingHovered === 'portfolio'
 						? 1
 						: $activeMenuInfo.isBeingHovered
 						? 0.5
 						: 1}"
-					on:mouseenter={() => itemHovered(true, 'work')}
+					on:mouseenter={() => itemHovered(true, 'portfolio')}
 					on:mouseleave={() => itemHovered(false, '')}
 				>
 					<Link

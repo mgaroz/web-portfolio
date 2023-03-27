@@ -8,27 +8,17 @@
 	export let menuItem: boolean = false;
 
 	function setItemBeingHovered(status: string) {
-		activeMenuInfo.set({
-			itemBeingHovered: status,
-			isBeingHovered: true,
-			currentActiveItem: $activeMenuInfo.currentActiveItem
-		});
+		$activeMenuInfo.itemBeingHovered = status;
+		$activeMenuInfo.isBeingHovered = true;
 	}
 
 	function setClickedNavItem(item: string) {
-		activeMenuInfo.set({
-			currentActiveItem: item,
-			itemBeingHovered: $activeMenuInfo.itemBeingHovered,
-			isBeingHovered: $activeMenuInfo.isBeingHovered
-		});
+		$activeMenuInfo.currentActiveItem = item;
 	}
 
 	function setPreviousNavItem() {
-		activeMenuInfo.set({
-			itemBeingHovered: '',
-			isBeingHovered: false,
-			currentActiveItem: $activeMenuInfo.currentActiveItem
-		});
+		$activeMenuInfo.itemBeingHovered = '';
+		$activeMenuInfo.isBeingHovered = false;
 	}
 </script>
 
