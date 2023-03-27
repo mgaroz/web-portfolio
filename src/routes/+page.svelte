@@ -92,13 +92,13 @@
 	bind:this={ballContainer}
 	style="--backColor:{activeBackColor}"
 />
-<section class="2xs:px-6 h-[calc(70vh+128px)] md:px-20 md:pt-32" id="home">
+<section class="2xs:px-6 md:h-[calc(70vh+128px)] md:px-20 md:pt-32" id="home">
 	<div
 		id="hero"
-		class="relative z-20 flex h-full w-full flex-col items-center justify-around overflow-hidden"
+		class="relative z-20 h-full w-full flex-col items-center justify-around overflow-hidden md:flex"
 	>
 		<div class="z-2 relative inset-0 mx-auto block w-full">
-			<div class="relative mx-auto w-full pt-10 pb-40 text-left">
+			<div class="2xs:pt-40 relative mx-auto w-full pb-40 text-left md:pt-10">
 				<h1 class="text-hero-size 2xs:pb-10 leading-none md:pb-0">
 					<span class="relative block md:-translate-x-2" bind:this={nameContainer}>MIGUEL</span>
 					<span

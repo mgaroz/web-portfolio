@@ -35,7 +35,10 @@
 </script>
 
 <section class="2xs:px-6 h-full w-full pb-28 md:px-20" id="portfolio">
-	<div id="work-section" class="items-center justify-between gap-8 md:flex">
+	<div
+		id="work-section"
+		class="2xs:flex 2xs:flex-col gap-8 md:flex-row md:items-center md:justify-between"
+	>
 		<div
 			id="work-item-one"
 			class="group relative w-1/4 grow basis-0 cursor-pointer transition-all duration-500 hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"

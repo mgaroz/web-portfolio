@@ -9,42 +9,44 @@
 		<span class="text-big-size block uppercase leading-none">In touch</span>
 	</div>
 	<div class="md:pb-20">
-		<span class="font-bgr block text-[1.25rem] uppercase"> I'd love to hear from you </span>
+		<span class="font-bgr text-hear block text-[1.25rem] uppercase">
+			I'd love to hear from you
+		</span>
 	</div>
 	<div class="w-full items-start justify-between pb-28 md:flex">
 		<div id="contact-left" class="2xs:pb-10 md:w-1/4 md:pb-0">
-			<h3 class="font-bgr uppercase leading-none">Let's talk</h3>
+			<h3 class="font-bgr text-subheader uppercase leading-none">Let's talk</h3>
 		</div>
 		<div id="contact-right" class="font-bgr md:w-2/3">
 			<form action="https://fabform.io/f/Cf02Z9Y" method="POST">
 				<div class="mb-8 grid w-full grid-cols-2 gap-10">
 					<div class="inline-block">
-						<label for="name" class="text-[20px]">NAME</label>
+						<label for="name" class="text-hear">NAME</label>
 						<input
 							type="text"
 							name="name"
 							id="name"
-							class="border-cod-gray-50 focus:border-b-gallery-50 inline-block w-full border-0 border-b bg-transparent text-[20px] focus:ring-transparent"
+							class="border-cod-gray-50 focus:border-b-gallery-50 text-hear inline-block w-full border-0 border-b bg-transparent focus:ring-transparent"
 						/>
 					</div>
 					<div class="inline-block">
-						<label for="email" class="text-[20px]">EMAIL</label>
+						<label for="email" class="text-hear">EMAIL</label>
 						<input
 							type="email"
 							name="email"
 							id="email"
-							class="border-cod-gray-50 focus:border-b-gallery-50 inline-block w-full border-0 border-b bg-transparent text-[20px] focus:ring-transparent"
+							class="border-cod-gray-50 focus:border-b-gallery-50 text-hear inline-block w-full border-0 border-b bg-transparent focus:ring-transparent"
 						/>
 					</div>
 				</div>
 				<div class="w-full">
-					<label for="message" class="text-[20px]">MESSAGE</label>
+					<label for="message" class="text-hear">MESSAGE</label>
 					<textarea
 						name="message"
 						id="message"
 						cols="30"
 						rows="3"
-						class="border-cod-gray-50 focus:border-b-gallery-50 w-full resize-none border-0 border-b bg-transparent text-[20px] focus:ring-transparent"
+						class="border-cod-gray-50 focus:border-b-gallery-50 text-hear w-full resize-none border-0 border-b bg-transparent focus:ring-transparent"
 					/>
 				</div>
 				<hr class="h-[1.75rem] border-0" />
@@ -87,5 +89,13 @@
 <style>
 	.text-big-size {
 		font-size: clamp(2.125rem, 1.2354rem + 3.9538vw, 5.98rem);
+	}
+
+	.text-subheader {
+		font-size: clamp(1.5rem, 1.1827rem + 1.4103vw, 2.875rem);
+	}
+
+	.text-hear {
+		font-size: clamp(0.875rem, 0.7885rem + 0.3846vw, 1.25rem);
 	}
 </style>
