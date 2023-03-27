@@ -7,8 +7,8 @@
 	export let displacement: string = '19px';
 	export let menuItem: boolean = false;
 
-	function setItemBeingHovered(status: string) {
-		$activeMenuInfo.itemBeingHovered = status;
+	function setItemBeingHovered(item: string) {
+		$activeMenuInfo.itemBeingHovered = item;
 		$activeMenuInfo.isBeingHovered = true;
 	}
 
