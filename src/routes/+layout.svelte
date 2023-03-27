@@ -37,8 +37,7 @@
 			>
 				<li
 					class="hovered group h-full px-[30px]"
-					style="opacity: {$activeMenuInfo.isBeingHovered &&
-					$activeMenuInfo.itemBeingHovered === 'home'
+					style="opacity: {$activeMenuInfo.itemBeingHovered === 'home'
 						? 1
 						: $activeMenuInfo.isBeingHovered
 						? 0.5
