@@ -14,14 +14,12 @@
 		let animText = tl
 			.from(headerContainer, {
 				duration: 2,
-				// clipPath: 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)',
 				opacity: 0.5
 			})
 			.to(
 				headerContainer,
 				{
 					duration: 2,
-					// clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
 					opacity: 1
 				},
 				'-=2'
