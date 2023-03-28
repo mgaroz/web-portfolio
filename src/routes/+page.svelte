@@ -13,6 +13,7 @@
 	let subContainer: HTMLSpanElement;
 	let ballContainer: HTMLDivElement;
 	let m = { x: 0, y: 0 };
+	let tagline = 'Front-end developer with an adaptive approach to problem solving.';
 
 	export let data;
 
@@ -105,15 +106,14 @@
 					>
 					<span
 						class="font-bgr 2xs:hidden relative max-w-[16.25rem] align-middle text-sm uppercase leading-5 md:inline-block"
-						bind:this={subContainer}
-						>Front-end developer with an adaptive approach to problem solving.</span
+						bind:this={subContainer}>{tagline}</span
 					>
 					<span class="2xs:left-0 relative inline-block md:left-10" bind:this={lastNameContainer}
 						>GAROZ</span
 					>
 				</h1>
 				<span class="font-bgr 2xs:block 2xs:text-[14px] uppercase md:hidden">
-					Front-end developer with an adaptive approach to problem solving.
+					{tagline}
 				</span>
 			</div>
 		</div>
