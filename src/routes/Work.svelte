@@ -52,7 +52,11 @@
 				/>
 			</div>
 			<div class="2xs:w-full flex items-center justify-between">
-				<p class="font-bgr p1 2xs:whitespace-normal uppercase md:whitespace-nowrap">Skyler Cohen</p>
+				<p
+					class="font-bgr p1 2xs:whitespace-normal 2xs:opacity-0 2xs:hover:opacity-100 uppercase md:whitespace-nowrap md:opacity-100"
+				>
+					Skyler Cohen
+				</p>
 				<p
 					class="text-gallery-800 p2 2xs:hidden uppercase opacity-0 transition-opacity duration-500 group-hover:opacity-100 md:block"
 				>

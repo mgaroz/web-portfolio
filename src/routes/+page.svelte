@@ -100,7 +100,9 @@
 		<div class="z-2 relative inset-0 mx-auto block w-full">
 			<div class="2xs:pt-40 relative mx-auto w-full pb-40 text-left md:pt-10">
 				<h1 class="text-hero-size 2xs:pb-10 leading-none md:pb-0">
-					<span class="relative block md:-translate-x-2" bind:this={nameContainer}>MIGUEL</span>
+					<span class="2xs:translate-x-0 relative block md:-translate-x-2" bind:this={nameContainer}
+						>MIGUEL</span
+					>
 					<span
 						class="font-bgr 2xs:hidden relative max-w-[16.25rem] align-middle text-sm uppercase leading-5 md:inline-block"
 						bind:this={subContainer}
@@ -125,7 +127,7 @@
 			>
 				<div class="2xs:hidden md:block">
 					<Link
-						href="#work"
+						href="#portfolio"
 						content="Scroll to explore"
 						textSize="14px"
 						duration="200ms"
@@ -133,20 +135,22 @@
 					/>
 				</div>
 				<div class="flex h-5 w-5 items-center justify-center">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						fill="none"
-						viewBox="0 0 24 24"
-						stroke-width={2.5}
-						stroke="currentColor"
-						class="h-5 w-5"
-					>
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							d="M4.5 4.5l15 15m0 0V8.25m0 11.25H8.25"
-						/>
-					</svg>
+					<a href="#portfolio">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width={2.5}
+							stroke="currentColor"
+							class="h-5 w-5"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M4.5 4.5l15 15m0 0V8.25m0 11.25H8.25"
+							/>
+						</svg>
+					</a>
 				</div>
 			</div>
 			<div id="hero-footer-right">
