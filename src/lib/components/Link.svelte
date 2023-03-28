@@ -32,9 +32,7 @@
 			on:click={() => setClickedNavItem(content.toString().toLowerCase())}
 		>
 			<span
-				class="slide-up transition-[top] {displacement
-					? `group-hover:-top-[var(--displacement)]`
-					: 'group-hover:-top-[19px]'} overflow-hidden"
+				class="slide-up transition-[top] group-hover:-top-[var(--displacement)]"
 				data-hover={content}
 				style="--textSize:{textSize}; --duration:{duration}; --displacement:{displacement}"
 				>{content}</span

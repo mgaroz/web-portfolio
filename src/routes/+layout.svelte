@@ -47,14 +47,7 @@
 					on:mouseenter={() => itemHovered(true, 'home')}
 					on:mouseleave={() => itemHovered(false, '')}
 				>
-					<Link
-						href="/"
-						content="Home"
-						textSize="14px"
-						duration={'150ms'}
-						displacement=""
-						menuItem={true}
-					/>
+					<Link href="/" content="Home" textSize="14px" duration={'150ms'} menuItem={true} />
 				</li>
 				<li
 					class="hovered group h-full px-[30px]"
@@ -71,7 +64,6 @@
 						content="Portfolio"
 						textSize="14px"
 						duration={'150ms'}
-						displacement=""
 						menuItem={true}
 					/>
 				</li>
@@ -85,14 +77,7 @@
 					on:mouseenter={() => itemHovered(true, 'about')}
 					on:mouseleave={() => itemHovered(false, '')}
 				>
-					<Link
-						href="#about"
-						content="About"
-						textSize="14px"
-						duration={'150ms'}
-						displacement=""
-						menuItem={true}
-					/>
+					<Link href="#about" content="About" textSize="14px" duration={'150ms'} menuItem={true} />
 				</li>
 				<li
 					class="hovered group h-full px-[30px]"
@@ -104,14 +89,7 @@
 					on:mouseenter={() => itemHovered(true, 'blog')}
 					on:mouseleave={() => itemHovered(false, '')}
 				>
-					<Link
-						href="#blog"
-						content="Blog"
-						textSize="14px"
-						duration={'150ms'}
-						displacement=""
-						menuItem={true}
-					/>
+					<Link href="#blog" content="Blog" textSize="14px" duration={'150ms'} menuItem={true} />
 				</li>
 				<li
 					class="hovered group h-full pl-[30px]"
@@ -128,7 +106,6 @@
 						content="Contact"
 						textSize="14px"
 						duration={'150ms'}
-						displacement=""
 						menuItem={true}
 					/>
 				</li>
