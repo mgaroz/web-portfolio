@@ -73,7 +73,7 @@
 							></a
 						>
 						<a
-							href="https://github.com/mgaroz"
+							href="https://skylercohen.com.au"
 							target="_blank"
 							class="mr-4 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
 							><svg
