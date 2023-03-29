@@ -50,7 +50,11 @@
 					style="background-image: url('{item1}')"
 					class="bg-cod-gray-50 mb-4 flex h-full w-full scale-110 flex-col items-end justify-end bg-cover bg-center bg-no-repeat text-white transition-transform duration-500 group-hover:scale-100"
 				>
-					<div class="mb-4 flex">
+					<div
+						class="mb-4 flex"
+						on:mouseenter={() => workActive.set(false)}
+						on:mouseleave={() => setStatusAndColor(true, 'item1')}
+					>
 						<a
 							href="https://github.com/mgaroz"
 							target="_blank"
