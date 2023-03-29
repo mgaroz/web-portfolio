@@ -1,7 +1,13 @@
 <script lang="ts">
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import Link from '$lib/components/Link.svelte';
 	import { blogActive, backColor, active } from '$lib/store';
 	import dayjs from 'dayjs';
+	import { onMount } from 'svelte';
+	let sectionContainer: HTMLElement;
+
+	let tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
 	export let blogData: any;
 
@@ -15,9 +21,26 @@
 		blogActive.set(false);
 		active.set(status);
 	}
+
+	onMount(() => {
+		gsap.registerPlugin(ScrollTrigger);
+
+		gsap.from(sectionContainer, {
+			duration: 1,
+			y: 100,
+			opacity: 0,
+			scrollTrigger: {
+				trigger: sectionContainer,
+				start: 'top 80%',
+				end: 'bottom 80%',
+				toggleActions: 'play reverse play reverse',
+				markers: true
+			}
+		});
+	});
 </script>
 
-<section id="blog" class="2xs:px-6 h-full w-full pb-28 md:px-20">
+<section id="blog" class="2xs:px-6 h-full w-full pb-28 md:px-20" bind:this={sectionContainer}>
 	<div>
 		<h6 class="font-bgr pb-[1.5625rem] uppercase">/ Stay informed</h6>
 		<hr class="h-[1.75rem] border-0" />
