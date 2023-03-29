@@ -7,8 +7,6 @@
 	import { onMount } from 'svelte';
 	let sectionContainer: HTMLDivElement;
 
-	let tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-
 	export let blogData: any;
 
 	function setStatus(status: boolean) {
