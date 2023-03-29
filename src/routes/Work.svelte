@@ -48,8 +48,53 @@
 			<div class="mb-4 h-full w-full overflow-hidden">
 				<div
 					style="background-image: url('{item1}')"
-					class="bg-cod-gray-50 mb-4 h-full w-full scale-110 bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-100"
-				/>
+					class="bg-cod-gray-50 mb-4 flex h-full w-full scale-110 flex-col items-end justify-end bg-cover bg-center bg-no-repeat text-white transition-transform duration-500 group-hover:scale-100"
+				>
+					<div class="mb-4 flex">
+						<a
+							href="https://github.com/mgaroz"
+							target="_blank"
+							class="mr-4 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+							><svg
+								class="h-7 w-7 text-white"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								stroke-width="1"
+								stroke="currentColor"
+								fill="none"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<path stroke="none" d="M0 0h24v24H0z" />
+								<path
+									d="M9 19c-4.286 1.35-4.286-2.55-6-3m12 5v-3.5c0-1 .099-1.405-.5-2 2.791-.3 5.5-1.366 5.5-6.04a4.567 4.567 0 0 0 -1.333 -3.21 4.192 4.192 0 00-.08-3.227s-1.05-.3-3.476 1.267a12.334 12.334 0 0 0 -6.222 0C6.462 2.723 5.413 3.023 5.413 3.023a4.192 4.192 0 0 0 -.08 3.227A4.566 4.566 0 004 9.486c0 4.64 2.709 5.68 5.5 6.014-.591.589-.56 1.183-.5 2V21"
+								/></svg
+							></a
+						>
+						<a
+							href="https://github.com/mgaroz"
+							target="_blank"
+							class="mr-4 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+							><svg
+								class="h-7 w-7 text-white"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								stroke-width="1"
+								stroke="currentColor"
+								fill="none"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<path stroke="none" d="M0 0h24v24H0z" /> <circle cx="12" cy="12" r="9" />
+								<line x1="3.6" y1="9" x2="20.4" y2="9" />
+								<line x1="3.6" y1="15" x2="20.4" y2="15" /> <path d="M11.5 3a17 17 0 0 0 0 18" />
+								<path d="M12.5 3a17 17 0 0 1 0 18" /></svg
+							></a
+						>
+					</div>
+				</div>
 			</div>
 			<div class="2xs:w-full flex items-center justify-between">
 				<p
