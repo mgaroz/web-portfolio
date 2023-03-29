@@ -6,6 +6,7 @@
 
 	let headerContainer: HTMLHeadElement;
 	let sectionContainer: HTMLElement;
+	let aboutContainer: HTMLDivElement;
 	let tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
 	onMount(() => {
@@ -14,13 +15,22 @@
 		let animText = tl
 			.from(headerContainer, {
 				duration: 2,
-				opacity: 0.5
+				opacity: 0
 			})
 			.to(
 				headerContainer,
 				{
 					duration: 2,
 					opacity: 1
+				},
+				'-=2'
+			)
+			.from(
+				aboutContainer,
+				{
+					duration: 2,
+					opacity: 0,
+					x: 1000
 				},
 				'-=2'
 			);
@@ -37,7 +47,7 @@
 
 <section
 	id="about"
-	class="2xs:px-6 2xs:pb-20 h-full w-full md:px-20 md:pb-28"
+	class="2xs:px-6 2xs:pb-20 h-full w-full overflow-hidden md:px-20 md:pb-28"
 	bind:this={sectionContainer}
 >
 	<div id="about-me" class="md:pb-14 2xl:pb-20">
@@ -46,7 +56,7 @@
 		</h1>
 	</div>
 	<div id="more-about-me" class="2xs:pb-10 flex items-center justify-end pt-10 md:pb-20">
-		<div id="more-about-me-section-1" class="2xs:w-full md:w-1/2">
+		<div id="more-about-me-section-1" class="2xs:w-full md:w-1/2" bind:this={aboutContainer}>
 			<h5
 				class="md:font-bgr responsive-title 2xs:font-bgm 2xs:font-normal mb-[1.5625rem] uppercase"
 			>
