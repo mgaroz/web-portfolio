@@ -41,7 +41,7 @@
 	>
 		<div
 			id="work-item-one"
-			class="2xs:h-[13vh] xs:h-[19vh] group relative w-1/4 grow basis-0 cursor-pointer transition-all duration-500 hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"
+			class="2xs:h-[13vh] xs:h-[19vh] group relative w-1/4 grow basis-0 transition-all duration-500 hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"
 			on:mouseenter={() => setStatusAndColor(true, 'item1')}
 			on:mouseleave={() => workActive.set(false)}
 		>
