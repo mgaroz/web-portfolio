@@ -33,8 +33,7 @@
 				trigger: sectionContainer,
 				start: 'top 80%',
 				end: 'bottom 80%',
-				toggleActions: 'play reverse play reverse',
-				markers: true
+				toggleActions: 'play reverse play reverse'
 			}
 		});
 	});
