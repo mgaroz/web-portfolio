@@ -189,7 +189,7 @@
 						/>
 					</div>
 					<div class="flex h-5 w-5 items-center justify-center">
-						<a href="#portfolio">
+						<a href="#portfolio" aria-label="Portfolio">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								fill="none"
