@@ -31,10 +31,12 @@
 	<button
 		aria-controls="primary-navigation"
 		aria-expanded="false"
-		class="2xs:fixed 2xs:aspect-square 2xs:z-50 2xs:right-6 2xs:top-7 md:hidden"
+		class="2xs:fixed 2xs:aspect-square 2xs:z-50 2xs:right-6 2xs:top-7 h-6 w-6 md:hidden {$isMobileMenuActive
+			? 'open'
+			: ''}"
 		on:click={() => ($isMobileMenuActive = !$isMobileMenuActive)}
 	>
-		{#if $isMobileMenuActive}
+		<!-- {#if $isMobileMenuActive}
 			<svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 				<path
 					stroke-linecap="round"
@@ -52,7 +54,12 @@
 					d="M4 6h16M4 12h16m-7 6h7"
 				/>
 			</svg>
-		{/if}
+		{/if} -->
+		<div class="flex h-6 w-6 flex-col items-center justify-around overflow-hidden">
+			<div class="bar-one" />
+			<div class="bar-two" />
+			<div class="bar-three" />
+		</div>
 		<span class="sr-only">Menu</span></button
 	>
 	<nav
@@ -156,5 +163,42 @@
 <style>
 	.hovered {
 		transition: opacity 0.1s ease-in-out;
+	}
+
+	.bar-one,
+	.bar-two,
+	.bar-three {
+		width: 1.5rem;
+		height: 0.125rem;
+		background-color: #fff;
+		border-radius: 10px;
+		transition: all 0.3s linear;
+		position: relative;
+		transform-origin: 1px;
+	}
+
+	.bar-one {
+		transform: rotate(0);
+	}
+
+	.bar-two {
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	.bar-three {
+		transform: rotate(0);
+	}
+
+	.open .bar-one {
+		transform: rotate(45deg);
+	}
+	.open .bar-two {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+
+	.open .bar-three {
+		transform: rotate(-45deg);
 	}
 </style>
