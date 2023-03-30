@@ -4,7 +4,6 @@
 	import { active, activeMenuInfo } from '$lib/store';
 	import logo from '$lib/img/mg-logo.svg';
 
-	let mobileMenu: boolean;
 	$: isMobileMenuActive = false;
 
 	function handleEnter() {
