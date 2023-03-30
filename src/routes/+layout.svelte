@@ -142,11 +142,13 @@
 			</ul>
 		</div>
 	</nav>
-	{#if $isMobileMenuActive}
-		<div class="bg-cod-gray-500 fixed top-0 z-40 h-full w-full pt-20 md:hidden">
-			<MobileNav />
-		</div>
-	{/if}
+	<div
+		class="bg-cod-gray-500 2xs:fixed top-0 z-40 h-full w-full pt-20 transition-all duration-500 md:hidden {$isMobileMenuActive
+			? 'translate-y-0'
+			: '-translate-y-full'}"
+	>
+		<MobileNav />
+	</div>
 </header>
 
 <slot />
