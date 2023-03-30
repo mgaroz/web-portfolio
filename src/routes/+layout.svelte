@@ -1,10 +1,12 @@
 <script lang="ts">
 	import '../app.css';
 	import Link from '$lib/components/Link.svelte';
+	import MobileNav from '$lib/components/MobileNav.svelte';
 	import { active, activeMenuInfo } from '$lib/store';
 	import logo from '$lib/img/mg-logo.svg';
 
-	$: isMobileMenuActive = false;
+	let mobileMenuActive: boolean = false;
+	$: isMobileMenuActive = mobileMenuActive;
 
 	function handleEnter() {
 		active.set(true);
@@ -143,6 +145,11 @@
 			</ul>
 		</div>
 	</nav>
+	{#if isMobileMenuActive}
+		<div class="bg-cod-gray-500 fixed top-0 z-40 h-full w-full pt-20 md:hidden">
+			<MobileNav isMobileMenuActive={mobileMenuActive} />
+		</div>
+	{/if}
 </header>
 
 <slot />
