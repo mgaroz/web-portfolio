@@ -51,17 +51,15 @@
 	bind:this={sectionContainer}
 >
 	<div id="about-me" class="md:pb-14 2xl:pb-20">
-		<h1 class="responsive-font uppercase leading-none" bind:this={headerContainer}>
+		<h2 class="responsive-font uppercase leading-none" bind:this={headerContainer}>
 			Helping people to innovate and remain relevant by developing highly performant websites
-		</h1>
+		</h2>
 	</div>
 	<div id="more-about-me" class="2xs:pb-10 flex items-center justify-end pt-10 md:pb-20">
 		<div id="more-about-me-section-1" class="2xs:w-full md:w-1/2" bind:this={aboutContainer}>
-			<h5
-				class="md:font-bgr responsive-title 2xs:font-bgm 2xs:font-normal mb-[1.5625rem] uppercase"
-			>
+			<p class="md:font-bgr responsive-title 2xs:font-bgm 2xs:font-normal mb-[1.5625rem] uppercase">
 				About me
-			</h5>
+			</p>
 			<p class="font-bgr mb-[1.5625rem] leading-7">
 				Hello there, my name is Miguel Garoz and I'm a front-end developer. I have a passion for
 				creating responsive websites that provide the best user experience possible. I am constantly

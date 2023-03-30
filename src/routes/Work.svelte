@@ -59,6 +59,7 @@
 							href="https://github.com/mgaroz"
 							target="_blank"
 							class="mr-4 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+							aria-label="Source"
 							><svg
 								class="h-7 w-7 text-white"
 								width="24"

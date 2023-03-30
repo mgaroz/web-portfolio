@@ -122,7 +122,7 @@
 			id="hero-footer"
 		>
 			<div class="2xs:pb-4 flex w-full items-center gap-4 md:pb-8">
-				<a href="https://github.com/mgaroz" target="_blank">
+				<a href="https://github.com/mgaroz" target="_blank" aria-label="Github">
 					<svg
 						class="h-7 w-7 text-white"
 						width="24"
@@ -140,7 +140,7 @@
 						/></svg
 					>
 				</a>
-				<a href="https://www.linkedin.com/in/mgaroz/" target="_blank">
+				<a href="https://www.linkedin.com/in/mgaroz/" target="_blank" aria-label="LinkedIn">
 					<svg
 						class="h-7 w-7 text-white"
 						viewBox="0 0 24 24"
@@ -155,7 +155,7 @@
 						/> <rect x="2" y="9" width="4" height="12" /> <circle cx="4" cy="4" r="2" /></svg
 					>
 				</a>
-				<a href="https://twitter.com/mgaroz_pro" target="_blank">
+				<a href="https://twitter.com/mgaroz_pro" target="_blank" aria-label="Twitter">
 					<svg
 						class="h-7 w-7 text-white"
 						width="24"

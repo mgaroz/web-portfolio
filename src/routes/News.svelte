@@ -40,7 +40,7 @@
 <section id="blog" class="2xs:px-6 h-full w-full pb-28 md:px-20">
 	<div bind:this={sectionContainer}>
 		<div>
-			<h6 class="font-bgr pb-[1.5625rem] uppercase">/ Stay informed</h6>
+			<p class="font-bgr pb-[1.5625rem] text-sm uppercase">/ Stay informed</p>
 			<hr class="h-[1.75rem] border-0" />
 			<span class="text-big-size block uppercase leading-none">Blog</span>
 			<span class="text-big-size block uppercase leading-none">Latest entries</span>
@@ -145,9 +145,9 @@
 		<hr class="h-[1.75rem] border-0" />
 		<hr class="h-[1.75rem] border-0" />
 		<div class="md:w-2/5">
-			<h5 class="font-bgr uppercase">
+			<p class="font-bgr text-xl uppercase">
 				Create a powerful online presence, engage with your audience, and grow your business.
-			</h5>
+			</p>
 			<hr class="h-[1.75rem] border-0" />
 			<hr class="h-[1.75rem] border-0" />
 			<button

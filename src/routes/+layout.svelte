@@ -30,7 +30,9 @@
 	<nav
 		class="bg-cod-gray-500 2xs:px-6 2xs:py-8 fixed z-30 flex w-full items-center justify-between md:h-32 md:py-5 md:px-20"
 	>
-		<div class="flex items-center"><img src={logo} alt="logo" class="h-4" /></div>
+		<div class="flex items-center">
+			<img src={logo} alt="logo" class="h-4" width="144px" height="16" />
+		</div>
 		<div class="menu 2xs:hidden h-full md:block">
 			<ul
 				class="font-bgr flex h-full list-none items-center"
