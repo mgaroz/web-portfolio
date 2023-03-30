@@ -22,10 +22,6 @@
 			link: '#contact'
 		}
 	];
-
-	function toggleMobileMenu() {
-		$isMobileMenuActive = !$isMobileMenuActive;
-	}
 </script>
 
 <div
