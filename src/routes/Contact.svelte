@@ -61,7 +61,7 @@
 	</div>
 	<div class="items-center justify-between pb-12 md:flex md:gap-8">
 		<div class="font-bgr 2xs:gap-1 group flex items-center md:justify-between md:gap-8">
-			<a href="/">
+			<a href="/" aria-label="Home">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
