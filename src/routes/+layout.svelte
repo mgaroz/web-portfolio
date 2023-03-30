@@ -4,6 +4,9 @@
 	import { active, activeMenuInfo } from '$lib/store';
 	import logo from '$lib/img/mg-logo.svg';
 
+	let mobileMenu: boolean;
+	$: isMobileMenuActive = false;
+
 	function handleEnter() {
 		active.set(true);
 	}
@@ -27,6 +30,32 @@
 </svelte:head>
 
 <header>
+	<button
+		aria-controls="primary-navigation"
+		aria-expanded="false"
+		class="2xs:fixed 2xs:aspect-square 2xs:z-50 2xs:right-4 2xs:top-4 md:hidden"
+	>
+		{#if isMobileMenuActive}
+			<svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M6 18L18 6M6 6l12 12"
+				/>
+			</svg>
+		{:else}
+			<svg class="h-6 w-6 text-white" fill="#fff" viewBox="0 0 24 24" stroke="currentColor">
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M4 6h16M4 12h16m-7 6h7"
+				/>
+			</svg>
+		{/if}
+		<span class="sr-only">Menu</span></button
+	>
 	<nav
 		class="bg-cod-gray-500 2xs:px-6 2xs:py-8 fixed z-30 flex w-full items-center justify-between md:h-32 md:py-5 md:px-20"
 	>
