@@ -32,7 +32,8 @@
 	<button
 		aria-controls="primary-navigation"
 		aria-expanded="false"
-		class="2xs:fixed 2xs:aspect-square 2xs:z-50 2xs:right-4 2xs:top-4 md:hidden"
+		class="2xs:fixed 2xs:aspect-square 2xs:z-50 2xs:right-6 2xs:top-7 md:hidden"
+		on:click={() => (isMobileMenuActive = !isMobileMenuActive)}
 	>
 		{#if isMobileMenuActive}
 			<svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
