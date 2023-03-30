@@ -81,6 +81,7 @@
 							href="https://skylercohen.com.au"
 							target="_blank"
 							class="mr-4 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+							aria-label="Website"
 							><svg
 								class="h-7 w-7 text-white"
 								width="24"
