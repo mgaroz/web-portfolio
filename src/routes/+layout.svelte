@@ -143,7 +143,7 @@
 		</div>
 	</nav>
 	<div
-		class="bg-cod-gray-500 2xs:fixed top-0 z-40 h-full w-full pt-20 transition-all duration-500 md:hidden {$isMobileMenuActive
+		class="bg-cod-gray-500 2xs:fixed top-0 z-40 h-full w-full pt-20 duration-500 md:hidden {$isMobileMenuActive
 			? 'translate-y-0'
 			: '-translate-y-full'}"
 	>
