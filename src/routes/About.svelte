@@ -79,7 +79,7 @@
 			<Link href="#blog" content="Blog" textSize="14px" duration="200ms" displacement="20px" />
 		</div>
 		<div class="flex h-5 w-5 items-center justify-center">
-			<a href="#blog">
+			<a href="#blog" aria-label="Blog">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
