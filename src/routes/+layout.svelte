@@ -36,25 +36,6 @@
 			: ''}"
 		on:click={() => ($isMobileMenuActive = !$isMobileMenuActive)}
 	>
-		<!-- {#if $isMobileMenuActive}
-			<svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-				<path
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					stroke-width="2"
-					d="M6 18L18 6M6 6l12 12"
-				/>
-			</svg>
-		{:else}
-			<svg class="h-6 w-6 text-white" fill="#fff" viewBox="0 0 24 24" stroke="currentColor">
-				<path
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					stroke-width="2"
-					d="M4 6h16M4 12h16m-7 6h7"
-				/>
-			</svg>
-		{/if} -->
 		<div class="flex h-6 w-6 flex-col items-center justify-around overflow-hidden">
 			<div class="bar-one" />
 			<div class="bar-two" />
