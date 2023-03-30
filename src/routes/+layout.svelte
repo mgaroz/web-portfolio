@@ -31,12 +31,14 @@
 	<button
 		aria-controls="primary-navigation"
 		aria-expanded="false"
-		class="2xs:fixed 2xs:aspect-square 2xs:z-50 2xs:right-6 2xs:top-7 h-6 w-6 md:hidden {$isMobileMenuActive
-			? 'open'
-			: ''}"
+		class="2xs:fixed 2xs:aspect-square 2xs:z-50 2xs:right-6 2xs:top-7 h-6 w-6 md:hidden"
 		on:click={() => ($isMobileMenuActive = !$isMobileMenuActive)}
 	>
-		<div class="flex h-6 w-6 flex-col items-center justify-around overflow-hidden">
+		<div
+			class="flex h-6 w-6 flex-col items-center justify-around overflow-hidden {$isMobileMenuActive
+				? 'open'
+				: ''}"
+		>
 			<div class="bar-one" />
 			<div class="bar-two" />
 			<div class="bar-three" />
