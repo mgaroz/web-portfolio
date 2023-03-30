@@ -2,11 +2,8 @@
 	import '../app.css';
 	import Link from '$lib/components/Link.svelte';
 	import MobileNav from '$lib/components/MobileNav.svelte';
-	import { active, activeMenuInfo } from '$lib/store';
+	import { active, activeMenuInfo, isMobileMenuActive } from '$lib/store';
 	import logo from '$lib/img/mg-logo.svg';
-
-	let mobileMenuActive: boolean = false;
-	$: isMobileMenuActive = mobileMenuActive;
 
 	function handleEnter() {
 		active.set(true);
@@ -35,9 +32,9 @@
 		aria-controls="primary-navigation"
 		aria-expanded="false"
 		class="2xs:fixed 2xs:aspect-square 2xs:z-50 2xs:right-6 2xs:top-7 md:hidden"
-		on:click={() => (isMobileMenuActive = !isMobileMenuActive)}
+		on:click={() => ($isMobileMenuActive = !$isMobileMenuActive)}
 	>
-		{#if isMobileMenuActive}
+		{#if $isMobileMenuActive}
 			<svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 				<path
 					stroke-linecap="round"
@@ -145,9 +142,9 @@
 			</ul>
 		</div>
 	</nav>
-	{#if isMobileMenuActive}
+	{#if $isMobileMenuActive}
 		<div class="bg-cod-gray-500 fixed top-0 z-40 h-full w-full pt-20 md:hidden">
-			<MobileNav isMobileMenuActive={mobileMenuActive} />
+			<MobileNav />
 		</div>
 	{/if}
 </header>

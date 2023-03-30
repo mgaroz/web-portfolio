@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { isMobileMenuActive } from '$lib/store';
 	let menuData = [
 		{
 			name: 'Home',
@@ -22,11 +23,8 @@
 		}
 	];
 
-	export let isMobileMenuActive: boolean;
-
 	function toggleMobileMenu() {
-		isMobileMenuActive = !isMobileMenuActive;
-		console.log(isMobileMenuActive);
+		$isMobileMenuActive = !$isMobileMenuActive;
 	}
 </script>
 
@@ -37,7 +35,7 @@
 	<ul class="flex h-full flex-col justify-center gap-8">
 		{#each menuData as { name, link }}
 			<li>
-				<a href={link} on:click={() => console.log('clicked!')}>{name}</a>
+				<a href={link} on:click={() => ($isMobileMenuActive = !$isMobileMenuActive)}>{name}</a>
 			</li>
 		{/each}
 	</ul>

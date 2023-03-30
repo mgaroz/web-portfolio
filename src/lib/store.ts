@@ -9,3 +9,4 @@ export const activeMenuInfo = writable({
 	isBeingHovered: false,
 	currentActiveItem: 'home'
 });
+export const isMobileMenuActive = writable(false);
