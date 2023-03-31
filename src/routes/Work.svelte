@@ -9,6 +9,40 @@
 
 	let imagesObject = { item1: item1, item2: item2, item3: item3, item4: item4 };
 	let colorObject: { [prop: string]: any } = {};
+	let portfolioItems = [
+		{
+			name: 'Skyler Cohen',
+			type: 'Development',
+			tech: 'Sveltekit, Tailwind',
+			link: 'https://skylercohen.com.au',
+			source: 'https://github.com/mgaroz/skyler-website',
+			img: item1
+		},
+		{
+			name: "Andy's Cafe",
+			type: 'Development',
+			tech: 'Sveltekit, Tailwind',
+			link: '',
+			source: 'https://github.com/mgaroz/coffee-landing',
+			img: item2
+		},
+		{
+			name: 'Item 3',
+			type: 'Development',
+			tech: 'Sveltekit, Tailwind',
+			link: '',
+			source: '',
+			img: item3
+		},
+		{
+			name: 'Item 4',
+			type: 'Development',
+			tech: 'Sveltekit, Tailwind',
+			link: '',
+			source: '',
+			img: item4
+		}
+	];
 
 	function setStatusAndColor(status: boolean, color: string) {
 		workActive.set(status);
