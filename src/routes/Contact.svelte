@@ -4,14 +4,13 @@
 </script>
 
 <section id="contact" class="2xs:px-6 h-full w-full md:px-20">
+	<div class="md:pb-[1.5625rem]">
+		<span class="font-bgr block text-sm uppercase">/ I'd love to hear from you </span>
+	</div>
+	<hr class="h-[1.75rem] border-0" />
 	<div class="pb-10">
 		<span class="text-big-size block uppercase leading-none">Get</span>
 		<span class="text-big-size block uppercase leading-none">In touch</span>
-	</div>
-	<div class="md:pb-20">
-		<span class="font-bgr text-hear block text-[1.25rem] uppercase">
-			I'd love to hear from you
-		</span>
 	</div>
 	<div class="w-full items-start justify-between pb-28 md:flex">
 		<div id="contact-left" class="2xs:pb-10 md:w-1/4 md:pb-0">
