@@ -31,7 +31,7 @@
 				trigger: sectionContainer,
 				start: 'top 80%',
 				end: 'bottom 80%',
-				toggleActions: 'play reverse play reverse'
+				toggleActions: 'play none none none'
 			}
 		});
 	});

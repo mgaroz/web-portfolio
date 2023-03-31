@@ -39,7 +39,7 @@
 			trigger: sectionContainer,
 			start: '15% 90%',
 			end: 'bottom 80%',
-			toggleActions: 'restart reverse restart reverse',
+			toggleActions: 'play none none none',
 			animation: animText
 		});
 	});
