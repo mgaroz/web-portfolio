@@ -75,7 +75,7 @@
 <section class="2xs:px-6 h-full w-full pb-28 md:px-20" id="portfolio">
 	<div
 		id="work-section"
-		class="2xs:flex 2xs:justify-between 2xs:flex-col 2xs:gap-6 md:grid md:grid-cols-2 md:gap-8 md:gap-y-16 xl:flex xl:flex-row xl:items-center xl:gap-8"
+		class="2xs:flex 2xs:justify-between 2xs:flex-col 2xs:gap-16 md:grid md:grid-cols-2 md:gap-8 md:gap-y-16 xl:flex xl:flex-row xl:items-center xl:gap-8"
 	>
 		{#each portfolioItems as { id, name, type, tech, link, source, img }}
 			<div
@@ -85,7 +85,7 @@
 			>
 				<div class="relative mb-4 min-h-full w-full overflow-hidden">
 					<div
-						class="font-bgr 2xs:absolute 2xs:left-0 2xs:h-[25%] sm: 2xs:bottom-0 2xs:w-full bg-cod-gray-900/60 z-20 flex items-center justify-between backdrop-blur-sm md:h-[10%] md:opacity-0 md:transition-opacity md:duration-500 md:group-hover:opacity-100"
+						class="font-bgr 2xs:absolute 2xs:left-0 2xs:h-[25%] sm: 2xs:bottom-0 2xs:w-full bg-cod-gray-900/60 z-20 flex items-center justify-between backdrop-blur-sm md:opacity-0 md:transition-opacity md:duration-500 md:group-hover:opacity-100 xl:h-[10%]"
 					>
 						<p class="2xs:px-2 xs:px-4 text-[14px] uppercase">
 							{type}
