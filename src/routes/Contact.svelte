@@ -53,7 +53,7 @@
 					type="submit"
 					class="bg-gallery-500 text-cod-gray-500 font-bgm group h-[40px] w-36 rounded-full align-middle text-[14px] uppercase"
 				>
-					Send mail
+					Submit
 				</button>
 			</form>
 		</div>
