@@ -37,11 +37,11 @@
 <section class="2xs:px-6 h-full w-full pb-28 md:px-20" id="portfolio">
 	<div
 		id="work-section"
-		class="2xs:flex 2xs:justify-between 2xs:flex-col 2xs:gap-8 md:flex-row md:items-center md:gap-8"
+		class="2xs:flex 2xs:justify-between 2xs:flex-col 2xs:gap-6 md:flex-row md:items-center md:gap-8"
 	>
 		<div
 			id="work-item-one"
-			class="2xs:h-[50vmin] 2xs:w-full group relative transition-all duration-500 hover:grow-[2.5] md:w-1/4 md:grow md:basis-0 xl:h-[45vh] 2xl:h-[60vh]"
+			class="2xs:h-[50vmin] 2xs:flex 2xs:flex-col 2xs:w-full group relative transition-all duration-500 hover:grow-[2.5] md:block md:w-1/4 md:grow md:basis-0 xl:h-[45vh] 2xl:h-[60vh]"
 			on:mouseenter={() => setStatusAndColor(true, 'item1')}
 			on:mouseleave={() => workActive.set(false)}
 		>
@@ -114,7 +114,7 @@
 		</div>
 		<div
 			id="work-item-two"
-			class="2xs:h-[50vmin] 2xs:w-full group relative cursor-pointer transition-all duration-500 md:w-1/4 md:grow md:basis-0 md:hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"
+			class="2xs:h-[50vmin] 2xs:flex 2xs:flex-col 2xs:w-full group relative cursor-pointer transition-all duration-500 md:block md:w-1/4 md:grow md:basis-0 md:hover:grow-[2.5] xl:h-[45vh] 2xl:h-[60vh]"
 			on:mouseenter={() => setStatusAndColor(true, 'item2')}
 			on:mouseleave={() => workActive.set(false)}
 		>
@@ -135,7 +135,7 @@
 		</div>
 		<div
 			id="work-item-three"
-			class="2xs:h-[50vmin] 2xs:w-full group relative cursor-pointer transition-all duration-500 hover:grow-[2.5] md:w-1/4 md:grow md:basis-0 xl:h-[45vh] 2xl:h-[60vh]"
+			class="2xs:h-[50vmin] 2xs:flex 2xs:flex-col 2xs:w-full group relative cursor-pointer transition-all duration-500 hover:grow-[2.5] md:block md:w-1/4 md:grow md:basis-0 xl:h-[45vh] 2xl:h-[60vh]"
 			on:mouseenter={() => setStatusAndColor(true, 'item3')}
 			on:mouseleave={() => workActive.set(false)}
 		>
@@ -156,7 +156,7 @@
 		</div>
 		<div
 			id="work-item-four"
-			class="2xs:w-full 2xs:h-[50vmin] group relative cursor-pointer transition-all duration-500 hover:grow-[2.5] md:w-1/4 md:grow md:basis-0 xl:h-[45vh] 2xl:h-[60vh]"
+			class="2xs:w-full 2xs:flex 2xs:flex-col 2xs:h-[50vmin] group relative cursor-pointer transition-all duration-500 hover:grow-[2.5] md:block md:w-1/4 md:grow md:basis-0 xl:h-[45vh] 2xl:h-[60vh]"
 			on:mouseenter={() => setStatusAndColor(true, 'item4')}
 			on:mouseleave={() => workActive.set(false)}
 		>
