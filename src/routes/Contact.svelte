@@ -4,7 +4,7 @@
 </script>
 
 <section id="contact" class="2xs:px-6 h-full w-full md:px-20">
-	<div class="md:pb-[1.5625rem]">
+	<div class="pb-[1.5625rem]">
 		<span class="font-bgr block text-sm uppercase">/ I'd love to hear from you </span>
 	</div>
 	<hr class="h-[1.75rem] border-0" />
