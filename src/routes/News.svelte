@@ -2,7 +2,7 @@
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import Link from '$lib/components/Link.svelte';
-	import { blogActive, backColor, active } from '$lib/store';
+	import { blogActive, backColor, active, blogActiveTags } from '$lib/store';
 	import dayjs from 'dayjs';
 	import { onMount } from 'svelte';
 	let sectionContainer: HTMLDivElement;
@@ -17,7 +17,7 @@
 
 	function setTrailerActive(status: boolean) {
 		blogActive.set(false);
-		active.set(status);
+		blogActiveTags.set(status);
 	}
 
 	onMount(() => {

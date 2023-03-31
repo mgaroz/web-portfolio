@@ -5,7 +5,7 @@
 	import Contact from './Contact.svelte';
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
-	import { active, workActive, backColor, blogActive } from '$lib/store';
+	import { active, workActive, backColor, blogActive, blogActiveTags } from '$lib/store';
 	import Link from '$lib/components/Link.svelte';
 
 	let nameContainer: HTMLSpanElement;
@@ -87,7 +87,7 @@
 <svelte:window on:mousemove={handleMousemove} />
 
 <div
-	class:active={$active}
+	class:active={$active || $blogActiveTags}
 	class:active-work={$workActive || $blogActive}
 	class="circle 2xs:hidden z-40 md:block"
 	bind:this={ballContainer}
