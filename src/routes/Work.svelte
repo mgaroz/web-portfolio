@@ -53,18 +53,17 @@
 		backColor.set(colorObject[color]);
 	}
 
-	const fac = new FastAverageColor();
-
 	onMount(() => {
+		const fac = new FastAverageColor();
 		let values = Object.values(imagesObject);
 		values.forEach((item, idx) => {
 			fac
 				.getColorAsync(item)
-				.then((color) => {
+				.then((color: any) => {
 					let key = 'item' + (idx + 1).toString();
 					Object.assign(colorObject, { [key]: color.hex });
 				})
-				.catch((e) => {
+				.catch((e: any) => {
 					console.error(e);
 				});
 		});
