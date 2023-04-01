@@ -59,9 +59,14 @@
 					clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'
 				},
 				'-=1.5'
-			).from(subContainer2, {
-				clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
-			}, '-=1.5')
+			)
+			.from(
+				subContainer2,
+				{
+					clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
+				},
+				'-=1.5'
+			)
 			.to(
 				subContainer2,
 				{
@@ -74,25 +79,7 @@
 			);
 	}
 
-
 	onMount(() => {
-		// const ball = ballContainer;
-		// const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-		// const mouse = m;
-		// const speed = 0.25;
-
-		// function mouseFollow() {
-		// 	requestAnimationFrame(mouseFollow);
-		// 	const delay = 1.25 - Math.pow(1.35 - speed, 0.016);
-
-		// 	pos.x += (mouse.x - pos.x) * delay;
-		// 	pos.y += (mouse.y - pos.y) * delay;
-
-		// 	ball.style.top = pos.y + 'px';
-		// 	ball.style.left = pos.x + 'px';
-		// }
-
-		// mouseFollow();
 		gsap.set(ballContainer, { xPercent: -50, yPercent: -50 });
 		const ball = ballContainer;
 		const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
@@ -128,7 +115,9 @@
 		<div class="z-2 relative inset-0 mx-auto block w-full">
 			<div class="2xs:pt-40 relative mx-auto w-full pb-40 text-left md:pt-10">
 				<h1 class="text-hero-size 2xs:pb-10 leading-none md:pb-0">
-					<span class="2xs:translate-x-0 relative block md:-ml-2" bind:this={nameContainer}>MIGUEL</span>
+					<span class="2xs:translate-x-0 relative block md:-ml-2" bind:this={nameContainer}
+						>MIGUEL</span
+					>
 					<span
 						class="font-bgr 2xs:hidden relative max-w-[16.25rem] align-middle text-sm uppercase leading-5 opacity-0 md:inline-block"
 						bind:this={subContainer}>{tagline}</span
@@ -138,7 +127,8 @@
 					>
 				</h1>
 				<span
-					class="font-bgr 2xs:block 2xs:text-[14px] uppercase opacity-0 translate-y-28 md:hidden" bind:this={subContainer2}
+					class="font-bgr 2xs:block 2xs:text-[14px] translate-y-28 uppercase opacity-0 md:hidden"
+					bind:this={subContainer2}
 				>
 					{tagline}
 				</span>

@@ -7,8 +7,6 @@
 	import { onMount } from 'svelte';
 	let sectionContainer: HTMLDivElement;
 
-	let observed = false;
-
 	export let blogData: any;
 
 	function setStatus(status: boolean) {
@@ -20,17 +18,6 @@
 	function setTrailerActive(status: boolean) {
 		blogActive.set(false);
 		blogActiveTags.set(status);
-	}
-
-	function actionWhenIntersecting(e: HTMLElement) {
-		const observer = new IntersectionObserver((entries) => {
-			if (entries[0].isIntersecting) {
-				observed = true;
-				observer.unobserve(e);
-				observer.disconnect();
-			}
-		});
-		observer.observe(e);
 	}
 
 	onMount(() => {
@@ -46,13 +33,11 @@
 				toggleActions: 'play reverse play reverse'
 			}
 		});
-	})
+	});
 </script>
 
 <section id="blog" class="2xs:px-6 h-full w-full pb-28 md:px-20">
-	<div
-		bind:this={sectionContainer}
-	>
+	<div bind:this={sectionContainer}>
 		<div>
 			<p class="font-bgr pb-[1.5625rem] text-sm uppercase">/ Stay informed</p>
 			<hr class="h-[1.75rem] border-0" />
