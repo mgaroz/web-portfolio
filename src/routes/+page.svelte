@@ -3,7 +3,6 @@
 	import About from './About.svelte';
 	import News from './News.svelte';
 	import Contact from './Contact.svelte';
-	// import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 	import { active, workActive, backColor, blogActive, blogActiveTags } from '$lib/store';
 	import Link from '$lib/components/Link.svelte';
@@ -21,15 +20,10 @@
 	}
 
 	onMount(() => {
-		// gsap.set(ballContainer, { xPercent: -50, yPercent: -50 });
-
 		const ball = ballContainer;
 		const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 		const mouse = m;
 		const speed = 0.25;
-
-		// const xSet = gsap.quickSetter(ball, 'x', 'px');
-		// const ySet = gsap.quickSetter(ball, 'y', 'px');
 
 		function mouseFollow() {
 			requestAnimationFrame(mouseFollow);
@@ -41,15 +35,6 @@
 			ball.style.top = pos.y + 'px';
 			ball.style.left = pos.x + 'px';
 		}
-
-		// gsap.ticker.add(() => {
-		// 	const dt = 1.25 - Math.pow(1.35 - speed, gsap.ticker.deltaRatio());
-
-		// 	pos.x += (mouse.x - pos.x) * dt;
-		// 	pos.y += (mouse.y - pos.y) * dt;
-		// 	xSet(pos.x);
-		// 	ySet(pos.y);
-		// });
 
 		mouseFollow();
 	});
