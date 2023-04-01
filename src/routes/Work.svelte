@@ -1,14 +1,17 @@
 <script lang="ts">
-	// import { FastAverageColor } from 'fast-average-color';
 	import { workActive, backColor } from '$lib/store';
 	import item1 from '$lib/img/sky-full.avif';
 	import item2 from '$lib/img/cf-landing.avif';
 	import item3 from '$lib/img/item3.avif';
 	import item4 from '$lib/img/item4.avif';
-	// import { onMount } from 'svelte';
 
-	let imagesObject = { item1: item1, item2: item2, item3: item3, item4: item4 };
-	let colorObject: { [prop: string]: any } = {};
+	let colorObject: { [prop: string]: string } = {
+		item1: '#7d6e68',
+		item2: '#373432',
+		item3: '#262324',
+		item4: '#1c2839'
+	};
+
 	let portfolioItems = [
 		{
 			id: 'item1',
@@ -52,23 +55,6 @@
 		workActive.set(status);
 		backColor.set(colorObject[color]);
 	}
-
-	// onMount(() => {
-	// 	const fac = new FastAverageColor();
-	// 	let values = Object.values(imagesObject);
-	// 	values.forEach((item, idx) => {
-	// 		fac
-	// 			.getColorAsync(item)
-	// 			.then((color: any) => {
-	// 				let key = 'item' + (idx + 1).toString();
-	// 				Object.assign(colorObject, { [key]: color.hex });
-	// 			})
-	// 			.catch((e: any) => {
-	// 				console.error(e);
-	// 			});
-	// 	});
-	// 	fac.destroy();
-	// });
 </script>
 
 <section class="2xs:px-6 h-full w-full pb-28 md:px-20" id="portfolio">
