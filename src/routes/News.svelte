@@ -1,7 +1,11 @@
 <script lang="ts">
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import Link from '$lib/components/Link.svelte';
 	import { blogActive, backColor, active, blogActiveTags } from '$lib/store';
 	import dayjs from 'dayjs';
+	import { onMount } from 'svelte';
+	let sectionContainer: HTMLDivElement;
 
 	let observed = false;
 
@@ -28,14 +32,26 @@
 		});
 		observer.observe(e);
 	}
+
+	onMount(() => {
+		gsap.registerPlugin(ScrollTrigger);
+		gsap.from(sectionContainer, {
+			duration: 1,
+			y: 100,
+			opacity: 0,
+			scrollTrigger: {
+				trigger: sectionContainer,
+				start: 'top 80%',
+				end: 'bottom 80%',
+				toggleActions: 'play reverse play reverse'
+			}
+		});
+	})
 </script>
 
 <section id="blog" class="2xs:px-6 h-full w-full pb-28 md:px-20">
 	<div
-		class="transition-all duration-[1200ms]  {observed
-			? 'translate-y-0 opacity-100'
-			: 'translate-y-48 opacity-0'}"
-		use:actionWhenIntersecting
+		bind:this={sectionContainer}
 	>
 		<div>
 			<p class="font-bgr pb-[1.5625rem] text-sm uppercase">/ Stay informed</p>

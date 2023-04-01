@@ -3,10 +3,15 @@
 	import About from './About.svelte';
 	import News from './News.svelte';
 	import Contact from './Contact.svelte';
+	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 	import { active, workActive, backColor, blogActive, blogActiveTags } from '$lib/store';
 	import Link from '$lib/components/Link.svelte';
 
+	let nameContainer: HTMLSpanElement;
+	let lastNameContainer: HTMLSpanElement;
+	let subContainer: HTMLSpanElement;
+	let subContainer2: HTMLSpanElement;
 	let ballContainer: HTMLDivElement;
 	let m = { x: 0, y: 0 };
 	let tagline = 'Front-end developer with an adaptive approach to problem solving.';
@@ -15,28 +20,94 @@
 
 	$: activeBackColor = $backColor;
 
+	let tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
 	function handleMousemove(e: MouseEvent) {
 		(m.x = e.clientX), (m.y = e.clientY);
 	}
 
+	function animateHero() {
+		tl.from(nameContainer, {
+			duration: 1.5,
+			y: 100,
+			opacity: 0
+		})
+			.from(
+				lastNameContainer,
+				{
+					duration: 1.5,
+					y: 100,
+					opacity: 0
+				},
+				'-=1.40'
+			)
+			.from(
+				subContainer,
+				{
+					duration: 1.5,
+					y: 100,
+					opacity: 0,
+					clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
+				},
+				'-=1.40'
+			)
+			.to(
+				subContainer,
+				{
+					duration: 1.5,
+					opacity: 1,
+					clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'
+				},
+				'-=1.5'
+			).from(subContainer2, {
+				clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
+			}, '-=1.5')
+			.to(
+				subContainer2,
+				{
+					duration: 1.5,
+					opacity: 1,
+					y: 0,
+					clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'
+				},
+				'-=1.5'
+			);
+	}
+
+
 	onMount(() => {
+		// const ball = ballContainer;
+		// const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+		// const mouse = m;
+		// const speed = 0.25;
+
+		// function mouseFollow() {
+		// 	requestAnimationFrame(mouseFollow);
+		// 	const delay = 1.25 - Math.pow(1.35 - speed, 0.016);
+
+		// 	pos.x += (mouse.x - pos.x) * delay;
+		// 	pos.y += (mouse.y - pos.y) * delay;
+
+		// 	ball.style.top = pos.y + 'px';
+		// 	ball.style.left = pos.x + 'px';
+		// }
+
+		// mouseFollow();
+		gsap.set(ballContainer, { xPercent: -50, yPercent: -50 });
 		const ball = ballContainer;
 		const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 		const mouse = m;
 		const speed = 0.25;
-
-		function mouseFollow() {
-			requestAnimationFrame(mouseFollow);
-			const delay = 1.25 - Math.pow(1.35 - speed, 0.016);
-
-			pos.x += (mouse.x - pos.x) * delay;
-			pos.y += (mouse.y - pos.y) * delay;
-
-			ball.style.top = pos.y + 'px';
-			ball.style.left = pos.x + 'px';
-		}
-
-		mouseFollow();
+		const xSet = gsap.quickSetter(ball, 'x', 'px');
+		const ySet = gsap.quickSetter(ball, 'y', 'px');
+		gsap.ticker.add(() => {
+			const dt = 1.25 - Math.pow(1.35 - speed, gsap.ticker.deltaRatio());
+			pos.x += (mouse.x - pos.x) * dt;
+			pos.y += (mouse.y - pos.y) * dt;
+			xSet(pos.x);
+			ySet(pos.y);
+		});
+		animateHero();
 	});
 </script>
 
@@ -57,17 +128,17 @@
 		<div class="z-2 relative inset-0 mx-auto block w-full">
 			<div class="2xs:pt-40 relative mx-auto w-full pb-40 text-left md:pt-10">
 				<h1 class="text-hero-size 2xs:pb-10 leading-none md:pb-0">
-					<span class="2xs:translate-x-0 load-animation-title relative block md:-ml-2">MIGUEL</span>
+					<span class="2xs:translate-x-0 relative block md:-ml-2" bind:this={nameContainer}>MIGUEL</span>
 					<span
-						class="font-bgr 2xs:hidden tagline-animation relative max-w-[16.25rem] align-middle text-sm uppercase leading-5 opacity-0 md:inline-block"
-						>{tagline}</span
+						class="font-bgr 2xs:hidden relative max-w-[16.25rem] align-middle text-sm uppercase leading-5 opacity-0 md:inline-block"
+						bind:this={subContainer}>{tagline}</span
 					>
-					<span class="2xs:left-0 load-animation-subtitle relative inline-block md:left-10"
+					<span class="2xs:left-0  relative inline-block md:left-10" bind:this={lastNameContainer}
 						>GAROZ</span
 					>
 				</h1>
 				<span
-					class="font-bgr 2xs:block 2xs:text-[14px] tagline-animation uppercase opacity-0 md:hidden"
+					class="font-bgr 2xs:block 2xs:text-[14px] uppercase opacity-0 translate-y-28 md:hidden" bind:this={subContainer2}
 				>
 					{tagline}
 				</span>
@@ -189,9 +260,8 @@
 		width: 40px;
 		height: 40px;
 		position: fixed;
-		top: 50%;
-		left: 50%;
-		translate: -50% -50%;
+		top: 0;
+		left: 0;
 		border: 2px solid #737373;
 		border-radius: 50%;
 		pointer-events: none;
@@ -214,40 +284,5 @@
 		background-size: 50%;
 		background-repeat: no-repeat;
 		background-position: center;
-	}
-
-	.load-animation-title {
-		animation: slideUp 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
-	}
-
-	.load-animation-subtitle {
-		animation: slideUp 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0.1s forwards;
-	}
-
-	.tagline-animation {
-		animation: slideUp2 1.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s forwards;
-	}
-	@keyframes slideUp {
-		0% {
-			transform: translateY(100%);
-			opacity: 0;
-		}
-		100% {
-			transform: translateY(0);
-			opacity: 1;
-		}
-	}
-
-	@keyframes slideUp2 {
-		0% {
-			clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-			transform: translateY(100%);
-			opacity: 0;
-		}
-		100% {
-			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-			transform: translateY(0);
-			opacity: 1;
-		}
 	}
 </style>

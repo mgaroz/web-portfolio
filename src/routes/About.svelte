@@ -1,27 +1,67 @@
 <script lang="ts">
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import Link from '$lib/components/Link.svelte';
+	import {onMount} from 'svelte';
 
-	let observed = false;
+	let headerContainer: HTMLDivElement;
+	let sectionContainer: HTMLElement;
+	let aboutContainer: HTMLDivElement;
+	let tl = gsap.timeline({defaults: {ease: 'power3.out'}});
 
-	function actionWhenIntersecting(e: HTMLElement) {
-		const observer = new IntersectionObserver((entries) => {
-			if (entries[0].isIntersecting) {
-				observed = true;
-				observer.unobserve(e);
-				observer.disconnect();
-			}
+	// let observed = false;
+
+	// function actionWhenIntersecting(e: HTMLElement) {
+	// 	const observer = new IntersectionObserver((entries) => {
+	// 		if (entries[0].isIntersecting) {
+	// 			observed = true;
+	// 			observer.unobserve(e);
+	// 			observer.disconnect();
+	// 		}
+	// 	});
+	// 	observer.observe(e);
+	// }
+
+	onMount(() => {
+		gsap.registerPlugin(ScrollTrigger);
+
+		let animText = tl
+			.from(headerContainer, {
+				duration: 2,
+				opacity: 0
+			})
+			.to(
+				headerContainer,
+				{
+					duration: 2,
+					opacity: 1
+				},
+				'-=2'
+			)
+			.from(
+				aboutContainer,
+				{
+					duration: 2,
+					opacity: 0,
+					x: 1000
+				},
+				'-=2'
+			);
+
+			ScrollTrigger.create({
+			trigger: sectionContainer,
+			start: '15% 90%',
+			end: 'bottom 80%',
+			toggleActions: 'restart reverse restart reverse',
+			animation: animText
 		});
-		observer.observe(e);
-	}
+	})
 </script>
 
-<section id="about" class="2xs:px-6 2xs:pb-20 h-full w-full overflow-hidden md:px-20 md:pb-28">
+<section id="about" class="2xs:px-6 2xs:pb-20 h-full w-full overflow-hidden md:px-20 md:pb-28" bind:this={sectionContainer}>
 	<div id="about-me" class="md:pb-14 2xl:pb-20">
 		<h2
-			class="responsive-font uppercase leading-none transition-opacity duration-[1500ms] {observed
-				? 'opacity-100'
-				: 'opacity-0'}"
-			use:actionWhenIntersecting
+			class="responsive-font uppercase leading-none" bind:this={headerContainer}
 		>
 			Helping people to innovate and remain relevant by developing highly performant websites
 		</h2>
@@ -29,10 +69,8 @@
 	<div id="more-about-me" class="2xs:pb-10 flex items-center justify-end pt-10 md:pb-20">
 		<div
 			id="more-about-me-section-1"
-			class="2xs:w-full transition-all duration-[1500ms] md:w-1/2 {observed
-				? 'translate-x-0'
-				: 'translate-x-[800px]'}"
-			use:actionWhenIntersecting
+			class="2xs:w-full md:w-1/2"
+			bind:this={aboutContainer}
 		>
 			<p class="md:font-bgr responsive-title 2xs:font-bgm 2xs:font-normal mb-[1.5625rem] uppercase">
 				About me
