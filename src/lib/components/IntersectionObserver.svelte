@@ -2,6 +2,7 @@
 	import { onMount, onDestroy } from 'svelte';
 	import { browser } from '$app/environment';
 	import { observed } from '$lib/store';
+
 	function handleView() {
 		$observed = true;
 	}
@@ -18,7 +19,7 @@
 					}
 				});
 			};
-			const options = { threshold: 0, rootMargin: '0px 0px 0% 0px' };
+			const options = { threshold: 0, rootMargin: '-30%' };
 			observer = new IntersectionObserver(handleIntersect, options);
 			observer.observe(container);
 		}

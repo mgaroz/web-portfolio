@@ -6,6 +6,7 @@
 	import { onMount } from 'svelte';
 	import { active, workActive, backColor, blogActive, blogActiveTags } from '$lib/store';
 	import Link from '$lib/components/Link.svelte';
+	import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
 
 	let ballContainer: HTMLDivElement;
 	let m = { x: 0, y: 0 };
@@ -174,7 +175,9 @@
 <div class="2xs:px-6 md:px-20">
 	<hr class="border-cod-gray-50 pb-28" />
 </div>
-<About />
+<IntersectionObserver>
+	<About />
+</IntersectionObserver>
 {#await data then res}
 	<News blogData={res.response} />
 {/await}

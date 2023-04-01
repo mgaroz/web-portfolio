@@ -1,62 +1,25 @@
 <script lang="ts">
-	// import { gsap } from 'gsap';
-	// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import Link from '$lib/components/Link.svelte';
-	// import { onMount } from 'svelte';
-
-	let headerContainer: HTMLHeadElement;
-	let sectionContainer: HTMLElement;
-	let aboutContainer: HTMLDivElement;
-	// let tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-
-	// onMount(() => {
-	// 	gsap.registerPlugin(ScrollTrigger);
-
-	// 	let animText = tl
-	// 		.from(headerContainer, {
-	// 			duration: 2,
-	// 			opacity: 0
-	// 		})
-	// 		.to(
-	// 			headerContainer,
-	// 			{
-	// 				duration: 2,
-	// 				opacity: 1
-	// 			},
-	// 			'-=2'
-	// 		)
-	// 		.from(
-	// 			aboutContainer,
-	// 			{
-	// 				duration: 2,
-	// 				opacity: 0,
-	// 				x: 1000
-	// 			},
-	// 			'-=2'
-	// 		);
-
-	// 	ScrollTrigger.create({
-	// 		trigger: sectionContainer,
-	// 		start: '15% 90%',
-	// 		end: 'bottom 80%',
-	// 		toggleActions: 'play none none none',
-	// 		animation: animText
-	// 	});
-	// });
+	import { observed } from '$lib/store';
 </script>
 
-<section
-	id="about"
-	class="2xs:px-6 2xs:pb-20 h-full w-full overflow-hidden md:px-20 md:pb-28"
-	bind:this={sectionContainer}
->
+<section id="about" class="2xs:px-6 2xs:pb-20 h-full w-full overflow-hidden md:px-20 md:pb-28">
 	<div id="about-me" class="md:pb-14 2xl:pb-20">
-		<h2 class="responsive-font uppercase leading-none" bind:this={headerContainer}>
+		<h2
+			class="responsive-font uppercase leading-none transition-opacity duration-1000 {$observed
+				? 'opacity-100'
+				: 'opacity-0'}"
+		>
 			Helping people to innovate and remain relevant by developing highly performant websites
 		</h2>
 	</div>
 	<div id="more-about-me" class="2xs:pb-10 flex items-center justify-end pt-10 md:pb-20">
-		<div id="more-about-me-section-1" class="2xs:w-full md:w-1/2" bind:this={aboutContainer}>
+		<div
+			id="more-about-me-section-1"
+			class="2xs:w-full transition-all duration-1000 md:w-1/2 {$observed
+				? 'translate-x-0'
+				: 'translate-x-[1000px]'}"
+		>
 			<p class="md:font-bgr responsive-title 2xs:font-bgm 2xs:font-normal mb-[1.5625rem] uppercase">
 				About me
 			</p>
