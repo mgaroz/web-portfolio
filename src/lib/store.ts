@@ -11,3 +11,4 @@ export const activeMenuInfo = writable({
 	currentActiveItem: 'home'
 });
 export const isMobileMenuActive = writable(false);
+export const observed = writable(false);
