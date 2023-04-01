@@ -32,7 +32,7 @@
 
 <section id="blog" class="2xs:px-6 h-full w-full pb-28 md:px-20">
 	<div
-		class="transition-all duration-1000  {observed
+		class="transition-all duration-[1200ms]  {observed
 			? 'translate-y-0 opacity-100'
 			: 'translate-y-48 opacity-0'}"
 		use:actionWhenIntersecting
