@@ -1,14 +1,27 @@
 <script lang="ts">
 	import Link from '$lib/components/Link.svelte';
-	import { observed } from '$lib/store';
+
+	let observed = false;
+
+	function actionWhenIntersecting(e: HTMLElement) {
+		const observer = new IntersectionObserver((entries) => {
+			if (entries[0].isIntersecting) {
+				observed = true;
+				observer.unobserve(e);
+				observer.disconnect();
+			}
+		});
+		observer.observe(e);
+	}
 </script>
 
 <section id="about" class="2xs:px-6 2xs:pb-20 h-full w-full overflow-hidden md:px-20 md:pb-28">
 	<div id="about-me" class="md:pb-14 2xl:pb-20">
 		<h2
-			class="responsive-font uppercase leading-none transition-opacity duration-1000 {$observed
+			class="responsive-font uppercase leading-none transition-opacity duration-1000 {observed
 				? 'opacity-100'
 				: 'opacity-0'}"
+			use:actionWhenIntersecting
 		>
 			Helping people to innovate and remain relevant by developing highly performant websites
 		</h2>
@@ -16,9 +29,10 @@
 	<div id="more-about-me" class="2xs:pb-10 flex items-center justify-end pt-10 md:pb-20">
 		<div
 			id="more-about-me-section-1"
-			class="2xs:w-full transition-all duration-1000 md:w-1/2 {$observed
+			class="2xs:w-full transition-all duration-1000 md:w-1/2 {observed
 				? 'translate-x-0'
 				: 'translate-x-[1000px]'}"
+			use:actionWhenIntersecting
 		>
 			<p class="md:font-bgr responsive-title 2xs:font-bgm 2xs:font-normal mb-[1.5625rem] uppercase">
 				About me
