@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { gsap } from 'gsap';
-	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	// import { gsap } from 'gsap';
+	// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import Link from '$lib/components/Link.svelte';
 	import { blogActive, backColor, active, blogActiveTags } from '$lib/store';
 	import dayjs from 'dayjs';
-	import { onMount } from 'svelte';
+	// import { onMount } from 'svelte';
 	let sectionContainer: HTMLDivElement;
 
 	export let blogData: any;
@@ -20,21 +20,21 @@
 		blogActiveTags.set(status);
 	}
 
-	onMount(() => {
-		gsap.registerPlugin(ScrollTrigger);
+	// onMount(() => {
+	// 	gsap.registerPlugin(ScrollTrigger);
 
-		gsap.from(sectionContainer, {
-			duration: 1,
-			y: 100,
-			opacity: 0,
-			scrollTrigger: {
-				trigger: sectionContainer,
-				start: 'top 80%',
-				end: 'bottom 80%',
-				toggleActions: 'play none none none'
-			}
-		});
-	});
+	// 	gsap.from(sectionContainer, {
+	// 		duration: 1,
+	// 		y: 100,
+	// 		opacity: 0,
+	// 		scrollTrigger: {
+	// 			trigger: sectionContainer,
+	// 			start: 'top 80%',
+	// 			end: 'bottom 80%',
+	// 			toggleActions: 'play none none none'
+	// 		}
+	// 	});
+	// });
 </script>
 
 <section id="blog" class="2xs:px-6 h-full w-full pb-28 md:px-20">

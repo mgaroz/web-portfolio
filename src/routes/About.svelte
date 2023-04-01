@@ -1,48 +1,48 @@
 <script lang="ts">
-	import { gsap } from 'gsap';
-	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	// import { gsap } from 'gsap';
+	// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import Link from '$lib/components/Link.svelte';
-	import { onMount } from 'svelte';
+	// import { onMount } from 'svelte';
 
 	let headerContainer: HTMLHeadElement;
 	let sectionContainer: HTMLElement;
 	let aboutContainer: HTMLDivElement;
-	let tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+	// let tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-	onMount(() => {
-		gsap.registerPlugin(ScrollTrigger);
+	// onMount(() => {
+	// 	gsap.registerPlugin(ScrollTrigger);
 
-		let animText = tl
-			.from(headerContainer, {
-				duration: 2,
-				opacity: 0
-			})
-			.to(
-				headerContainer,
-				{
-					duration: 2,
-					opacity: 1
-				},
-				'-=2'
-			)
-			.from(
-				aboutContainer,
-				{
-					duration: 2,
-					opacity: 0,
-					x: 1000
-				},
-				'-=2'
-			);
+	// 	let animText = tl
+	// 		.from(headerContainer, {
+	// 			duration: 2,
+	// 			opacity: 0
+	// 		})
+	// 		.to(
+	// 			headerContainer,
+	// 			{
+	// 				duration: 2,
+	// 				opacity: 1
+	// 			},
+	// 			'-=2'
+	// 		)
+	// 		.from(
+	// 			aboutContainer,
+	// 			{
+	// 				duration: 2,
+	// 				opacity: 0,
+	// 				x: 1000
+	// 			},
+	// 			'-=2'
+	// 		);
 
-		ScrollTrigger.create({
-			trigger: sectionContainer,
-			start: '15% 90%',
-			end: 'bottom 80%',
-			toggleActions: 'play none none none',
-			animation: animText
-		});
-	});
+	// 	ScrollTrigger.create({
+	// 		trigger: sectionContainer,
+	// 		start: '15% 90%',
+	// 		end: 'bottom 80%',
+	// 		toggleActions: 'play none none none',
+	// 		animation: animText
+	// 	});
+	// });
 </script>
 
 <section

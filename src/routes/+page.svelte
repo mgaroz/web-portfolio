@@ -3,7 +3,7 @@
 	import About from './About.svelte';
 	import News from './News.svelte';
 	import Contact from './Contact.svelte';
-	import { gsap } from 'gsap';
+	// import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 	import { active, workActive, backColor, blogActive, blogActiveTags } from '$lib/store';
 	import Link from '$lib/components/Link.svelte';
@@ -16,31 +16,42 @@
 
 	$: activeBackColor = $backColor;
 
-	let tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-
 	function handleMousemove(e: MouseEvent) {
 		(m.x = e.clientX), (m.y = e.clientY);
 	}
 
 	onMount(() => {
-		gsap.set(ballContainer, { xPercent: -50, yPercent: -50 });
+		// gsap.set(ballContainer, { xPercent: -50, yPercent: -50 });
 
 		const ball = ballContainer;
 		const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 		const mouse = m;
 		const speed = 0.25;
 
-		const xSet = gsap.quickSetter(ball, 'x', 'px');
-		const ySet = gsap.quickSetter(ball, 'y', 'px');
+		// const xSet = gsap.quickSetter(ball, 'x', 'px');
+		// const ySet = gsap.quickSetter(ball, 'y', 'px');
 
-		gsap.ticker.add(() => {
-			const dt = 1.25 - Math.pow(1.35 - speed, gsap.ticker.deltaRatio());
+		function mouseFollow() {
+			requestAnimationFrame(mouseFollow);
+			const delay = 1.25 - Math.pow(1.35 - speed, 0.016);
 
-			pos.x += (mouse.x - pos.x) * dt;
-			pos.y += (mouse.y - pos.y) * dt;
-			xSet(pos.x);
-			ySet(pos.y);
-		});
+			pos.x += (mouse.x - pos.x) * delay;
+			pos.y += (mouse.y - pos.y) * delay;
+
+			ball.style.top = pos.y + 'px';
+			ball.style.left = pos.x + 'px';
+		}
+
+		// gsap.ticker.add(() => {
+		// 	const dt = 1.25 - Math.pow(1.35 - speed, gsap.ticker.deltaRatio());
+
+		// 	pos.x += (mouse.x - pos.x) * dt;
+		// 	pos.y += (mouse.y - pos.y) * dt;
+		// 	xSet(pos.x);
+		// 	ySet(pos.y);
+		// });
+
+		mouseFollow();
 	});
 </script>
 
@@ -193,8 +204,9 @@
 		width: 40px;
 		height: 40px;
 		position: fixed;
-		top: 0;
-		left: 0;
+		top: 50%;
+		left: 50%;
+		translate: -50% -50%;
 		border: 2px solid #737373;
 		border-radius: 50%;
 		pointer-events: none;
