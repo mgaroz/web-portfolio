@@ -13,6 +13,9 @@
 	let subContainer: HTMLSpanElement;
 	let subContainer2: HTMLSpanElement;
 	let ballContainer: HTMLDivElement;
+	let socialIconsContainer: HTMLDivElement;
+	let heroFooterLeftContainer: HTMLDivElement;
+	let heroFooterRightContainer: HTMLDivElement;
 	let m = { x: 0, y: 0 };
 	let tagline = 'Front-end developer with an adaptive approach to problem solving.';
 
@@ -88,6 +91,30 @@
 					clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'
 				},
 				'-=1.5'
+			)
+			.to(
+				socialIconsContainer,
+				{
+					duration: 1.5,
+					x: 0
+				},
+				'-=1.5'
+			)
+			.to(
+				heroFooterLeftContainer,
+				{
+					duration: 1.5,
+					x: 0
+				},
+				'-=1.1'
+			)
+			.to(
+				heroFooterRightContainer,
+				{
+					duration: 1.5,
+					x: 0
+				},
+				'-=1.2'
 			);
 	}
 
@@ -153,7 +180,10 @@
 			class="2xs:pb-10 flex w-full flex-col items-center justify-between uppercase md:pb-0"
 			id="hero-footer"
 		>
-			<div class="2xs:pb-4 flex w-full items-center gap-4 md:pb-8">
+			<div
+				class="2xs:pb-4 flex w-full -translate-x-32 items-center gap-4 md:pb-8"
+				bind:this={socialIconsContainer}
+			>
 				<a href="https://github.com/mgaroz" target="_blank" aria-label="Github">
 					<svg
 						class="h-7 w-7 text-white"
@@ -209,7 +239,8 @@
 			<div class="flex w-full justify-between">
 				<div
 					id="hero-footer-left"
-					class="font-bgr group flex items-center justify-center gap-8 overflow-hidden"
+					class="font-bgr group flex -translate-x-52 items-center justify-center gap-8 overflow-hidden"
+					bind:this={heroFooterLeftContainer}
 				>
 					<div class="2xs:hidden md:block">
 						<Link
@@ -239,7 +270,7 @@
 						</a>
 					</div>
 				</div>
-				<div id="hero-footer-right">
+				<div id="hero-footer-right" bind:this={heroFooterRightContainer} class="translate-x-52">
 					<span class="font-bgr h-full text-sm">Selected works (04)</span>
 				</div>
 			</div>
