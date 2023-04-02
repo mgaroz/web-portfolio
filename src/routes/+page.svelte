@@ -21,7 +21,7 @@
 
 	let syncWorker: Worker | undefined = undefined;
 	const onWorkerMessage = () => {
-		console.log('Cool it works out 😃');
+		console.log('Cool it works 😃');
 	};
 
 	const loadWorker = async () => {
