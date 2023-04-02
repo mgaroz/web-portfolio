@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { workActive, backColor } from '$lib/store';
-	import item1 from '$lib/img/sky-full.avif';
+	import item1 from '$lib/img/sky-cover.avif';
 	import item2 from '$lib/img/cf-landing.avif';
 	import item3 from '$lib/img/item3.avif';
 	import item4 from '$lib/img/item4.avif';
 
 	let colorObject: { [prop: string]: string } = {
-		item1: '#7d6e68',
+		item1: '#826487',
 		item2: '#373432',
 		item3: '#262324',
 		item4: '#1c2839'
