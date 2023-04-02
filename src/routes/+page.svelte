@@ -147,10 +147,13 @@
 	bind:this={ballContainer}
 	style="--backColor:{activeBackColor}"
 />
-<section class="2xs:px-6 md:h-[calc(70vh+128px)] md:px-20 md:pt-32" id="home">
+<section
+	class="2xs:px-6 2xs:h-[calc(95vh+128px)] md:h-[calc(90vh+128px)] md:px-20 md:pt-32"
+	id="home"
+>
 	<div
 		id="hero"
-		class="relative z-20 h-full w-full flex-col items-center justify-around overflow-hidden md:flex"
+		class="2xs:flex relative z-20 h-full w-full flex-col items-center justify-around overflow-hidden"
 	>
 		<div class="z-2 relative inset-0 mx-auto block w-full">
 			<div class="2xs:pt-40 relative mx-auto w-full pb-40 text-left md:pt-10">
