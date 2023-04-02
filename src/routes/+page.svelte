@@ -16,6 +16,19 @@
 	let m = { x: 0, y: 0 };
 	let tagline = 'Front-end developer with an adaptive approach to problem solving.';
 
+	let syncWorker: Worker | undefined = undefined;
+	const onWorkerMessage = () => {
+		console.log('Cool it works out 😃');
+	};
+
+	const loadWorker = async () => {
+		const SyncWorker = await import('$lib/workers/my-worker?worker');
+		syncWorker = new SyncWorker.default();
+
+		syncWorker.onmessage = onWorkerMessage;
+		syncWorker.postMessage({});
+	};
+
 	export let data;
 
 	$: activeBackColor = $backColor;
@@ -27,17 +40,17 @@
 	}
 
 	function animateHero() {
-		tl.from(nameContainer, {
+		tl.to(nameContainer, {
 			duration: 1.5,
-			y: 100,
-			opacity: 0
+			y: 0,
+			opacity: 1
 		})
-			.from(
+			.to(
 				lastNameContainer,
 				{
 					duration: 1.5,
-					y: 100,
-					opacity: 0
+					y: 0,
+					opacity: 1
 				},
 				'-=1.40'
 			)
@@ -45,8 +58,6 @@
 				subContainer,
 				{
 					duration: 1.5,
-					y: 100,
-					opacity: 0,
 					clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
 				},
 				'-=1.40'
@@ -56,6 +67,7 @@
 				{
 					duration: 1.5,
 					opacity: 1,
+					y: 0,
 					clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'
 				},
 				'-=1.5'
@@ -95,6 +107,7 @@
 			ySet(pos.y);
 		});
 		animateHero();
+		loadWorker();
 	});
 </script>
 
@@ -115,15 +128,17 @@
 		<div class="z-2 relative inset-0 mx-auto block w-full">
 			<div class="2xs:pt-40 relative mx-auto w-full pb-40 text-left md:pt-10">
 				<h1 class="text-hero-size 2xs:pb-10 leading-none md:pb-0">
-					<span class="2xs:translate-x-0 relative block md:-ml-2" bind:this={nameContainer}
-						>MIGUEL</span
+					<span
+						class="2xs:translate-x-0 relative block translate-y-28 opacity-0 md:-ml-2"
+						bind:this={nameContainer}>MIGUEL</span
 					>
 					<span
-						class="font-bgr 2xs:hidden relative max-w-[16.25rem] align-middle text-sm uppercase leading-5 opacity-0 md:inline-block"
+						class="font-bgr 2xs:hidden relative max-w-[16.25rem] translate-y-28 align-middle text-sm uppercase leading-5 opacity-0 md:inline-block"
 						bind:this={subContainer}>{tagline}</span
 					>
-					<span class="2xs:left-0  relative inline-block md:left-10" bind:this={lastNameContainer}
-						>GAROZ</span
+					<span
+						class="2xs:left-0 relative inline-block translate-y-28 opacity-0 md:left-10"
+						bind:this={lastNameContainer}>GAROZ</span
 					>
 				</h1>
 				<span
