@@ -19,12 +19,33 @@
 </script>
 
 <svelte:head>
-	<title>mgaroz | Font-End Developer</title>
-	<meta name="robots" content="index nofollow" />
+	<!-- Primary Meta Tags -->
+	<title>mgaroz | Front-End Developer</title>
+	<meta name="title" content="mgaroz | Front-End Developer" />
 	<meta
 		name="description"
 		content="Miguel Garoz is a Front-End Developer. He specializes in building exceptional websites, applications, and everything in between."
 	/>
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://www.mgaroz.pro/" />
+	<meta property="og:title" content="mgaroz | Front-End Developer" />
+	<meta
+		property="og:description"
+		content="Miguel Garoz is a Front-End Developer. He specializes in building exceptional websites, applications, and everything in between."
+	/>
+	<meta property="og:image" content="" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="https://www.mgaroz.pro/" />
+	<meta property="twitter:title" content="mgaroz | Front-End Developer" />
+	<meta
+		property="twitter:description"
+		content="Miguel Garoz is a Front-End Developer. He specializes in building exceptional websites, applications, and everything in between."
+	/>
+	<meta property="twitter:image" content="" />
 </svelte:head>
 
 <header>
