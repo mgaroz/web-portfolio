@@ -27,6 +27,14 @@
 		content="Miguel Garoz is a Front-End Developer. He specializes in building exceptional websites, applications, and everything in between."
 	/>
 
+	<!-- Google / Search Engine Tags -->
+	<meta itemprop="name" content="mgaroz | Front-End Developer" />
+	<meta
+		itemprop="description"
+		content="Miguel Garoz is a Front-End Developer. He specializes in building exceptional websites, applications, and everything in between."
+	/>
+	<meta itemprop="image" content="https://www.mgaroz.pro/website.webp" />
+
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.mgaroz.pro/" />
@@ -35,7 +43,7 @@
 		property="og:description"
 		content="Miguel Garoz is a Front-End Developer. He specializes in building exceptional websites, applications, and everything in between."
 	/>
-	<meta property="og:image" content="" />
+	<meta property="og:image" content="https://www.mgaroz.pro/website.webp" />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
@@ -45,7 +53,7 @@
 		property="twitter:description"
 		content="Miguel Garoz is a Front-End Developer. He specializes in building exceptional websites, applications, and everything in between."
 	/>
-	<meta property="twitter:image" content="" />
+	<meta property="twitter:image" content="https://www.mgaroz.pro/website.webp" />
 </svelte:head>
 
 <header>
