@@ -33,7 +33,7 @@
 		},
 		{
 			id: 'item3',
-			name: 'Project manager (WIP)',
+			name: 'Showcase (WIP)',
 			type: 'Development',
 			tech: 'Sveltekit, Tailwind, DaisyUI',
 			link: 'https://showcase-nine.vercel.app/',
@@ -64,7 +64,7 @@
 	>
 		{#each portfolioItems as { id, name, type, tech, link, source, img }}
 			<div
-				class="2xs:h-[50vmin] 2xs:flex 2xs:flex-col 2xs:w-full group relative transition-all duration-500 hover:grow-[2.5] md:h-[25vh] xl:flex xl:h-[45vh] xl:w-1/4 xl:grow xl:basis-0 2xl:h-[60vh]"
+				class="2xs:h-[50vmin] 2xs:flex 2xs:flex-col 2xs:w-full group relative shrink transition-all duration-500 hover:grow-[2.5] md:h-[25vh] xl:flex xl:h-[45vh] xl:w-1/4 xl:grow xl:basis-0 2xl:h-[60vh]"
 				on:mouseenter={() => setStatusAndColor(true, id)}
 				on:mouseleave={() => workActive.set(false)}
 			>
@@ -73,7 +73,7 @@
 						class="font-bgr 2xs:absolute 2xs:left-0 2xs:h-[25%] sm: 2xs:bottom-0 2xs:w-full bg-cod-gray-900/60 z-20 flex items-center justify-between backdrop-blur-sm md:opacity-0 md:transition-opacity md:duration-500 md:group-hover:opacity-100 xl:h-[10%]"
 					>
 						<p class="2xs:px-2 xs:px-4 text-[14px] uppercase">
-							{type}
+							{tech}
 						</p>
 						<div
 							class="flex gap-4 pr-4"
@@ -140,7 +140,7 @@
 					<p
 						class="text-gallery-800 p2 2xs:hidden 2xs:whitespace-nowrap uppercase opacity-0 transition-all duration-500 group-hover:opacity-100 md:block"
 					>
-						{tech}
+						{type}
 					</p>
 				</div>
 			</div>
