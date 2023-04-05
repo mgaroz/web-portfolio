@@ -35,7 +35,7 @@
 			id: 'item3',
 			name: 'Projects (WIP)',
 			type: 'Development',
-			tech: 'Sveltekit, Tailwind, DaisyUI',
+			tech: 'Sveltekit, DaisyUI',
 			link: 'https://showcase-nine.vercel.app/',
 			source: 'https://github.com/mgaroz/showcase/tree/main/apps/web',
 			img: item3
