@@ -2,13 +2,13 @@
 	import { workActive, backColor } from '$lib/store';
 	import item1 from '$lib/img/skyshot.webp';
 	import item2 from '$lib/img/coffeeshot.webp';
-	import item3 from '$lib/img/item3.avif';
+	import item3 from '$lib/img/showcaseport.webp';
 	import item4 from '$lib/img/airobodark.webp';
 
 	let colorObject: { [prop: string]: string } = {
 		item1: '#775280',
 		item2: '#5b5953',
-		item3: '#262324',
+		item3: '#9c9a9e',
 		item4: '#465f77'
 	};
 
@@ -33,11 +33,11 @@
 		},
 		{
 			id: 'item3',
-			name: 'Item 3',
+			name: 'Project manager (WIP)',
 			type: 'Development',
 			tech: 'Sveltekit, Tailwind',
 			link: '',
-			source: '',
+			source: 'https://github.com/mgaroz/showcase/tree/main/apps/web',
 			img: item3
 		},
 		{
