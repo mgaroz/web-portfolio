@@ -7,7 +7,7 @@
 
 	let colorObject: { [prop: string]: string } = {
 		item1: '#775280',
-		item2: '#3b3d38',
+		item2: '#5b5953',
 		item3: '#262324',
 		item4: '#465f77'
 	};
