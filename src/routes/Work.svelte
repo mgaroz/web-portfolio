@@ -33,7 +33,7 @@
 		},
 		{
 			id: 'item3',
-			name: 'Showcase (WIP)',
+			name: 'Projects (WIP)',
 			type: 'Development',
 			tech: 'Sveltekit, Tailwind, DaisyUI',
 			link: 'https://showcase-nine.vercel.app/',
