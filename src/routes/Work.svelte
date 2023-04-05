@@ -35,8 +35,8 @@
 			id: 'item3',
 			name: 'Project manager (WIP)',
 			type: 'Development',
-			tech: 'Sveltekit, Tailwind',
-			link: '',
+			tech: 'Sveltekit, Tailwind, DaisyUI',
+			link: 'https://showcase-nine.vercel.app/',
 			source: 'https://github.com/mgaroz/showcase/tree/main/apps/web',
 			img: item3
 		},
