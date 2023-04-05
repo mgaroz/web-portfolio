@@ -88,58 +88,6 @@
 					</div>
 				</div>
 			{/each}
-			<div
-				class="border-cod-gray-50 group h-[15.125rem] w-full items-center justify-between border-b py-[3.125rem] md:flex"
-			>
-				<div class="relative max-h-36 cursor-pointer items-center md:flex">
-					<div class="relative overflow-hidden transition-all">
-						<div
-							class="reverseit 2xs:hidden h-36 w-0 scale-125 bg-[url('https://picsum.photos/221/140')] bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100 md:block"
-						/>
-					</div>
-					<h3
-						class="text-titles 2xs:flex 2xs:h-20 2xs:pb-10 2xs:items-center uppercase md:block md:h-auto md:pb-0"
-						on:mouseenter={() => setStatus(true)}
-						on:mouseleave={() => setStatus(false)}
-					>
-						Website of the year
-					</h3>
-				</div>
-				<div class="flex-shrink-0 items-center justify-between md:flex md:gap-20">
-					<div>
-						<span class="font-bgr block text-[14px] uppercase">intern / projects / agency</span>
-					</div>
-					<div>
-						<span class="font-bgr block text-[14px] uppercase">march 21, 2023</span>
-					</div>
-				</div>
-			</div>
-			<div
-				class="border-cod-gray-50 group h-[15.125rem] w-full items-center justify-between border-b py-[3.125rem] md:flex"
-			>
-				<div class="relative max-h-36 cursor-pointer items-center md:flex">
-					<div class="relative overflow-hidden">
-						<div
-							class="reverseit 2xs:hidden h-36 w-0 scale-125 bg-[url('https://picsum.photos/222/140')] bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100 md:block"
-						/>
-					</div>
-					<h3
-						class="text-titles 2xs:flex 2xs:h-20 2xs:pb-10 2xs:items-center uppercase md:block md:h-auto md:pb-0"
-						on:mouseenter={() => setStatus(true)}
-						on:mouseleave={() => setStatus(false)}
-					>
-						The process
-					</h3>
-				</div>
-				<div class="flex-shrink-0 items-center justify-between md:flex md:gap-20">
-					<div>
-						<span class="font-bgr block text-[14px] uppercase">intern / projects / agency</span>
-					</div>
-					<div>
-						<span class="font-bgr block text-[14px] uppercase">march 21, 2023</span>
-					</div>
-				</div>
-			</div>
 		</div>
 		<hr class="h-[1.75rem] border-0" />
 		<hr class="h-[1.75rem] border-0" />
