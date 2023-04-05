@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { workActive, backColor } from '$lib/store';
-	import item1 from '$lib/img/sky-cover.avif';
-	import item2 from '$lib/img/cf-landing.avif';
+	import item1 from '$lib/img/skyshot.webp';
+	import item2 from '$lib/img/coffeeshot.webp';
 	import item3 from '$lib/img/item3.avif';
-	import item4 from '$lib/img/item4.avif';
+	import item4 from '$lib/img/airobodark.webp';
 
 	let colorObject: { [prop: string]: string } = {
-		item1: '#826487',
-		item2: '#373432',
+		item1: '#775280',
+		item2: '#3b3d38',
 		item3: '#262324',
-		item4: '#1c2839'
+		item4: '#465f77'
 	};
 
 	let portfolioItems = [
@@ -27,7 +27,7 @@
 			name: "Andy's Cafe",
 			type: 'Development',
 			tech: 'Sveltekit, Tailwind',
-			link: '',
+			link: 'https://coffee-landing.pages.dev/',
 			source: 'https://github.com/mgaroz/coffee-landing',
 			img: item2
 		},
@@ -42,11 +42,11 @@
 		},
 		{
 			id: 'item4',
-			name: 'Item 4',
+			name: 'AiRobo',
 			type: 'Development',
 			tech: 'Sveltekit, Tailwind',
-			link: '',
-			source: '',
+			link: 'https://airobo.pages.dev',
+			source: 'https://github.com/mgaroz/airobo',
 			img: item4
 		}
 	];
