@@ -19,7 +19,6 @@
 </script>
 
 <svelte:head>
-	<!-- Primary Meta Tags -->
 	<title>mgaroz | Front-End Developer</title>
 	<meta name="title" content="mgaroz | Front-End Developer" />
 	<meta
@@ -27,7 +26,6 @@
 		content="Miguel Garoz is a Front-End Developer. He specializes in building exceptional websites, applications, and everything in between."
 	/>
 
-	<!-- Google / Search Engine Tags -->
 	<meta itemprop="name" content="mgaroz | Front-End Developer" />
 	<meta
 		itemprop="description"
@@ -35,7 +33,6 @@
 	/>
 	<meta itemprop="image" content="https://www.mgaroz.pro/website.webp" />
 
-	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://www.mgaroz.pro/" />
 	<meta property="og:title" content="mgaroz | Front-End Developer" />
@@ -45,7 +42,6 @@
 	/>
 	<meta property="og:image" content="https://www.mgaroz.pro/website.webp" />
 
-	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:url" content="https://www.mgaroz.pro/" />
 	<meta property="twitter:title" content="mgaroz | Front-End Developer" />
