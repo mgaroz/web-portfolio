@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-	import Link from '$lib/components/Link.svelte';
 	import { blogActive, backColor, active, blogActiveTags } from '$lib/store';
 	import dayjs from 'dayjs';
 	import { onMount } from 'svelte';
@@ -100,13 +99,9 @@
 			<button
 				class="bg-gallery-500 text-cod-gray-500 group h-[40px] w-36 rounded-full align-middle uppercase"
 			>
-				<Link
-					href="https://dev.to/mgaroz"
-					content="Read blog"
-					textSize="14px"
-					duration="200ms"
-					displacement="20px"
-				/>
+				<a href="https://dev.to/mgaroz" class="text-sm" target="_blank" rel="noreferrer"
+					>Read blog</a
+				>
 			</button>
 		</div>
 	</div>
