@@ -6,6 +6,7 @@
 	export let duration: string;
 	export let displacement: string = '19px';
 	export let menuItem: boolean = false;
+	export let target: string = '_blank';
 
 	function setItemBeingHovered(item: string) {
 		$activeMenuInfo.itemBeingHovered = item;
@@ -47,7 +48,7 @@
 		/>
 	</div>
 {:else}
-	<a {href} class="block overflow-hidden uppercase">
+	<a {href} class="block overflow-hidden uppercase" {target}>
 		<span
 			class="slide-up transition-[top] group-hover:-top-[var(--displacement)]"
 			data-hover={content}

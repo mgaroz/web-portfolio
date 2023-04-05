@@ -153,7 +153,7 @@
 				class="bg-gallery-500 text-cod-gray-500 group h-[40px] w-36 rounded-full align-middle uppercase"
 			>
 				<Link
-					href="#blog"
+					href="https://dev.to/mgaroz"
 					content="Read blog"
 					textSize="14px"
 					duration="200ms"
