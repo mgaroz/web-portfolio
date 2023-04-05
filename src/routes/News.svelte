@@ -47,14 +47,14 @@
 		<hr class="h-[1.75rem] border-0" />
 		<hr class="h-[1.75rem] border-0" />
 		<div>
-			{#each blogData as post}
+			{#each blogData as { cover_image, url, title, tag_list, created_at }}
 				<div
 					class="border-cod-gray-50 group w-full items-center justify-between overflow-hidden border-b py-[3.125rem] first:border-t md:flex md:h-[15.125rem]"
 				>
 					<div class="relative max-h-36 max-w-fit cursor-pointer items-center md:flex">
 						<div class="relative overflow-hidden">
 							<div
-								style="background-image: url('{post.cover_image}')"
+								style="background-image: url('{cover_image}')"
 								class="reverseit 2xs:hidden h-36 w-0 scale-125 bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100 md:block"
 							/>
 						</div>
@@ -63,7 +63,7 @@
 							on:mouseenter={() => setStatus(true)}
 							on:mouseleave={() => setStatus(false)}
 						>
-							<a href={post.url} target="_blank">{post.title}</a>
+							<a href={url} target="_blank">{title}</a>
 						</h3>
 					</div>
 					<div class="flex-shrink-0 items-center justify-between md:flex md:h-16 md:gap-20">
@@ -73,7 +73,7 @@
 							on:mouseleave={() => setTrailerActive(false)}
 						>
 							<span class="font-bgr 2xs:leading-loose block text-[14px] uppercase md:leading-normal"
-								>{post.tag_list[0]} / {post.tag_list[1]} / {post.tag_list[2]}</span
+								>{tag_list[0]} / {tag_list[1]} / {tag_list[2]}</span
 							>
 						</div>
 						<div
@@ -82,7 +82,7 @@
 							on:mouseleave={() => setTrailerActive(false)}
 						>
 							<span class="font-bgr block text-[14px] uppercase"
-								>{dayjs(post.created_at.substring(0, 10)).format('MMMM DD, YYYY')}</span
+								>{dayjs(created_at.substring(0, 10)).format('MMMM DD, YYYY')}</span
 							>
 						</div>
 					</div>
