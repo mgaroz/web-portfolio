@@ -6,10 +6,10 @@
 	import item4 from '$lib/img/airoboshot.webp';
 
 	let colorObject: { [prop: string]: string } = {
-		item1: '#775280',
-		item2: '#5b5953',
-		item3: '#9c9a9e',
-		item4: '#465f77'
+		item1: '#8a6089',
+		item2: '#5f5a55',
+		item3: '#b4b3b8',
+		item4: '#54718f'
 	};
 
 	let portfolioItems = [
