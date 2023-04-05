@@ -6,7 +6,7 @@
 	export let duration: string;
 	export let displacement: string = '19px';
 	export let menuItem: boolean = false;
-	export let target: string = '_blank';
+	export let target: string = '_self';
 
 	function setItemBeingHovered(item: string) {
 		$activeMenuInfo.itemBeingHovered = item;
