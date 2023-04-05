@@ -19,19 +19,6 @@
 	let m = { x: 0, y: 0 };
 	let tagline = 'Front-end developer with an adaptive approach to problem solving.';
 
-	let syncWorker: Worker | undefined = undefined;
-	const onWorkerMessage = () => {
-		console.log('Cool it works 😃');
-	};
-
-	const loadWorker = async () => {
-		const SyncWorker = await import('$lib/workers/my-worker?worker');
-		syncWorker = new SyncWorker.default();
-
-		syncWorker.onmessage = onWorkerMessage;
-		syncWorker.postMessage({});
-	};
-
 	export let data;
 
 	$: activeBackColor = $backColor;
@@ -134,7 +121,6 @@
 			ySet(pos.y);
 		});
 		animateHero();
-		loadWorker();
 	});
 </script>
 
