@@ -2,8 +2,18 @@
 	import '../app.css';
 	import Link from '$lib/components/Link.svelte';
 	import MobileNav from '$lib/components/MobileNav.svelte';
-	import { active, activeMenuInfo, isMobileMenuActive } from '$lib/store';
+	import { active } from '$lib/store';
+	import { activeMenuInfo } from '$lib/store';
+	import { isMobileMenuActive } from '$lib/store';
 	import logo from '$lib/img/mg-logo.svg';
+
+	const menuItems = [
+		{ label: 'Home', href: '/', id: 'home' },
+		{ label: 'Portfolio', href: '#portfolio', id: 'portfolio' },
+		{ label: 'About', href: '#about', id: 'about' },
+		{ label: 'Blog', href: '#blog', id: 'blog' },
+		{ label: 'Contact', href: '#contact', id: 'contact' }
+	];
 
 	function handleEnter() {
 		active.set(true);
@@ -82,78 +92,25 @@
 				on:mouseenter={handleEnter}
 				on:mouseleave={() => active.set(false)}
 			>
-				<li
-					class="hovered group h-full px-[30px]"
-					style="opacity: {$activeMenuInfo.itemBeingHovered === 'home'
-						? 1
-						: $activeMenuInfo.isBeingHovered
-						? 0.5
-						: 1}"
-					on:mouseenter={() => itemHovered(true, 'home')}
-					on:mouseleave={() => itemHovered(false, '')}
-				>
-					<Link href="/" content="Home" textSize="14px" duration={'150ms'} menuItem={true} />
-				</li>
-				<li
-					class="hovered group h-full px-[30px]"
-					style="opacity: {$activeMenuInfo.itemBeingHovered === 'portfolio'
-						? 1
-						: $activeMenuInfo.isBeingHovered
-						? 0.5
-						: 1}"
-					on:mouseenter={() => itemHovered(true, 'portfolio')}
-					on:mouseleave={() => itemHovered(false, '')}
-				>
-					<Link
-						href="#portfolio"
-						content="Portfolio"
-						textSize="14px"
-						duration={'150ms'}
-						menuItem={true}
-					/>
-				</li>
-				<li
-					class="hovered group h-full px-[30px]"
-					style="opacity: {$activeMenuInfo.itemBeingHovered === 'about'
-						? 1
-						: $activeMenuInfo.isBeingHovered
-						? 0.5
-						: 1}"
-					on:mouseenter={() => itemHovered(true, 'about')}
-					on:mouseleave={() => itemHovered(false, '')}
-				>
-					<Link href="#about" content="About" textSize="14px" duration={'150ms'} menuItem={true} />
-				</li>
-				<li
-					class="hovered group h-full px-[30px]"
-					style="opacity: {$activeMenuInfo.itemBeingHovered === 'blog'
-						? 1
-						: $activeMenuInfo.isBeingHovered
-						? 0.5
-						: 1}"
-					on:mouseenter={() => itemHovered(true, 'blog')}
-					on:mouseleave={() => itemHovered(false, '')}
-				>
-					<Link href="#blog" content="Blog" textSize="14px" duration={'150ms'} menuItem={true} />
-				</li>
-				<li
-					class="hovered group h-full pl-[30px]"
-					style="opacity: {$activeMenuInfo.itemBeingHovered === 'contact'
-						? 1
-						: $activeMenuInfo.isBeingHovered
-						? 0.5
-						: 1}"
-					on:mouseenter={() => itemHovered(true, 'contact')}
-					on:mouseleave={() => itemHovered(false, '')}
-				>
-					<Link
-						href="#contact"
-						content="Contact"
-						textSize="14px"
-						duration={'150ms'}
-						menuItem={true}
-					/>
-				</li>
+				{#each menuItems as item}
+					<li
+						class="hovered group h-full px-[30px] {$activeMenuInfo.itemBeingHovered === item.id
+							? 'li__opacity__full'
+							: $activeMenuInfo.isBeingHovered
+							? 'li__opacity__half'
+							: 'li__opacity__full'}"
+						on:mouseenter={() => itemHovered(true, item.id)}
+						on:mouseleave={() => itemHovered(false, '')}
+					>
+						<Link
+							href={item.href}
+							content={item.label}
+							textSize="14px"
+							duration={'150ms'}
+							menuItem={true}
+						/>
+					</li>
+				{/each}
 			</ul>
 		</div>
 	</nav>
@@ -169,6 +126,13 @@
 <slot />
 
 <style>
+	.li__opacity__full {
+		opacity: 1;
+	}
+
+	.li__opacity__half {
+		opacity: 0.5;
+	}
 	.hovered {
 		transition: opacity 0.1s ease-in-out;
 	}
