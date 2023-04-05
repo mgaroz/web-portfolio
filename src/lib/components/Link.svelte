@@ -17,8 +17,10 @@
 	}
 
 	function setPreviousNavItem() {
-		$activeMenuInfo.itemBeingHovered = '';
-		$activeMenuInfo.isBeingHovered = false;
+		setTimeout(() => {
+			$activeMenuInfo.itemBeingHovered = '';
+			$activeMenuInfo.isBeingHovered = false;
+		}, 0);
 	}
 </script>
 
