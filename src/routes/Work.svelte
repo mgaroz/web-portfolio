@@ -3,7 +3,7 @@
 	import item1 from '$lib/img/skyshot.webp';
 	import item2 from '$lib/img/coffeeshot.webp';
 	import item3 from '$lib/img/showcaseport.webp';
-	import item4 from '$lib/img/airobodark.webp';
+	import item4 from '$lib/img/airoboshot.webp';
 
 	let colorObject: { [prop: string]: string } = {
 		item1: '#775280',
