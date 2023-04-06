@@ -1,7 +1,10 @@
 <script lang="ts">
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-	import { blogActive, backColor, active, blogActiveTags } from '$lib/store';
+	import { blogActive } from '$lib/store';
+	import { backColor } from '$lib/store';
+	import { active } from '$lib/store';
+	import { blogActiveTags } from '$lib/store';
 	import dayjs from 'dayjs';
 	import { onMount } from 'svelte';
 	let sectionContainer: HTMLDivElement;

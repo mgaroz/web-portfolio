@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { workActive, backColor } from '$lib/store';
+	import { workActive } from '$lib/store';
+	import { backColor } from '$lib/store';
 	import item1 from '$lib/img/skyshot.webp';
 	import item2 from '$lib/img/coffeeshot.webp';
 	import item3 from '$lib/img/showcaseport.webp';
