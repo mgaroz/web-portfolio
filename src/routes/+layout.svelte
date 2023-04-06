@@ -102,7 +102,7 @@
 						on:mouseenter={() => itemHovered(true, item.id)}
 						on:mouseleave={() => itemHovered(false, '')}
 					>
-						<Link href={item.href} content={item.label} textSize="14px" duration={'150ms'} />
+						<Link href={item.href} content={item.label} />
 					</li>
 				{/each}
 			</ul>
