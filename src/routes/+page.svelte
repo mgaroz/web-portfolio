@@ -32,15 +32,17 @@
 	function animateHero() {
 		tl.to(nameContainer, {
 			duration: 1.5,
-			y: 0,
-			opacity: 1
+			clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+			opacity: 1,
+			y: 0
 		})
 			.to(
 				lastNameContainer,
 				{
 					duration: 1.5,
-					y: 0,
-					opacity: 1
+					clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+					opacity: 1,
+					y: 0
 				},
 				'-=1.40'
 			)
@@ -145,7 +147,7 @@
 			<div class="2xs:pt-40 relative mx-auto w-full pb-40 text-left md:pt-10">
 				<h1 class="text-hero-size 2xs:pb-10 leading-none md:pb-0">
 					<span
-						class="2xs:translate-x-0 relative block translate-y-28 opacity-0 md:-ml-2"
+						class="2xs:ml-0 name-container relative block translate-y-28 opacity-0 md:-ml-2"
 						bind:this={nameContainer}>MIGUEL</span
 					>
 					<span
@@ -153,7 +155,7 @@
 						bind:this={subContainer}>{tagline}</span
 					>
 					<span
-						class="2xs:left-0 relative inline-block translate-y-28 opacity-0 md:left-10"
+						class="2xs:left-0 name-container relative inline-block translate-y-28 opacity-0 md:left-10"
 						bind:this={lastNameContainer}>GAROZ</span
 					>
 				</h1>
@@ -279,6 +281,14 @@
 <style>
 	.text-hero-size {
 		font-size: clamp(3.15rem, 1.3846rem + 7.8462vw, 10.8rem);
+	}
+
+	.name-container {
+		clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+	}
+
+	.lastname-container {
+		clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
 	}
 
 	.circle {
