@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-	import Link from '$lib/components/Link.svelte';
+	import TextClear from '$lib/components/TextClear.svelte';
 	import { onMount } from 'svelte';
 
 	let headerContainer: HTMLDivElement;
@@ -76,7 +76,7 @@
 	</div>
 	<div id="about-footer" class="flex justify-start gap-8 2xl:mt-16">
 		<div class="font-bgr 2xs:hidden group md:block">
-			<Link href="#blog" content="Blog" textSize="14px" duration="200ms" displacement="20px" />
+			<TextClear href="#blog" text="Blog" />
 		</div>
 		<div class="flex h-5 w-5 items-center justify-center">
 			<a href="#blog" aria-label="Blog">
