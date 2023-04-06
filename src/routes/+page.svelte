@@ -287,10 +287,6 @@
 		clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
 	}
 
-	.lastname-container {
-		clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
-	}
-
 	.circle {
 		width: 40px;
 		height: 40px;
