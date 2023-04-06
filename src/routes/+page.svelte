@@ -5,7 +5,11 @@
 	import Contact from './Contact.svelte';
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
-	import { active, workActive, backColor, blogActive, blogActiveTags } from '$lib/store';
+	import { active } from '$lib/store';
+	import { workActive } from '$lib/store';
+	import { backColor } from '$lib/store';
+	import { blogActive } from '$lib/store';
+	import { blogActiveTags } from '$lib/store';
 	import TextClear from '$lib/components/TextClear.svelte';
 
 	let nameContainer: HTMLSpanElement;
