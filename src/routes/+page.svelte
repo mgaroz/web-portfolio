@@ -179,9 +179,9 @@
 				class="2xs:pb-4 flex w-full -translate-x-32 items-center gap-4 md:pb-8"
 				bind:this={socialIconsContainer}
 			>
-				<a href="https://github.com/mgaroz" target="_blank" aria-label="Github">
+				<a href="https://github.com/mgaroz" target="_blank" aria-label="Github" class="group">
 					<svg
-						class="h-7 w-7 text-white"
+						class="h-7 w-7 text-white transition-transform duration-200 lg:group-hover:scale-125"
 						width="24"
 						height="24"
 						viewBox="0 0 24 24"
@@ -197,9 +197,14 @@
 						/></svg
 					>
 				</a>
-				<a href="https://www.linkedin.com/in/mgaroz/" target="_blank" aria-label="LinkedIn">
+				<a
+					href="https://www.linkedin.com/in/mgaroz/"
+					target="_blank"
+					aria-label="LinkedIn"
+					class="group"
+				>
 					<svg
-						class="h-7 w-7 text-white"
+						class="h-7 w-7 text-white transition-transform duration-200 lg:group-hover:scale-125"
 						viewBox="0 0 24 24"
 						fill="none"
 						stroke="currentColor"
@@ -212,9 +217,9 @@
 						/> <rect x="2" y="9" width="4" height="12" /> <circle cx="4" cy="4" r="2" /></svg
 					>
 				</a>
-				<a href="https://twitter.com/mgaroz_pro" target="_blank" aria-label="Twitter">
+				<a href="https://twitter.com/mgaroz_pro" target="_blank" aria-label="Twitter" class="group">
 					<svg
-						class="h-7 w-7 text-white"
+						class="h-7 w-7 text-white transition-transform duration-200 lg:group-hover:scale-125"
 						width="24"
 						height="24"
 						viewBox="0 0 24 24"
