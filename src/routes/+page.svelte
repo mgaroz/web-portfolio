@@ -6,7 +6,7 @@
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 	import { active, workActive, backColor, blogActive, blogActiveTags } from '$lib/store';
-	import Link from '$lib/components/Link.svelte';
+	import TextClear from '$lib/components/TextClear.svelte';
 
 	let nameContainer: HTMLSpanElement;
 	let lastNameContainer: HTMLSpanElement;
@@ -234,13 +234,7 @@
 					bind:this={heroFooterLeftContainer}
 				>
 					<div class="2xs:hidden md:block">
-						<Link
-							href="#portfolio"
-							content="Scroll to explore"
-							textSize="14px"
-							duration="200ms"
-							displacement="20px"
-						/>
+						<TextClear href="#portfolio" text="Scroll to explore" />
 					</div>
 					<div class="flex h-5 w-5 items-center justify-center">
 						<a href="#portfolio" aria-label="Portfolio">

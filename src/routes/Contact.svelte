@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Link from '$lib/components/Link.svelte';
+	import TextClear from '$lib/components/TextClear.svelte';
 	let currentYear = new Date().getFullYear();
 </script>
 
@@ -77,13 +77,15 @@
 				</svg>
 			</a>
 			<div class="2xs:hidden md:block">
-				<Link href="/" content="Back to top" textSize="14px" duration="200ms" displacement="20px" />
+				<TextClear text="Back to top" href="#home" />
 			</div>
 		</div>
 		<div class="font-bgr">
 			<span class="text-[14px] uppercase">Miguel Garoz &#169; {currentYear}</span>
 		</div>
-		<div />
+		<div>
+			<TextClear text="Made with SvelteKit ❤️" href="https://kit.svelte.dev" target="_blank" />
+		</div>
 	</div>
 </section>
 
