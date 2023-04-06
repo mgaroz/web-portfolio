@@ -58,8 +58,10 @@
 			</form>
 		</div>
 	</div>
-	<div class="items-center justify-between pb-12 md:flex md:gap-8">
-		<div class="font-bgr 2xs:gap-1 group flex items-center md:justify-between md:gap-8">
+	<div
+		class="2xs:grid 2xs:grid-cols-[1fr_1fr] 2xs:grid-rows-[1fr_1fr] items-center justify-between pb-12 md:flex md:gap-8"
+	>
+		<div class="font-bgr 2xs:gap-1 2xs:justify-between group flex items-center md:gap-8">
 			<a href="/" aria-label="Home">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -80,11 +82,11 @@
 				<TextClear text="Back to top" href="#home" />
 			</div>
 		</div>
-		<div class="font-bgr">
+		<div class="font-bgr 2xs:text-right md:text-left">
 			<span class="text-[14px] uppercase">Miguel Garoz &#169; {currentYear}</span>
 		</div>
-		<div>
-			<TextClear text="Made with SvelteKit ❤️" href="https://kit.svelte.dev" target="_blank" />
+		<div class="2xs:text-right col-span-2">
+			<TextClear text="Made with Sveltekit" href="https://kit.svelte.dev" target="_blank" />
 		</div>
 	</div>
 </section>
