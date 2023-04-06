@@ -83,9 +83,7 @@
 		<div class="font-bgr">
 			<span class="text-[14px] uppercase">Miguel Garoz &#169; {currentYear}</span>
 		</div>
-		<div class="font-bgr">
-			<span class="text-[14px] uppercase">Follow me</span>
-		</div>
+		<div />
 	</div>
 </section>
 
