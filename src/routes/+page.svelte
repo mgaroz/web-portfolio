@@ -11,6 +11,7 @@
 	import { blogActive } from '$lib/store';
 	import { blogActiveTags } from '$lib/store';
 	import TextClear from '$lib/components/TextClear.svelte';
+	// import Card from '$lib/components/Card.svelte';
 
 	let nameContainer: HTMLSpanElement;
 	let lastNameContainer: HTMLSpanElement;
@@ -275,6 +276,9 @@
 <div class="2xs:px-6 md:px-20">
 	<hr class="border-cod-gray-50 pb-28" />
 </div>
+<!-- <div class="min-h-[75vh] px-20 pb-28 pt-28">
+	<Card />
+</div> -->
 <About />
 {#await data then res}
 	<News blogData={res.response} />
