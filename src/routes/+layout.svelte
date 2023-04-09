@@ -1,9 +1,8 @@
 <script lang="ts">
 	import '../app.css';
-	import Link from '$lib/components/Link.svelte';
+	import Menu from '$lib/components/Menu.svelte';
 	import MobileNav from '$lib/components/MobileNav.svelte';
 	import { active } from '$lib/store';
-	import { activeMenuInfo } from '$lib/store';
 	import { isMobileMenuActive } from '$lib/store';
 	import logo from '$lib/img/mg-logo.svg';
 
@@ -14,18 +13,6 @@
 		{ label: 'Blog', href: '#blog', id: 'blog' },
 		{ label: 'Contact', href: '#contact', id: 'contact' }
 	];
-
-	function handleEnter() {
-		active.set(true);
-	}
-
-	function itemHovered(status: boolean, item: string) {
-		activeMenuInfo.set({
-			itemBeingHovered: item,
-			isBeingHovered: status,
-			currentActiveItem: $activeMenuInfo.currentActiveItem
-		});
-	}
 </script>
 
 <svelte:head>
@@ -86,26 +73,12 @@
 		<div class="flex items-center">
 			<img src={logo} alt="logo" class="h-4" width="144px" height="16" />
 		</div>
-		<div class="menu 2xs:hidden h-full md:block">
-			<ul
-				class="font-bgr flex h-full list-none items-center"
-				on:mouseenter={handleEnter}
-				on:mouseleave={() => active.set(false)}
-			>
-				{#each menuItems as item}
-					<li
-						class="hovered group h-full px-[30px] {$activeMenuInfo.itemBeingHovered === item.id
-							? 'li__opacity__full'
-							: $activeMenuInfo.isBeingHovered
-							? 'li__opacity__half'
-							: 'li__opacity__full'}"
-						on:mouseenter={() => itemHovered(true, item.id)}
-						on:mouseleave={() => itemHovered(false, '')}
-					>
-						<Link href={item.href} content={item.label} />
-					</li>
-				{/each}
-			</ul>
+		<div
+			class="flex h-full items-center"
+			on:mouseenter={() => ($active = true)}
+			on:mouseleave={() => ($active = false)}
+		>
+			<Menu {menuItems} />
 		</div>
 	</nav>
 	<div
@@ -120,17 +93,6 @@
 <slot />
 
 <style>
-	.li__opacity__full {
-		opacity: 1;
-	}
-
-	.li__opacity__half {
-		opacity: 0.5;
-	}
-	.hovered {
-		transition: opacity 0.1s ease-in-out;
-	}
-
 	.bar-one,
 	.bar-two,
 	.bar-three {
