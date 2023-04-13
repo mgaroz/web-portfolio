@@ -5,6 +5,7 @@
 	import item2 from '$lib/img/coffeeshot.webp';
 	import item3 from '$lib/img/showcaseport.webp';
 	import item4 from '$lib/img/airoboshot.webp';
+	import item5 from '$lib/img/theblogshot1.webp';
 
 	let colorObject: { [prop: string]: string } = {
 		item1: '#8a6089',
@@ -43,12 +44,12 @@
 		},
 		{
 			id: 'item4',
-			name: 'AiRobo',
-			type: 'Development',
-			tech: 'Sveltekit, Tailwind',
-			link: 'https://airobo.pages.dev',
-			source: 'https://github.com/mgaroz/airobo',
-			img: item4
+			name: 'Blog',
+			type: 'Optimization',
+			tech: 'Astro, Svelte',
+			link: 'https://theblog-8jg.pages.dev/',
+			source: 'https://github.com/mgaroz/theblog',
+			img: item5
 		}
 	];
 
