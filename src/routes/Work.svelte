@@ -5,7 +5,7 @@
 	import item2 from '$lib/img/coffeeshot.webp';
 	import item3 from '$lib/img/showcaseport.webp';
 	import item4 from '$lib/img/airoboshot.webp';
-	import item5 from '$lib/img/theblogshot1.webp';
+	import item5 from '$lib/img/theblogshot2.avif';
 
 	let colorObject: { [prop: string]: string } = {
 		item1: '#8a6089',
