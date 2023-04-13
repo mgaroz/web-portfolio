@@ -11,7 +11,7 @@
 		item1: '#8a6089',
 		item2: '#5f5a55',
 		item3: '#b4b3b8',
-		item4: '#54718f'
+		item4: '#7c7772'
 	};
 
 	let portfolioItems = [
