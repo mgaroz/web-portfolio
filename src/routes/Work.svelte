@@ -72,7 +72,8 @@
 			>
 				<div class="relative mb-4 min-h-full w-full overflow-hidden">
 					<div
-						class="font-bgr 2xs:absolute 2xs:left-0 2xs:h-[25%] sm: 2xs:bottom-0 2xs:w-full bg-cod-gray-900/60 z-20 flex items-center justify-between backdrop-blur-sm md:opacity-0 md:transition-opacity md:duration-500 md:group-hover:opacity-100 xl:h-[10%]"
+						class="font-bgr 2xs:absolute 2xs:left-0 2xs:h-[25%] sm: 2xs:bottom-0 2xs:w-full bg-cod-gray-900/60 2xs:backdrop-blur-[1px] z-20 flex items-center justify-between md:opacity-0 md:backdrop-blur-sm md:transition-opacity md:duration-500 md:group-hover:opacity-100 xl:h-[10%]"
+						style="translateZ(0)"
 					>
 						<p class="2xs:px-2 xs:px-4 text-[14px] uppercase">
 							{tech}
