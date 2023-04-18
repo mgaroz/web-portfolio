@@ -140,7 +140,7 @@
 						{name}
 					</p>
 					<p
-						class="text-gallery-800 p2 2xs:hidden 2xs:whitespace-nowrap uppercase opacity-0 transition-all duration-500 group-hover:opacity-100 md:block"
+						class="text-gallery-800 2xs:hidden 2xs:whitespace-nowrap text-[14px] uppercase opacity-0 transition-all duration-500 group-hover:opacity-100 md:block"
 					>
 						{type}
 					</p>
@@ -153,9 +153,5 @@
 <style>
 	.p1 {
 		font-size: clamp(0.875rem, 0.7885rem + 0.3846vw, 1.25rem);
-	}
-
-	.p2 {
-		font-size: 14px;
 	}
 </style>
