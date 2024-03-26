@@ -1,7 +1,7 @@
 export async function load() {
-	const response = async () => {
+	const response = () => {
 		try {
-			const res = await fetch('https://dev.to/api/articles/latest?username=mgaroz&per_page=3').then(
+			const res = fetch('https://dev.to/api/articles/latest?username=mgaroz&per_page=3').then(
 				(result) => result.json()
 			);
 			return res;
