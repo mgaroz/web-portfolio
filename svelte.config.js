@@ -15,7 +15,11 @@ const config = {
 			routes: {
 				include: ['/*'],
 				exclude: ['<all>']
-			}
+			},
+			pages: 'build',
+			assets: 'build',
+			fallback: null,
+			precompress: false
 		})
 	}
 };
