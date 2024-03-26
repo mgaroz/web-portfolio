@@ -1,3 +1,5 @@
+export const prerender = false;
+
 export async function _sendEmail(name: string, email: string, subject: string, message: string) {
 	const request = new Request('https://api.mailchannels.net/tx/v1/send', {
 		method: 'POST',
