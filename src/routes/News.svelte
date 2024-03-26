@@ -9,7 +9,14 @@
 	import { onMount } from 'svelte';
 	let sectionContainer: HTMLDivElement;
 
-	export let blogData: any;
+	let blogData: any;
+
+	const getData = async () => {
+		const data = await fetch('https://dev.to/api/articles/latest?username=mgaroz&per_page=3')
+			.then((res) => res.json())
+			.catch((e) => console.error(e));
+		blogData = data;
+	};
 
 	function setStatus(status: boolean) {
 		active.set(false);
@@ -35,6 +42,8 @@
 				toggleActions: 'play reverse play reverse'
 			}
 		});
+
+		getData();
 	});
 </script>
 
