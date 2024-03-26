@@ -18,7 +18,7 @@ const config = {
 			},
 			pages: 'build',
 			assets: 'build',
-			fallback: null,
+			fallback: undefined,
 			precompress: false
 		})
 	}
