@@ -1,4 +1,4 @@
-export async function load({ fetch }) {
+export async function load() {
 	const response = async () => {
 		try {
 			const res = await fetch('https://dev.to/api/articles/latest?username=mgaroz&per_page=3').then(
