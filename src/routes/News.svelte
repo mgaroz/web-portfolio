@@ -9,14 +9,7 @@
 	import { onMount } from 'svelte';
 	let sectionContainer: HTMLDivElement;
 
-	let blogData: any;
-
-	const getData = async () => {
-		const data = await fetch('https://dev.to/api/articles/latest?username=mgaroz&per_page=3')
-			.then((res) => res.json())
-			.catch((e) => console.error(e));
-		blogData = data;
-	};
+	export let blogData: any;
 
 	function setStatus(status: boolean) {
 		active.set(false);
@@ -42,8 +35,6 @@
 				toggleActions: 'play reverse play reverse'
 			}
 		});
-
-		getData();
 	});
 </script>
 
@@ -58,52 +49,49 @@
 		<hr class="h-[1.75rem] border-0" />
 		<hr class="h-[1.75rem] border-0" />
 		<div>
-			{#await blogData then}
-				{#each blogData as { cover_image, url, title, tag_list, created_at }}
-					<div
-						class="border-cod-gray-50 group w-full items-center justify-between overflow-hidden border-b py-[3.125rem] first:border-t md:flex md:h-[15.125rem]"
-					>
-						<div class="relative max-h-36 max-w-fit cursor-pointer items-center md:flex">
-							<div class="relative overflow-hidden">
-								<div
-									style="background-image: url('{cover_image}')"
-									class="reverseit 2xs:hidden h-36 w-0 scale-125 bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100 md:block"
-								/>
-							</div>
-							<h3
-								class="text-titles 2xs:flex 2xs:h-20 2xs:pb-10 2xs:items-center uppercase md:block md:h-auto md:pb-0"
-								on:mouseenter={() => setStatus(true)}
-								on:mouseleave={() => setStatus(false)}
-							>
-								<a href={url} target="_blank">{title}</a>
-							</h3>
+			{#each blogData as { cover_image, url, title, tag_list, created_at }}
+				<div
+					class="border-cod-gray-50 group w-full items-center justify-between overflow-hidden border-b py-[3.125rem] first:border-t md:flex md:h-[15.125rem]"
+				>
+					<div class="relative max-h-36 max-w-fit cursor-pointer items-center md:flex">
+						<div class="relative overflow-hidden">
+							<div
+								style="background-image: url('{cover_image}')"
+								class="reverseit 2xs:hidden h-36 w-0 scale-125 bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100 md:block"
+							/>
 						</div>
-						<div class="flex-shrink-0 items-center justify-between md:flex md:h-16 md:gap-20">
-							<!-- svelte-ignore a11y-no-static-element-interactions -->
-							<div
-								class="items-center justify-center md:flex md:h-16"
-								on:mouseenter={() => setTrailerActive(true)}
-								on:mouseleave={() => setTrailerActive(false)}
+						<h3
+							class="text-titles 2xs:flex 2xs:h-20 2xs:pb-10 2xs:items-center uppercase md:block md:h-auto md:pb-0"
+							on:mouseenter={() => setStatus(true)}
+							on:mouseleave={() => setStatus(false)}
+						>
+							<a href={url} target="_blank">{title}</a>
+						</h3>
+					</div>
+					<div class="flex-shrink-0 items-center justify-between md:flex md:h-16 md:gap-20">
+						<!-- svelte-ignore a11y-no-static-element-interactions -->
+						<div
+							class="items-center justify-center md:flex md:h-16"
+							on:mouseenter={() => setTrailerActive(true)}
+							on:mouseleave={() => setTrailerActive(false)}
+						>
+							<span class="font-bgr 2xs:leading-loose block text-[14px] uppercase md:leading-normal"
+								>{tag_list[0]} / {tag_list[1]} / {tag_list[2]}</span
 							>
-								<span
-									class="font-bgr 2xs:leading-loose block text-[14px] uppercase md:leading-normal"
-									>{tag_list[0]} / {tag_list[1]} / {tag_list[2]}</span
-								>
-							</div>
-							<!-- svelte-ignore a11y-no-static-element-interactions -->
-							<div
-								class="items-center justify-center md:flex md:h-16"
-								on:mouseenter={() => setTrailerActive(true)}
-								on:mouseleave={() => setTrailerActive(false)}
+						</div>
+						<!-- svelte-ignore a11y-no-static-element-interactions -->
+						<div
+							class="items-center justify-center md:flex md:h-16"
+							on:mouseenter={() => setTrailerActive(true)}
+							on:mouseleave={() => setTrailerActive(false)}
+						>
+							<span class="font-bgr block text-[14px] uppercase"
+								>{dayjs(created_at.substring(0, 10)).format('MMMM DD, YYYY')}</span
 							>
-								<span class="font-bgr block text-[14px] uppercase"
-									>{dayjs(created_at.substring(0, 10)).format('MMMM DD, YYYY')}</span
-								>
-							</div>
 						</div>
 					</div>
-				{/each}
-			{/await}
+				</div>
+			{/each}
 		</div>
 		<hr class="h-[1.75rem] border-0" />
 		<hr class="h-[1.75rem] border-0" />
