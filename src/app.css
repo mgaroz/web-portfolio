@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	@font-face {
+		font-family: 'Basis Grotesque Pro Medium';
+		src: local('Basis Grotesque Pro Medium'),
+			url('lib/font/BasisGrotesquePro-Medium.woff2') format('woff2');
+		font-weight: 500;
+		font-display: swap;
+	}
+
+	@font-face {
+		font-family: 'Basis Grotesque Pro Regular';
+		src: local('Basis Grotesque Pro Regular'),
+			url('lib/font/BasisGrotesquePro-Regular.woff2') format('woff2');
+		font-weight: 400;
+		font-display: swap;
+	}
+
+	h1 {
+		@apply text-h1;
+	}
+
+	h2 {
+		@apply text-h2;
+	}
+
+	h3 {
+		@apply text-h3;
+	}
+
+	h4 {
+		@apply text-h4;
+	}
+
+	h5 {
+		@apply text-h5;
+	}
+
+	h6 {
+		@apply text-h6;
+	}
+
+	quote {
+		@apply text-quote;
+	}
+}
