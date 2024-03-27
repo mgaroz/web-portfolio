@@ -32,7 +32,6 @@
 
 	function handleMousemove(e: MouseEvent) {
 		(m.x = e.clientX), (m.y = e.clientY);
-		console.log('mouse pos', e);
 	}
 
 	function animateHero() {
