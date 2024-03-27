@@ -1,7 +1,6 @@
 export async function _sendEmail(
 	name: FormDataEntryValue,
 	email: FormDataEntryValue,
-	subject: FormDataEntryValue,
 	message: FormDataEntryValue
 ) {
 	const request = new Request('https://api.mailchannels.net/tx/v1/send', {
@@ -25,7 +24,6 @@ export async function _sendEmail(
 					type: 'text/plain',
 					value: `<p> You've got a new message from: <strong>${name}</strong> - ${email}</p>
 
-        <h3>${subject}</h3>
         <p>${message}</p>`
 				}
 			]
