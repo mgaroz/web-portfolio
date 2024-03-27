@@ -4,6 +4,7 @@
 	import MobileNav from '$lib/components/MobileNav.svelte';
 	import { active } from '$lib/store';
 	import { isMobileMenuActive } from '$lib/store';
+	import { Toaster } from 'svelte-french-toast';
 	import logo from '$lib/img/mg-logo.svg';
 
 	const menuItems = [
@@ -49,6 +50,7 @@
 	<meta property="twitter:image" content="https://www.mgaroz.pro/website.webp" />
 </svelte:head>
 
+<Toaster />
 <header>
 	<button
 		aria-controls="primary-navigation"
@@ -68,7 +70,7 @@
 		<span class="sr-only">Menu</span></button
 	>
 	<nav
-		class="bg-cod-gray-500 2xs:px-6 2xs:py-8 fixed z-30 flex w-full items-center justify-between md:h-32 md:py-5 md:px-20"
+		class="bg-cod-gray-500 2xs:px-6 2xs:py-8 fixed z-30 flex w-full items-center justify-between md:h-32 md:px-20 md:py-5"
 	>
 		<div class="flex items-center">
 			<img src={logo} alt="logo" class="h-4" width="144px" height="16" />
