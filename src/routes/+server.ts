@@ -1,3 +1,5 @@
+import { fail } from '@sveltejs/kit';
+
 export async function _sendEmail(
 	name: FormDataEntryValue,
 	email: FormDataEntryValue,
@@ -31,18 +33,20 @@ export async function _sendEmail(
 	});
 
 	let respContent = '';
+	let respStatus: number = 0;
 	if (request.method == 'POST') {
 		const response = await fetch(request);
 		const respText = await response.text();
+		respStatus = response.status;
 
 		respContent = response.status + ' ' + response.statusText + '\n\n' + respText;
 		if (response.status >= 400) {
-			console.error(
-				`Error sending email: ${response.status} ${response.statusText} ${await response.text()}`
-			);
+			console.error(`Error sending email: ${response.status} ${response.statusText}`);
+			// this matters
+			return fail(response.status, { status: response.status, message: response.statusText });
 		}
 	}
 	return new Response(respContent, {
-		status: 200
+		status: respStatus
 	});
 }

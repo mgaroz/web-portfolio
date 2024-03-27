@@ -10,7 +10,15 @@
 	const submitForm = () => {
 		return async ({ result, update }: any) => {
 			loading = true;
+
 			switch (result.type) {
+				case 'success':
+					toast.success('Form was successfully submitted', {
+						style: 'background: #2E2E2E; border: 1px solid #3ECF8E; color:white'
+					});
+					await invalidateAll();
+					await applyAction(result);
+					break;
 				case 'redirect':
 					toast.success('Form was successfully submitted', {
 						style: 'background: #2E2E2E; border: 1px solid #3ECF8E; color:white'
@@ -19,8 +27,7 @@
 					await applyAction(result);
 					break;
 				case 'failure':
-					console.log(result.data.errors);
-					toast.error('Something went wrong', {
+					toast.error(result.data.status + ' ' + result.data.message, {
 						style: 'background: #2E2E2E; border: 1px solid #f87171; color:white'
 					});
 					await update();
