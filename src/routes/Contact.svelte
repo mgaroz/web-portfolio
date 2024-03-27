@@ -1,6 +1,41 @@
 <script lang="ts">
+	import { applyAction, enhance } from '$app/forms';
+	import { invalidateAll } from '$app/navigation';
 	import TextClear from '$lib/components/TextClear.svelte';
+	import toast from 'svelte-french-toast';
+
+	let loading = false;
 	let currentYear = new Date().getFullYear();
+
+	const submitForm = () => {
+		return async ({ result, update }: any) => {
+			loading = true;
+			switch (result.type) {
+				case 'redirect':
+					toast.success('Form was successfully submitted', {
+						style: 'background: #2E2E2E; border: 1px solid #3ECF8E; color:white'
+					});
+					await invalidateAll();
+					await applyAction(result);
+					break;
+				case 'failure':
+					console.log(result.data.errors);
+					toast.error('Something went wrong', {
+						style: 'background: #2E2E2E; border: 1px solid #f87171; color:white'
+					});
+					await update();
+					break;
+				case 'error':
+					toast.error(result.error.message, {
+						style: 'background: #2E2E2E; border: 1px solid #f87171; color:white'
+					});
+					break;
+				default:
+					await update();
+			}
+			loading = false;
+		};
+	};
 </script>
 
 <section id="contact" class="2xs:px-6 h-full w-full md:px-20">
@@ -17,7 +52,7 @@
 			<h3 class="font-bgr text-subheader uppercase leading-none">Let's talk</h3>
 		</div>
 		<div id="contact-right" class="font-bgr md:w-2/3">
-			<form method="POST">
+			<form method="POST" use:enhance={submitForm}>
 				<div class="mb-8 grid w-full grid-cols-2 gap-10">
 					<div class="inline-block">
 						<label for="name" class="text-hear">NAME</label>
@@ -26,6 +61,7 @@
 							name="name"
 							id="name"
 							class="border-cod-gray-50 focus:border-b-gallery-50 text-hear inline-block w-full border-0 border-b bg-transparent focus:ring-transparent"
+							disabled={loading}
 						/>
 					</div>
 					<div class="inline-block">
@@ -35,6 +71,7 @@
 							name="email"
 							id="email"
 							class="border-cod-gray-50 focus:border-b-gallery-50 text-hear inline-block w-full border-0 border-b bg-transparent focus:ring-transparent"
+							disabled={loading}
 						/>
 					</div>
 				</div>
@@ -46,12 +83,14 @@
 						cols="30"
 						rows="3"
 						class="border-cod-gray-50 focus:border-b-gallery-50 text-hear w-full resize-none border-0 border-b bg-transparent focus:ring-transparent"
+						disabled={loading}
 					/>
 				</div>
 				<hr class="h-[1.75rem] border-0" />
 				<button
 					type="submit"
 					class="bg-gallery-500 text-cod-gray-500 font-bgm group h-[40px] w-36 rounded-full align-middle text-[14px] uppercase"
+					disabled={loading}
 				>
 					Submit
 				</button>
