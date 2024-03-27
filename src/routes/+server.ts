@@ -15,15 +15,16 @@ export async function _sendEmail(
 				}
 			],
 			from: {
-				email: 'mgaroz@mgaroz.pro'
+				email: 'noreply@mgaroz.pro',
+				name: 'Website form'
 			},
 			subject: 'New message from website',
 			content: [
 				{
-					type: 'text/plain',
-					value: `<p> You've got a new message from: <strong>${name ?? 'Test Message'}</strong> - ${email ?? 'test@test.com'}</p>
+					type: 'text/html',
+					value: `<p> You've got a new message from: <strong>${name}</strong> - ${email}</p>
 
-        <p>${message ?? 'Hello world this is my mailchannels test mail'}</p>`
+        <p>${message}</p>`
 				}
 			]
 		})
