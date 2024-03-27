@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
 	import TextClear from '$lib/components/TextClear.svelte';
 	let currentYear = new Date().getFullYear();
 </script>
@@ -18,7 +17,7 @@
 			<h3 class="font-bgr text-subheader uppercase leading-none">Let's talk</h3>
 		</div>
 		<div id="contact-right" class="font-bgr md:w-2/3">
-			<form method="POST" use:enhance>
+			<form method="POST">
 				<div class="mb-8 grid w-full grid-cols-2 gap-10">
 					<div class="inline-block">
 						<label for="name" class="text-hear">NAME</label>
