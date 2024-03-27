@@ -1,5 +1,7 @@
 import type { PageLoad } from './$types';
 
+export const ssr = false;
+
 export const load: PageLoad = async () => {
 	console.log('fetching posts...');
 	const response = await fetch('https://dev.to/api/articles/latest?username=mgaroz&per_page=3');
