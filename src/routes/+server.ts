@@ -6,25 +6,24 @@ export async function _sendEmail(
 	const request = new Request('https://api.mailchannels.net/tx/v1/send', {
 		method: 'POST',
 		headers: {
-			'content-type': 'application/json'
+			'Content-Type': 'application/json'
 		},
 		body: JSON.stringify({
 			personalizations: [
 				{
-					to: [{ email: 'mgaroz@gmail.com', name: 'Miguel Garoz' }]
+					to: [{ email: 'mgaroz@gmail.com' }]
 				}
 			],
 			from: {
-				email: 'noreply@mgaroz.workers.dev',
-				name: 'Website contact form'
+				email: 'noreply@web-portfolio-8xt.pages.dev'
 			},
 			subject: 'New message from website',
 			content: [
 				{
 					type: 'text/plain',
-					value: `<p> You've got a new message from: <strong>${name}</strong> - ${email}</p>
+					value: `<p> You've got a new message from: <strong>${name ?? 'Test Message'}</strong> - ${email ?? 'test@test.com'}</p>
 
-        <p>${message}</p>`
+        <p>${message ?? 'Hello world this is my mailchannels test mail'}</p>`
 				}
 			]
 		})
