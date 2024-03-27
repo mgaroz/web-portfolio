@@ -15,7 +15,7 @@ export async function _sendEmail(
 				}
 			],
 			from: {
-				email: 'noreply@web-portfolio-8xt.pages.dev'
+				email: 'mgaroz@mgaroz.pro'
 			},
 			subject: 'New message from website',
 			content: [
