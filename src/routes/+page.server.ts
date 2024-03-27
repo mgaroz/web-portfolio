@@ -7,13 +7,7 @@ export const actions = {
 		let response;
 
 		if (Object.keys(form).length > 0) {
-			try {
-				response = await _sendEmail(form?.name, form?.email, form?.message);
-				return response;
-			} catch (e) {
-				console.error(e);
-				return fail(response?.status ?? 500);
-			}
+			response = await _sendEmail(form?.name, form?.email, form?.message);
 		}
 	}
 };
