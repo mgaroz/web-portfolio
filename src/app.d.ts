@@ -5,7 +5,16 @@ declare global {
 		// interface Error {}
 		// interface Locals {}
 		// interface PageData {}
+<<<<<<< HEAD
 		// interface Platform {}
+=======
+		// interface PageState {}
+		interface Platform {
+			context: {
+				waitUntil(promise: Promise<any>): void;
+			};
+		}
+>>>>>>> cf-mailchannels
 	}
 }
 

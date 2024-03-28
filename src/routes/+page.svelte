@@ -318,7 +318,14 @@
 		border: 2px solid #737373;
 		border-radius: 50%;
 		pointer-events: none;
+<<<<<<< HEAD
 		transition: background-color 0.3s, width 0.3s, height 0.3s;
+=======
+		transition:
+			background-color 0.3s,
+			width 0.3s,
+			height 0.3s;
+>>>>>>> cf-mailchannels
 	}
 
 	.active {

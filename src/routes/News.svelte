@@ -69,6 +69,10 @@
 						</h3>
 					</div>
 					<div class="flex-shrink-0 items-center justify-between md:flex md:h-16 md:gap-20">
+<<<<<<< HEAD
+=======
+						<!-- svelte-ignore a11y-no-static-element-interactions -->
+>>>>>>> cf-mailchannels
 						<div
 							class="items-center justify-center md:flex md:h-16"
 							on:mouseenter={() => setTrailerActive(true)}
@@ -78,6 +82,10 @@
 								>{tag_list[0]} / {tag_list[1]} / {tag_list[2]}</span
 							>
 						</div>
+<<<<<<< HEAD
+=======
+						<!-- svelte-ignore a11y-no-static-element-interactions -->
+>>>>>>> cf-mailchannels
 						<div
 							class="items-center justify-center md:flex md:h-16"
 							on:mouseenter={() => setTrailerActive(true)}
