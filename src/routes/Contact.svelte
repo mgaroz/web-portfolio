@@ -16,8 +16,8 @@
 					toast.success('Form was successfully submitted', {
 						style: 'background: #2E2E2E; border: 1px solid #3ECF8E; color:white'
 					});
-					await invalidateAll();
 					await applyAction(result);
+					await invalidateAll();
 					break;
 				case 'redirect':
 					toast.success('Form was successfully submitted', {
