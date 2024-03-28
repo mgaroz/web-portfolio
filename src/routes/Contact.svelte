@@ -8,7 +8,7 @@
 	let currentYear = new Date().getFullYear();
 
 	const submitForm = () => {
-		return async ({ result, update }: any) => {
+		return async ({ result, update, formElement }: any) => {
 			loading = true;
 			console.log(result);
 
@@ -19,6 +19,7 @@
 					});
 					await applyAction(result);
 					await invalidateAll();
+					formElement.reset();
 					break;
 				case 'redirect':
 					toast.success('Form was successfully submitted', {
