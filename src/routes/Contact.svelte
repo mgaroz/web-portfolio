@@ -14,7 +14,7 @@
 
 			switch (result.type) {
 				case 'success':
-					toast.success('Form was successfully submitted', {
+					toast.success('Message was sent successfully', {
 						style: 'background: #2E2E2E; border: 1px solid #3ECF8E; color:white'
 					});
 					await applyAction(result);
