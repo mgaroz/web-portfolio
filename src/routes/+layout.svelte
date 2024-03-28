@@ -4,10 +4,7 @@
 	import MobileNav from '$lib/components/MobileNav.svelte';
 	import { active } from '$lib/store';
 	import { isMobileMenuActive } from '$lib/store';
-<<<<<<< HEAD
-=======
 	import { Toaster } from 'svelte-french-toast';
->>>>>>> cf-mailchannels
 	import logo from '$lib/img/mg-logo.svg';
 
 	const menuItems = [
@@ -53,10 +50,7 @@
 	<meta property="twitter:image" content="https://www.mgaroz.pro/website.webp" />
 </svelte:head>
 
-<<<<<<< HEAD
-=======
 <Toaster />
->>>>>>> cf-mailchannels
 <header>
 	<button
 		aria-controls="primary-navigation"
@@ -76,19 +70,12 @@
 		<span class="sr-only">Menu</span></button
 	>
 	<nav
-<<<<<<< HEAD
-		class="bg-cod-gray-500 2xs:px-6 2xs:py-8 fixed z-30 flex w-full items-center justify-between md:h-32 md:py-5 md:px-20"
-=======
 		class="bg-cod-gray-500 2xs:px-6 2xs:py-8 fixed z-30 flex w-full items-center justify-between md:h-32 md:px-20 md:py-5"
->>>>>>> cf-mailchannels
 	>
 		<div class="flex items-center">
 			<img src={logo} alt="logo" class="h-4" width="144px" height="16" />
 		</div>
-<<<<<<< HEAD
-=======
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
->>>>>>> cf-mailchannels
 		<div
 			class="flex h-full items-center"
 			on:mouseenter={() => ($active = true)}

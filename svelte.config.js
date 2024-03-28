@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-import adapter from '@sveltejs/adapter-static';
-import { vitePreprocess } from '@sveltejs/kit/vite';
-=======
 import adapter from '@sveltejs/adapter-cloudflare';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
->>>>>>> cf-mailchannels
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -17,11 +12,6 @@ const config = {
 		// If your environment is not supported or you settled on a specific environment, switch out the adapter.
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter({
-<<<<<<< HEAD
-			pages: 'build',
-			assets: 'build',
-			fallback: null,
-=======
 			// routes: {
 			// 	include: ['/*'],
 			// 	exclude: ['<all>']
@@ -29,7 +19,6 @@ const config = {
 			pages: 'build',
 			assets: 'build',
 			fallback: undefined,
->>>>>>> cf-mailchannels
 			precompress: false
 		})
 	}

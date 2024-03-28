@@ -65,10 +65,7 @@
 		class="2xs:flex 2xs:justify-between 2xs:flex-col 2xs:gap-16 md:grid md:grid-cols-2 md:gap-8 md:gap-y-16 xl:flex xl:flex-row xl:items-center xl:gap-8"
 	>
 		{#each portfolioItems as { id, name, type, tech, link, source, img }}
-<<<<<<< HEAD
-=======
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
->>>>>>> cf-mailchannels
 			<div
 				class="2xs:h-[50vmin] 2xs:flex 2xs:flex-col 2xs:w-full group relative shrink transition-all duration-500 hover:grow-[2.5] md:h-[25vh] xl:flex xl:h-[45vh] xl:w-1/4 xl:grow xl:basis-0 2xl:h-[60vh]"
 				on:mouseenter={() => setStatusAndColor(true, id)}
@@ -81,10 +78,7 @@
 						<p class="2xs:px-2 xs:px-4 text-[14px] uppercase">
 							{tech}
 						</p>
-<<<<<<< HEAD
-=======
 						<!-- svelte-ignore a11y-no-static-element-interactions -->
->>>>>>> cf-mailchannels
 						<div
 							class="flex gap-4 pr-4"
 							on:mouseenter={() => workActive.set(false)}
