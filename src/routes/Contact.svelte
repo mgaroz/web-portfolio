@@ -1,11 +1,17 @@
 <script lang="ts">
 	import { applyAction, enhance } from '$app/forms';
 	import { invalidateAll } from '$app/navigation';
+	import { superForm } from 'sveltekit-superforms';
+	import SuperDebug from 'sveltekit-superforms';
+	import type { PageData } from './$types';
 	import TextClear from '$lib/components/TextClear.svelte';
 	import toast from 'svelte-french-toast';
 
+	export let data: PageData;
 	let loading = false;
 	let currentYear = new Date().getFullYear();
+
+	const { form } = superForm(data.form);
 
 	const submitForm = () => {
 		return async ({ result, update, formElement }: any) => {
@@ -71,6 +77,7 @@
 							id="name"
 							class="border-cod-gray-50 focus:border-b-gallery-50 text-hear inline-block w-full border-0 border-b bg-transparent focus:ring-transparent"
 							disabled={loading}
+							bind:value={$form.name}
 						/>
 					</div>
 					<div class="inline-block">
@@ -81,6 +88,7 @@
 							id="email"
 							class="border-cod-gray-50 focus:border-b-gallery-50 text-hear inline-block w-full border-0 border-b bg-transparent focus:ring-transparent"
 							disabled={loading}
+							bind:value={$form.email}
 						/>
 					</div>
 				</div>
@@ -93,6 +101,7 @@
 						rows="3"
 						class="border-cod-gray-50 focus:border-b-gallery-50 text-hear w-full resize-none border-0 border-b bg-transparent focus:ring-transparent"
 						disabled={loading}
+						bind:value={$form.message}
 					/>
 				</div>
 				<hr class="h-[1.75rem] border-0" />
@@ -105,6 +114,7 @@
 				</button>
 			</form>
 		</div>
+		<SuperDebug data={$form} />
 	</div>
 	<div
 		class="2xs:grid 2xs:grid-cols-[1fr_1fr] 2xs:grid-rows-[1fr_1fr] items-center justify-between pb-12 md:flex md:gap-8"
