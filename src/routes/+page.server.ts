@@ -7,7 +7,6 @@ export const actions = {
 
 		if (Object.keys(form).length > 0) {
 			response = await _sendEmail(form?.name, form?.email, form?.message);
-			return response;
 		}
 	}
 };
