@@ -2,7 +2,6 @@
 	// import { applyAction, enhance } from '$app/forms';
 	// import { invalidateAll } from '$app/navigation';
 	import { superForm } from 'sveltekit-superforms/client';
-	import SuperDebug from 'sveltekit-superforms/client/SuperDebug.svelte';
 	import type { PageData } from './$types';
 	import TextClear from '$lib/components/TextClear.svelte';
 	import toast from 'svelte-french-toast';
@@ -144,7 +143,6 @@
 					Submit
 				</button>
 			</form>
-			<SuperDebug data={$form} />
 		</div>
 	</div>
 	<div
