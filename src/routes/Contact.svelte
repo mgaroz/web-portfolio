@@ -1,56 +1,78 @@
 <script lang="ts">
-	import { applyAction, enhance } from '$app/forms';
-	import { invalidateAll } from '$app/navigation';
-	import { superForm } from 'sveltekit-superforms';
-	import SuperDebug from 'sveltekit-superforms';
+	// import { applyAction, enhance } from '$app/forms';
+	// import { invalidateAll } from '$app/navigation';
+	import { superForm } from 'sveltekit-superforms/client';
+	import SuperDebug from 'sveltekit-superforms/client/SuperDebug.svelte';
 	import type { PageData } from './$types';
 	import TextClear from '$lib/components/TextClear.svelte';
 	import toast from 'svelte-french-toast';
+	import { newContactSchema } from '$lib/schemas/schemas.js';
+	import { zod } from 'sveltekit-superforms/adapters';
+	import { page } from '$app/stores';
 
 	export let data: PageData;
 	let loading = false;
 	let currentYear = new Date().getFullYear();
 
-	const { form } = superForm(data.form);
-
-	const submitForm = () => {
-		return async ({ result, update, formElement }: any) => {
-			loading = true;
-			console.log(result);
-
-			switch (result.type) {
-				case 'success':
+	const { form, errors, enhance } = superForm(data.form, {
+		validators: zod(newContactSchema),
+		onUpdated({ form }) {
+			console.log('isValid', form);
+			if (form.valid) {
+				console.log('message', form.message);
+				if ($page.status === 200) {
 					toast.success('Message was sent successfully', {
 						style: 'background: #2E2E2E; border: 1px solid #3ECF8E; color:white'
 					});
-					await applyAction(result);
-					await invalidateAll();
-					formElement.reset();
-					break;
-				case 'redirect':
-					toast.success('Form was successfully submitted', {
-						style: 'background: #2E2E2E; border: 1px solid #3ECF8E; color:white'
-					});
-					await invalidateAll();
-					await applyAction(result);
-					break;
-				case 'failure':
-					toast.error(result.data.status + ' ' + result.data.message, {
-						style: 'background: #2E2E2E; border: 1px solid #f87171; color:white'
-					});
-					await update();
-					break;
-				case 'error':
-					toast.error(result.error.message, {
-						style: 'background: #2E2E2E; border: 1px solid #f87171; color:white'
-					});
-					break;
-				default:
-					await update();
+				}
 			}
-			loading = false;
-		};
-	};
+			if (form.errors && !form.valid) {
+				console.log('status', $page.status);
+				toast.error('Please check the fields', {
+					style: 'background: #2E2E2E; border: 1px solid #f87171; color:white'
+				});
+			}
+		}
+	});
+
+	// const submitForm = () => {
+	// 	return async ({ result, update, formElement }: any) => {
+	// 		loading = true;
+	// 		console.log(result);
+
+	// 		switch (result.type) {
+	// 			case 'success':
+	// 				toast.success('Message was sent successfully', {
+	// 					style: 'background: #2E2E2E; border: 1px solid #3ECF8E; color:white'
+	// 				});
+	// 				await applyAction(result);
+	// 				await invalidateAll();
+	// 				formElement.reset();
+	// 				break;
+	// 			case 'redirect':
+	// 				toast.success('Form was successfully submitted', {
+	// 					style: 'background: #2E2E2E; border: 1px solid #3ECF8E; color:white'
+	// 				});
+	// 				await invalidateAll();
+	// 				await applyAction(result);
+	// 				break;
+	// 			case 'failure':
+	// 				toast.error(result.data.status + ' ' + result.data.message, {
+	// 					style: 'background: #2E2E2E; border: 1px solid #f87171; color:white'
+	// 				});
+	// 				await update();
+	// 				break;
+	// 			case 'error':
+	// 				toast.error(result.error.message, {
+	// 					style: 'background: #2E2E2E; border: 1px solid #f87171; color:white'
+	// 				});
+	// 				break;
+	// 			default:
+	// 				await update();
+	// 		}
+	// 		loading = false;
+	// 	};
+	// };
 </script>
 
 <section id="contact" class="2xs:px-6 h-full w-full md:px-20">
@@ -67,7 +89,7 @@
 			<h3 class="font-bgr text-subheader uppercase leading-none">Let's talk</h3>
 		</div>
 		<div id="contact-right" class="font-bgr md:w-2/3">
-			<form method="POST" use:enhance={submitForm}>
+			<form method="POST" use:enhance>
 				<div class="mb-8 grid w-full grid-cols-2 gap-10">
 					<div class="inline-block">
 						<label for="name" class="text-hear">NAME</label>
@@ -79,6 +101,9 @@
 							disabled={loading}
 							bind:value={$form.name}
 						/>
+						{#if $errors.name}
+							<small>{$errors.name}</small>
+						{/if}
 					</div>
 					<div class="inline-block">
 						<label for="email" class="text-hear">EMAIL</label>
@@ -90,6 +115,9 @@
 							disabled={loading}
 							bind:value={$form.email}
 						/>
+						{#if $errors.email}
+							<small>{$errors.email}</small>
+						{/if}
 					</div>
 				</div>
 				<div class="w-full">
@@ -103,6 +131,9 @@
 						disabled={loading}
 						bind:value={$form.message}
 					/>
+					{#if $errors.message}
+						<small>{$errors.message}</small>
+					{/if}
 				</div>
 				<hr class="h-[1.75rem] border-0" />
 				<button
@@ -113,8 +144,8 @@
 					Submit
 				</button>
 			</form>
+			<SuperDebug data={$form} />
 		</div>
-		<SuperDebug data={$form} />
 	</div>
 	<div
 		class="2xs:grid 2xs:grid-cols-[1fr_1fr] 2xs:grid-rows-[1fr_1fr] items-center justify-between pb-12 md:flex md:gap-8"
