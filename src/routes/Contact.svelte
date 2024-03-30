@@ -1,77 +1,57 @@
 <script lang="ts">
-	// import { applyAction, enhance } from '$app/forms';
-	// import { invalidateAll } from '$app/navigation';
-	import { superForm } from 'sveltekit-superforms/client';
-	import type { PageData } from './$types';
+	import { applyAction, enhance } from '$app/forms';
+	import { invalidateAll } from '$app/navigation';
 	import TextClear from '$lib/components/TextClear.svelte';
 	import toast from 'svelte-french-toast';
-	import { newContactSchema } from '$lib/schemas/schemas.js';
-	import { zod } from 'sveltekit-superforms/adapters';
-	import { page } from '$app/stores';
+	import type { ActionData } from './$types';
 
-	export let data: PageData;
 	let loading = false;
 	let currentYear = new Date().getFullYear();
+	export let form: ActionData;
 
-	const { form, errors, enhance } = superForm(data.form, {
-		validators: zod(newContactSchema),
-		onUpdated({ form }) {
-			console.log('isValid', form);
-			if (form.valid) {
-				console.log('message', form.message);
-				if ($page.status === 200) {
+	const submitForm = () => {
+		return async ({ result, update, formElement }: any) => {
+			loading = true;
+
+			switch (result.type) {
+				case 'success':
 					toast.success('Message was sent successfully', {
 						style: 'background: #2E2E2E; border: 1px solid #3ECF8E; color:white'
 					});
-				}
+					await applyAction(result);
+					await invalidateAll();
+					formElement.reset();
+					break;
+				case 'redirect':
+					toast.success('Form was successfully submitted', {
+						style: 'background: #2E2E2E; border: 1px solid #3ECF8E; color:white'
+					});
+					await invalidateAll();
+					await applyAction(result);
+					break;
+				case 'failure':
+					if (result.status === 400) {
+						toast.error('Some fields are missing', {
+							style: 'background: #2E2E2E; border: 1px solid #f87171; color:white'
+						});
+					} else {
+						toast.error(result.status + ' ' + result.data.message, {
+							style: 'background: #2E2E2E; border: 1px solid #f87171; color:white'
+						});
+					}
+					await update();
+					break;
+				case 'error':
+					toast.error(result.errors.message, {
+						style: 'background: #2E2E2E; border: 1px solid #f87171; color:white'
+					});
+					break;
+				default:
+					await update();
 			}
-			if (form.errors && !form.valid) {
-				console.log('status', $page.status);
-				toast.error('Please check the fields', {
-					style: 'background: #2E2E2E; border: 1px solid #f87171; color:white'
-				});
-			}
-		}
-	});
-
-	// const submitForm = () => {
-	// 	return async ({ result, update, formElement }: any) => {
-	// 		loading = true;
-	// 		console.log(result);
-
-	// 		switch (result.type) {
-	// 			case 'success':
-	// 				toast.success('Message was sent successfully', {
-	// 					style: 'background: #2E2E2E; border: 1px solid #3ECF8E; color:white'
-	// 				});
-	// 				await applyAction(result);
-	// 				await invalidateAll();
-	// 				formElement.reset();
-	// 				break;
-	// 			case 'redirect':
-	// 				toast.success('Form was successfully submitted', {
-	// 					style: 'background: #2E2E2E; border: 1px solid #3ECF8E; color:white'
-	// 				});
-	// 				await invalidateAll();
-	// 				await applyAction(result);
-	// 				break;
-	// 			case 'failure':
-	// 				toast.error(result.data.status + ' ' + result.data.message, {
-	// 					style: 'background: #2E2E2E; border: 1px solid #f87171; color:white'
-	// 				});
-	// 				await update();
-	// 				break;
-	// 			case 'error':
-	// 				toast.error(result.error.message, {
-	// 					style: 'background: #2E2E2E; border: 1px solid #f87171; color:white'
-	// 				});
-	// 				break;
-	// 			default:
-	// 				await update();
-	// 		}
-	// 		loading = false;
-	// 	};
-	// };
+			loading = false;
+		};
+	};
 </script>
 
 <section id="contact" class="2xs:px-6 h-full w-full md:px-20">
@@ -88,7 +68,7 @@
 			<h3 class="font-bgr text-subheader uppercase leading-none">Let's talk</h3>
 		</div>
 		<div id="contact-right" class="font-bgr md:w-2/3">
-			<form method="POST" use:enhance>
+			<form method="POST" use:enhance={submitForm}>
 				<div class="mb-8 grid w-full grid-cols-2 gap-10">
 					<div class="inline-block">
 						<label for="name" class="text-hear">NAME</label>
@@ -98,10 +78,9 @@
 							id="name"
 							class="border-cod-gray-50 focus:border-b-gallery-50 text-hear inline-block w-full border-0 border-b bg-transparent focus:ring-transparent"
 							disabled={loading}
-							bind:value={$form.name}
 						/>
-						{#if $errors.name}
-							<small>{$errors.name}</small>
+						{#if form?.errors?.name}
+							<small>{form.errors.name}</small>
 						{/if}
 					</div>
 					<div class="inline-block">
@@ -112,10 +91,9 @@
 							id="email"
 							class="border-cod-gray-50 focus:border-b-gallery-50 text-hear inline-block w-full border-0 border-b bg-transparent focus:ring-transparent"
 							disabled={loading}
-							bind:value={$form.email}
 						/>
-						{#if $errors.email}
-							<small>{$errors.email}</small>
+						{#if form?.errors?.email}
+							<small>{form.errors.email}</small>
 						{/if}
 					</div>
 				</div>
@@ -128,10 +106,9 @@
 						rows="3"
 						class="border-cod-gray-50 focus:border-b-gallery-50 text-hear w-full resize-none border-0 border-b bg-transparent focus:ring-transparent"
 						disabled={loading}
-						bind:value={$form.message}
 					/>
-					{#if $errors.message}
-						<small>{$errors.message}</small>
+					{#if form?.errors?.message}
+						<small>{form.errors.message}</small>
 					{/if}
 				</div>
 				<hr class="h-[1.75rem] border-0" />

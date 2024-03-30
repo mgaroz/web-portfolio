@@ -11,7 +11,7 @@
 	import { blogActive } from '$lib/store';
 	import { blogActiveTags } from '$lib/store';
 	import TextClear from '$lib/components/TextClear.svelte';
-	import type { PageData } from './$types';
+	import type { ActionData } from './$types';
 	// import Card from '$lib/components/Card.svelte';
 
 	let nameContainer: HTMLSpanElement;
@@ -25,7 +25,7 @@
 	let m = { x: 0, y: 0 };
 	let tagline = 'Front-end developer with an adaptive approach to problem solving.';
 
-	export let data: PageData;
+	export let form: ActionData;
 
 	$: activeBackColor = $backColor;
 
@@ -297,7 +297,7 @@
 </div> -->
 <About />
 <News />
-<Contact {data} />
+<Contact {form} />
 
 <style>
 	.text-hero-size {

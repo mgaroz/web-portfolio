@@ -1,40 +1,25 @@
-import { superValidate } from 'sveltekit-superforms/server';
-import { zod } from 'sveltekit-superforms/adapters';
-import type { PageServerLoad } from './$types.js';
-import { fail, type ActionFailure } from '@sveltejs/kit';
-import { newContactSchema } from '$lib/schemas/schemas.js';
 import { _sendEmail } from './+server.js';
+import { validateData } from '$lib/utils.js';
+import { newContactSchema } from '$lib/schemas/schemas.js';
+import { fail, type Actions } from '@sveltejs/kit';
 
-export const load: PageServerLoad = async (event) => {
-	const super_form = await superValidate(event, zod(newContactSchema));
+export const actions: Actions = {
+	default: async ({ request }) => {
+		// const form = Object.fromEntries(await request.formData());
+		const body = await request.formData();
 
-	return { form: super_form };
-};
-
-// export const actions = {
-// 	default: async ({ request }) => {
-// 		const form = Object.fromEntries(await request.formData());
-
-// 		if (Object.keys(form).length > 0) {
-// 			await _sendEmail(form?.name, form?.email, form?.message);
-// 		}
-// 	}
-// };
-
-export const actions = {
-	default: async (event) => {
-		const form = await superValidate(event, zod(newContactSchema));
-		let formStatus: Response | ActionFailure<{ status: number; message: string }>;
-
-		if (Object.keys(form.errors).length > 0 && !form.valid) {
-			return fail(400, { form });
+		const { formData, errors } = await validateData(body, newContactSchema);
+		if (errors) {
+			return fail(400, {
+				data: formData,
+				errors: errors.fieldErrors
+			});
 		}
+		let response;
 
-		if (Object.keys(form.data).length > 0 && form.valid) {
-			formStatus = await _sendEmail(form.data.name, form.data.email, form.data.message);
-			console.log(form, formStatus.status);
+		if (Object.keys(formData).length > 0) {
+			response = await _sendEmail(formData?.name, formData?.email, formData?.message);
+			return response;
 		}
-
-		return { form };
 	}
 };
