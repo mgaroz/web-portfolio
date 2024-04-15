@@ -43,7 +43,7 @@ export async function _sendEmail(
 		if (response.status >= 400) {
 			console.error(`Error sending email: ${response.status} ${response.statusText}`);
 			// this matters
-			return fail(response.status, { status: response.status, message: response.statusText });
+			throw fail(response.status, { status: response.status, message: response.statusText });
 		}
 	}
 	// return new Response(respContent, {
