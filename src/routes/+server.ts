@@ -36,10 +36,11 @@ export async function _sendEmail(
 	// let respStatus: number = 0;
 	if (request.method == 'POST') {
 		const response = await fetch(request);
-		const respText = await response.text();
+		// const respText = await response.text();
 		// respStatus = response.status;
 
-		respContent = response.status + ' ' + response.statusText + '\n\n' + respText;
+		console.log(response);
+		respContent = response.status + ' ' + response.statusText;
 		if (response.status >= 400) {
 			console.error(`Error sending email: ${response.status} ${response.statusText}`);
 			// this matters
