@@ -5,7 +5,6 @@ import { fail, type Actions } from '@sveltejs/kit';
 
 export const actions: Actions = {
 	default: async ({ request }) => {
-		// const form = Object.fromEntries(await request.formData());
 		const body = await request.formData();
 
 		const { formData, errors } = await validateData(body, newContactSchema);

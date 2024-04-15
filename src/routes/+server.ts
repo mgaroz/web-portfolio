@@ -1,11 +1,12 @@
 import { fail } from '@sveltejs/kit';
+import { SECRET_TO_EMAIL, SECRET_FROM_EMAIL, SECRET_MAIL_API_URL } from '$env/static/private';
 
 export async function _sendEmail(
 	name: FormDataEntryValue,
 	email: FormDataEntryValue,
 	message: FormDataEntryValue
 ) {
-	const request = new Request('https://api.mailchannels.net/tx/v1/send', {
+	const request = new Request(SECRET_MAIL_API_URL, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
@@ -13,11 +14,11 @@ export async function _sendEmail(
 		body: JSON.stringify({
 			personalizations: [
 				{
-					to: [{ email: 'mgaroz@gmail.com' }]
+					to: [{ email: SECRET_TO_EMAIL }]
 				}
 			],
 			from: {
-				email: 'noreply@mgaroz.pro',
+				email: SECRET_FROM_EMAIL,
 				name: 'Website form'
 			},
 			subject: 'New message from website',
@@ -36,11 +37,9 @@ export async function _sendEmail(
 	if (request.method == 'POST') {
 		const response = await fetch(request);
 
-		console.log(response);
 		respContent = response.status + ' ' + response.statusText;
 		if (response.status >= 400) {
 			console.error(`Error sending email: ${response.status} ${response.statusText}`);
-			// this matters
 			return fail(response.status, { status: response.status, message: response.statusText });
 		}
 	}
