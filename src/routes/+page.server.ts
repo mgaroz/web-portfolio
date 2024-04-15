@@ -7,6 +7,7 @@ export const actions: Actions = {
 	default: async ({ request }) => {
 		// const form = Object.fromEntries(await request.formData());
 		const body = await request.formData();
+		const form = Object.fromEntries(body);
 
 		const { formData, errors } = await validateData(body, newContactSchema);
 		if (errors) {
@@ -18,8 +19,7 @@ export const actions: Actions = {
 		let response;
 
 		if (Object.keys(formData).length > 0) {
-			response = await _sendEmail(formData?.name, formData?.email, formData?.message);
-			console.log(response);
+			response = await _sendEmail(form?.name, form?.email, form?.message);
 			return response;
 		}
 	}

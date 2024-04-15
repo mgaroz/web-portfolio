@@ -1,6 +1,10 @@
 import { fail, json } from '@sveltejs/kit';
 
-export async function _sendEmail(name: string, email: string, message: string) {
+export async function _sendEmail(
+	name: FormDataEntryValue,
+	email: FormDataEntryValue,
+	message: FormDataEntryValue
+) {
 	const request = new Request('https://api.mailchannels.net/tx/v1/send', {
 		method: 'POST',
 		headers: {
