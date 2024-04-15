@@ -6,5 +6,5 @@ export const newContactSchema = z.object({
 	message: z
 		.string({ required_error: 'A message is required' })
 		.min(10)
-		.max(1024, "That's a long message, try getting to the point quicker!")
+		.max(1024, "You've reached the character limit, make it shorter!")
 });
