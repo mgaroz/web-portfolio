@@ -12,12 +12,6 @@ declare global {
 				waitUntil(promise: Promise<any>): void;
 			};
 		}
-		namespace Superforms {
-			type Message = {
-				type: 'error' | 'success';
-				text: string;
-			};
-		}
 	}
 }
 
