@@ -33,11 +33,11 @@ export async function _sendEmail(
 	});
 
 	let respContent = '';
-	let respStatus: number = 0;
+	// let respStatus: number = 0;
 	if (request.method == 'POST') {
 		const response = await fetch(request);
 		const respText = await response.text();
-		respStatus = response.status;
+		// respStatus = response.status;
 
 		respContent = response.status + ' ' + response.statusText + '\n\n' + respText;
 		if (response.status >= 400) {
@@ -49,5 +49,5 @@ export async function _sendEmail(
 	// return new Response(respContent, {
 	// 	status: respStatus
 	// });
-	return json(respContent + ' ' + respStatus);
+	return json(respContent);
 }
