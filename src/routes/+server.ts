@@ -1,5 +1,4 @@
-import { fail, json } from '@sveltejs/kit';
-import sgMail from '@sendgrid/mail';
+import { fail } from '@sveltejs/kit';
 import { SECRET_SG_API_KEY } from '$env/static/private';
 
 export async function _sendEmail(
@@ -54,12 +53,11 @@ export async function _sendEmail(
 	// });
 
 	// LOOK INTO THIS
-	return json({ data: respContent });
+	return JSON.parse(JSON.stringify(respContent));
 }
 
 export async function _sgMail() {
 	const API_KEY = SECRET_SG_API_KEY;
-	sgMail.setApiKey(API_KEY);
 
 	const message = {
 		to: 'mgaroz@gmail.com',
@@ -69,14 +67,18 @@ export async function _sgMail() {
 		html: '<h1>Hello from sendgrid</h1>'
 	};
 
-	sgMail
-		.send(message)
-		.then((res) => {
-			console.log('Email sent ', res);
-			return res;
-		})
-		.catch((err) => {
-			console.log(err.message);
-			return err.message;
+	try {
+		const email = await fetch('https://api.sendgrid.com/v3/mail/send', {
+			method: 'POST',
+			headers: {
+				Authorization: `Bearer ${API_KEY}`,
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(message)
 		});
+		return { data: JSON.parse(JSON.stringify(email)) };
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	} catch (err: any) {
+		return { status: 500, error: err.message };
+	}
 }
