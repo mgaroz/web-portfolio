@@ -29,7 +29,7 @@
 				<div
 					class="{!$activeMenuInfo.isBeingHovered && $activeMenuInfo.currentActiveItem === item.id
 						? 'visible'
-						: 'invisible'} mt-[2px] h-[1px] w-full border-t group-hover/link:visible hover/link:[&:not(:hover)]:invisible"
+						: 'invisible'} border-cod-gray-400 mt-[2px] h-[1px] w-full border-t group-hover/link:visible dark:border-white hover/link:[&:not(:hover)]:invisible"
 				/>
 			</li>
 		{/each}

@@ -9,7 +9,7 @@
 	import { onMount } from 'svelte';
 	let sectionContainer: HTMLDivElement;
 
-	export let blogData: any;
+	let myBlogData: any[] = [];
 
 	function setStatus(status: boolean) {
 		active.set(false);
@@ -22,7 +22,7 @@
 		blogActiveTags.set(status);
 	}
 
-	onMount(() => {
+	onMount(async () => {
 		gsap.registerPlugin(ScrollTrigger);
 		gsap.from(sectionContainer, {
 			duration: 1,
@@ -35,6 +35,9 @@
 				toggleActions: 'play reverse play reverse'
 			}
 		});
+
+		const res = await fetch('https://dev.to/api/articles/latest?username=mgaroz&per_page=3');
+		myBlogData = await res.json();
 	});
 </script>
 
@@ -49,7 +52,7 @@
 		<hr class="h-[1.75rem] border-0" />
 		<hr class="h-[1.75rem] border-0" />
 		<div>
-			{#each blogData as { cover_image, url, title, tag_list, created_at }}
+			{#each myBlogData as { cover_image, url, title, tag_list, created_at }}
 				<div
 					class="border-cod-gray-50 group w-full items-center justify-between overflow-hidden border-b py-[3.125rem] first:border-t md:flex md:h-[15.125rem]"
 				>

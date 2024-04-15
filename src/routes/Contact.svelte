@@ -3,14 +3,15 @@
 	import { invalidateAll } from '$app/navigation';
 	import TextClear from '$lib/components/TextClear.svelte';
 	import toast from 'svelte-french-toast';
+	import type { ActionData } from './$types';
 
 	let loading = false;
 	let currentYear = new Date().getFullYear();
+	export let form: ActionData;
 
 	const submitForm = () => {
 		return async ({ result, update, formElement }: any) => {
 			loading = true;
-			console.log(result);
 
 			switch (result.type) {
 				case 'success':
@@ -29,13 +30,19 @@
 					await applyAction(result);
 					break;
 				case 'failure':
-					toast.error(result.data.status + ' ' + result.data.message, {
-						style: 'background: #2E2E2E; border: 1px solid #f87171; color:white'
-					});
+					if (result.status === 400) {
+						toast.error('Some fields are missing', {
+							style: 'background: #2E2E2E; border: 1px solid #f87171; color:white'
+						});
+					} else {
+						toast.error(result.status + ' ' + result.data.message, {
+							style: 'background: #2E2E2E; border: 1px solid #f87171; color:white'
+						});
+					}
 					await update();
 					break;
 				case 'error':
-					toast.error(result.error.message, {
+					toast.error(result.status + ' ' + result.error.message, {
 						style: 'background: #2E2E2E; border: 1px solid #f87171; color:white'
 					});
 					break;
@@ -72,6 +79,9 @@
 							class="border-cod-gray-50 focus:border-b-gallery-50 text-hear inline-block w-full border-0 border-b bg-transparent focus:ring-transparent"
 							disabled={loading}
 						/>
+						{#if form?.errors?.name}
+							<small>{form.errors.name}</small>
+						{/if}
 					</div>
 					<div class="inline-block">
 						<label for="email" class="text-hear">EMAIL</label>
@@ -82,6 +92,9 @@
 							class="border-cod-gray-50 focus:border-b-gallery-50 text-hear inline-block w-full border-0 border-b bg-transparent focus:ring-transparent"
 							disabled={loading}
 						/>
+						{#if form?.errors?.email}
+							<small>{form.errors.email}</small>
+						{/if}
 					</div>
 				</div>
 				<div class="w-full">
@@ -94,6 +107,9 @@
 						class="border-cod-gray-50 focus:border-b-gallery-50 text-hear w-full resize-none border-0 border-b bg-transparent focus:ring-transparent"
 						disabled={loading}
 					/>
+					{#if form?.errors?.message}
+						<small>{form.errors.message}</small>
+					{/if}
 				</div>
 				<hr class="h-[1.75rem] border-0" />
 				<button
