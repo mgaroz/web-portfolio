@@ -1,4 +1,6 @@
 import { fail, json } from '@sveltejs/kit';
+import sgMail from '@sendgrid/mail';
+import { SECRET_SG_API_KEY } from '$env/static/private';
 
 export async function _sendEmail(
 	name: FormDataEntryValue,
@@ -50,5 +52,31 @@ export async function _sendEmail(
 	// return new Response(respContent, {
 	// 	status: respStatus
 	// });
+
+	// LOOK INTO THIS
 	return json({ data: respContent });
+}
+
+export async function _sgMail() {
+	const API_KEY = SECRET_SG_API_KEY;
+	sgMail.setApiKey(API_KEY);
+
+	const message = {
+		to: 'mgaroz@gmail.com',
+		from: 'noreply@mgaroz.pro',
+		subject: 'Message from website',
+		text: 'Hello from sendgrid',
+		html: '<h1>Hello from sendgrid</h1>'
+	};
+
+	sgMail
+		.send(message)
+		.then((res) => {
+			console.log('Email sent ', res);
+			return res;
+		})
+		.catch((err) => {
+			console.log(err.message);
+			return err.message;
+		});
 }
