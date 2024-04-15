@@ -1,4 +1,4 @@
-import { fail } from '@sveltejs/kit';
+import { fail, json } from '@sveltejs/kit';
 
 export async function _sendEmail(
 	name: FormDataEntryValue,
@@ -46,7 +46,8 @@ export async function _sendEmail(
 			return fail(response.status, { status: response.status, message: response.statusText });
 		}
 	}
-	return new Response(respContent, {
-		status: respStatus
-	});
+	// return new Response(respContent, {
+	// 	status: respStatus
+	// });
+	return json(respContent + ' ' + respStatus);
 }
