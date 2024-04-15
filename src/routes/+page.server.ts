@@ -20,7 +20,7 @@ export const actions: Actions = {
 
 		if (Object.keys(formData).length > 0) {
 			response = await _sendEmail(form?.name, form?.email, form?.message);
-			return response;
+			return structuredClone(response);
 		}
 	}
 };
