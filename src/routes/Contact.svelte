@@ -43,7 +43,7 @@
 					await update();
 					break;
 				case 'error':
-					toast.error(result.errors.message, {
+					toast.error(result.status + ' ' + result.error.message, {
 						style: 'background: #2E2E2E; border: 1px solid #f87171; color:white'
 					});
 					break;
