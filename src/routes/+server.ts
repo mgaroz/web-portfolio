@@ -49,5 +49,5 @@ export async function _sendEmail(
 	// return new Response(respContent, {
 	// 	status: respStatus
 	// });
-	return json(respContent);
+	return json({ data: respContent });
 }
