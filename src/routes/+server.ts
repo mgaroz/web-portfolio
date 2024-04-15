@@ -1,10 +1,6 @@
 import { fail, json } from '@sveltejs/kit';
 
-export async function _sendEmail(
-	name: FormDataEntryValue,
-	email: FormDataEntryValue,
-	message: FormDataEntryValue
-) {
+export async function _sendEmail(name: string, email: string, message: string) {
 	const request = new Request('https://api.mailchannels.net/tx/v1/send', {
 		method: 'POST',
 		headers: {
@@ -43,7 +39,7 @@ export async function _sendEmail(
 		if (response.status >= 400) {
 			console.error(`Error sending email: ${response.status} ${response.statusText}`);
 			// this matters
-			throw fail(response.status);
+			return fail(response.status, { status: response.status, message: response.statusText });
 		}
 	}
 	// return new Response(respContent, {
