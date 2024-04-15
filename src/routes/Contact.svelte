@@ -12,6 +12,7 @@
 	const submitForm = () => {
 		return async ({ result, update, formElement }: any) => {
 			loading = true;
+			console.log(result);
 
 			switch (result.type) {
 				case 'success':
