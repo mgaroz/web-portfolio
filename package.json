@@ -39,6 +39,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@builder.io/partytown": "^0.10.2",
 		"dayjs": "^1.11.10",
 		"gsap": "^3.12.5",
 		"svelte-french-toast": "^1.2.0"

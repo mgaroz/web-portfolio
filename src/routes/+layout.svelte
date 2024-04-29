@@ -6,6 +6,7 @@
 	import { isMobileMenuActive } from '$lib/store';
 	import { Toaster } from 'svelte-french-toast';
 	import logo from '$lib/img/mg-logo.svg';
+	import { partytownSnippet } from '@builder.io/partytown/integration';
 
 	const menuItems = [
 		{ label: 'Home', href: '/', id: 'home' },
@@ -48,6 +49,24 @@
 		content="Miguel Garoz is a Front-End Developer. He specializes in building exceptional websites, applications, and everything in between."
 	/>
 	<meta property="twitter:image" content="https://www.mgaroz.pro/website.webp" />
+	<script>
+		partytown = {
+			forward: ['dataLayer.push', 'gtag']
+		};
+	</script>
+	{@html '<script>' + partytownSnippet() + '</script>'}
+	<script
+		type="text/partytown"
+		src="https://www.googletagmanager.com/gtag/js?id=G-NLCL9X3EY6"
+	></script>
+	<script type="text/partytown">
+		window.dataLayer = window.dataLayer || [];
+		window.gtag = function () {
+			dataLayer.push(arguments);
+		};
+		gtag('js', new Date());
+		gtag('config', 'G-NLCL9X3EY6');
+	</script>
 </svelte:head>
 
 <Toaster />
