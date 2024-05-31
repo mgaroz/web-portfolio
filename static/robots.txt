@@ -1,3 +1,11 @@
 User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
+User-agent: Googlebot
+Allow: /
+User-agent: Slurp
+Allow: /
+User-Agent: msnbot
+Allow: /
+User-agent: Twitterbot
+Allow: /
