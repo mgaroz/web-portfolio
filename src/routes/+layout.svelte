@@ -54,6 +54,7 @@
 		property="twitter:image"
 		content="https://www.mgaroz.pro/website.webp"
 	/>
+	<meta name="twitter:creator" content="@mgaroz_pro" />
 	<script>
 		partytown = {
 			forward: ['dataLayer.push', 'gtag']
