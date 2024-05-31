@@ -1,6 +1,4 @@
 User-agent: *
-Allow: /
-Allow:
 Disallow: 
 Crawl-delay: 120
 Disallow: /cgi-bin/
