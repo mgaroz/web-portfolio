@@ -6,11 +6,12 @@
 		<link href="favicon-dark.webp" rel="icon" media="(prefers-color-scheme: dark)" />
 		<link rel="canonical" href="https://mgaroz.pro/" />
 		<meta name="viewport" content="width=device-width" />
+		<script src="%sveltekit.assets%/darkMode.js"></script>
 		%sveltekit.head%
 	</head>
 	<body
 		data-sveltekit-preload-data="hover"
-		class="bg-white font-bgm text-cod-gray-400 dark:bg-cod-gray-500 dark:text-white"
+		class="overflow-hidden bg-white font-bgm text-cod-gray-400 dark:bg-cod-gray-500 dark:text-white"
 	>
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>

@@ -64,6 +64,7 @@ export default {
       }
     },
   },
+  darkMode: 'selector',
   plugins: [
     require('@tailwindcss/forms')
   ],

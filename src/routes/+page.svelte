@@ -183,7 +183,7 @@
 			>
 				<a href="https://github.com/mgaroz" target="_blank" aria-label="Github" class="group">
 					<svg
-						class="h-7 w-7 text-white transition-transform duration-200 lg:group-hover:scale-125"
+						class="h-7 w-7 transition-transform duration-200 lg:group-hover:scale-125 dark:text-white"
 						width="24"
 						height="24"
 						viewBox="0 0 24 24"
@@ -206,7 +206,7 @@
 					class="group"
 				>
 					<svg
-						class="h-7 w-7 text-white transition-transform duration-200 lg:group-hover:scale-125"
+						class="h-7 w-7 transition-transform duration-200 lg:group-hover:scale-125 dark:text-white"
 						viewBox="0 0 24 24"
 						fill="none"
 						stroke="currentColor"
@@ -221,7 +221,7 @@
 				</a>
 				<a href="https://twitter.com/mgaroz_pro" target="_blank" aria-label="Twitter" class="group">
 					<svg
-						class="h-7 w-7 text-white transition-transform duration-200 lg:group-hover:scale-125"
+						class="h-7 w-7 transition-transform duration-200 lg:group-hover:scale-125 dark:text-white"
 						width="24"
 						height="24"
 						viewBox="0 0 24 24"
@@ -239,12 +239,12 @@
 				</a>
 				<a href="https://dev.to/mgaroz" target="_blank" aria-label="Dev.to" class="group">
 					<svg
-						class="h-7 w-7 text-white transition-transform duration-200 lg:group-hover:scale-125"
+						class="h-7 w-7 transition-transform duration-200 lg:group-hover:scale-125 dark:text-white"
 						width="24"
 						height="24"
 						viewBox="0 0 448 512"
 						stroke="currentColor"
-						fill="#fff"
+						fill="currentColor"
 						stroke-linecap="round"
 						stroke-linejoin="round"
 						><path
