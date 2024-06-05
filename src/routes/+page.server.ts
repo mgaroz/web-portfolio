@@ -1,9 +1,7 @@
-// import { _sendEmail } from './+server.js';
 import { validateData } from '$lib/utils.js';
 import { newContactSchema } from '$lib/schemas/schemas.js';
 import { fail, type Actions } from '@sveltejs/kit';
 
-// import { fail } from '@sveltejs/kit';
 import { SECRET_TO_EMAIL, SECRET_FROM_EMAIL, SECRET_MAIL_API_URL } from '$env/static/private';
 
 async function _sendEmail(
