@@ -69,8 +69,8 @@
 		</div>
 		<div id="contact-right" class="font-bgr md:w-2/3">
 			<form method="POST" use:enhance={submitForm}>
-				<div class="mb-8 grid w-full grid-cols-2 gap-10">
-					<div class="inline-block">
+				<div class="mb-8 w-full gap-10 md:grid md:grid-cols-2">
+					<div class="2xs:mb-8 2xs:w-full inline-block">
 						<label for="name" class="text-hear">NAME</label>
 						<input
 							type="text"
@@ -83,7 +83,7 @@
 							<small>{form.errors.name}</small>
 						{/if}
 					</div>
-					<div class="inline-block">
+					<div class="2xs:w-full inline-block">
 						<label for="email" class="text-hear">EMAIL</label>
 						<input
 							type="email"
