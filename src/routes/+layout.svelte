@@ -22,11 +22,13 @@
 			if (theme === 'dark') {
 				localStorage.theme = 'light';
 				document.documentElement.classList.remove('dark');
+				document.documentElement.classList.add('light');
 				colorScheme = 'dark';
 				isDark = false;
 			} else {
 				localStorage.theme = 'dark';
 				document.documentElement.classList.add('dark');
+				document.documentElement.classList.remove('light');
 				colorScheme = 'light';
 				isDark = true;
 			}
@@ -43,7 +45,14 @@
 
 	onMount(() => {
 		colorScheme = localStorage.getItem('theme') as string;
-		isDark = colorScheme === 'dark' ? true : false;
+
+		if (colorScheme !== null || colorScheme !== undefined || colorScheme !== '') {
+			isDark = colorScheme === 'dark' ? true : false;
+		} else {
+			isDark = false;
+		}
+
+		console.log(isDark);
 	});
 </script>
 
@@ -128,7 +137,11 @@
 		class="dark:bg-cod-gray-500 2xs:px-6 2xs:py-8 fixed z-30 flex w-full items-center justify-between bg-white md:h-32 md:px-20 md:py-5"
 	>
 		<div class="flex items-center">
-			<img src={isDark ? logo : logolight} alt="logo" class="h-4" width="144px" height="16" />
+			{#if isDark}
+				<img src={logo} alt="logo" class="h-4" width="144px" height="16" />
+			{:else}
+				<img src={logolight} alt="logo" class="h-4" width="144px" height="16" />
+			{/if}
 		</div>
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		<div

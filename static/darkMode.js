@@ -1,10 +1,9 @@
-const saved_theme = localStorage.getItem('theme')
-if (saved_theme) {
-  document.documentElement.classList.add("dark")
+if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark')
+  document.documentElement.classList.remove('light')
+  localStorage.setItem('theme', 'dark')
 } else {
-  const prefers_dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const theme = prefers_dark ? "dark" : "light"
-  document.documentElement.classList.add(theme)
-  localStorage.setItem("theme", theme)
-  console.log(prefers_dark)
+  document.documentElement.classList.remove('dark')
+  document.documentElement.classList.add('light')
+  localStorage.setItem('theme', 'light')
 }
