@@ -6,12 +6,11 @@
 	import { isMobileMenuActive } from '$lib/store';
 	import { Toaster } from 'svelte-french-toast';
 	import logo from '$lib/img/mg-logo.svg';
+	import logolight from '$lib/img/mg-logo-light.svg';
 	import { partytownSnippet } from '@builder.io/partytown/integration';
 	import { browser } from '$app/environment';
 	import Switcher from '$lib/components/Switcher.svelte';
 	import { onMount } from 'svelte';
-	import { fly } from 'svelte/transition';
-	import { cubicIn, cubicOut } from 'svelte/easing';
 
 	let colorScheme: string;
 	let isDark: boolean;
@@ -107,60 +106,50 @@
 </svelte:head>
 
 <Toaster />
-{#key isDark}
-	<header
-		in:fly={{ delay: 300, duration: 300, easing: cubicIn, x: '-100vw', y: 0 }}
-		out:fly={{ duration: 300, easing: cubicOut, x: '100vw', y: 0 }}
+<header>
+	<button
+		aria-controls="primary-navigation"
+		aria-expanded="false"
+		class="2xs:fixed 2xs:aspect-square 2xs:z-50 2xs:right-6 2xs:top-7 h-6 w-6 md:hidden"
+		on:click={() => ($isMobileMenuActive = !$isMobileMenuActive)}
 	>
-		<button
-			aria-controls="primary-navigation"
-			aria-expanded="false"
-			class="2xs:fixed 2xs:aspect-square 2xs:z-50 2xs:right-6 2xs:top-7 h-6 w-6 md:hidden"
-			on:click={() => ($isMobileMenuActive = !$isMobileMenuActive)}
-		>
-			<div
-				class="flex h-6 w-6 flex-col items-center justify-around overflow-hidden {$isMobileMenuActive
-					? 'open'
-					: ''}"
-			>
-				<div class="bar-one" />
-				<div class="bar-two" />
-				<div class="bar-three" />
-			</div>
-			<span class="sr-only">Menu</span></button
-		>
-		<nav
-			class="dark:bg-cod-gray-500 2xs:px-6 2xs:py-8 fixed z-30 flex w-full items-center justify-between bg-white md:h-32 md:px-20 md:py-5"
-		>
-			<div class="flex items-center">
-				<img src={logo} alt="logo" class="h-4" width="144px" height="16" />
-			</div>
-			<!-- svelte-ignore a11y-no-static-element-interactions -->
-			<div
-				class="flex h-full items-center"
-				on:mouseenter={() => ($active = true)}
-				on:mouseleave={() => ($active = false)}
-			>
-				<Menu {menuItems} />
-				<Switcher {toggleTheme} {isDark} />
-			</div>
-		</nav>
 		<div
-			class="bg-cod-gray-500 2xs:fixed top-0 z-40 h-full w-full pt-20 duration-500 md:hidden {$isMobileMenuActive
-				? 'translate-y-0'
-				: '-translate-y-full'}"
+			class="flex h-6 w-6 flex-col items-center justify-around overflow-hidden {$isMobileMenuActive
+				? 'open'
+				: ''}"
 		>
-			<MobileNav />
+			<div class="bar-one" />
+			<div class="bar-two" />
+			<div class="bar-three" />
 		</div>
-	</header>
-
-	<div
-		in:fly={{ delay: 300, duration: 300, easing: cubicIn, x: '-100vw', y: 0 }}
-		out:fly={{ duration: 300, easing: cubicOut, x: '100vw', y: 0 }}
+		<span class="sr-only">Menu</span></button
 	>
-		<slot />
+	<nav
+		class="dark:bg-cod-gray-500 2xs:px-6 2xs:py-8 fixed z-30 flex w-full items-center justify-between bg-white md:h-32 md:px-20 md:py-5"
+	>
+		<div class="flex items-center">
+			<img src={isDark ? logo : logolight} alt="logo" class="h-4" width="144px" height="16" />
+		</div>
+		<!-- svelte-ignore a11y-no-static-element-interactions -->
+		<div
+			class="flex h-full items-center"
+			on:mouseenter={() => ($active = true)}
+			on:mouseleave={() => ($active = false)}
+		>
+			<Menu {menuItems} />
+			<Switcher {toggleTheme} {isDark} />
+		</div>
+	</nav>
+	<div
+		class="bg-cod-gray-500 2xs:fixed top-0 z-40 h-full w-full pt-20 duration-500 md:hidden {$isMobileMenuActive
+			? 'translate-y-0'
+			: '-translate-y-full'}"
+	>
+		<MobileNav />
 	</div>
-{/key}
+</header>
+
+<slot />
 
 <style>
 	.bar-one,
