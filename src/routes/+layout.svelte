@@ -7,7 +7,6 @@
 	import { Toaster } from 'svelte-french-toast';
 	import logo from '$lib/img/mg-logo.svg';
 	import logolight from '$lib/img/mg-logo-light.svg';
-	import { partytownSnippet } from '@builder.io/partytown/integration';
 	import { browser } from '$app/environment';
 	import Switcher from '$lib/components/Switcher.svelte';
 	import { onMount } from 'svelte';
@@ -94,24 +93,6 @@
 		content="https://www.mgaroz.pro/website.webp"
 	/>
 	<meta name="twitter:creator" content="@mgaroz_pro" />
-	<script>
-		partytown = {
-			forward: ['dataLayer.push', 'gtag']
-		};
-	</script>
-	{@html '<script>' + partytownSnippet() + '</script>'}
-	<script
-		type="text/partytown"
-		src="https://www.googletagmanager.com/gtag/js?id=G-NLCL9X3EY6"
-	></script>
-	<script type="text/partytown">
-		window.dataLayer = window.dataLayer || [];
-		window.gtag = function () {
-			dataLayer.push(arguments);
-		};
-		gtag('js', new Date());
-		gtag('config', 'G-NLCL9X3EY6');
-	</script>
 </svelte:head>
 
 <Toaster />
