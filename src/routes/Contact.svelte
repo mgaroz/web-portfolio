@@ -54,7 +54,7 @@
 	};
 </script>
 
-<section id="contact" class="2xs:px-6 h-full w-full md:px-20">
+<section id="contact" class="2xs:px-6 h-full w-full transition-colors duration-500 md:px-20">
 	<div class="pb-[1.5625rem]">
 		<span class="font-bgr block text-sm uppercase">/ I'd love to hear from you </span>
 	</div>
@@ -114,7 +114,7 @@
 				<hr class="h-[1.75rem] border-0" />
 				<button
 					type="submit"
-					class="bg-gallery-500 text-cod-gray-500 font-bgm group h-[40px] w-36 rounded-full align-middle text-[14px] uppercase"
+					class="dark:bg-gallery-500 dark:text-cod-gray-500 font-bgm text-gallery-500 bg-cod-gray-500 group h-[40px] w-36 rounded-full align-middle text-[14px] uppercase transition-colors duration-500"
 					disabled={loading}
 				>
 					Submit

@@ -41,7 +41,7 @@
 	});
 </script>
 
-<section id="blog" class="2xs:px-6 h-full w-full pb-28 md:px-20">
+<section id="blog" class="2xs:px-6 h-full w-full pb-28 transition-colors duration-500 md:px-20">
 	<div bind:this={sectionContainer}>
 		<div>
 			<p class="font-bgr pb-[1.5625rem] text-sm uppercase">/ Stay informed</p>
@@ -105,7 +105,7 @@
 			<hr class="h-[1.75rem] border-0" />
 			<hr class="h-[1.75rem] border-0" />
 			<button
-				class="bg-gallery-500 text-cod-gray-500 group h-[40px] w-36 rounded-full align-middle uppercase"
+				class="dark:bg-gallery-500 dark:text-cod-gray-500 bg-cod-gray-500 text-gallery-500 group h-[40px] w-36 rounded-full align-middle uppercase transition-colors duration-500"
 			>
 				<a href="https://dev.to/mgaroz" class="text-sm" target="_blank" rel="noreferrer"
 					>Read blog</a
