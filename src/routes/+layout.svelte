@@ -150,7 +150,9 @@
 			on:mouseleave={() => ($active = false)}
 		>
 			<Menu {menuItems} />
-			<Switcher {toggleTheme} {isDark} />
+			<div class="2xs:hidden md:block">
+				<Switcher {toggleTheme} {isDark} />
+			</div>
 		</div>
 	</nav>
 	<div

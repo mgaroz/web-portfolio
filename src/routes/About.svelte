@@ -47,7 +47,7 @@
 
 <section
 	id="about"
-	class="2xs:px-6 2xs:pb-20 h-full w-full overflow-hidden md:px-20 md:pb-28"
+	class="2xs:px-6 2xs:pb-20 h-full w-full overflow-hidden transition-colors duration-500 md:px-20 md:pb-28"
 	bind:this={sectionContainer}
 >
 	<div id="about-me" class="md:pb-14 2xl:pb-20">

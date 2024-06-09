@@ -54,7 +54,7 @@
 	};
 </script>
 
-<section id="contact" class="2xs:px-6 h-full w-full md:px-20">
+<section id="contact" class="2xs:px-6 h-full w-full transition-colors duration-500 md:px-20">
 	<div class="pb-[1.5625rem]">
 		<span class="font-bgr block text-sm uppercase">/ I'd love to hear from you </span>
 	</div>
@@ -69,8 +69,8 @@
 		</div>
 		<div id="contact-right" class="font-bgr md:w-2/3">
 			<form method="POST" use:enhance={submitForm}>
-				<div class="mb-8 grid w-full grid-cols-2 gap-10">
-					<div class="inline-block">
+				<div class="mb-8 w-full gap-10 md:grid md:grid-cols-2">
+					<div class="2xs:mb-8 2xs:w-full inline-block">
 						<label for="name" class="text-hear">NAME</label>
 						<input
 							type="text"
@@ -83,7 +83,7 @@
 							<small>{form.errors.name}</small>
 						{/if}
 					</div>
-					<div class="inline-block">
+					<div class="2xs:w-full inline-block">
 						<label for="email" class="text-hear">EMAIL</label>
 						<input
 							type="email"
@@ -114,7 +114,7 @@
 				<hr class="h-[1.75rem] border-0" />
 				<button
 					type="submit"
-					class="bg-gallery-500 text-cod-gray-500 font-bgm group h-[40px] w-36 rounded-full align-middle text-[14px] uppercase"
+					class="dark:bg-gallery-500 dark:text-cod-gray-500 font-bgm text-gallery-500 bg-cod-gray-500 group h-[40px] w-36 rounded-full align-middle text-[14px] uppercase transition-colors duration-500"
 					disabled={loading}
 				>
 					Submit
