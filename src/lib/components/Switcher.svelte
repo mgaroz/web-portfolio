@@ -7,6 +7,7 @@
 	on:click={toggleTheme}
 	id="theme-toggle"
 	type="button"
+	aria-label="theme switch"
 	class="focus:ring-none text-cod-gray-400 mb-2 flex items-center rounded-lg p-2 text-sm hover:bg-gray-100 focus:outline-none focus:ring-gray-200 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
 >
 	<svg
