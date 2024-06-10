@@ -115,7 +115,7 @@
 		<span class="sr-only">Menu</span></button
 	>
 	<nav
-		class="dark:bg-cod-gray-500 2xs:px-6 2xs:py-8 fixed z-30 flex w-full items-center justify-between bg-white md:h-32 md:px-20 md:py-5"
+		class="dark:bg-cod-gray-500 2xs:px-6 2xs:py-8 fixed z-30 flex w-full items-center justify-between bg-white md:h-24 md:px-20 md:py-5"
 	>
 		<div class="flex items-center">
 			{#if isDark}

@@ -30,8 +30,8 @@
 			opacity: 0,
 			scrollTrigger: {
 				trigger: sectionContainer,
-				start: 'top 80%',
-				end: 'bottom 80%',
+				start: 'top 90%',
+				end: 'bottom 60%',
 				toggleActions: 'play reverse play reverse'
 			}
 		});
