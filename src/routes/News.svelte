@@ -30,8 +30,8 @@
 			opacity: 0,
 			scrollTrigger: {
 				trigger: sectionContainer,
-				start: 'top 80%',
-				end: 'bottom 80%',
+				start: 'top 90%',
+				end: 'bottom 60%',
 				toggleActions: 'play reverse play reverse'
 			}
 		});
@@ -105,7 +105,7 @@
 			<hr class="h-[1.75rem] border-0" />
 			<hr class="h-[1.75rem] border-0" />
 			<button
-				class="dark:bg-gallery-500 dark:text-cod-gray-500 bg-cod-gray-500 text-gallery-500 group h-[40px] w-36 rounded-full align-middle uppercase transition-colors duration-500"
+				class="dark:bg-gallery-500 dark:text-cod-gray-500 bg-cod-gray-500 text-gallery-500 group h-[40px] w-36 rounded-full align-middle uppercase transition-all duration-500 hover:scale-105"
 			>
 				<a href="https://dev.to/mgaroz" class="text-sm" target="_blank" rel="noreferrer"
 					>Read blog</a
