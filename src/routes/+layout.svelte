@@ -93,8 +93,11 @@
 		content="https://www.mgaroz.pro/website.webp"
 	/>
 	<meta name="twitter:creator" content="@mgaroz_pro" />
-	<link rel="preload" as="image" href={logo} />
-	<link rel="preload" as="image" href={logolight} />
+	{#if isDark}
+		<link rel="preload" as="image" href={logo} />
+	{:else}
+		<link rel="preload" as="image" href={logolight} />
+	{/if}
 </svelte:head>
 
 <Toaster />
