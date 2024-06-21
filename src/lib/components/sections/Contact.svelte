@@ -3,7 +3,8 @@
 	import { invalidateAll } from '$app/navigation';
 	import TextClear from '$lib/components/TextClear.svelte';
 	import toast from 'svelte-french-toast';
-	import type { ActionData } from './$types';
+	import type { ActionData } from '../../../routes/$types';
+	import { ArrowUp } from '$lib';
 
 	let loading = false;
 	let currentYear = new Date().getFullYear();
@@ -80,7 +81,7 @@
 							disabled={loading}
 						/>
 						{#if form?.errors?.name}
-							<small>{form.errors.name}</small>
+							<small class="text-red-400">{form.errors.name}</small>
 						{/if}
 					</div>
 					<div class="2xs:w-full inline-block">
@@ -93,7 +94,7 @@
 							disabled={loading}
 						/>
 						{#if form?.errors?.email}
-							<small>{form.errors.email}</small>
+							<small class="text-red-400">{form.errors.email}</small>
 						{/if}
 					</div>
 				</div>
@@ -108,7 +109,7 @@
 						disabled={loading}
 					/>
 					{#if form?.errors?.message}
-						<small>{form.errors.message}</small>
+						<small class="text-red-400">{form.errors.message}</small>
 					{/if}
 				</div>
 				<hr class="h-[1.75rem] border-0" />
@@ -127,20 +128,7 @@
 	>
 		<div class="font-bgr 2xs:gap-1 2xs:justify-between group flex items-center md:gap-8">
 			<a href="/" aria-label="Home">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke-width="2.5"
-					stroke="currentColor"
-					class="h-5 w-5"
-				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"
-					/>
-				</svg>
+				<svelte:component this={ArrowUp} />
 			</a>
 			<div class="2xs:hidden md:block">
 				<TextClear text="Back to top" href="#home" />
