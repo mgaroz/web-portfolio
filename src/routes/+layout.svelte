@@ -93,6 +93,8 @@
 		content="https://www.mgaroz.pro/website.webp"
 	/>
 	<meta name="twitter:creator" content="@mgaroz_pro" />
+	<link rel="preload" as="image" href={logo} />
+	<link rel="preload" as="image" href={logolight} />
 </svelte:head>
 
 <Toaster />

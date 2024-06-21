@@ -5,8 +5,21 @@
 		<link href="favicon-light.webp" rel="icon" media="(prefers-color-scheme: light)" />
 		<link href="favicon-dark.webp" rel="icon" media="(prefers-color-scheme: dark)" />
 		<link rel="canonical" href="https://www.mgaroz.pro/" />
-		<meta name="viewport" content="width=device-width" />
-		<script src="%sveltekit.assets%/darkMode.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script>
+			if (
+				localStorage.theme === 'dark' ||
+				(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+			) {
+				document.documentElement.classList.add('dark');
+				document.documentElement.classList.remove('light');
+				localStorage.setItem('theme', 'dark');
+			} else {
+				document.documentElement.classList.remove('dark');
+				document.documentElement.classList.add('light');
+				localStorage.setItem('theme', 'light');
+			}
+		</script>
 		%sveltekit.head%
 	</head>
 	<body
