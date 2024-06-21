@@ -1,5 +1,7 @@
 <script lang="ts">
 	import '../app.css';
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 	import Menu from '$lib/components/Menu.svelte';
 	import MobileNav from '$lib/components/MobileNav.svelte';
 	import { active } from '$lib/store';
@@ -7,9 +9,8 @@
 	import { Toaster } from 'svelte-french-toast';
 	import logo from '$lib/img/mg-logo.svg';
 	import logolight from '$lib/img/mg-logo-light.svg';
-	import { browser } from '$app/environment';
 	import Switcher from '$lib/components/Switcher.svelte';
-	import { onMount } from 'svelte';
+	import LayoutHead from '$lib/components/LayoutHead.svelte';
 
 	let colorScheme: string;
 	let isDark: boolean;
@@ -50,49 +51,11 @@
 		} else {
 			isDark = false;
 		}
-
-		console.log(isDark);
 	});
 </script>
 
 <svelte:head>
-	<title>mgaroz | Front-End Developer</title>
-	<meta name="title" content="mgaroz | Front-End Developer" />
-	<meta
-		name="description"
-		content="Miguel Garoz is a Front-End Developer. He specializes in building exceptional websites, applications, and everything in between."
-	/>
-
-	<meta itemprop="name" content="mgaroz | Front-End Developer" />
-	<meta
-		itemprop="description"
-		content="Miguel Garoz is a Front-End Developer. He specializes in building exceptional websites, applications, and everything in between."
-	/>
-	<meta itemprop="image" content="https://www.mgaroz.pro/website.webp" />
-
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://www.mgaroz.pro/" />
-	<meta property="og:title" content="mgaroz | Front-End Developer" />
-	<meta
-		property="og:description"
-		content="Miguel Garoz is a Front-End Developer. He specializes in building exceptional websites, applications, and everything in between."
-	/>
-	<meta property="og:image" content="https://www.mgaroz.pro/website.webp" />
-
-	<meta name="twitter:card" property="twitter:card" content="summary_large_image" />
-	<meta name="twitter:url" property="twitter:url" content="https://www.mgaroz.pro/" />
-	<meta name="twitter:title" property="twitter:title" content="mgaroz | Front-End Developer" />
-	<meta
-		name="twitter:description"
-		property="twitter:description"
-		content="Miguel Garoz is a Front-End Developer. He specializes in building exceptional websites, applications, and everything in between."
-	/>
-	<meta
-		name="twitter:image"
-		property="twitter:image"
-		content="https://www.mgaroz.pro/website.webp"
-	/>
-	<meta name="twitter:creator" content="@mgaroz_pro" />
+	<LayoutHead />
 	{#if isDark}
 		<link rel="preload" as="image" href={logo} />
 	{:else}
