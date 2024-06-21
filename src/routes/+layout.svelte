@@ -93,6 +93,8 @@
 		content="https://www.mgaroz.pro/website.webp"
 	/>
 	<meta name="twitter:creator" content="@mgaroz_pro" />
+	<link rel="preload" as="image" href={logo} />
+	<link rel="preload" as="image" href={logolight} />
 </svelte:head>
 
 <Toaster />
@@ -119,9 +121,9 @@
 	>
 		<div class="flex items-center">
 			{#if isDark}
-				<img src={logo} alt="logo" class="h-4" width="144px" height="16" />
+				<img loading="lazy" src={logo} alt="logo" class="h-4" width="144px" height="16" />
 			{:else}
-				<img src={logolight} alt="logo" class="h-4" width="144px" height="16" />
+				<img loading="lazy" src={logolight} alt="logo" class="h-4" width="144px" height="16" />
 			{/if}
 		</div>
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
