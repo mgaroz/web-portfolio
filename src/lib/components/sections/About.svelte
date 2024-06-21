@@ -3,6 +3,7 @@
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import TextClear from '$lib/components/TextClear.svelte';
 	import { onMount } from 'svelte';
+	import { ArrowDown } from '$lib';
 
 	let headerContainer: HTMLDivElement;
 	let sectionContainer: HTMLElement;
@@ -80,20 +81,7 @@
 		</div>
 		<div class="flex h-5 w-5 items-center justify-center">
 			<a href="#blog" aria-label="Blog">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke-width={2.5}
-					stroke="currentColor"
-					class="h-5 w-5"
-				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						d="M4.5 4.5l15 15m0 0V8.25m0 11.25H8.25"
-					/>
-				</svg>
+				<svelte:component this={ArrowDown} />
 			</a>
 		</div>
 	</div>

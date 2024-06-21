@@ -1,4 +1,3 @@
-// place files you want to import through the `$lib` alias in this folder.
 import LayoutHead from './components/LayoutHead.svelte';
 import About from './components/sections/About.svelte';
 import Contact from './components/sections/Contact.svelte';
