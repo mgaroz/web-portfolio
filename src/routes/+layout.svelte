@@ -1,5 +1,7 @@
 <script lang="ts">
 	import '../app.css';
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 	import Menu from '$lib/components/Menu.svelte';
 	import MobileNav from '$lib/components/MobileNav.svelte';
 	import { active } from '$lib/store';
@@ -7,9 +9,7 @@
 	import { Toaster } from 'svelte-french-toast';
 	import logo from '$lib/img/mg-logo.svg';
 	import logolight from '$lib/img/mg-logo-light.svg';
-	import { browser } from '$app/environment';
 	import Switcher from '$lib/components/Switcher.svelte';
-	import { onMount } from 'svelte';
 	import LayoutHead from '$lib/components/LayoutHead.svelte';
 
 	let colorScheme: string;
