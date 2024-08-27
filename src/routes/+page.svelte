@@ -114,21 +114,20 @@
 		<div class="z-2 relative inset-0 mx-auto block w-full">
 			<div class="2xs:pt-40 relative mx-auto w-full pb-40 text-left md:pt-10">
 				<h1 class="text-hero-size 2xs:pb-10 leading-none md:pb-0">
-					<span
-						class="2xs:ml-0 relative block translate-y-28 opacity-0 md:-ml-2"
-						bind:this={nameContainer}>MIGUEL</span
+					<span class="2xs:ml-0 relative block translate-y-28 md:-ml-2" bind:this={nameContainer}
+						>MIGUEL</span
 					>
 					<span
-						class="font-bgr 2xs:hidden relative max-w-[16.25rem] translate-y-28 align-middle text-sm uppercase leading-5 opacity-0 md:inline-block"
+						class="font-bgr 2xs:hidden relative max-w-[16.25rem] translate-y-28 align-middle text-sm uppercase leading-5 md:inline-block"
 						bind:this={subContainer}>{tagline}</span
 					>
 					<span
-						class="2xs:left-0 relative inline-block translate-y-28 opacity-0 md:left-10"
+						class="2xs:left-0 relative inline-block translate-y-28 md:left-10"
 						bind:this={lastNameContainer}>GAROZ</span
 					>
 				</h1>
 				<span
-					class="font-bgr 2xs:block 2xs:text-[14px] translate-y-28 uppercase opacity-0 md:hidden"
+					class="font-bgr 2xs:block 2xs:text-[14px] translate-y-28 uppercase md:hidden"
 					bind:this={subContainer2}
 				>
 					{tagline}
