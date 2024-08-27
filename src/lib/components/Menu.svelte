@@ -9,15 +9,17 @@
 
 <div class="2xs:hidden uppercase md:block">
 	<ul
-		class="font-bgr group flex h-full list-none items-center text-[14px]"
+		class="font-bgr group/fade flex h-full list-none items-center text-[14px]"
 		on:mouseenter={() => ($activeMenuInfo.isBeingHovered = true)}
 		on:mouseleave={() => ($activeMenuInfo.isBeingHovered = false)}
 	>
 		{#each menuItems as item}
-			<li class="group/link h-full overflow-hidden px-[30px]">
+			<li
+				class="group/link h-full overflow-hidden px-[30px] group-hover/fade:[&:not(:hover)]:opacity-50"
+			>
 				<a
 					href={item.href}
-					class="relative transition-all duration-150 after:absolute after:left-0 after:inline-block after:translate-y-full after:transition-[inherit] after:content-[attr(data-hover)] group-hover/link:opacity-100 group-hover/link:after:translate-y-0 group-hover:[&:not(:hover)]:opacity-50"
+					class="relative transition-all duration-150 after:absolute after:left-0 after:inline-block after:translate-y-full after:transition-[inherit] after:content-[attr(data-hover)] group-hover/link:opacity-100 group-hover/link:after:translate-y-0"
 					data-hover={item.label}
 					on:click={() => setClickedNavItem(item.id)}
 				>
