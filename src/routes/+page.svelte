@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Work, About, News, Contact, SocialIcons, ArrowDown } from '$lib/index';
-	import { gsap } from 'gsap';
+	import { timeline } from 'motion';
 	import { onMount } from 'svelte';
 	import { active } from '$lib/store';
 	import { workActive } from '$lib/store';
@@ -19,122 +19,86 @@
 	let socialIconsContainer: HTMLDivElement;
 	let heroFooterLeftContainer: HTMLDivElement;
 	let heroFooterRightContainer: HTMLDivElement;
-	let m = { x: 0, y: 0 };
 	let tagline = 'Front-end developer with an adaptive approach to problem solving.';
 
 	export let form: ActionData;
 
 	$: activeBackColor = $backColor;
 
-	let tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-
-	function handleMousemove(e: MouseEvent) {
-		(m.x = e.clientX), (m.y = e.clientY);
-	}
-
-	function animateHero() {
-		tl.to(nameContainer, {
-			duration: 1.5,
-			clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-			opacity: 1,
-			y: 0
-		})
-			.to(
+	onMount(() => {
+		const sequence = [
+			[
+				nameContainer,
+				{
+					clipPath: [
+						'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)',
+						'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'
+					],
+					y: [112, 0],
+					opacity: [0, 1]
+				},
+				{ duration: 1.5 }
+			],
+			[
 				lastNameContainer,
 				{
-					duration: 1.5,
-					clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-					opacity: 1,
-					y: 0
+					clipPath: [
+						'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)',
+						'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'
+					],
+					y: [112, 0],
+					opacity: [0, 1]
 				},
-				'-=1.40'
-			)
-			.from(
+				{ duration: 1.5, at: '-1.40' }
+			],
+			[
 				subContainer,
 				{
-					duration: 1.5,
-					clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
+					clipPath: [
+						'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)',
+						'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'
+					],
+					y: [112, 0],
+					opacity: [0, 1]
 				},
-				'-=1.40'
-			)
-			.to(
-				subContainer,
-				{
-					duration: 1.5,
-					opacity: 1,
-					y: 0,
-					clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'
-				},
-				'-=1.5'
-			)
-			.from(
+				{ duration: 1.5, at: '-1.5' }
+			],
+			[
 				subContainer2,
 				{
-					clipPath: 'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)'
+					clipPath: [
+						'polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)',
+						'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'
+					],
+					y: [112, 0],
+					opacity: [0, 1]
 				},
-				'-=1.5'
-			)
-			.to(
-				subContainer2,
-				{
-					duration: 1.5,
-					opacity: 1,
-					y: 0,
-					clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'
-				},
-				'-=1.5'
-			)
-			.to(
-				socialIconsContainer,
-				{
-					duration: 1.5,
-					x: 0
-				},
-				'-=1.5'
-			)
-			.to(
-				heroFooterLeftContainer,
-				{
-					duration: 1.5,
-					x: 0
-				},
-				'-=1.1'
-			)
-			.to(
-				heroFooterRightContainer,
-				{
-					duration: 1.5,
-					x: 0
-				},
-				'-=1.5'
-			);
-	}
-
-	onMount(() => {
-		gsap.set(ballContainer, { xPercent: -50, yPercent: -50 });
-		const ball = ballContainer;
-		const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-		const mouse = m;
-		const speed = 0.25;
-		const xSet = gsap.quickSetter(ball, 'x', 'px');
-		const ySet = gsap.quickSetter(ball, 'y', 'px');
-		gsap.ticker.add(() => {
-			const dt = 1.25 - Math.pow(1.35 - speed, gsap.ticker.deltaRatio());
-			pos.x += (mouse.x - pos.x) * dt;
-			pos.y += (mouse.y - pos.y) * dt;
-			xSet(pos.x);
-			ySet(pos.y);
-		});
-		animateHero();
+				{ duration: 1.5, at: '-1.5' }
+			],
+			[heroFooterLeftContainer, { x: [-208, 0] }, { duration: 1.5, at: '-1.1' }],
+			[heroFooterRightContainer, { x: [208, 0] }, { duration: 1.5, at: '-1.1' }]
+		] as any;
+		timeline(sequence, { delay: 0 });
 	});
 </script>
 
-<svelte:window on:mousemove={handleMousemove} />
+<svelte:window
+	on:pointermove={(event) => {
+		const { clientX, clientY } = event;
+		ballContainer.animate(
+			{
+				left: `${clientX}px`,
+				top: `${clientY}px`
+			},
+			{ duration: 750, fill: 'forwards' }
+		);
+	}}
+/>
 
 <div
 	class:active={$active || $blogActiveTags}
 	class:active-work={$workActive || $blogActive}
-	class="circle 2xs:hidden z-40 md:block"
+	class="2xs:hidden pointer-events-none fixed left-1/2 top-1/2 z-40 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#737373] transition-all duration-300 md:block"
 	bind:this={ballContainer}
 	style="--backColor:{activeBackColor}"
 />
@@ -151,7 +115,7 @@
 			<div class="2xs:pt-40 relative mx-auto w-full pb-40 text-left md:pt-10">
 				<h1 class="text-hero-size 2xs:pb-10 leading-none md:pb-0">
 					<span
-						class="2xs:ml-0 name-container relative block translate-y-28 opacity-0 md:-ml-2"
+						class="2xs:ml-0 relative block translate-y-28 opacity-0 md:-ml-2"
 						bind:this={nameContainer}>MIGUEL</span
 					>
 					<span
@@ -159,7 +123,7 @@
 						bind:this={subContainer}>{tagline}</span
 					>
 					<span
-						class="2xs:left-0 name-container relative inline-block translate-y-28 opacity-0 md:left-10"
+						class="2xs:left-0 relative inline-block translate-y-28 opacity-0 md:left-10"
 						bind:this={lastNameContainer}>GAROZ</span
 					>
 				</h1>
@@ -213,25 +177,6 @@
 <style>
 	.text-hero-size {
 		font-size: clamp(3.15rem, 1.3846rem + 7.8462vw, 10.8rem);
-	}
-
-	.name-container {
-		clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
-	}
-
-	.circle {
-		width: 40px;
-		height: 40px;
-		position: fixed;
-		top: 0;
-		left: 0;
-		border: 2px solid #737373;
-		border-radius: 50%;
-		pointer-events: none;
-		transition:
-			background-color 0.3s,
-			width 0.3s,
-			height 0.3s;
 	}
 
 	.active {
