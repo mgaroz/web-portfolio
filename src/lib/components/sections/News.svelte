@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { gsap } from 'gsap';
-	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	import { animate, inView } from 'motion';
 	import { blogActive } from '$lib/store';
 	import { backColor } from '$lib/store';
 	import { active } from '$lib/store';
@@ -23,17 +22,9 @@
 	}
 
 	onMount(async () => {
-		gsap.registerPlugin(ScrollTrigger);
-		gsap.from(sectionContainer, {
-			duration: 1,
-			y: 100,
-			opacity: 0,
-			scrollTrigger: {
-				trigger: sectionContainer,
-				start: 'top 90%',
-				end: 'bottom 60%',
-				toggleActions: 'play reverse play reverse'
-			}
+		inView(sectionContainer, () => {
+			const controls = animate(sectionContainer, { opacity: [0, 1], y: [100, 0] }, { duration: 1 });
+			return () => controls.stop();
 		});
 
 		const res = await fetch('https://dev.to/api/articles/latest?username=mgaroz&per_page=3');

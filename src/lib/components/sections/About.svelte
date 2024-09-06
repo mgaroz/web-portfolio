@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { gsap } from 'gsap';
-	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	import { animate, inView } from 'motion';
 	import TextClear from '$lib/components/TextClear.svelte';
 	import { onMount } from 'svelte';
 	import { ArrowDown } from '$lib';
@@ -8,40 +7,13 @@
 	let headerContainer: HTMLDivElement;
 	let sectionContainer: HTMLElement;
 	let aboutContainer: HTMLDivElement;
-	let tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
 	onMount(() => {
-		gsap.registerPlugin(ScrollTrigger);
+		inView(sectionContainer, () => {
+			const controls = animate(headerContainer, { opacity: [0, 1] }, { duration: 2 });
+			animate(aboutContainer, { x: [1000, 0], opacity: [0, 1] }, { duration: 2 });
 
-		let animText = tl
-			.from(headerContainer, {
-				duration: 2,
-				opacity: 0
-			})
-			.to(
-				headerContainer,
-				{
-					duration: 2,
-					opacity: 1
-				},
-				'-=2'
-			)
-			.from(
-				aboutContainer,
-				{
-					duration: 2,
-					opacity: 0,
-					x: 1000
-				},
-				'-=2'
-			);
-
-		ScrollTrigger.create({
-			trigger: sectionContainer,
-			start: '15% 90%',
-			end: 'bottom 80%',
-			toggleActions: 'restart reverse restart reverse',
-			animation: animText
+			return () => controls.stop();
 		});
 	});
 </script>
