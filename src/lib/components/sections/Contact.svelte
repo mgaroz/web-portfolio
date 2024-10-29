@@ -115,7 +115,7 @@
 				<hr class="h-[1.75rem] border-0" />
 				<button
 					type="submit"
-					class="dark:bg-gallery-500 dark:text-cod-gray-500 font-bgm text-gallery-500 bg-cod-gray-500 group h-[40px] w-36 rounded-full align-middle text-[14px] uppercase transition-all duration-500 hover:scale-105"
+					class="dark:bg-gallery-500 dark:text-cod-gray-500 font-bgm text-gallery-500 bg-cod-gray-500 group h-[40px] w-36 rounded-full align-middle text-sm uppercase transition-all duration-300 hover:scale-105"
 					disabled={loading}
 				>
 					Submit

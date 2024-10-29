@@ -96,7 +96,7 @@
 			<hr class="h-[1.75rem] border-0" />
 			<hr class="h-[1.75rem] border-0" />
 			<div
-				class="dark:bg-gallery-500 dark:text-cod-gray-500 bg-cod-gray-500 text-gallery-500 group flex h-[40px] w-36 items-center justify-center rounded-full align-middle uppercase transition-all duration-500 hover:scale-105"
+				class="dark:bg-gallery-500 dark:text-cod-gray-500 bg-cod-gray-500 text-gallery-500 group flex h-[40px] w-36 items-center justify-center rounded-full align-middle uppercase transition-all duration-300 hover:scale-105"
 			>
 				<a href="https://dev.to/mgaroz" class="text-sm" target="_blank" rel="noreferrer"
 					>Read blog</a
