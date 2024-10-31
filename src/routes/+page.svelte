@@ -76,6 +76,7 @@
 				{ duration: 1.5, at: '-1.5' }
 			],
 			[heroFooterLeftContainer, { x: [-208, 0] }, { duration: 1.5, at: '-1.1' }],
+			[socialIconsContainer, { x: [-208, 0] }, { duration: 1.5, at: '-1.1' }],
 			[heroFooterRightContainer, { x: [208, 0] }, { duration: 1.5, at: '-1.1' }]
 		] as any;
 		timeline(sequence, { delay: 0 });
