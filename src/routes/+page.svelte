@@ -76,7 +76,8 @@
 				{ duration: 1.5, at: '-1.5' }
 			],
 			[heroFooterLeftContainer, { x: [-208, 0] }, { duration: 1.5, at: '-1.1' }],
-			[heroFooterRightContainer, { x: [208, 0] }, { duration: 1.5, at: '-1.1' }]
+			[socialIconsContainer, { x: [-208, 0] }, { duration: 1, at: '-1.3' }],
+			[heroFooterRightContainer, { x: [208, 0] }, { duration: 1.5, at: '-1.5' }]
 		] as any;
 		timeline(sequence, { delay: 0 });
 	});
@@ -142,7 +143,7 @@
 			<div class="flex w-full justify-between">
 				<div
 					id="hero-footer-left"
-					class="font-bgr group flex -translate-x-52 items-center justify-center gap-8 overflow-hidden"
+					class="font-bgr group flex items-center justify-center gap-8 overflow-hidden"
 					bind:this={heroFooterLeftContainer}
 				>
 					<div class="2xs:hidden md:block">
@@ -154,7 +155,7 @@
 						</a>
 					</div>
 				</div>
-				<div id="hero-footer-right" bind:this={heroFooterRightContainer} class="translate-x-52">
+				<div id="hero-footer-right" bind:this={heroFooterRightContainer}>
 					<span class="font-bgr h-full text-sm">Selected works (04)</span>
 				</div>
 			</div>

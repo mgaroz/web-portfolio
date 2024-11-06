@@ -2,53 +2,12 @@ import { validateData } from '$lib/utils.js';
 import { newContactSchema } from '$lib/schemas/schemas.js';
 import { fail, type Actions } from '@sveltejs/kit';
 
-import { SECRET_TO_EMAIL, SECRET_FROM_EMAIL, SECRET_MAIL_API_URL } from '$env/static/private';
-
-async function _sendEmail(
-	name: FormDataEntryValue,
-	email: FormDataEntryValue,
-	message: FormDataEntryValue
-) {
-	const request = new Request(SECRET_MAIL_API_URL, {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify({
-			personalizations: [
-				{
-					to: [{ email: SECRET_TO_EMAIL }]
-				}
-			],
-			from: {
-				email: SECRET_FROM_EMAIL,
-				name: 'Website form'
-			},
-			subject: 'New message from website',
-			content: [
-				{
-					type: 'text/html',
-					value: `<p> You've got a new message from: <strong>${name}</strong> - ${email}</p>
-
-        <p>${message}</p>`
-				}
-			]
-		})
-	});
-
-	let respContent = '';
-	if (request.method == 'POST') {
-		const response = await fetch(request);
-
-		respContent = response.status + ' ' + response.statusText;
-		if (response.status >= 400) {
-			console.error(`Error sending email: ${response.status} ${response.statusText}`);
-			return fail(response.status, { status: response.status, message: response.statusText });
-		}
-	}
-
-	return JSON.parse(JSON.stringify(respContent));
-}
+import {
+	SECRET_TO_EMAIL,
+	SECRET_FROM_EMAIL,
+	SECRET_MAIL_API_URL,
+	SECRET_SG_API_KEY
+} from '$env/static/private';
 
 export const actions: Actions = {
 	default: async ({ request }) => {
@@ -61,11 +20,33 @@ export const actions: Actions = {
 				errors: errors.fieldErrors
 			});
 		}
-		let response;
+
+		const response = await fetch(SECRET_MAIL_API_URL, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				Authorization: `Bearer ${SECRET_SG_API_KEY}`
+			},
+			body: JSON.stringify({
+				personalizations: [{ to: [{ email: SECRET_TO_EMAIL }] }],
+				from: { email: SECRET_FROM_EMAIL },
+				subject: 'New message from website',
+				content: [
+					{
+						type: 'text/html',
+						value: `<h4> You've got a new message from: ${formData?.name} - ${formData?.email}</h4> 
+							${formData?.company ? '<p>Company: ${formData?.company}</p>' : ''}
+							
+							<p>${formData?.message}</p>`
+					}
+				]
+			})
+		});
 
 		if (Object.keys(formData).length > 0) {
-			response = await _sendEmail(formData?.name, formData?.email, formData?.message);
-			return response;
+			return {
+				response: structuredClone(response.status)
+			};
 		}
 	}
 };
