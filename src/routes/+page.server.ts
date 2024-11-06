@@ -45,7 +45,7 @@ export const actions: Actions = {
 
 		if (Object.keys(formData).length > 0) {
 			return {
-				response: structuredClone(response)
+				response: structuredClone(response.status)
 			};
 		}
 	}
