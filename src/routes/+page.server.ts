@@ -29,7 +29,7 @@ export const actions: Actions = {
 			},
 			body: JSON.stringify({
 				personalizations: [{ to: [{ email: SECRET_TO_EMAIL }] }],
-				from: { email: SECRET_FROM_EMAIL },
+				from: { email: SECRET_FROM_EMAIL, name: 'Website Form' },
 				subject: 'New message from website',
 				content: [
 					{
