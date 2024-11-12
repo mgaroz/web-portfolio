@@ -1,10 +1,14 @@
 <script lang="ts">
-	export let toggleTheme: () => void;
-	export let isDark: boolean;
+	interface Props {
+		toggleTheme: () => void;
+		isDark: boolean;
+	}
+
+	let { toggleTheme, isDark }: Props = $props();
 </script>
 
 <button
-	on:click={toggleTheme}
+	onclick={toggleTheme}
 	id="theme-toggle"
 	type="button"
 	aria-label="theme switch"

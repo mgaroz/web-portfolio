@@ -53,7 +53,7 @@
 		</div>
 		<div class="flex h-5 w-5 items-center justify-center">
 			<a href="#blog" aria-label="Blog">
-				<svelte:component this={ArrowDown} />
+				<ArrowDown />
 			</a>
 		</div>
 	</div>

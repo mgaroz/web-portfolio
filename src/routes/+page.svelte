@@ -21,9 +21,13 @@
 	let heroFooterRightContainer: HTMLDivElement;
 	let tagline = 'Front-end developer with an adaptive approach to problem solving.';
 
-	export let form: ActionData;
+	interface Props {
+		form: ActionData;
+	}
 
-	$: activeBackColor = $backColor;
+	let { form }: Props = $props();
+
+	let activeBackColor = $derived($backColor);
 
 	onMount(() => {
 		const sequence = [
@@ -84,7 +88,7 @@
 </script>
 
 <svelte:window
-	on:pointermove={(event) => {
+	onpointermove={(event) => {
 		const { clientX, clientY } = event;
 		ballContainer.animate(
 			{
@@ -102,7 +106,7 @@
 	class="2xs:hidden pointer-events-none fixed left-1/2 top-1/2 z-40 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#737373] transition-all duration-300 md:block"
 	bind:this={ballContainer}
 	style="--backColor:{activeBackColor}"
-/>
+></div>
 
 <section
 	class="2xs:px-6 2xs:h-[calc(95vh+128px)] md:h-[calc(90vh+128px)] md:px-20 md:pt-32"
@@ -139,7 +143,9 @@
 			class="2xs:pb-10 flex w-full flex-col items-center justify-between uppercase md:pb-0"
 			id="hero-footer"
 		>
-			<SocialIcons bind:socialIconsContainer />
+			<div bind:this={socialIconsContainer} class="w-full">
+				<SocialIcons />
+			</div>
 			<div class="flex w-full justify-between">
 				<div
 					id="hero-footer-left"
@@ -151,7 +157,7 @@
 					</div>
 					<div class="flex h-5 w-5 items-center justify-center">
 						<a href="#portfolio" aria-label="Portfolio">
-							<svelte:component this={ArrowDown} />
+							<ArrowDown />
 						</a>
 					</div>
 				</div>

@@ -8,7 +8,7 @@
 	import { onMount } from 'svelte';
 	let sectionContainer: HTMLDivElement;
 
-	let myBlogData: any[] = [];
+	let myBlogData: any[] = $state([]);
 
 	function setStatus(status: boolean) {
 		active.set(false);
@@ -52,32 +52,32 @@
 							<div
 								style="background-image: url('{cover_image}')"
 								class="reverseit 2xs:hidden h-36 w-0 scale-125 bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100 md:block"
-							/>
+							></div>
 						</div>
 						<h3
 							class="text-titles 2xs:flex 2xs:h-20 2xs:pb-10 2xs:items-center uppercase md:block md:h-auto md:pb-0"
-							on:mouseenter={() => setStatus(true)}
-							on:mouseleave={() => setStatus(false)}
+							onmouseenter={() => setStatus(true)}
+							onmouseleave={() => setStatus(false)}
 						>
 							<a href={url} target="_blank">{title}</a>
 						</h3>
 					</div>
 					<div class="flex-shrink-0 items-center justify-between md:flex md:h-16 md:gap-20">
-						<!-- svelte-ignore a11y-no-static-element-interactions -->
+						<!-- svelte-ignore a11y_no_static_element_interactions -->
 						<div
 							class="items-center justify-center md:flex md:h-16"
-							on:mouseenter={() => setTrailerActive(true)}
-							on:mouseleave={() => setTrailerActive(false)}
+							onmouseenter={() => setTrailerActive(true)}
+							onmouseleave={() => setTrailerActive(false)}
 						>
 							<span class="font-bgr 2xs:leading-loose block text-[14px] uppercase md:leading-normal"
 								>{tag_list[0]} / {tag_list[1]} / {tag_list[2]}</span
 							>
 						</div>
-						<!-- svelte-ignore a11y-no-static-element-interactions -->
+						<!-- svelte-ignore a11y_no_static_element_interactions -->
 						<div
 							class="items-center justify-center md:flex md:h-16"
-							on:mouseenter={() => setTrailerActive(true)}
-							on:mouseleave={() => setTrailerActive(false)}
+							onmouseenter={() => setTrailerActive(true)}
+							onmouseleave={() => setTrailerActive(false)}
 						>
 							<span class="font-bgr block text-[14px] uppercase"
 								>{dayjs(created_at.substring(0, 10)).format('MMMM DD, YYYY')}</span

@@ -6,9 +6,13 @@
 	import type { ActionData } from '../../../routes/$types';
 	import { ArrowUp } from '$lib';
 
-	let loading = false;
+	let loading = $state(false);
 	let currentYear = new Date().getFullYear();
-	export let form: ActionData;
+	interface Props {
+		form: ActionData;
+	}
+
+	let { form }: Props = $props();
 
 	const submitForm = () => {
 		return async ({ result, update, formElement }: any) => {
@@ -107,7 +111,7 @@
 						rows="3"
 						class="border-cod-gray-50 focus:border-b-gallery-50 text-hear w-full resize-none border-0 border-b bg-transparent focus:ring-transparent"
 						disabled={loading}
-					/>
+					></textarea>
 					{#if form?.errors?.message}
 						<small class="text-red-400">{form.errors.message}</small>
 					{/if}
@@ -128,7 +132,7 @@
 	>
 		<div class="font-bgr 2xs:gap-1 2xs:justify-between group flex items-center md:gap-8">
 			<a href="/" aria-label="Home">
-				<svelte:component this={ArrowUp} />
+				<ArrowUp />
 			</a>
 			<div class="2xs:hidden md:block">
 				<TextClear text="Back to top" href="#home" />

@@ -1,8 +1,17 @@
 <script lang="ts">
-	export let text: string;
-	export let href = '/';
-	export let target = '_self';
-	export let rel = 'noreferrer';
+	interface Props {
+		text: string;
+		href?: string;
+		target?: string;
+		rel?: string;
+	}
+
+	let {
+		text,
+		href = '/',
+		target = '_self',
+		rel = 'noreferrer'
+	}: Props = $props();
 </script>
 
 <a {href} {target} {rel} data-after={text} class="clear-text font-bgr text-[14px] uppercase">

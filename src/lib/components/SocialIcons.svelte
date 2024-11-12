@@ -1,8 +1,4 @@
-<script lang="ts">
-	export let socialIconsContainer: HTMLDivElement;
-</script>
-
-<div class="2xs:pb-4 flex w-full items-center gap-4 md:pb-8" bind:this={socialIconsContainer}>
+<div class="2xs:pb-4 flex w-full items-center gap-4 md:pb-8">
 	<a href="https://github.com/mgaroz" target="_blank" aria-label="Github" class="group">
 		<svg
 			class="h-7 w-7 transition-transform duration-200 lg:group-hover:scale-125 dark:text-white"
