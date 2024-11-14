@@ -14,11 +14,11 @@
 	}: Props = $props();
 </script>
 
-<a {href} {target} {rel} data-after={text} class="clear-text font-bgr text-[14px] uppercase">
+<a {href} {target} {rel} data-after={text} class="text--effect-clear font-bgr text-[14px] uppercase">
 	<span>{text}</span>
 </a>
 
-<style>
+<!-- <style>
 	.clear-text {
 		position: relative;
 		padding: 0;
@@ -49,4 +49,4 @@
 	.clear-text:hover::after {
 		transform: translateY(0%);
 	}
-</style>
+</style> -->

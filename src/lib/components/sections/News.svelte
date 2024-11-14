@@ -37,8 +37,8 @@
 		<div>
 			<p class="font-bgr pb-[1.5625rem] text-sm uppercase">/ Stay informed</p>
 			<hr class="h-[1.75rem] border-0" />
-			<span class="text-big-size block uppercase leading-none">Blog</span>
-			<span class="text-big-size block uppercase leading-none">Latest entries</span>
+			<span class="heading--h2-size block uppercase leading-none">Blog</span>
+			<span class="heading--h2-size block uppercase leading-none">Latest entries</span>
 		</div>
 		<hr class="h-[1.75rem] border-0" />
 		<hr class="h-[1.75rem] border-0" />
@@ -51,11 +51,11 @@
 						<div class="relative overflow-hidden">
 							<div
 								style="background-image: url('{cover_image}')"
-								class="reverseit 2xs:hidden h-36 w-0 scale-125 bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100 md:block"
+								class="news--background-reverseit 2xs:hidden h-36 w-0 scale-125 bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100 md:block"
 							></div>
 						</div>
 						<h3
-							class="text-titles 2xs:flex 2xs:h-20 2xs:pb-10 2xs:items-center uppercase md:block md:h-auto md:pb-0"
+							class="heading--h3-size 2xs:flex 2xs:h-20 2xs:pb-10 2xs:items-center uppercase md:block md:h-auto md:pb-0"
 							onmouseenter={() => setStatus(true)}
 							onmouseleave={() => setStatus(false)}
 						>
@@ -105,19 +105,3 @@
 		</div>
 	</div>
 </section>
-
-<style>
-	.text-big-size {
-		font-size: clamp(2.125rem, 1.2354rem + 3.9538vw, 5.98rem);
-	}
-
-	.reverseit {
-		transform: scale(1.25), width(0);
-		transform-origin: center;
-		transition: all 0.5s ease-in-out;
-	}
-
-	.text-titles {
-		font-size: clamp(1.5rem, 1.1827rem + 1.4103vw, 2.875rem);
-	}
-</style>

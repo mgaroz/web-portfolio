@@ -65,23 +65,23 @@
 	</div>
 	<hr class="h-[1.75rem] border-0" />
 	<div class="pb-10">
-		<span class="text-big-size block uppercase leading-none">Get</span>
-		<span class="text-big-size block uppercase leading-none">In touch</span>
+		<span class="heading--h2-size block uppercase leading-none">Get</span>
+		<span class="heading--h2-size block uppercase leading-none">In touch</span>
 	</div>
 	<div class="w-full items-start justify-between pb-28 md:flex">
 		<div id="contact-left" class="2xs:pb-10 md:w-1/4 md:pb-0">
-			<h3 class="font-bgr text-subheader uppercase leading-none">Let's talk</h3>
+			<h3 class="font-bgr heading--h3-size uppercase leading-none">Let's talk</h3>
 		</div>
 		<div id="contact-right" class="font-bgr md:w-2/3">
 			<form method="POST" use:enhance={submitForm}>
 				<div class="mb-8 w-full gap-10 md:grid md:grid-cols-2">
 					<div class="2xs:mb-8 2xs:w-full inline-block">
-						<label for="name" class="text-hear">NAME</label>
+						<label for="name" class="heading--h4-size">NAME</label>
 						<input
 							type="text"
 							name="name"
 							id="name"
-							class="border-cod-gray-50 focus:border-b-gallery-50 text-hear inline-block w-full border-0 border-b bg-transparent focus:ring-transparent"
+							class="border-cod-gray-50 focus:border-b-gallery-50 heading--h4-size inline-block w-full border-0 border-b bg-transparent focus:ring-transparent"
 							disabled={loading}
 						/>
 						{#if form?.errors?.name}
@@ -89,12 +89,12 @@
 						{/if}
 					</div>
 					<div class="2xs:w-full inline-block">
-						<label for="email" class="text-hear">EMAIL</label>
+						<label for="email" class="heading--h4-size">EMAIL</label>
 						<input
 							type="email"
 							name="email"
 							id="email"
-							class="border-cod-gray-50 focus:border-b-gallery-50 text-hear inline-block w-full border-0 border-b bg-transparent focus:ring-transparent"
+							class="border-cod-gray-50 focus:border-b-gallery-50 heading--h4-size inline-block w-full border-0 border-b bg-transparent focus:ring-transparent"
 							disabled={loading}
 						/>
 						{#if form?.errors?.email}
@@ -103,13 +103,13 @@
 					</div>
 				</div>
 				<div class="w-full">
-					<label for="message" class="text-hear">MESSAGE</label>
+					<label for="message" class="heading--h4-size">MESSAGE</label>
 					<textarea
 						name="message"
 						id="message"
 						cols="30"
 						rows="3"
-						class="border-cod-gray-50 focus:border-b-gallery-50 text-hear w-full resize-none border-0 border-b bg-transparent focus:ring-transparent"
+						class="border-cod-gray-50 focus:border-b-gallery-50 heading--h4-size w-full resize-none border-0 border-b bg-transparent focus:ring-transparent"
 						disabled={loading}
 					></textarea>
 					{#if form?.errors?.message}
@@ -146,17 +146,3 @@
 		</div>
 	</div>
 </section>
-
-<style>
-	.text-big-size {
-		font-size: clamp(2.125rem, 1.2354rem + 3.9538vw, 5.98rem);
-	}
-
-	.text-subheader {
-		font-size: clamp(1.5rem, 1.1827rem + 1.4103vw, 2.875rem);
-	}
-
-	.text-hear {
-		font-size: clamp(0.875rem, 0.7885rem + 0.3846vw, 1.25rem);
-	}
-</style>

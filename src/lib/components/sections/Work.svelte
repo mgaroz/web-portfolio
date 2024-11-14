@@ -137,7 +137,7 @@
 				</div>
 				<div class="2xs:w-full flex max-h-full items-center justify-between">
 					<p
-						class="font-bgr p1 2xs:whitespace-normal 2xs:opacity-100 uppercase md:whitespace-nowrap"
+						class="font-bgr heading--h4-size 2xs:whitespace-normal 2xs:opacity-100 uppercase md:whitespace-nowrap"
 					>
 						{name}
 					</p>
@@ -151,9 +151,3 @@
 		{/each}
 	</div>
 </section>
-
-<style>
-	.p1 {
-		font-size: clamp(0.875rem, 0.7885rem + 0.3846vw, 1.25rem);
-	}
-</style>

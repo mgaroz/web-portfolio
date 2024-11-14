@@ -101,8 +101,8 @@
 />
 
 <div
-	class:active={$active || $blogActiveTags}
-	class:active-work={$workActive || $blogActive}
+	class:hero--state-active={$active || $blogActiveTags}
+	class:hero--state-active-work={$workActive || $blogActive}
 	class="2xs:hidden pointer-events-none fixed left-1/2 top-1/2 z-40 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#737373] transition-all duration-300 md:block"
 	bind:this={ballContainer}
 	style="--backColor:{activeBackColor}"
@@ -118,7 +118,7 @@
 	>
 		<div class="z-2 relative inset-0 mx-auto block w-full">
 			<div class="2xs:pt-40 relative mx-auto w-full pb-40 text-left md:pt-10">
-				<h1 class="text-hero-size 2xs:pb-10 leading-none md:pb-0">
+				<h1 class="heading--h1-size 2xs:pb-10 leading-none md:pb-0">
 					<span class="2xs:ml-0 relative block translate-y-28 md:-ml-2" bind:this={nameContainer}
 						>MIGUEL</span
 					>
@@ -179,27 +179,3 @@
 <About />
 <News />
 <Contact {form} />
-
-<style>
-	.text-hero-size {
-		font-size: clamp(3.15rem, 1.3846rem + 7.8462vw, 10.8rem);
-	}
-
-	.active {
-		width: 120px;
-		height: 120px;
-		background-color: #73737340;
-		border: none;
-	}
-
-	.active-work {
-		width: 100px;
-		height: 100px;
-		background-color: var(--backColor);
-		border: none;
-		background-image: url('$lib/img/arrow-up-right.svg');
-		background-size: 50%;
-		background-repeat: no-repeat;
-		background-position: center;
-	}
-</style>
