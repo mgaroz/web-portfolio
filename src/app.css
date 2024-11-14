@@ -84,42 +84,10 @@
 	font-size: clamp(1rem, 0.9423rem + 0.2564vw, 1.25rem);
 }
 
-.about--heading-size {
-	font-size: clamp(2.125rem, 1.2354rem + 3.9538vw, 5.98rem);
-}
-
-.about--heading-size-2 {
-	font-size: clamp(1rem, 0.9423rem + 0.2564vw, 1.25rem);
-}
-
-.contact--heading-size {
-	font-size: clamp(2.125rem, 1.2354rem + 3.9538vw, 5.98rem);
-}
-
-.contact--subheading-size {
-	font-size: clamp(1.5rem, 1.1827rem + 1.4103vw, 2.875rem);
-}
-
-.contact--form-label {
-	font-size: clamp(0.875rem, 0.7885rem + 0.3846vw, 1.25rem);
-}
-
-.news--heading-size {
-	font-size: clamp(2.125rem, 1.2354rem + 3.9538vw, 5.98rem);
-}
-
-.news--heading-size-2 {
-	font-size: clamp(1.5rem, 1.1827rem + 1.4103vw, 2.875rem);
-}
-
 .news--background-reverseit {
 	transform: scale(1.25), width(0);
 	transform-origin: center;
 	transition: all 0.5s ease-in-out;
-}
-
-.work--heading-size {
-	font-size: clamp(0.875rem, 0.7885rem + 0.3846vw, 1.25rem);
 }
 
 .text--effect-clear {
