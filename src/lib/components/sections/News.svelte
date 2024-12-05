@@ -5,11 +5,10 @@
 	import { active } from '$lib/store';
 	import { blogActiveTags } from '$lib/store';
 	import dayjs from 'dayjs';
-	// import { onMount } from 'svelte';
+	import { onMount } from 'svelte';
 	let sectionContainer: HTMLDivElement;
 
-	// let blogData: any[] = $state([]);
-	let { result } = $props();
+	let blogData: any[] = $state([]);
 
 	function setStatus(status: boolean) {
 		active.set(false);
@@ -29,12 +28,10 @@
 		});
 	});
 
-	// onMount(async () => {
-	// 	const res = await fetch('https://dev.to/api/articles/latest?username=mgaroz&per_page=3');
-	// 	blogData = await res.json();
-	// });
-
-	console.log(result);
+	onMount(async () => {
+		const res = await fetch('https://dev.to/api/articles/latest?username=mgaroz&per_page=3');
+		blogData = await res.json();
+	});
 </script>
 
 <section id="blog" class="2xs:px-6 h-full w-full pb-28 transition-colors duration-500 md:px-20">
@@ -48,7 +45,7 @@
 		<hr class="h-[1.75rem] border-0" />
 		<hr class="h-[1.75rem] border-0" />
 		<div>
-			{#each result as { cover_image, url, title, tag_list, published_at }}
+			{#each blogData as { cover_image, url, title, tag_list, created_at }}
 				<div
 					class="border-cod-gray-50 group w-full items-center justify-between overflow-hidden border-b py-[3.125rem] first:border-t md:flex md:h-[15.125rem]"
 				>
@@ -85,7 +82,7 @@
 							onmouseleave={() => setTrailerActive(false)}
 						>
 							<span class="font-bgr block text-[14px] uppercase"
-								>{dayjs(published_at.substring(0, 10)).format('MMMM DD, YYYY')}</span
+								>{dayjs(created_at.substring(0, 10)).format('MMMM DD, YYYY')}</span
 							>
 						</div>
 					</div>
