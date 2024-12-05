@@ -22,9 +22,10 @@
 
 	interface Props {
 		form: ActionData;
+		data: PageServerData;
 	}
 
-	let { form }: Props = $props();
+	let { form, data }: Props = $props();
 
 	let activeBackColor = $derived($backColor);
 
@@ -176,5 +177,5 @@
 	<Card />
 </div> -->
 <About />
-<News />
+<News result={data.result} />
 <Contact {form} />
