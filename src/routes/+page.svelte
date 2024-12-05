@@ -1,14 +1,13 @@
 <script lang="ts">
 	import { Work, About, News, Contact, SocialIcons, ArrowDown } from '$lib/index';
 	import { timeline } from 'motion';
-	import { onMount } from 'svelte';
 	import { active } from '$lib/store';
 	import { workActive } from '$lib/store';
 	import { backColor } from '$lib/store';
 	import { blogActive } from '$lib/store';
 	import { blogActiveTags } from '$lib/store';
 	import TextClear from '$lib/components/TextClear.svelte';
-	import type { ActionData } from './$types';
+	import type { ActionData, PageServerData } from './$types';
 	// import Card from '$lib/components/Card.svelte';
 
 	let nameContainer: HTMLSpanElement;
@@ -23,13 +22,14 @@
 
 	interface Props {
 		form: ActionData;
+		data: PageServerData;
 	}
 
-	let { form }: Props = $props();
+	let { form, data }: Props = $props();
 
 	let activeBackColor = $derived($backColor);
 
-	onMount(() => {
+	$effect(() => {
 		const sequence = [
 			[
 				nameContainer,
@@ -177,5 +177,5 @@
 	<Card />
 </div> -->
 <About />
-<News />
+<News result={data.result} />
 <Contact {form} />

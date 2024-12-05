@@ -9,6 +9,20 @@ import {
 	SECRET_SG_API_KEY
 } from '$env/static/private';
 
+export const load = async ({ fetch }) => {
+	try {
+		const result = await fetch('https://dev.to/api/articles/latest?username=mgaroz&per_page=3');
+		const res = await result.json();
+
+		return {
+			result: res
+		};
+	} catch (error) {
+		console.error('Error fetching data:', error);
+		fail(500, { error: 'Internal server error' });
+	}
+};
+
 export const actions: Actions = {
 	default: async ({ request }) => {
 		const body = await request.formData();

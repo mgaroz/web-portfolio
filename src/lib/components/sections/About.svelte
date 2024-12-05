@@ -1,14 +1,13 @@
 <script lang="ts">
 	import { animate, inView } from 'motion';
 	import TextClear from '$lib/components/TextClear.svelte';
-	import { onMount } from 'svelte';
 	import { ArrowDown } from '$lib';
 
 	let headerContainer: HTMLDivElement;
 	let sectionContainer: HTMLElement;
 	let aboutContainer: HTMLDivElement;
 
-	onMount(() => {
+	$effect(() => {
 		inView(sectionContainer, () => {
 			const controls = animate(headerContainer, { opacity: [0, 1] }, { duration: 2 });
 			animate(aboutContainer, { x: [1000, 0], opacity: [0, 1] }, { duration: 2 });

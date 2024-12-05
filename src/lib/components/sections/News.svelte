@@ -5,10 +5,9 @@
 	import { active } from '$lib/store';
 	import { blogActiveTags } from '$lib/store';
 	import dayjs from 'dayjs';
-	import { onMount } from 'svelte';
 	let sectionContainer: HTMLDivElement;
 
-	let myBlogData: any[] = $state([]);
+	let { result } = $props();
 
 	function setStatus(status: boolean) {
 		active.set(false);
@@ -21,14 +20,11 @@
 		blogActiveTags.set(status);
 	}
 
-	onMount(async () => {
+	$effect(() => {
 		inView(sectionContainer, () => {
 			const controls = animate(sectionContainer, { opacity: [0, 1], y: [100, 0] }, { duration: 1 });
 			return () => controls.stop();
 		});
-
-		const res = await fetch('https://dev.to/api/articles/latest?username=mgaroz&per_page=3');
-		myBlogData = await res.json();
 	});
 </script>
 
@@ -43,7 +39,7 @@
 		<hr class="h-[1.75rem] border-0" />
 		<hr class="h-[1.75rem] border-0" />
 		<div>
-			{#each myBlogData as { cover_image, url, title, tag_list, created_at }}
+			{#each result as { cover_image, url, title, tag_list, created_at }}
 				<div
 					class="border-cod-gray-50 group w-full items-center justify-between overflow-hidden border-b py-[3.125rem] first:border-t md:flex md:h-[15.125rem]"
 				>
