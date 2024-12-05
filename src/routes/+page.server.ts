@@ -9,7 +9,7 @@ import {
 	SECRET_SG_API_KEY
 } from '$env/static/private';
 
-export const load = async ({ fetch }) => {
+export const load = async () => {
 	try {
 		const result = await fetch('https://dev.to/api/articles/latest?username=mgaroz&per_page=3');
 		const res = await result.json();
