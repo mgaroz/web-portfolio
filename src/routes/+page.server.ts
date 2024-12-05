@@ -1,4 +1,3 @@
-import { error as svelteError } from '@sveltejs/kit';
 import { validateData } from '$lib/utils.js';
 import { newContactSchema } from '$lib/schemas/schemas.js';
 import { fail, type Actions } from '@sveltejs/kit';
@@ -7,35 +6,8 @@ import {
 	SECRET_TO_EMAIL,
 	SECRET_FROM_EMAIL,
 	SECRET_MAIL_API_URL,
-	SECRET_SG_API_KEY,
-	SECRET_DEVTO_API_KEY
+	SECRET_SG_API_KEY
 } from '$env/static/private';
-
-export const load = async ({ fetch }) => {
-	try {
-		const result = await fetch('https://dev.to/api/articles/latest?username=mgaroz&per_page=3', {
-			headers: {
-				Accept: 'application/json',
-				'api-key': SECRET_DEVTO_API_KEY
-			}
-		});
-
-		if (!result.ok) {
-			// Log the error details for debugging
-			console.error(`Error fetching data: ${result.status} - ${result.statusText}`);
-			throw svelteError(result.status, 'Failed to fetch data from dev.to API');
-		}
-
-		const res = await result.json();
-
-		return {
-			result: res
-		};
-	} catch (error) {
-		console.error('Unexpected error fetching data:', error);
-		throw svelteError(500, 'Internal server error');
-	}
-};
 
 export const actions: Actions = {
 	default: async ({ request }) => {
