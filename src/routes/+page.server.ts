@@ -1,3 +1,4 @@
+import { error as svelteError } from '@sveltejs/kit';
 import { validateData } from '$lib/utils.js';
 import { newContactSchema } from '$lib/schemas/schemas.js';
 import { fail, type Actions } from '@sveltejs/kit';
@@ -11,15 +12,26 @@ import {
 
 export const load = async () => {
 	try {
-		const result = await fetch('https://dev.to/api/articles/latest?username=mgaroz&per_page=3');
+		const result = await fetch('https://dev.to/api/articles/latest?username=mgaroz&per_page=3', {
+			headers: {
+				Accept: 'application/json'
+			}
+		});
+
+		if (!result.ok) {
+			// Log the error details for debugging
+			console.error(`Error fetching data: ${result.status} - ${result.statusText}`);
+			throw svelteError(result.status, 'Failed to fetch data from dev.to API');
+		}
+
 		const res = await result.json();
 
 		return {
 			result: res
 		};
 	} catch (error) {
-		console.error('Error fetching data:', error);
-		fail(500, { error: 'Internal server error' });
+		console.error('Unexpected error fetching data:', error);
+		throw svelteError(500, 'Internal server error');
 	}
 };
 
