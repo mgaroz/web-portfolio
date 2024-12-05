@@ -26,6 +26,8 @@
 			return () => controls.stop();
 		});
 	});
+
+	console.log(result);
 </script>
 
 <section id="blog" class="2xs:px-6 h-full w-full pb-28 transition-colors duration-500 md:px-20">
