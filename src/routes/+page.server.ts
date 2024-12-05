@@ -7,14 +7,16 @@ import {
 	SECRET_TO_EMAIL,
 	SECRET_FROM_EMAIL,
 	SECRET_MAIL_API_URL,
-	SECRET_SG_API_KEY
+	SECRET_SG_API_KEY,
+	SECRET_DEVTO_API_KEY
 } from '$env/static/private';
 
-export const load = async () => {
+export const load = async ({ fetch }) => {
 	try {
 		const result = await fetch('https://dev.to/api/articles/latest?username=mgaroz&per_page=3', {
 			headers: {
-				Accept: 'application/json'
+				Accept: 'application/json',
+				'api-key': SECRET_DEVTO_API_KEY
 			}
 		});
 
