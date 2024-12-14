@@ -57,13 +57,3 @@
 		</div>
 	</div>
 </section>
-
-<!-- <style>
-	.responsive-font {
-		font-size: clamp(2.125rem, 1.2354rem + 3.9538vw, 5.98rem);
-	}
-
-	.responsive-title {
-		font-size: clamp(1rem, 0.9423rem + 0.2564vw, 1.25rem);
-	}
-</style> -->
