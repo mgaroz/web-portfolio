@@ -7,7 +7,7 @@
 	import { blogActive } from '$lib/store';
 	import { blogActiveTags } from '$lib/store';
 	import TextClear from '$lib/components/TextClear.svelte';
-	import type { ActionData, PageServerData } from './$types';
+	import type { ActionData } from './$types';
 	// import Card from '$lib/components/Card.svelte';
 
 	let nameContainer: HTMLSpanElement;
