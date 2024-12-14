@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Work, About, News, Contact, SocialIcons, ArrowDown } from '$lib/index';
-	import { timeline } from 'motion';
+	import { animate, frame, type AnimationSequence } from 'motion';
 	import { active } from '$lib/store';
 	import { workActive } from '$lib/store';
 	import { backColor } from '$lib/store';
@@ -19,6 +19,7 @@
 	let heroFooterLeftContainer: HTMLDivElement;
 	let heroFooterRightContainer: HTMLDivElement;
 	let tagline = 'Front-end developer with an adaptive approach to problem solving.';
+	let m = $state({ x: 0, y: 0 });
 
 	interface Props {
 		form: ActionData;
@@ -28,8 +29,12 @@
 
 	let activeBackColor = $derived($backColor);
 
+	function handleMousemove(e: MouseEvent) {
+		(m.x = e.clientX), (m.y = e.clientY);
+	}
+
 	$effect(() => {
-		const sequence = [
+		const sequence: AnimationSequence = [
 			[
 				nameContainer,
 				{
@@ -81,23 +86,36 @@
 			[heroFooterLeftContainer, { x: [-208, 0] }, { duration: 1.5, at: '-1.1' }],
 			[socialIconsContainer, { x: [-208, 0] }, { duration: 1, at: '-1.3' }],
 			[heroFooterRightContainer, { x: [208, 0] }, { duration: 1.5, at: '-1.5' }]
-		] as any;
-		timeline(sequence, { delay: 0 });
+		];
+
+		const ball = $state(ballContainer);
+		const pos = $state({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
+		const mouse = $derived(m);
+		const speed = 0.25;
+		const dt = 1.25 - Math.pow(1.35 - speed, 1.75);
+
+		function update() {
+			pos.x += (mouse.x - pos.x) * dt;
+			pos.y += (mouse.y - pos.y) * dt;
+		}
+
+		frame.read(update, true);
+		frame.update(update, true);
+		frame.render(() => {
+			ball.animate(
+				{
+					left: pos.x + 'px',
+					top: pos.y + 'px'
+				},
+				{ fill: 'forwards' }
+			);
+		}, true);
+
+		animate(sequence, { delay: 0 });
 	});
 </script>
 
-<svelte:window
-	onpointermove={(event) => {
-		const { clientX, clientY } = event;
-		ballContainer.animate(
-			{
-				left: `${clientX}px`,
-				top: `${clientY}px`
-			},
-			{ duration: 750, fill: 'forwards' }
-		);
-	}}
-/>
+<svelte:window onpointermove={handleMousemove} />
 
 <div
 	class:hero--state-active={$active || $blogActiveTags}

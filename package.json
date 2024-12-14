@@ -39,7 +39,7 @@
   "type": "module",
   "dependencies": {
     "dayjs": "^1.11.11",
-    "motion": "^10.18.0",
+    "motion": "^11.14.4",
     "svelte-french-toast": "^1.2.0"
   },
   "trustedDependencies": [
