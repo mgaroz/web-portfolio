@@ -104,8 +104,7 @@
 		frame.render(() => {
 			ball.animate(
 				{
-					left: pos.x + 'px',
-					top: pos.y + 'px'
+					transform: `translate(calc(${pos.x}px - 50%), calc(${pos.y}px - 50%))`
 				},
 				{ fill: 'forwards' }
 			);
@@ -120,7 +119,7 @@
 <div
 	class:hero--state-active={$active || $blogActiveTags}
 	class:hero--state-active-work={$workActive || $blogActive}
-	class="2xs:hidden pointer-events-none fixed left-1/2 top-1/2 z-40 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#737373] transition-all duration-300 md:block"
+	class="2xs:hidden pointer-events-none fixed z-40 h-10 w-10 translate-x-1/2 translate-y-1/2 rounded-full border-2 border-[#737373] transition-all duration-300 will-change-transform md:block"
 	bind:this={ballContainer}
 	style="--backColor:{activeBackColor}"
 ></div>
