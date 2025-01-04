@@ -157,7 +157,7 @@
 		</div>
 		<div class="font-bgr flex w-full flex-col items-center justify-center uppercase">
 			<div
-				class="dark:bg-gallery-500 dark:text-cod-gray-500 bg-cod-gray-500 text-gallery-500 group flex h-[40px] min-w-36 items-center justify-center rounded-full px-4 uppercase transition-all duration-300"
+				class="dark:bg-gallery-500 dark:text-cod-gray-500 bg-cod-gray-500 text-gallery-500 animate-gentlePulse group flex h-[40px] min-w-36 items-center justify-center rounded-full px-4 uppercase transition-all duration-300"
 			>
 				<a href="#contact"
 					><p class="flex items-center justify-center gap-2 text-sm font-medium">Contact me!</p></a
