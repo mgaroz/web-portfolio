@@ -125,15 +125,15 @@
 ></div>
 
 <section
-	class="2xs:px-6 2xs:h-[calc(95vh+128px)] md:h-[calc(90vh+128px)] md:px-20 md:pt-32"
+	class="2xs:px-6 2xs:h-[calc(95vh+128px)] pb-20 md:h-[calc(90vh+128px)] md:px-20 md:pt-32"
 	id="home"
 >
 	<div
 		id="hero"
-		class="2xs:flex relative z-20 h-full w-full flex-col items-center justify-around overflow-hidden transition-colors duration-500"
+		class="2xs:flex relative z-20 h-full w-full flex-col items-center justify-between overflow-hidden transition-colors duration-500"
 	>
 		<div class="z-2 relative inset-0 mx-auto block w-full">
-			<div class="2xs:pt-40 relative mx-auto w-full pb-40 text-left md:pt-10">
+			<div class="2xs:pt-40 relative mx-auto w-full pb-32 text-left md:pt-10 xl:pb-40">
 				<h1 class="heading--h1-size 2xs:pb-10 leading-none md:pb-0">
 					<span class="2xs:ml-0 relative block translate-y-28 md:-ml-2" bind:this={nameContainer}
 						>MIGUEL</span
@@ -153,6 +153,15 @@
 				>
 					{tagline}
 				</span>
+			</div>
+		</div>
+		<div class="font-bgr flex w-full flex-col items-center justify-center uppercase">
+			<div
+				class="dark:bg-gallery-500 dark:text-cod-gray-500 bg-cod-gray-500 text-gallery-500 group flex h-[40px] min-w-36 items-center justify-center rounded-full px-4 uppercase transition-all duration-300"
+			>
+				<a href="#contact"
+					><p class="flex items-center justify-center gap-2 text-sm font-medium">Contact me!</p></a
+				>
 			</div>
 		</div>
 		<div
