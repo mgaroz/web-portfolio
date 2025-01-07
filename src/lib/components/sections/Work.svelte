@@ -65,11 +65,11 @@
 		class="2xs:flex 2xs:justify-between 2xs:flex-col 2xs:gap-16 md:grid md:grid-cols-2 md:gap-8 md:gap-y-16 xl:flex xl:flex-row xl:items-center xl:gap-8"
 	>
 		{#each portfolioItems as { id, name, type, tech, link, source, img }}
-			<!-- svelte-ignore a11y-no-static-element-interactions -->
+			<!-- svelte-ignore a11y_no_static_element_interactions -->
 			<div
 				class="2xs:h-[50vmin] 2xs:flex 2xs:flex-col 2xs:w-full group relative shrink transition-all duration-500 hover:grow-[2.5] md:h-[25vh] xl:flex xl:h-[45vh] xl:w-1/4 xl:grow xl:basis-0 2xl:h-[60vh]"
-				on:mouseenter={() => setStatusAndColor(true, id)}
-				on:mouseleave={() => workActive.set(false)}
+				onmouseenter={() => setStatusAndColor(true, id)}
+				onmouseleave={() => workActive.set(false)}
 			>
 				<div class="relative mb-4 min-h-full w-full overflow-hidden">
 					<div
@@ -78,11 +78,11 @@
 						<p class="2xs:px-2 xs:px-4 text-[14px] uppercase text-white">
 							{tech}
 						</p>
-						<!-- svelte-ignore a11y-no-static-element-interactions -->
+						<!-- svelte-ignore a11y_no_static_element_interactions -->
 						<div
 							class="flex gap-4 pr-4"
-							on:mouseenter={() => workActive.set(false)}
-							on:mouseleave={() => setStatusAndColor(true, id)}
+							onmouseenter={() => workActive.set(false)}
+							onmouseleave={() => setStatusAndColor(true, id)}
 						>
 							<a
 								href={source}
@@ -133,11 +133,11 @@
 					<div
 						style="background-image: url('{img}')"
 						class="bg-cod-gray-50 relative mb-4 flex h-full w-full scale-110 flex-col items-end justify-end bg-cover bg-center bg-no-repeat text-white transition-transform duration-500 group-hover:scale-100"
-					/>
+					></div>
 				</div>
 				<div class="2xs:w-full flex max-h-full items-center justify-between">
 					<p
-						class="font-bgr p1 2xs:whitespace-normal 2xs:opacity-100 uppercase md:whitespace-nowrap"
+						class="font-bgr heading--h4-size 2xs:whitespace-normal 2xs:opacity-100 uppercase md:whitespace-nowrap"
 					>
 						{name}
 					</p>
@@ -151,9 +151,3 @@
 		{/each}
 	</div>
 </section>
-
-<style>
-	.p1 {
-		font-size: clamp(0.875rem, 0.7885rem + 0.3846vw, 1.25rem);
-	}
-</style>

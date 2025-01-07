@@ -5,7 +5,8 @@
 @layer base {
 	@font-face {
 		font-family: 'Basis Grotesque Pro Medium';
-		src: local('Basis Grotesque Pro Medium'),
+		src:
+			local('Basis Grotesque Pro Medium'),
 			url('lib/font/BasisGrotesquePro-Medium.woff2') format('woff2');
 		font-weight: 500;
 		font-display: swap;
@@ -13,7 +14,8 @@
 
 	@font-face {
 		font-family: 'Basis Grotesque Pro Regular';
-		src: local('Basis Grotesque Pro Regular'),
+		src:
+			local('Basis Grotesque Pro Regular'),
 			url('lib/font/BasisGrotesquePro-Regular.woff2') format('woff2');
 		font-weight: 400;
 		font-display: swap;
@@ -45,5 +47,76 @@
 
 	quote {
 		@apply text-quote;
+	}
+}
+
+.heading--h1-size {
+	font-size: clamp(3.15rem, 1.3846rem + 7.8462vw, 10.8rem);
+}
+
+.hero--state-active {
+	width: 120px;
+	height: 120px;
+	background-color: #73737340;
+	border: none;
+}
+
+.hero--state-active-work {
+	width: 100px;
+	height: 100px;
+	background-color: var(--backColor);
+	border: none;
+	background-image: url('$lib/img/arrow-up-right.svg');
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.heading--h2-size {
+	font-size: clamp(2.125rem, 1.2354rem + 3.9538vw, 5.98rem);
+}
+
+.heading--h3-size {
+	font-size: clamp(1.5rem, 1.1827rem + 1.4103vw, 2.875rem);
+}
+
+.heading--h4-size {
+	font-size: clamp(1rem, 0.9423rem + 0.2564vw, 1.25rem);
+}
+
+.news--background-reverseit {
+	transform: scale(1.25), width(0);
+	transform-origin: center;
+	transition: all 0.5s ease-in-out;
+}
+
+.text--effect-clear {
+	position: relative;
+	padding: 0;
+	overflow: hidden;
+	transition: transform 0.2s;
+	display: block;
+
+	&::after {
+		content: attr(data-after);
+		display: inline-block;
+		transform: translateY(100%);
+		position: absolute;
+		left: 0;
+		transition: inherit;
+	}
+
+	& > span {
+		display: inline-block;
+		transform: translateY(0%);
+		transition: inherit;
+	}
+
+	&:hover > span {
+		transform: translateY(-100%);
+	}
+
+	&:hover::after {
+		transform: translateY(0%);
 	}
 }

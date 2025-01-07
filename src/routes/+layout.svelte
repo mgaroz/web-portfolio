@@ -11,9 +11,14 @@
 	import logolight from '$lib/img/mg-logo-light.svg';
 	import Switcher from '$lib/components/Switcher.svelte';
 	import LayoutHead from '$lib/components/LayoutHead.svelte';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 
 	let colorScheme: string;
-	let isDark: boolean;
+	let isDark: boolean = $state(false);
 
 	const toggleTheme = () => {
 		if (browser) {
@@ -69,16 +74,16 @@
 		aria-controls="primary-navigation"
 		aria-expanded="false"
 		class="2xs:fixed 2xs:aspect-square 2xs:z-50 2xs:right-6 2xs:top-7 h-6 w-6 md:hidden"
-		on:click={() => ($isMobileMenuActive = !$isMobileMenuActive)}
+		onclick={() => ($isMobileMenuActive = !$isMobileMenuActive)}
 	>
 		<div
 			class="flex h-6 w-6 flex-col items-center justify-around overflow-hidden {$isMobileMenuActive
 				? 'open'
 				: ''}"
 		>
-			<div class="bar-one" />
-			<div class="bar-two" />
-			<div class="bar-three" />
+			<div class="bar-one"></div>
+			<div class="bar-two"></div>
+			<div class="bar-three"></div>
 		</div>
 		<span class="sr-only">Menu</span></button
 	>
@@ -92,11 +97,11 @@
 				<img src={logolight} alt="logo" class="h-4" width="144px" height="16" />
 			{/if}
 		</div>
-		<!-- svelte-ignore a11y-no-static-element-interactions -->
+		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div
 			class="flex h-full items-center"
-			on:mouseenter={() => ($active = true)}
-			on:mouseleave={() => ($active = false)}
+			onmouseenter={() => ($active = true)}
+			onmouseleave={() => ($active = false)}
 		>
 			<Menu {menuItems} />
 			<div class="2xs:hidden md:block">
@@ -113,7 +118,7 @@
 	</div>
 </header>
 
-<slot />
+{@render children?.()}
 
 <style>
 	.bar-one,

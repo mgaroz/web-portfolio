@@ -8,7 +8,7 @@
 	import { onMount } from 'svelte';
 	let sectionContainer: HTMLDivElement;
 
-	let myBlogData: any[] = [];
+	let blogData: any[] = $state([]);
 
 	function setStatus(status: boolean) {
 		active.set(false);
@@ -21,14 +21,16 @@
 		blogActiveTags.set(status);
 	}
 
-	onMount(async () => {
+	$effect(() => {
 		inView(sectionContainer, () => {
 			const controls = animate(sectionContainer, { opacity: [0, 1], y: [100, 0] }, { duration: 1 });
 			return () => controls.stop();
 		});
+	});
 
+	onMount(async () => {
 		const res = await fetch('https://dev.to/api/articles/latest?username=mgaroz&per_page=3');
-		myBlogData = await res.json();
+		blogData = await res.json();
 	});
 </script>
 
@@ -37,13 +39,13 @@
 		<div>
 			<p class="font-bgr pb-[1.5625rem] text-sm uppercase">/ Stay informed</p>
 			<hr class="h-[1.75rem] border-0" />
-			<span class="text-big-size block uppercase leading-none">Blog</span>
-			<span class="text-big-size block uppercase leading-none">Latest entries</span>
+			<span class="heading--h2-size block uppercase leading-none">Blog</span>
+			<span class="heading--h2-size block uppercase leading-none">Latest entries</span>
 		</div>
 		<hr class="h-[1.75rem] border-0" />
 		<hr class="h-[1.75rem] border-0" />
 		<div>
-			{#each myBlogData as { cover_image, url, title, tag_list, created_at }}
+			{#each blogData as { cover_image, url, title, tag_list, created_at }}
 				<div
 					class="border-cod-gray-50 group w-full items-center justify-between overflow-hidden border-b py-[3.125rem] first:border-t md:flex md:h-[15.125rem]"
 				>
@@ -51,33 +53,33 @@
 						<div class="relative overflow-hidden">
 							<div
 								style="background-image: url('{cover_image}')"
-								class="reverseit 2xs:hidden h-36 w-0 scale-125 bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100 md:block"
-							/>
+								class="news--background-reverseit 2xs:hidden h-36 w-0 scale-125 bg-cover bg-center bg-no-repeat duration-500 group-hover:mr-10 group-hover:w-[220px] group-hover:scale-100 md:block"
+							></div>
 						</div>
 						<h3
-							class="text-titles 2xs:flex 2xs:h-20 2xs:pb-10 2xs:items-center uppercase md:block md:h-auto md:pb-0"
-							on:mouseenter={() => setStatus(true)}
-							on:mouseleave={() => setStatus(false)}
+							class="heading--h3-size 2xs:flex 2xs:h-20 2xs:pb-10 2xs:items-center uppercase md:block md:h-auto md:pb-0"
+							onmouseenter={() => setStatus(true)}
+							onmouseleave={() => setStatus(false)}
 						>
 							<a href={url} target="_blank">{title}</a>
 						</h3>
 					</div>
 					<div class="flex-shrink-0 items-center justify-between md:flex md:h-16 md:gap-20">
-						<!-- svelte-ignore a11y-no-static-element-interactions -->
+						<!-- svelte-ignore a11y_no_static_element_interactions -->
 						<div
 							class="items-center justify-center md:flex md:h-16"
-							on:mouseenter={() => setTrailerActive(true)}
-							on:mouseleave={() => setTrailerActive(false)}
+							onmouseenter={() => setTrailerActive(true)}
+							onmouseleave={() => setTrailerActive(false)}
 						>
 							<span class="font-bgr 2xs:leading-loose block text-[14px] uppercase md:leading-normal"
 								>{tag_list[0]} / {tag_list[1]} / {tag_list[2]}</span
 							>
 						</div>
-						<!-- svelte-ignore a11y-no-static-element-interactions -->
+						<!-- svelte-ignore a11y_no_static_element_interactions -->
 						<div
 							class="items-center justify-center md:flex md:h-16"
-							on:mouseenter={() => setTrailerActive(true)}
-							on:mouseleave={() => setTrailerActive(false)}
+							onmouseenter={() => setTrailerActive(true)}
+							onmouseleave={() => setTrailerActive(false)}
 						>
 							<span class="font-bgr block text-[14px] uppercase"
 								>{dayjs(created_at.substring(0, 10)).format('MMMM DD, YYYY')}</span
@@ -105,19 +107,3 @@
 		</div>
 	</div>
 </section>
-
-<style>
-	.text-big-size {
-		font-size: clamp(2.125rem, 1.2354rem + 3.9538vw, 5.98rem);
-	}
-
-	.reverseit {
-		transform: scale(1.25), width(0);
-		transform-origin: center;
-		transition: all 0.5s ease-in-out;
-	}
-
-	.text-titles {
-		font-size: clamp(1.5rem, 1.1827rem + 1.4103vw, 2.875rem);
-	}
-</style>

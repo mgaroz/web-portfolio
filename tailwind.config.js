@@ -61,7 +61,16 @@ export default {
       screens: {
         xs: '475px',
         '2xs': '360px'
-      }
+      },
+      keyframes: {
+        pulse: {
+          '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+          '50%': { transform: 'scale(1.05)', opacity: '0.9' },
+        },
+      },
+      animation: {
+        gentlePulse: 'pulse 2s ease-in-out infinite',
+      },
     },
   },
   darkMode: 'selector',

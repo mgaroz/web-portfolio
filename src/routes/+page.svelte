@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Work, About, News, Contact, SocialIcons, ArrowDown } from '$lib/index';
-	import { timeline } from 'motion';
-	import { onMount } from 'svelte';
+	import { animate, frame, type AnimationSequence } from 'motion';
 	import { active } from '$lib/store';
 	import { workActive } from '$lib/store';
 	import { backColor } from '$lib/store';
@@ -20,13 +19,22 @@
 	let heroFooterLeftContainer: HTMLDivElement;
 	let heroFooterRightContainer: HTMLDivElement;
 	let tagline = 'Front-end developer with an adaptive approach to problem solving.';
+	let m = $state({ x: 0, y: 0 });
 
-	export let form: ActionData;
+	interface Props {
+		form: ActionData;
+	}
 
-	$: activeBackColor = $backColor;
+	let { form }: Props = $props();
 
-	onMount(() => {
-		const sequence = [
+	let activeBackColor = $derived($backColor);
+
+	function handleMousemove(e: MouseEvent) {
+		(m.x = e.clientX), (m.y = e.clientY);
+	}
+
+	$effect(() => {
+		const sequence: AnimationSequence = [
 			[
 				nameContainer,
 				{
@@ -78,43 +86,55 @@
 			[heroFooterLeftContainer, { x: [-208, 0] }, { duration: 1.5, at: '-1.1' }],
 			[socialIconsContainer, { x: [-208, 0] }, { duration: 1, at: '-1.3' }],
 			[heroFooterRightContainer, { x: [208, 0] }, { duration: 1.5, at: '-1.5' }]
-		] as any;
-		timeline(sequence, { delay: 0 });
+		];
+
+		const ball = $state(ballContainer);
+		const pos = $state({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
+		const mouse = $derived(m);
+		const speed = 0.25;
+		const dt = 1.25 - Math.pow(1.35 - speed, 1.75);
+
+		function update() {
+			pos.x += (mouse.x - pos.x) * dt;
+			pos.y += (mouse.y - pos.y) * dt;
+		}
+
+		frame.read(update, true);
+		frame.update(update, true);
+		frame.render(() => {
+			ball.animate(
+				{
+					transform: `translate(calc(${pos.x}px - 50%), calc(${pos.y}px - 50%))`
+				},
+				{ fill: 'forwards' }
+			);
+		}, true);
+
+		animate(sequence, { delay: 0 });
 	});
 </script>
 
-<svelte:window
-	on:pointermove={(event) => {
-		const { clientX, clientY } = event;
-		ballContainer.animate(
-			{
-				left: `${clientX}px`,
-				top: `${clientY}px`
-			},
-			{ duration: 750, fill: 'forwards' }
-		);
-	}}
-/>
+<svelte:window onpointermove={handleMousemove} />
 
 <div
-	class:active={$active || $blogActiveTags}
-	class:active-work={$workActive || $blogActive}
-	class="2xs:hidden pointer-events-none fixed left-1/2 top-1/2 z-40 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#737373] transition-all duration-300 md:block"
+	class:hero--state-active={$active || $blogActiveTags}
+	class:hero--state-active-work={$workActive || $blogActive}
+	class="2xs:hidden pointer-events-none fixed z-40 h-10 w-10 translate-x-1/2 translate-y-1/2 rounded-full border-2 border-[#737373] transition-all duration-300 will-change-transform md:block"
 	bind:this={ballContainer}
 	style="--backColor:{activeBackColor}"
-/>
+></div>
 
 <section
-	class="2xs:px-6 2xs:h-[calc(95vh+128px)] md:h-[calc(90vh+128px)] md:px-20 md:pt-32"
+	class="2xs:px-6 2xs:h-[calc(95vh+128px)] pb-20 md:h-[calc(90vh+128px)] md:px-20 md:pt-32"
 	id="home"
 >
 	<div
 		id="hero"
-		class="2xs:flex relative z-20 h-full w-full flex-col items-center justify-around overflow-hidden transition-colors duration-500"
+		class="2xs:flex relative z-20 h-full w-full flex-col items-center justify-between overflow-hidden transition-colors duration-500"
 	>
 		<div class="z-2 relative inset-0 mx-auto block w-full">
-			<div class="2xs:pt-40 relative mx-auto w-full pb-40 text-left md:pt-10">
-				<h1 class="text-hero-size 2xs:pb-10 leading-none md:pb-0">
+			<div class="2xs:pt-40 relative mx-auto w-full pb-32 text-left md:pt-10 xl:pb-40">
+				<h1 class="heading--h1-size 2xs:pb-10 leading-none md:pb-0">
 					<span class="2xs:ml-0 relative block translate-y-28 md:-ml-2" bind:this={nameContainer}
 						>MIGUEL</span
 					>
@@ -135,11 +155,22 @@
 				</span>
 			</div>
 		</div>
+		<div class="font-bgr flex w-full flex-col items-center justify-center uppercase">
+			<div
+				class="dark:bg-gallery-500 dark:text-cod-gray-500 bg-cod-gray-500 text-gallery-500 animate-gentlePulse group flex h-[40px] min-w-36 items-center justify-center rounded-full px-4 uppercase transition-all duration-300"
+			>
+				<a href="#contact"
+					><p class="flex items-center justify-center gap-2 text-sm font-medium">Contact me!</p></a
+				>
+			</div>
+		</div>
 		<div
 			class="2xs:pb-10 flex w-full flex-col items-center justify-between uppercase md:pb-0"
 			id="hero-footer"
 		>
-			<SocialIcons bind:socialIconsContainer />
+			<div bind:this={socialIconsContainer} class="w-full">
+				<SocialIcons />
+			</div>
 			<div class="flex w-full justify-between">
 				<div
 					id="hero-footer-left"
@@ -151,7 +182,7 @@
 					</div>
 					<div class="flex h-5 w-5 items-center justify-center">
 						<a href="#portfolio" aria-label="Portfolio">
-							<svelte:component this={ArrowDown} />
+							<ArrowDown />
 						</a>
 					</div>
 				</div>
@@ -173,27 +204,3 @@
 <About />
 <News />
 <Contact {form} />
-
-<style>
-	.text-hero-size {
-		font-size: clamp(3.15rem, 1.3846rem + 7.8462vw, 10.8rem);
-	}
-
-	.active {
-		width: 120px;
-		height: 120px;
-		background-color: #73737340;
-		border: none;
-	}
-
-	.active-work {
-		width: 100px;
-		height: 100px;
-		background-color: var(--backColor);
-		border: none;
-		background-image: url('$lib/img/arrow-up-right.svg');
-		background-size: 50%;
-		background-repeat: no-repeat;
-		background-position: center;
-	}
-</style>

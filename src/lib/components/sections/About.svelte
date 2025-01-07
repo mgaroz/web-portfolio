@@ -1,14 +1,13 @@
 <script lang="ts">
 	import { animate, inView } from 'motion';
 	import TextClear from '$lib/components/TextClear.svelte';
-	import { onMount } from 'svelte';
 	import { ArrowDown } from '$lib';
 
 	let headerContainer: HTMLDivElement;
 	let sectionContainer: HTMLElement;
 	let aboutContainer: HTMLDivElement;
 
-	onMount(() => {
+	$effect(() => {
 		inView(sectionContainer, () => {
 			const controls = animate(headerContainer, { opacity: [0, 1] }, { duration: 2 });
 			animate(aboutContainer, { x: [1000, 0], opacity: [0, 1] }, { duration: 2 });
@@ -24,13 +23,13 @@
 	bind:this={sectionContainer}
 >
 	<div id="about-me" class="md:pb-14 2xl:pb-20">
-		<h2 class="responsive-font uppercase leading-none" bind:this={headerContainer}>
+		<h2 class="heading--h2-size uppercase leading-none" bind:this={headerContainer}>
 			Helping people to innovate and remain relevant by developing highly performant websites
 		</h2>
 	</div>
 	<div id="more-about-me" class="2xs:pb-10 flex items-center justify-end pt-10 md:pb-20">
 		<div id="more-about-me-section-1" class="2xs:w-full md:w-1/2" bind:this={aboutContainer}>
-			<p class="md:font-bgr responsive-title 2xs:font-bgm 2xs:font-normal mb-[1.5625rem] uppercase">
+			<p class="md:font-bgr heading--h4-size 2xs:font-bgm 2xs:font-normal mb-[1.5625rem] uppercase">
 				About me
 			</p>
 			<p class="font-bgr mb-[1.5625rem] leading-7">
@@ -53,18 +52,8 @@
 		</div>
 		<div class="flex h-5 w-5 items-center justify-center">
 			<a href="#blog" aria-label="Blog">
-				<svelte:component this={ArrowDown} />
+				<ArrowDown />
 			</a>
 		</div>
 	</div>
 </section>
-
-<style>
-	.responsive-font {
-		font-size: clamp(2.125rem, 1.2354rem + 3.9538vw, 5.98rem);
-	}
-
-	.responsive-title {
-		font-size: clamp(1rem, 0.9423rem + 0.2564vw, 1.25rem);
-	}
-</style>
