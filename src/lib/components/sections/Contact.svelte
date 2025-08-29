@@ -15,12 +15,11 @@
 	let { form }: Props = $props();
 
 	const submitForm = () => {
+		loading = true;
 		return async ({ result, update, formElement }: any) => {
-			loading = true;
-
 			switch (result.type) {
 				case 'success':
-					toast.success('Message was sent successfully', {
+					toast.success(result.data.message, {
 						style: 'background: #2E2E2E; border: 1px solid #3ECF8E; color:white'
 					});
 					await applyAction(result);
@@ -35,15 +34,9 @@
 					await applyAction(result);
 					break;
 				case 'failure':
-					if (result.status === 400) {
-						toast.error('Some fields are missing', {
+					toast.error(result.status + ' ' + result.data.error, {
 							style: 'background: #2E2E2E; border: 1px solid #f87171; color:white'
 						});
-					} else {
-						toast.error(result.status + ' ' + result.data.message, {
-							style: 'background: #2E2E2E; border: 1px solid #f87171; color:white'
-						});
-					}
 					await update();
 					break;
 				case 'error':

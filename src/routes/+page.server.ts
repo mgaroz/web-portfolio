@@ -6,7 +6,7 @@ import {
 	SECRET_TO_EMAIL,
 	SECRET_FROM_EMAIL,
 	SECRET_MAIL_API_URL,
-	SECRET_SG_API_KEY
+	SECRET_MAIL_API_KEY
 } from '$env/static/private';
 
 export const actions: Actions = {
@@ -21,32 +21,42 @@ export const actions: Actions = {
 			});
 		}
 
-		const response = await fetch(SECRET_MAIL_API_URL, {
+		const options = {
 			method: 'POST',
 			headers: {
+				accept: 'application/json',
 				'Content-Type': 'application/json',
-				Authorization: `Bearer ${SECRET_SG_API_KEY}`
+				'X-Smtp2go-Api-Key': SECRET_MAIL_API_KEY
 			},
 			body: JSON.stringify({
-				personalizations: [{ to: [{ email: SECRET_TO_EMAIL }] }],
-				from: { email: SECRET_FROM_EMAIL, name: 'Website Form' },
 				subject: 'New message from website',
-				content: [
-					{
-						type: 'text/html',
-						value: `<h4> You've got a new message from: ${formData?.name} - ${formData?.email}</h4> 
-							${formData?.company ? '<p>Company: ${formData?.company}</p>' : ''}
-							
-							<p>${formData?.message}</p>`
-					}
-				]
+				html_body: `<h4> You've got a new message from: ${formData?.name} - ${formData?.email}</h4>
+					${formData?.company ? '<p>Company: ${formData?.company}</p>' : ''}
+					
+					<p>${formData?.message}</p>`,
+				to: [`Miguel Garoz <${SECRET_TO_EMAIL}>`],
+				sender: `Website Form <${SECRET_FROM_EMAIL}>`
 			})
-		});
+		};
 
 		if (Object.keys(formData).length > 0) {
-			return {
-				response: structuredClone(response.status)
-			};
+			try {
+				const response = await fetch(SECRET_MAIL_API_URL, options);
+
+				if (response.status === 200) {
+					return { message: 'Message sent successfully' };
+				} else if (response.status === 400) {
+					return fail(400, { error: 'Bad request' });
+				} else if (response.status === 403) {
+					return fail(403, { error: 'Unauthorized' });
+				} else if (response.status === 500) {
+					return fail(500, { error: 'Internal server error' });
+				} else {
+					return fail(response.status, { error: 'Unexpected error' });
+				}
+			} catch (error) {
+				return fail(500, { error: 'Network or server error' });
+			}
 		}
 	}
 };
