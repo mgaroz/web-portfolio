@@ -50,6 +50,22 @@
 	}
 }
 
+.spinner {
+	display: inline-block;
+	width: 13em; /* size of spinner */
+	height: 13em;
+	border: 2px solid #ccc; /* light color for the background */
+	border-top: 2px solid #333; /* dark color for the spinning part */
+	border-radius: 50%; /* makes it circular */
+	animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
 .heading--h1-size {
 	font-size: clamp(3.15rem, 1.3846rem + 7.8462vw, 10.8rem);
 }
