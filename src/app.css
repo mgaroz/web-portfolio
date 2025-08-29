@@ -52,8 +52,8 @@
 
 .spinner {
 	display: inline-block;
-	width: 13em; /* size of spinner */
-	height: 13em;
+	width: 1rem; /* size of spinner */
+	height: 1rem;
 	border: 2px solid #ccc; /* light color for the background */
 	border-top: 2px solid #333; /* dark color for the spinning part */
 	border-radius: 50%; /* makes it circular */
